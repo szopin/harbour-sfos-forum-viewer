@@ -20,11 +20,21 @@ import Sailfish.Silica 1.0
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
                     list.model.clear();
+                    if (viewmode === "latest" && tid === ""){
 
                     for (var i=0;i<data.topic_list.topics.length;i++) {
+                        if (data.topic_list.topics[i]["bumped"] === true){
                         list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"]});
                     }
-                }
+                    }
+                } else {
+                        for (var j=0;j<data.topic_list.topics.length;j++) {
+
+                            list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"]});
+                        }
+                        }
+
+                    }
             }
             xhr.send();
         }
@@ -93,6 +103,7 @@ import Sailfish.Silica 1.0
 
 
           delegate: Item {
+
             width: parent.width
 
             height:  Theme.paddingLarge + theTitle.contentHeight
