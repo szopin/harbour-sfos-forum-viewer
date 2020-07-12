@@ -22,7 +22,7 @@ Page {
                     list.model.clear();
 
                 for (var i=0;i<posts_count;i++) {
-                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"]});
+                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"]});
                 }
                 }
             }
@@ -64,7 +64,7 @@ Page {
 
             Label {
                 id:  cid
-                text: "<p> <b>" + username + "</b></p><p><i>" + cooked + "</i></p>\n"// + cooked
+                text: "<p> <b>" + username + "</b> (" + updated_at + ")</p><p><i>" + cooked + "</i></p>\n"// + cooked
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
