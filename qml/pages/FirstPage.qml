@@ -7,10 +7,11 @@ import Sailfish.Silica 1.0
         allowedOrientations: Orientation.All
         property string source: "https://forum.sailfishos.org/"
         property string tid
+        property int pageno: 0
         property string viewmode : "latest"
         property string textname
         property string pagetitle:  textname == "" ? "SFOS Forum - " + viewmode : "SFOS Forum - " + textname
-        property string combined: tid == "" ? source + viewmode + ".json" : source + "c/" + tid + ".json"
+        property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
 
 
         function updateview(){
@@ -19,28 +20,104 @@ import Sailfish.Silica 1.0
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
-                    list.model.clear();
+                    //list.model.clear();
+
+
                     if (viewmode === "latest" && tid === ""){
 
                     for (var i=0;i<data.topic_list.topics.length;i++) {
-                        if (data.topic_list.topics[i]["bumped"] === true){
+                        if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
                         list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"]});
                     }
                     }
+
                 } else {
                         for (var j=0;j<data.topic_list.topics.length;j++) {
 
                             list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"]});
                         }
+
+                        }
+                    var more = 'more_topics_url';
+                    if (data.topic_list[more]){
+                        pageno++;
+
+                    } else {
+                        pageno = 0;
+
                         }
 
-                    }
+
+                }
             }
+
             xhr.send();
+
         }
+        SilicaFlickable {
+                 anchors.fill: parent;
+
+
+                  anchors.top: parent.bottom
+                  width: parent.width
+                  height: parent.height
+                  PullDownMenu {
+                      MenuItem {
+                          text: "About"
+                          onClicked: pageStack.push("About.qml");
+                      }
+                      MenuItem {
+                          text: "Reload"
+                          onClicked: {
+                              pageno = 0;
+                              list.model.clear()
+                              firstPage.updateview()
+                          }
+                      }
+                      MenuItem {
+                          text: "Latest"
+                          visible: viewmode == "top" || tid !== ""
+                          onClicked: {
+                              list.model.clear()
+                              pageno = 0;
+                              tid =""
+                              textname = ""
+                              viewmode = "latest"
+                              firstPage.updateview()
+                          }
+                      }
+                      MenuItem {
+                          text: "Top"
+                          visible: viewmode == "latest" || tid !== ""
+                          onClicked: {
+                              viewmode = "top"
+                              pageno = 0;
+                              tid =""
+                              textname = ""
+                              list.model.clear()
+                              firstPage.updateview()
+                          }
+                      }
+
+                      MenuItem {
+                          text: "Browse by category"
+                          onClicked: pageStack.push("CategorySelect.qml");
+
+                      }
+                  }
+
 
     SilicaListView {
         id:list
+
+        header: PageHeader {
+            id: header
+                 title: pagetitle
+                 }
+         anchors.fill: parent;
+         anchors.top: parent.bottom
+         width: parent.width
+         height: parent.height
         ViewPlaceholder {
             id: vplaceholder
             enabled: model.count == 0
@@ -48,57 +125,9 @@ import Sailfish.Silica 1.0
 
         }
 
-       header: PageHeader {
-                title: pagetitle
-                }
-        anchors.top: header.bottom
-        width: parent.width
-        height: parent.height
-        PullDownMenu {
-            MenuItem {
-                text: "About"
-                onClicked: pageStack.push("About.qml");
-            }
-            MenuItem {
-                text: "Reload"
-                onClicked: {
-                    list.model.clear()
-                    firstPage.updateview()
-                }
-            }
-            MenuItem {
-                text: "Latest"
-                visible: viewmode == "top" || tid !== ""
-                onClicked: {
-                    list.model.clear()
-                    tid =""
-                    textname = ""
-                    viewmode = "latest"
-                    firstPage.updateview()
-                }
-            }
-            MenuItem {
-                text: "Top"
-                visible: viewmode == "latest" || tid !== ""
-                onClicked: {
-                    viewmode = "top"
-                    tid =""
-                    textname = ""
-                    list.model.clear()
-                    firstPage.updateview()
-                }
-            }
 
-            MenuItem {
-                text: "Browse by category"
-                onClicked: pageStack.push("CategorySelect.qml");
-
-            }
-        }
-
-        VerticalScrollDecorator {}
         model: ListModel { id: model}
-
+        VerticalScrollDecorator {}
         Component.onCompleted: firstPage.updateview();
 
 
@@ -136,5 +165,19 @@ import Sailfish.Silica 1.0
                 }
             }
         }
+    }
+    PushUpMenu{
+
+        visible: pageno != 0;
+        MenuItem {
+
+            text: "Load more"
+            onClicked: {
+
+                firstPage.updateview();
+            }
+        }
+
+    }
    }
 }

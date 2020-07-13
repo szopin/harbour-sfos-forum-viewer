@@ -15,7 +15,7 @@ Page {
 
          function getcomments(){
             var xhr = new XMLHttpRequest;
-            xhr.open("GET", source +  topicid + ".json");
+            xhr.open("GET", source +  topicid + ".json?print=true");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
@@ -64,7 +64,7 @@ Page {
 
             Label {
                 id:  cid
-                text: "<p> <b>" + username + "</b> (" + updated_at + ")</p><p><i>" + cooked + "</i></p>\n"// + cooked
+                text: "<p> <b>" + username + "</b> (" + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
