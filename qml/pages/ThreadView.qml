@@ -15,7 +15,7 @@ Page {
 
          function getcomments(){
             var xhr = new XMLHttpRequest;
-            xhr.open("GET", source +  topicid + ".json?print=true");
+            xhr.open("GET", source +  topicid + ".json");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
