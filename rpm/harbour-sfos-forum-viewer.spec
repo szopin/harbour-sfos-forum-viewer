@@ -12,9 +12,9 @@ Summary:    Viewer for SailfishOS forums
 Version:    0.4
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    MIT
 BuildArch:  noarch
-URL:        http://example.org/
+URL:        https://github.com/szopin/harbour-sfos-forum-viewer
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sfos-forum-viewer.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -26,7 +26,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my Sailfish OS Application
+Native viewer for SFOS Forum
 
 
 %prep
