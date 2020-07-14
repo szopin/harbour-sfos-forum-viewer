@@ -6,7 +6,7 @@ Page {
     allowedOrientations: Orientation.All
     property string content
     property string source: "https://forum.sailfishos.org/t/"
-    property string intro
+    property string loadmore: source + topicid + "/posts.json?post_ids[]="
     property int topicid
     property string url
     property string aTitle
@@ -21,8 +21,29 @@ Page {
                     var data = JSON.parse(xhr.responseText);
                     list.model.clear();
 
-                for (var i=0;i<posts_count;i++) {
+                for (var i=0;i<data.post_stream.posts.length;i++) {
                         list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"]});
+                }
+
+                if (posts_count >= 20){
+                    for(var j=20;j<posts_count;j++)
+                    loadmore = loadmore + data.post_stream.stream[j] + "&post_ids[]="
+
+                }
+                }
+            }
+            xhr.send();
+    }
+
+         function morecomments(){
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", loadmore);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var data = JSON.parse(xhr.responseText);
+                for (var i=0;i<data.post_stream.posts.length;i++) {
+                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"]});
+
                 }
                 }
             }
@@ -44,7 +65,17 @@ Page {
         height: parent.height
         anchors.top: header.bottom
         VerticalScrollDecorator {}
+        PullDownMenu{
+        MenuItem {
+            text: "Open in browser"
+            onClicked: Qt.openUrlExternally(source + topicid)
+            }
+        MenuItem {
+            text: "Open in webview"
+            onClicked: pageStack.push("webView.qml", {"pageurl": source + topicid });
 
+            }
+        }
         ViewPlaceholder {
             id: vplaceholder
             enabled: commodel.count == 0
@@ -80,6 +111,20 @@ Page {
                 }
             }
         Component.onCompleted: commentpage.getcomments();
+        PushUpMenu{
+
+            visible: loadmore != source + topicid + "/posts.json?post_ids[]=";
+
+            MenuItem {
+
+                text: "Load more"
+                onClicked: {
+                    commentpage.morecomments();
+                    loadmore = source + topicid + "/posts.json?post_ids[]="
+                }
+            }
+
+        }
     }
 }
 

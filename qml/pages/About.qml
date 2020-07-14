@@ -52,7 +52,7 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: "SFOS Forum Viewer for Sailfish OS v0.3.1\nBy szopin\nLicensed under MIT";
+                text: "SFOS Forum Viewer for Sailfish OS v0.4\nBy szopin\nLicensed under MIT";
             }
 
             Button {
