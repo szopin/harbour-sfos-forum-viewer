@@ -85,7 +85,7 @@ Page {
         model: ListModel { id: commodel}
           delegate: Item {
             width: list.width
-            height: cid.height
+            height: cid.height + Theme.paddingMedium
 
             anchors  {
                 left: parent.left
@@ -95,7 +95,8 @@ Page {
 
             Label {
                 id:  cid
-                text: "<p> <b>" + username + "</b> (" + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
+                text: "<style>a {color:" + Theme.highlightColor + " } </style>" +
+                      "<p> <b>" + username + "</b> (" + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
