@@ -54,70 +54,61 @@ import Sailfish.Silica 1.0
             xhr.send();
 
         }
-        SilicaFlickable {
-                 anchors.fill: parent;
-
-
-                  anchors.top: parent.bottom
-                  width: parent.width
-                  height: parent.height
-                  PullDownMenu {
-                      MenuItem {
-                          text: "About"
-                          onClicked: pageStack.push("About.qml");
-                      }
-                      MenuItem {
-                          text: "Reload"
-                          onClicked: {
-                              pageno = 0;
-                              list.model.clear()
-                              firstPage.updateview()
-                          }
-                      }
-                      MenuItem {
-                          text: "Latest"
-                          visible: viewmode == "top" || tid !== ""
-                          onClicked: {
-                              list.model.clear()
-                              pageno = 0;
-                              tid =""
-                              textname = ""
-                              viewmode = "latest"
-                              firstPage.updateview()
-                          }
-                      }
-                      MenuItem {
-                          text: "Top"
-                          visible: viewmode == "latest" || tid !== ""
-                          onClicked: {
-                              viewmode = "top"
-                              pageno = 0;
-                              tid =""
-                              textname = ""
-                              list.model.clear()
-                              firstPage.updateview()
-                          }
-                      }
-
-                      MenuItem {
-                          text: "Browse by category"
-                          onClicked: pageStack.push("CategorySelect.qml");
-
-                      }
-                  }
-
 
     SilicaListView {
         id:list
+        anchors.fill: parent
 
         header: PageHeader {
             id: header
-                 title: pagetitle
-                 }
-         anchors.fill: parent;
-         anchors.top: parent.bottom
-         width: parent.width
-         height: parent.height
+            title: pagetitle
+        }
+
+        PullDownMenu {
+            MenuItem {
+                text: "About"
+                onClicked: pageStack.push("About.qml");
+            }
+            MenuItem {
+                text: "Reload"
+                onClicked: {
+                    pageno = 0;
+                    list.model.clear()
+                    firstPage.updateview()
+                }
+            }
+            MenuItem {
+                text: "Latest"
+                visible: viewmode == "top" || tid !== ""
+                onClicked: {
+                    list.model.clear()
+                    pageno = 0;
+                    tid =""
+                    textname = ""
+                    viewmode = "latest"
+                    firstPage.updateview()
+                }
+            }
+            MenuItem {
+                text: "Top"
+                visible: viewmode == "latest" || tid !== ""
+                onClicked: {
+                    viewmode = "top"
+                    pageno = 0;
+                    tid =""
+                    textname = ""
+                    list.model.clear()
+                    firstPage.updateview()
+                }
+            }
+
+            MenuItem {
+                text: "Browse by category"
+                onClicked: pageStack.push("CategorySelect.qml");
+
+            }
+        }
+
         ViewPlaceholder {
             id: vplaceholder
             enabled: model.count == 0
@@ -125,24 +116,16 @@ import Sailfish.Silica 1.0
 
         }
 
-
         model: ListModel { id: model}
         VerticalScrollDecorator {}
         Component.onCompleted: firstPage.updateview();
 
 
-          delegate: Item {
+          delegate: BackgroundItem {
 
             width: parent.width
 
             height:  Theme.paddingLarge + theTitle.contentHeight
-
-            anchors  {
-
-                left: parent.left
-                right: parent.right
-                margins: Theme.paddingSmall
-                }
 
             Label {
                 id:  theTitle
@@ -153,31 +136,27 @@ import Sailfish.Silica 1.0
                 anchors {
                     left: parent.left
                     right: parent.right
-
+                    margins: Theme.paddingSmall
+                    verticalCenter: parent.verticalCenter
                     }
                 }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    var name = list.model.get(index).name
-                        pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
-                }
-            }
-        }
-    }
-    PushUpMenu{
-
-        visible: pageno != 0;
-        MenuItem {
-
-            text: "Load more"
             onClicked: {
-
-                firstPage.updateview();
+                var name = list.model.get(index).name
+                pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
             }
         }
+          PushUpMenu{
+              visible: pageno != 0;
+              MenuItem {
 
+                  text: "Load more"
+                  onClicked: {
+
+                      firstPage.updateview();
+                  }
+              }
+
+          }
     }
-   }
 }

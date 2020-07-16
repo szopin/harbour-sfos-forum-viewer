@@ -44,16 +44,9 @@ Page {
        }
 
 
-         delegate: Item {
+         delegate: BackgroundItem {
            width: parent.width
            height: Theme.paddingLarge + theTitle.contentHeight
-
-           anchors  {
-
-               left: parent.left
-               right: parent.right
-               margins: Theme.paddingSmall
-               }
 
            Label {
                id:  theTitle
@@ -63,17 +56,15 @@ Page {
                anchors {
                    left: parent.left
                    right: parent.right
+                   margins: Theme.paddingSmall
+                   verticalCenter: parent.verticalCenter
                    }
                }
 
-           MouseArea {
-               anchors.fill: parent
-               onClicked: {
-                   var name = list.model.get(index).name
-                       pageStack.replaceAbove(null, "FirstPage.qml", {"tid": topic, "textname": textname});
-
-                   }
-               }
+           onClicked: {
+               var name = list.model.get(index).name
+               pageStack.replaceAbove(null, "FirstPage.qml", {"tid": topic, "textname": textname});
+           }
            }
        }
   }
