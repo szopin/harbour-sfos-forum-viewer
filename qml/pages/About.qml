@@ -4,46 +4,45 @@ import Sailfish.Silica 1.0
 Page {
     id: aboutPage
 
-    Flickable {
+    SilicaFlickable {
         id: flickable
         anchors.fill: parent
+        contentWidth: column.width
+        contentHeight: column.height
 
-        PageHeader {
-            id: header;
-            title: "About"
-        }
+        Column {
+            id: column
+            width: flickable.width
 
-        Rectangle {
-            anchors {
-                left: parent.left;
-                right: parent.right;
-                top: header.bottom
+            PageHeader {
+                id: header;
+                title: "About"
             }
-            height: parent.height
-            color: "transparent"
+
             Image {
                 id: appIcon
                 fillMode: Image.PreserveAspectFit
                 smooth: true
                 source: "../img/harbour-sfos-forum-viewer.png"
                 anchors.horizontalCenter: parent.horizontalCenter
-
             }
-
 
             Label {
                 id: appName
                 text: "SFOS Forum Viewer"
-                anchors.top: appIcon.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.fontSizeLarge
             }
 
+            Item {
+                width: 1
+                height: Theme.paddingMedium
+            }
+
             Text {
                 id: desc
                 anchors {
-                    top: appName.bottom;
                     left: parent.left;
                     right: parent.right;
                     margins: Theme.paddingMedium
@@ -54,26 +53,33 @@ Page {
                 wrapMode: Text.Wrap
                 text: "SFOS Forum Viewer for Sailfish OS v0.4\nBy szopin\nLicensed under MIT";
             }
+            Item {
+                width: 1
+                height: Theme.paddingMedium
+            }
 
             Button {
                 id: github
-                anchors {
-                    top: desc.bottom;
-                    horizontalCenter: parent.horizontalCenter;
-                    margins: Theme.paddingMedium
-                }
+                anchors.horizontalCenter: parent.horizontalCenter
                 text: "Github"
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer");
             }
-                        Button {
+
+            Item {
+                width: 1
+                height: Theme.paddingLarge
+            }
+
+            Button {
                 id: license
-                anchors {
-                    top: github.bottom;
-                    horizontalCenter: parent.horizontalCenter;
-                    margins: Theme.paddingLarge
-                }
+                anchors.horizontalCenter: parent.horizontalCenter
                 text: "License"
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer/blob/master/LICENSE");
+            }
+
+            Item {
+                width: 1
+                height: Theme.paddingMedium
             }
         }
     }
