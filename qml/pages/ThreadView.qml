@@ -112,7 +112,8 @@ Page {
                 }
             }
         Component.onCompleted: commentpage.getcomments();
-        PushUpMenu{
+        PushUpMenu {
+            id: pupmenu
 
             visible: loadmore != source + topicid + "/posts.json?post_ids[]=";
 
@@ -120,6 +121,7 @@ Page {
 
                 text: "Load more"
                 onClicked: {
+                    pupmenu.close();
                     commentpage.morecomments();
                     loadmore = source + topicid + "/posts.json?post_ids[]="
                 }

@@ -146,13 +146,14 @@ import Sailfish.Silica 1.0
                 pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
             }
         }
-          PushUpMenu{
+          PushUpMenu {
+              id: pupmenu
               visible: pageno != 0;
               MenuItem {
 
                   text: "Load more"
                   onClicked: {
-
+                      pupmenu.close();
                       firstPage.updateview();
                   }
               }
