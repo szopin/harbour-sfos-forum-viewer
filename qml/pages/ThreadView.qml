@@ -4,7 +4,7 @@ import Sailfish.Silica 1.0
 Page {
     id: commentpage
     allowedOrientations: Orientation.All
-    property string content
+    property int likes
     property string source: "https://forum.sailfishos.org/t/"
     property string loadmore: source + topicid + "/posts.json?post_ids[]="
     property int topicid
@@ -22,7 +22,10 @@ Page {
                     list.model.clear();
 
                 for (var i=0;i<data.post_stream.posts.length;i++) {
-                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"]});
+                    if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
+                         likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
+                         } else likes = 0;
+                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"]});
                 }
 
                 if (posts_count >= 20){
@@ -42,7 +45,10 @@ Page {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
                 for (var i=0;i<data.post_stream.posts.length;i++) {
-                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"]});
+                    if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
+                         likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
+                         } else likes = 0;
+                      list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"]});
 
                 }
                 }
@@ -85,7 +91,7 @@ Page {
         model: ListModel { id: commodel}
           delegate: Item {
             width: list.width
-            height: cid.height + Theme.paddingMedium
+            height: extras.visible ? cid.height + Theme.paddingMedium + extras.height : cid.height + Theme.paddingMedium
 
             anchors  {
                 left: parent.left
@@ -96,7 +102,7 @@ Page {
             Label {
                 id:  cid
                 text: "<style>a {color:" + Theme.highlightColor + " } </style>" +
-                      "<p> <b>" + username + "</b> (" + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
+                      "<p> <b>" + username + "</b> (" + created_at.substring(0,10) + " " + created_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
@@ -109,8 +115,22 @@ Page {
                 onLinkActivated: {
                     var dialog = pageStack.push("OpenLink.qml", {link: link});
                 }
+            }
+            Label {
+                id: extras
+                visible: likes > 0 || (version > 1 && updated_at !== created_at)
+                horizontalAlignment: Text.AlignRight
+                text: likes > 0 ? (version > 1 ? "(✍️: " + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ") (❤:" + likes + ")" : "(❤:" + likes + ")") : (version > 1 ? "(✍️: " + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")" : "")
+                font.pixelSize: Theme.fontSizeSmall
+                anchors {
+                    top: cid.bottom
+                    leftMargin: Theme.paddingMedium
+                    rightMargin: Theme.paddingSmall
+                    left: parent.left
+                    right: parent.right
                 }
             }
+          }
         Component.onCompleted: commentpage.getcomments();
         PushUpMenu {
             id: pupmenu
