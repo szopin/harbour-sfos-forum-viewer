@@ -78,11 +78,13 @@ xhr.send();
 
             }
         }
-        ViewPlaceholder {
+
+        BusyIndicator {
             id: vplaceholder
-            enabled: commodel.count == 0
-            text: "Loading..."
-            }
+            running: commodel.count == 0
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+        }
 
         model: ListModel { id: commodel}
           delegate: Item {
