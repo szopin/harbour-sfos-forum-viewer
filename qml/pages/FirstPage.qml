@@ -127,24 +127,30 @@ import Sailfish.Silica 1.0
 
 
           delegate: BackgroundItem {
-
             width: parent.width
-
             height:  Theme.paddingLarge + theTitle.contentHeight
 
             Label {
                 id:  theTitle
-                text: title + " (posts: " + posts_count + ")"
+                text: title + "\n(posts: " + posts_count + ")"
 
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 anchors {
                     left: parent.left
                     right: parent.right
-                    margins: Theme.paddingSmall
+                    margins: Theme.paddingMedium
                     verticalCenter: parent.verticalCenter
                     }
                 }
+
+            /* To be aligned in the future?
+            Separator {
+                width: parent.width
+                horizontalAlignment: Qt.AlignHCenter
+                color: Theme.highlightColor
+                height: 2
+            } */
 
             onClicked: {
                 var name = list.model.get(index).name
