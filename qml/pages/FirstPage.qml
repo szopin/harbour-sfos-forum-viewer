@@ -47,7 +47,6 @@ import Sailfish.Silica 1.0
 
                         }
 
-
                 }
             }
 
@@ -65,6 +64,8 @@ import Sailfish.Silica 1.0
         }
 
         PullDownMenu {
+            busy: model.count == 0
+
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push("About.qml");
@@ -88,7 +89,7 @@ import Sailfish.Silica 1.0
                 onClicked: {
                     list.model.clear()
                     pageno = 0;
-                    tid =""
+                    tid = ""
                     textname = ""
                     viewmode = "latest"
                     firstPage.updateview()
@@ -100,7 +101,7 @@ import Sailfish.Silica 1.0
                 onClicked: {
                     viewmode = "top"
                     pageno = 0;
-                    tid =""
+                    tid = ""
                     textname = ""
                     list.model.clear()
                     firstPage.updateview()
@@ -114,11 +115,11 @@ import Sailfish.Silica 1.0
             }
         }
 
-        ViewPlaceholder {
+        BusyIndicator {
             id: vplaceholder
-            enabled: model.count == 0
-            text: "Loading..."
-
+            running: model.count == 0
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
         }
 
         model: ListModel { id: model}
@@ -127,24 +128,22 @@ import Sailfish.Silica 1.0
 
 
           delegate: BackgroundItem {
-
             width: parent.width
-
             height:  Theme.paddingLarge + theTitle.contentHeight
 
             Label {
                 id:  theTitle
-                text: title + " (posts: " + posts_count + ")"
-
+                text: "<b>" + title + "</b>" + "<p>(Posts: " + posts_count + ")</p>"
+                textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 anchors {
                     left: parent.left
                     right: parent.right
-                    margins: Theme.paddingSmall
+                    margins: Theme.paddingMedium
                     verticalCenter: parent.verticalCenter
                     }
-                }
+             }
 
             onClicked: {
                 var name = list.model.get(index).name

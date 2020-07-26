@@ -76,7 +76,7 @@ function getcomments(text){
                 anchors {
                     left: parent.left
                     right: parent.right
-                    margins: Theme.paddingSmall
+                    margins: Theme.paddingMedium
                     verticalCenter: parent.verticalCenter
                     }
         }

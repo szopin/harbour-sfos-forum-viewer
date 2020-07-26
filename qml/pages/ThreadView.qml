@@ -78,11 +78,13 @@ xhr.send();
 
             }
         }
-        ViewPlaceholder {
+
+        BusyIndicator {
             id: vplaceholder
-            enabled: commodel.count == 0
-            text: "Loading..."
-            }
+            running: commodel.count == 0
+            anchors.centerIn: parent
+            size: BusyIndicatorSize.Large
+        }
 
         model: ListModel { id: commodel}
           delegate: Item {
@@ -125,6 +127,14 @@ xhr.send();
                     left: parent.left
                     right: parent.right
                 }
+            }
+
+            Separator {
+                color: Theme.highlightColor
+                height: 3
+                width: parent.width
+                anchors.margins: Theme.paddingLarge
+                horizontalAlignment: Qt.AlignHCenter
             }
           }
         Component.onCompleted: commentpage.getcomments();

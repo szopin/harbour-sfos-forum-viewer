@@ -17,7 +17,8 @@ Page {
 
       header: PageHeader {
                title: "Categories"
-               }
+      }
+
        anchors.top: header.bottom
        width: parent.width
        height: parent.height
@@ -43,7 +44,6 @@ Page {
            xhr.send();
        }
 
-
          delegate: BackgroundItem {
            width: parent.width
            height: Theme.paddingLarge + theTitle.contentHeight
@@ -56,16 +56,16 @@ Page {
                anchors {
                    left: parent.left
                    right: parent.right
-                   margins: Theme.paddingSmall
+                   margins: Theme.paddingMedium
                    verticalCenter: parent.verticalCenter
                    }
-               }
+           }
 
            onClicked: {
                var name = list.model.get(index).name
                pageStack.replaceAbove(null, "FirstPage.qml", {"tid": topic, "textname": textname});
            }
-           }
+         }
        }
   }
 
