@@ -139,7 +139,7 @@ xhr.send();
           }
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
-        //  if (highest_post_number == posts_count && list.count == posts_count){
+
               for(var i=0;i<=posts_count;i++){
                   if (post_id !== "" && list.model.get(i) !== undefined && list.model.get(i).postid === post_id){
           positionViewAtIndex(i, ListView.Beginning);
