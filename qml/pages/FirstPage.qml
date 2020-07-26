@@ -129,11 +129,11 @@ import Sailfish.Silica 1.0
 
           delegate: BackgroundItem {
             width: parent.width
-            height:  Theme.paddingLarge + theTitle.contentHeight
+            height:  Theme.paddingMedium + theTitle.contentHeight
 
             Label {
                 id:  theTitle
-                text: "<b>" + title + "</b>" + "<p>(Posts: " + posts_count + ")</p>"
+                text: "<b>" + title + "</b>" + "<br>(Posts: " + posts_count + ")</br>"
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
