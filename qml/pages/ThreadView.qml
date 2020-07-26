@@ -128,6 +128,14 @@ xhr.send();
                     right: parent.right
                 }
             }
+
+            Separator {
+                color: Theme.highlightColor
+                height: 3
+                width: parent.width
+                anchors.margins: Theme.paddingLarge
+                horizontalAlignment: Qt.AlignHCenter
+            }
           }
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {

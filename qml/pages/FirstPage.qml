@@ -133,8 +133,7 @@ import Sailfish.Silica 1.0
 
             Label {
                 id:  theTitle
-                text: "<style>p {color:" + Theme.secondaryColor + " } </style>" +
-                       title + "<p>(Posts: " + posts_count + ")</p>"
+                text: "<b>" + title + "</b>" + "<p>(Posts: " + posts_count + ")</p>"
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
