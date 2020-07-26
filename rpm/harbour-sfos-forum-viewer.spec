@@ -9,12 +9,12 @@ Name:       harbour-sfos-forum-viewer
 # << macros
 
 Summary:    Viewer for SailfishOS forums
-Version:    0.5
+Version:    0.6
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    MIT
 BuildArch:  noarch
-URL:        http://example.org/
+URL:        https://github.com/szopin/harbour-sfos-forum-viewer
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sfos-forum-viewer.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9

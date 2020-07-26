@@ -78,6 +78,11 @@ import Sailfish.Silica 1.0
                 }
             }
             MenuItem {
+                text: "Search"
+                onClicked: pageStack.push("SearchPage.qml");
+
+            }
+            MenuItem {
                 text: "Latest"
                 visible: viewmode == "top" || tid !== ""
                 onClicked: {

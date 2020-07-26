@@ -5,6 +5,7 @@ Page {
     id: commentpage
     allowedOrientations: Orientation.All
     property int likes
+    property int post_id
     property string source: "https://forum.sailfishos.org/t/"
     property string loadmore: source + topicid + "/posts.json?post_ids[]="
     property int topicid
@@ -13,53 +14,48 @@ Page {
     property int posts_count
 
 
-         function getcomments(){
-            var xhr = new XMLHttpRequest;
-            xhr.open("GET", source +  topicid + ".json");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhr.responseText);
-                    list.model.clear();
+    function getcomments(){
+       var xhr = new XMLHttpRequest;
+       xhr.open("GET", source +  topicid + ".json");
+       xhr.onreadystatechange = function() {
+           if (xhr.readyState === XMLHttpRequest.DONE) {
+               var data = JSON.parse(xhr.responseText);
+           if (posts_count >= 20){
+               for(var j=20;j<posts_count;j++)
+               loadmore = loadmore + data.post_stream.stream[j] + "&post_ids[]="
 
-                for (var i=0;i<data.post_stream.posts.length;i++) {
-                    if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
-                         likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
-                         } else likes = 0;
-                        list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"]});
-                }
-
-                if (posts_count >= 20){
-                    for(var j=20;j<posts_count;j++)
-                    loadmore = loadmore + data.post_stream.stream[j] + "&post_ids[]="
-
-                }
-                }
-            }
-            xhr.send();
-    }
-
-         function morecomments(){
-            var xhr = new XMLHttpRequest;
-            xhr.open("GET", loadmore);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhr.responseText);
-                for (var i=0;i<data.post_stream.posts.length;i++) {
-                    if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
-                         likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
-                         } else likes = 0;
-                      list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"]});
-
-                }
-                }
-            }
-            xhr.send();
-    }
+           }
+           var xhr2 = new XMLHttpRequest;
+       xhr2.open("GET", loadmore);
+       xhr2.onreadystatechange = function() {
+           if (xhr2.readyState === XMLHttpRequest.DONE) {
+               var data2 = JSON.parse(xhr2.responseText);
 
 
 
+               list.model.clear();
 
+           for (var i=0;i<data.post_stream.posts.length;i++) {
+               if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
+                    likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
+                    } else likes = 0;
+                   list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"], postid: data.post_stream.posts[i]["id"]});
+           }
+for (var j=0;j<data2.post_stream.posts.length;j++) {
+               if(data2.post_stream.posts[j]["actions_summary"][0] && data2.post_stream.posts[j]["actions_summary"][0]["id"] === 2){
+                    likes = data2.post_stream.posts[j]["actions_summary"][0]["count"];
+                    } else likes = 0;
+                 list.model.append({cooked: data2.post_stream.posts[j]["cooked"], username: data2.post_stream.posts[j]["username"], updated_at: data2.post_stream.posts[j]["updated_at"], likes: likes, created_at: data2.post_stream.posts[j]["created_at"], version: data2.post_stream.posts[j]["version"], postid: data2.post_stream.posts[j]["id"]});
 
+           }
+           }
+           }
+       xhr2.send();
+
+}
+}
+xhr.send();
+}
 
     SilicaListView {
         id: list
@@ -132,22 +128,14 @@ Page {
             }
           }
         Component.onCompleted: commentpage.getcomments();
-        PushUpMenu {
-            id: pupmenu
-
-            visible: loadmore != source + topicid + "/posts.json?post_ids[]=";
-
-            MenuItem {
-
-                text: "Load more"
-                onClicked: {
-                    pupmenu.close();
-                    commentpage.morecomments();
-                    loadmore = source + topicid + "/posts.json?post_ids[]="
-                }
-            }
-
-        }
+        onCountChanged: {
+        //  if (highest_post_number == posts_count && list.count == posts_count){
+              for(var i=0;i<=posts_count;i++){
+                  if (post_id !== "" && list.model.get(i) !== undefined && list.model.get(i).postid === post_id){
+          positionViewAtIndex(i, ListView.Beginning);
+                  }
+          }
+      }
     }
 }
 

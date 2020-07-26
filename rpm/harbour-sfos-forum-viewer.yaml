@@ -1,19 +1,19 @@
 Name: harbour-sfos-forum-viewer
 Summary: Viewer for SailfishOS forums
-Version: 0.5
+Version: 0.6
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group: Qt/Qt
-URL: http://example.org/
+URL: https://github.com/szopin/harbour-sfos-forum-viewer
 BuildArch: noarch
-License: LICENSE
+License: MIT
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my Sailfish OS Application
+  Viewer for SailfishOS forums
 Configure: none
 Builder: qmake5
 
