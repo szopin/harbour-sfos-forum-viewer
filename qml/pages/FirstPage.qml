@@ -129,21 +129,36 @@ import Sailfish.Silica 1.0
 
           delegate: BackgroundItem {
             width: parent.width
-            height:  Theme.paddingMedium + theTitle.contentHeight
+            height:  Theme.paddingMedium + column.height
 
-            Label {
-                id:  theTitle
-                text: "<b>" + title + "</b>" + "<br>(Posts: " + posts_count + ")</br>"
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    margins: Theme.paddingMedium
-                    verticalCenter: parent.verticalCenter
+            Column {
+                id: column
+                width: parent.width
+                anchors.verticalCenter: parent.verticalCenter
+
+                Label {
+                    id:  theTitle
+                    text: title
+                    wrapMode: Text.Wrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        margins: Theme.paddingMedium
                     }
-             }
+                }
+                Label {
+                    text: "(Posts: " + posts_count + ")"
+                    wrapMode: Text.Wrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.secondaryColor
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        margins: Theme.paddingMedium
+                    }
+                }
+            }
 
             onClicked: {
                 var name = list.model.get(index).name
