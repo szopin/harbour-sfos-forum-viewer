@@ -6,6 +6,8 @@ Page {
     allowedOrientations: Orientation.All
     property int likes
     property int post_id
+    property int highest_post_number
+    property int post_number
     property string source: "https://forum.sailfishos.org/t/"
     property string loadmore: source + topicid + "/posts.json?post_ids[]="
     property int topicid
@@ -139,8 +141,8 @@ xhr.send();
           }
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
-
-              for(var i=0;i<=posts_count;i++){
+              // Lets not parse the whole thread but only suspect posts from the search, ~33% speed improvement in a thread with 57 posts
+              for(var i=post_number - (highest_post_number - posts_count) - 1;i<=post_number;i++){
                   if (post_id !== "" && list.model.get(i) !== undefined && list.model.get(i).postid === post_id){
           positionViewAtIndex(i, ListView.Beginning);
                   }

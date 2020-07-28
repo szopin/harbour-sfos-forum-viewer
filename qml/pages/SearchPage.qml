@@ -26,7 +26,7 @@ function getcomments(text){
 
                 for (var i=0;i<data.posts.length;i++) {
 
-                        list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[i]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[i]["posts_count"], post_id: data.posts[i]["id"]});
+                        list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[i]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[i]["posts_count"], post_id: data.posts[i]["id"], highest_post_number: data.topics[i]["highest_post_number"]});
                 }
                 } else {
                             viewPlaceholder.text = "No results"
@@ -84,7 +84,7 @@ function getcomments(text){
 
                 var name = list.model.get(index).name
                 if(viewPlaceholder.text !== "No results"){
-                pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "post_number": post_number, "posts_count": posts_count, "post_id": post_id});
+                pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "post_number": post_number, "posts_count": posts_count, "post_id": post_id, "highest_post_number": highest_post_number});
             }
             }
         }
