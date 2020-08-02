@@ -3,7 +3,7 @@ import Sailfish.Silica 1.0
 
 
  Page {
-    id: firstPage
+        id: firstPage
         allowedOrientations: Orientation.All
         property string source: "https://forum.sailfishos.org/"
         property string tid
@@ -12,9 +12,11 @@ import Sailfish.Silica 1.0
         property string textname
         property string pagetitle:  textname == "" ? "SFOS Forum - " + viewmode : "SFOS Forum - " + textname
         property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
+        property bool fetching: false
 
         function updateview() {
             var xhr = new XMLHttpRequest;
+            fetching = true
             xhr.open("GET", combined);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -51,12 +53,21 @@ import Sailfish.Silica 1.0
                         pageno = 0;
 
                         }
-
                 }
             }
-
+            fetching = false
+            updateApplicationData()
             xhr.send();
+        }
 
+        function updateApplicationData() {
+            application.tid = tid
+            application.pageno = pageno
+            application.viewmode = viewmode
+            application.textname = textname
+            application.pagetitle = pagetitle
+            application.combined = combined
+            application.fetching = fetching
         }
 
     SilicaListView {

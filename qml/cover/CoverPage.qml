@@ -12,15 +12,9 @@ CoverBackground {
         spacing: Theme.paddingLarge
 
         Label {
+            id: header
             text: "Latest posts"
             font.pixelSize: Theme.fontSizeSmall
-        }
-
-        Label {
-            id: busy
-            visible: false
-            text: "Loading..."
-            font.pixelSize: Theme.fontSizeTiny
         }
 
         Repeater {
@@ -40,7 +34,16 @@ CoverBackground {
         }
     }
 
-    /* Possible implementation later when connected to updateView
+    BusyIndicator {
+        anchors.centerIn: parent
+        visible: application.fetching
+    }
+
+    Label {
+        anchors.centerIn: parent
+        visible: application.latest.count === 0 && !application.fetching
+        text: "No posts found"
+    }
 
     CoverActionList {
         id: coverAction
@@ -53,5 +56,5 @@ CoverBackground {
             }
         }
 
-    } */
+    }
 }
