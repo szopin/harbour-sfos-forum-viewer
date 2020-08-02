@@ -4,7 +4,9 @@ import "pages"
 
 ApplicationWindow
 {
+    id: application
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    property var latest: ListModel{id: latest}
     allowedOrientations: defaultAllowedOrientations
 }
