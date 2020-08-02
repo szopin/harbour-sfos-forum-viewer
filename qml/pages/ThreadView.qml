@@ -79,6 +79,11 @@ xhr.send();
             onClicked: pageStack.push("webView.qml", {"pageurl": source + topicid });
 
             }
+        MenuItem {
+            text: "Search thread"
+            onClicked: pageStack.push("SearchPage.qml", {"searchid": topicid, "aTitle": aTitle });
+
+            }
         }
 
         BusyIndicator {

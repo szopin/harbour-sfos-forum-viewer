@@ -4,19 +4,23 @@ import Sailfish.Silica 1.0
 
 Page {
     property string initialSearch
+    property int searchid
+    property string aTitle
+    property string hint: aTitle === "" ? "" : "Searching thread: " + aTitle
+    property string searchstring: searchid !== 0 ? "https://forum.sailfishos.org/search.json?context=topic&context_id=" + searchid + "&q=" : "https://forum.sailfishos.org/search.json?q="
 
     function _reset() {
         list.headerItem.searchField.text = ""
         list.model.clear()
 
         viewPlaceholder.text = "Type at least 3 letters in the field above"
-
+        viewPlaceholder.hintText = hint
 
         list.headerItem.searchField.forceActiveFocus()
     }
 function getcomments(text){
             var xhr = new XMLHttpRequest;
-            xhr.open("GET", "https://forum.sailfishos.org/search.json?q=" + text);
+            xhr.open("GET", searchstring + text);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
@@ -25,8 +29,12 @@ function getcomments(text){
 
 
                 for (var i=0;i<data.posts.length;i++) {
+                    if(searchid === 0){
 
                         list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[i]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[i]["posts_count"], post_id: data.posts[i]["id"], highest_post_number: data.topics[i]["highest_post_number"]});
+                } else {
+                        list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[0]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[0]["posts_count"], post_id: data.posts[i]["id"], highest_post_number: data.topics[0]["highest_post_number"]});
+                    }
                 }
                 } else {
                             viewPlaceholder.text = "No results"
