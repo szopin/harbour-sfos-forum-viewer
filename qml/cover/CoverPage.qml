@@ -8,12 +8,12 @@ CoverBackground {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.right: parent.right
-        anchors.margins: Theme.paddingLarge
-        spacing: Theme.paddingLarge
+        anchors.margins: Theme.paddingSmall
+        spacing: Theme.paddingSmall
 
         Label {
             id: header
-            text: "Latest posts"
+            text: "SFOS Forum"
             font.pixelSize: Theme.fontSizeSmall
         }
 

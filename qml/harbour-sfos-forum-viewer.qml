@@ -30,7 +30,7 @@ ApplicationWindow
 
                 for (var i=0;i<data.topic_list.topics.length;i++) {
                     if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                        if (i <= 4) {
+                        if (i <= 10) {
                             application.latest.append({title: data.topic_list.topics[i]["title"]})
                         }
                     }
@@ -38,7 +38,7 @@ ApplicationWindow
 
             } else {
                     for (var j=0;j<data.topic_list.topics.length;j++) {
-                        if (j < 4) {
+                        if (j < 10) {
                             application.latest.append({title: data.topic_list.topics[j]["title"]})
                         }
                     }

@@ -30,7 +30,7 @@ import Sailfish.Silica 1.0
                         if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
                         list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"]});
 
-                        if (i <= 4) {
+                        if (i <= 10) {
                             application.latest.append({title: data.topic_list.topics[i]["title"]})
                         }
                     }
@@ -39,7 +39,7 @@ import Sailfish.Silica 1.0
                 } else {
                         for (var j=0;j<data.topic_list.topics.length;j++) {
                             list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"]});
-                            if (j < 4) {
+                            if (j < 10) {
                                 application.latest.append({title: data.topic_list.topics[j]["title"]})
                             }
                         }
