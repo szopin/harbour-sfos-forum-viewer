@@ -24,7 +24,7 @@ Page {
        height: parent.height
 
        VerticalScrollDecorator {}
-       model: ListModel { id: model}
+       model: ListModel { id: catmodel}
 
        Component.onCompleted: {
            var xhr = new XMLHttpRequest;
@@ -32,11 +32,11 @@ Page {
            xhr.onreadystatechange = function() {
                if (xhr.readyState === XMLHttpRequest.DONE) {
                    var data = JSON.parse(xhr.responseText);
-                   model.clear();
+                   catmodel.clear();
 
                    for (var i=0;i<data.category_list.categories.length;i++) {
 
-                         model.append({textname: data.category_list.categories[i]["name"], topic: data.category_list.categories[i]["id"]});
+                         catmodel.append({textname: data.category_list.categories[i]["name"], topic: data.category_list.categories[i]["id"]});
 
                    }
                }
@@ -62,8 +62,12 @@ Page {
            }
 
            onClicked: {
-               var name = list.model.get(index).name
-               pageStack.replaceAbove(null, "FirstPage.qml", {"tid": topic, "textname": textname});
+               var firstPage = pageStack.find(function(page) { return (page._depth === 0); });
+              firstPage.tid = topic;
+               firstPage.textname = textname;
+               firstPage.pageno = 0;
+               firstPage.clearview();
+               pageStack.navigateBack();
            }
          }
        }

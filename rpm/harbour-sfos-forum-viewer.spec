@@ -9,7 +9,7 @@ Name:       harbour-sfos-forum-viewer
 # << macros
 
 Summary:    Viewer for SailfishOS forums
-Version:    0.7.4
+Version:    0.7.5
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -26,7 +26,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my Sailfish OS Application
+Viewer for SailfishOS forums
 
 
 %prep

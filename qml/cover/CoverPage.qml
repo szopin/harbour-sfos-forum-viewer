@@ -13,7 +13,7 @@ CoverBackground {
 
         Label {
             id: header
-            text: "SFOS Forum"
+            text: "Latest posts"
             font.pixelSize: Theme.fontSizeSmall
         }
 

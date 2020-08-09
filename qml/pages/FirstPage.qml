@@ -12,36 +12,35 @@ import Sailfish.Silica 1.0
         property string textname
         property string pagetitle:  textname == "" ? "SFOS Forum - " + viewmode : "SFOS Forum - " + textname
         property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
-        property bool fetching: false
 
+    function clearview(){
+        list.model.clear();
+        pageno = 0;
+        updateview();
+    }
         function updateview() {
             var xhr = new XMLHttpRequest;
-            fetching = true
+
             xhr.open("GET", combined);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
-                    //list.model.clear();
-                    application.latest.clear()
+
 
                     if (viewmode === "latest" && tid === ""){
 
                     for (var i=0;i<data.topic_list.topics.length;i++) {
                         if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                        list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"]});
+                        list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"], bumped: data.topic_list.topics[i]["bumped_at"]});
 
-                        if (i <= 10) {
-                            application.latest.append({title: data.topic_list.topics[i]["title"]})
-                        }
+
                     }
                     }
 
                 } else {
                         for (var j=0;j<data.topic_list.topics.length;j++) {
-                            list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"]});
-                            if (j < 10) {
-                                application.latest.append({title: data.topic_list.topics[j]["title"]})
-                            }
+                            list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"], bumped: data.topic_list.topics[j]["bumped_at"]});
+
                         }
 
                         }
@@ -55,20 +54,15 @@ import Sailfish.Silica 1.0
                         }
                 }
             }
-            fetching = false
-            updateApplicationData()
+
             xhr.send();
         }
 
-        function updateApplicationData() {
-            application.tid = tid
-            application.pageno = pageno
-            application.viewmode = viewmode
-            application.textname = textname
-            application.pagetitle = pagetitle
-            application.combined = combined
-            application.fetching = fetching
+    onStatusChanged: {
+        if (status === PageStatus.Active){
+            pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"))
         }
+    }
 
     SilicaListView {
         id:list
@@ -80,20 +74,13 @@ import Sailfish.Silica 1.0
         }
 
         PullDownMenu {
-            busy: model.count == 0
+            //busy: model.count == 0
 
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push("About.qml");
             }
-            MenuItem {
-                text: "Reload"
-                onClicked: {
-                    pageno = 0;
-                    list.model.clear()
-                    firstPage.updateview()
-                }
-            }
+
             MenuItem {
                 text: "Search"
                 onClicked: pageStack.push("SearchPage.qml");
@@ -124,10 +111,14 @@ import Sailfish.Silica 1.0
                 }
             }
 
-            MenuItem {
-                text: "Browse by category"
-                onClicked: pageStack.push("CategorySelect.qml");
 
+            MenuItem {
+                text: "Reload"
+                onClicked: {
+                    pageno = 0;
+                    list.model.clear()
+                    firstPage.updateview()
+                }
             }
         }
 
@@ -140,7 +131,7 @@ import Sailfish.Silica 1.0
 
         model: ListModel { id: model}
         VerticalScrollDecorator {}
-        Component.onCompleted: firstPage.updateview();
+        Component.onCompleted: {firstPage.updateview(); application.fetchLatestPosts();}
 
 
           delegate: BackgroundItem {
@@ -164,7 +155,7 @@ import Sailfish.Silica 1.0
                     }
                 }
                 Label {
-                    text: "(Posts: " + posts_count + ")"
+                    text: "(Posts: " + posts_count + "; Last bump: " + bumped.substring(0,10) + " " + bumped.substring(11,19) + ")"
                     wrapMode: Text.Wrap
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.secondaryColor
