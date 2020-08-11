@@ -10,7 +10,7 @@ Page {
        id:list
        ViewPlaceholder {
            id: vplaceholder
-           enabled: model.count == 0
+           enabled: catmodel.count == 0
            text: "Loading..."
 
        }
