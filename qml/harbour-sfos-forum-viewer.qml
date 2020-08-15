@@ -24,7 +24,7 @@ ApplicationWindow
                 for (var i=0;i<data.topic_list.topics.length;i++) {
                     if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
                         if (i <= 10) {
-                            application.latest.append({title: data.topic_list.topics[i]["title"]})
+                            application.latest.append({title: data.topic_list.topics[i]["title"], posts_count: data.topic_list.topics[i]["posts_count"]})
                         }
                     }
                 }
