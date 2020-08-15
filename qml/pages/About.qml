@@ -27,6 +27,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
+            Item {
+                width: parent.width
+                height: Theme.paddingLarge
+            }
+
             Label {
                 id: appName
                 text: "SFOS Forum Viewer"
@@ -36,7 +41,7 @@ Page {
             }
 
             Item {
-                width: 1
+                width: parent.width
                 height: Theme.paddingMedium
             }
 
@@ -45,17 +50,24 @@ Page {
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    margins: Theme.paddingMedium
+                    margins: Theme.horizontalPageMargin
                 }
                 horizontalAlignment: Text.AlignHCenter
-                font.pixelSize: Theme.fontSizeExtraSmall
+                font.pixelSize: Theme.fontSizeSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: "SFOS Forum Viewer for Sailfish OS v0.7.6\nBy szopin\nLicensed under MIT\n\nApp icon by dseight\nAboutPage art by Hanibu\n\nSpecial thanks to contributors:\n\ncarlosgonz\nelros34\nMoppa5\n";
+                text: qsTr("SFOS Forum Viewer for Sailfish OS v0.7.6\n" +
+                           "By szopin\n" +
+                           "Licensed under MIT\n\n" +
+                           "App icon by dseight\n" +
+                           "AboutPage art by Hanibu\n\n" +
+                           "Special thanks to contributors:\n") +
+                      ["carlosgonz", "elros34", "Moppa5"].join(
+                          qsTr(", ", "contributors list separator"));
             }
             Item {
-                width: 1
-                height: Theme.paddingMedium
+                width: parent.width
+                height: 1.5*Theme.paddingLarge
             }
 
             Button {
