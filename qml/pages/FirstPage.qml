@@ -8,9 +8,8 @@ import Sailfish.Silica 1.0
         property string source: "https://forum.sailfishos.org/"
         property string tid
         property int pageno: 0
-        property string viewmode : "latest"
+        property string viewmode
         property string textname
-        property string pagetitle:  textname == "" ? "SFOS Forum - " + viewmode : "SFOS Forum - " + textname
         property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
 
     function clearview(){
@@ -80,7 +79,7 @@ import Sailfish.Silica 1.0
 
     onStatusChanged: {
         if (status === PageStatus.Active){
-            pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"))
+            pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"));
         }
     }
 
@@ -90,17 +89,22 @@ import Sailfish.Silica 1.0
 
         header: PageHeader {
             id: header
-            title: pagetitle
+            title: textname === "" ? viewmode : textname
+            description: qsTr("SailfishOS Forum")
+        }
+
+        footer: Item {
+            width: parent.width
+            height: Theme.horizontalPageMargin
         }
 
         PullDownMenu {
-            //busy: model.count == 0
+            busy: application.fetching
 
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push("About.qml");
             }
-
             MenuItem {
                 text: "Search"
                 onClicked: pageStack.push("SearchPage.qml");
@@ -125,38 +129,69 @@ import Sailfish.Silica 1.0
 
         model: ListModel { id: model}
         VerticalScrollDecorator {}
-        Component.onCompleted: {firstPage.updateview(); application.fetchLatestPosts();}
+        Component.onCompleted: {
+            showLatest();
+            application.fetchLatestPosts();
+        }
 
-
-          delegate: BackgroundItem {
+        delegate: BackgroundItem {
             width: parent.width
-            height:  Theme.paddingMedium + column.height
+            height: delegateCol.height + Theme.paddingLarge
 
             Column {
-                id: column
-                width: parent.width
-                anchors.verticalCenter: parent.verticalCenter
-
-                Label {
-                    id:  theTitle
-                    text: title
-                    wrapMode: Text.Wrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: Theme.paddingMedium
-                    }
+                id: delegateCol
+                height: childrenRect.height
+                width: parent.width - 2*Theme.horizontalPageMargin
+                spacing: Theme.paddingSmall
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    horizontalCenter: parent.horizontalCenter
                 }
-                Label {
-                    text: "(Posts: " + posts_count + "; Last bump: " + bumped.substring(0,10) + " " + bumped.substring(11,19) + ")"
-                    wrapMode: Text.Wrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: Theme.secondaryColor
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: Theme.paddingMedium
+
+                Row {
+                    width: parent.width
+                    spacing: 1.5*Theme.paddingMedium
+                    Label {
+                        id: postsLabel
+                        text: posts_count
+                        minimumPixelSize: Theme.fontSizeTiny
+                        fontSizeMode: "Fit"
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.primaryColor
+                        opacity: Theme.opacityHigh
+                        height: 1.2*Theme.fontSizeSmall; width: height
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        anchors.top: parent.top
+
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width: parent.width+Theme.paddingSmall; height: parent.height
+                            radius: 20
+                            opacity: Theme.opacityLow
+                            color: Theme.secondaryColor
+                        }
+                    }
+
+                    Column {
+                        width: parent.width - postsLabel.width - parent.spacing
+
+                        Label {
+                            text: title
+                            width: parent.width
+                            wrapMode: Text.Wrap
+                            font.pixelSize: Theme.fontSizeSmall
+                        }
+                        Label {
+                            text: formatJsonDate(bumped)
+                            wrapMode: Text.Wrap
+                            elide: Text.ElideRight
+                            width: parent.width
+                            color: highlighted ? Theme.secondaryHighlightColor
+                                               : Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            horizontalAlignment: Text.AlignLeft
+                        }
                     }
                 }
             }
@@ -166,6 +201,7 @@ import Sailfish.Silica 1.0
                 pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
             }
         }
+
           PushUpMenu {
               id: pupmenu
               visible: pageno != 0;
