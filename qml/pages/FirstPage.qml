@@ -58,6 +58,20 @@ import Sailfish.Silica 1.0
             xhr.send();
         }
 
+    function showLatest() {
+        tid = "";
+        textname = qsTr("Latest");
+        viewmode = "latest";
+        clearview();
+    }
+
+    function showTop() {
+        viewmode = "top";
+        tid = "";
+        textname = qsTr("Top");
+        clearview();
+    }
+
     function showCategory(showTopic, showTextname) {
         tid = showTopic;
         textname = showTextname;
@@ -92,32 +106,6 @@ import Sailfish.Silica 1.0
                 onClicked: pageStack.push("SearchPage.qml");
 
             }
-            MenuItem {
-                text: "Latest"
-                visible: viewmode == "top" || tid !== ""
-                onClicked: {
-                    list.model.clear()
-                    pageno = 0;
-                    tid = ""
-                    textname = ""
-                    viewmode = "latest"
-                    firstPage.updateview()
-                }
-            }
-            MenuItem {
-                text: "Top"
-                visible: viewmode == "latest" || tid !== ""
-                onClicked: {
-                    viewmode = "top"
-                    pageno = 0;
-                    tid = ""
-                    textname = ""
-                    list.model.clear()
-                    firstPage.updateview()
-                }
-            }
-
-
             MenuItem {
                 text: "Reload"
                 onClicked: {

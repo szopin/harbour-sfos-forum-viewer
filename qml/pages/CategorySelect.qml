@@ -27,6 +27,26 @@ Page {
                title: qsTr("Categories")
            }
 
+           Row {
+               anchors.horizontalCenter: pageHeader.horizontalCenter
+               spacing: Theme.paddingSmall
+
+               Button {
+                   text: qsTr("Latest")
+                   onClicked: {
+                       findFirstPage().showLatest();
+                       pageStack.navigateBack();
+                   }
+               }
+               Button {
+                   text: qsTr("Top")
+                   onClicked: {
+                       findFirstPage().showTop();
+                       pageStack.navigateBack();
+                   }
+               }
+           }
+
            Item { width: parent.width; height: Theme.paddingSmall }
        }
 
