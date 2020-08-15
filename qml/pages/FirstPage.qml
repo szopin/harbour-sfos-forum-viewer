@@ -58,6 +58,12 @@ import Sailfish.Silica 1.0
             xhr.send();
         }
 
+    function showCategory(showTopic, showTextname) {
+        tid = showTopic;
+        textname = showTextname;
+        clearview();
+    }
+
     onStatusChanged: {
         if (status === PageStatus.Active){
             pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"))

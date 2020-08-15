@@ -2,9 +2,12 @@ import QtQuick 2.2
 import Sailfish.Silica 1.0
 
 Page {
-   id: categorySelectPage
-       allowedOrientations: Orientation.All
+    id: categorySelectPage
+    allowedOrientations: Orientation.All
 
+    function findFirstPage() {
+        return pageStack.find(function(page) { return (page._depth === 0); });
+    }
 
    SilicaListView {
        id:list
@@ -15,9 +18,19 @@ Page {
 
        }
 
-      header: PageHeader {
-               title: "Categories"
-      }
+       header: Column {
+           width: list.width; height: childrenRect.height
+           spacing: 0
+
+           PageHeader {
+               id: pageHeader
+               title: qsTr("Categories")
+           }
+
+           Item { width: parent.width; height: Theme.paddingSmall }
+       }
+
+       footer: Item { width: parent.width; height: Theme.horizontalPageMargin }
 
        anchors.top: header.bottom
        width: parent.width
@@ -44,32 +57,24 @@ Page {
            xhr.send();
        }
 
-         delegate: BackgroundItem {
+       delegate: BackgroundItem {
            width: parent.width
-           height: Theme.paddingLarge + theTitle.contentHeight
-
-           Label {
-               id:  theTitle
-               text: textname
-               wrapMode: Text.Wrap
-               font.pixelSize: Theme.fontSizeSmall
-               anchors {
-                   left: parent.left
-                   right: parent.right
-                   margins: Theme.paddingMedium
-                   verticalCenter: parent.verticalCenter
-                   }
-           }
-
+           height: Theme.itemSizeSmall
            onClicked: {
-               var firstPage = pageStack.find(function(page) { return (page._depth === 0); });
-              firstPage.tid = topic;
-               firstPage.textname = textname;
-               firstPage.pageno = 0;
-               firstPage.clearview();
+               findFirstPage().showCategory(topic, textname);
                pageStack.navigateBack();
            }
-         }
-       }
-  }
 
+           Label {
+               id: theTitle
+               text: textname
+               wrapMode: Text.Wrap
+               anchors {
+                   left: parent.left; leftMargin: Theme.horizontalPageMargin
+                   right: parent.right; rightMargin: Theme.horizontalPageMargin
+                   verticalCenter: parent.verticalCenter
+               }
+           }
+       }
+   }
+}
