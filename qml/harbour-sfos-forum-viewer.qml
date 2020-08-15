@@ -10,6 +10,11 @@ ApplicationWindow
     property bool fetching: false
     property var latest: ListModel{id: latest}
     property string source: "https://forum.sailfishos.org/"
+    readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'", "date format including date and time but no weekday")
+
+    function formatJsonDate(date) {
+        return new Date(date).toLocaleString(Qt.locale(), dateTimeFormat);
+    }
 
     function fetchLatestPosts() {
         application.latest.clear()
