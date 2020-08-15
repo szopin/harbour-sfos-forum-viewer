@@ -62,7 +62,7 @@ Page {
                            "App icon by dseight\n" +
                            "AboutPage art by Hanibu\n\n" +
                            "Special thanks to contributors:\n") +
-                      ["carlosgonz", "elros34", "Moppa5"].join(
+                      ["carlosgonz", "elros34", "ichthyosaurus", "Moppa5"].join(
                           qsTr(", ", "contributors list separator"));
             }
             Item {
