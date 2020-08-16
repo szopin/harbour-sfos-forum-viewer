@@ -1,3 +1,30 @@
+/*
+ * This file is part of harbour-sfos-forum-viewer.
+ *
+ * MIT License
+ *
+ * Copyright (c) 2020 szopin
+ * Copyright (C) 2020 Mirian Margiani
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
@@ -6,27 +33,30 @@ Page {
     property string initialSearch
     property int searchid
     property string aTitle
-    property string hint: aTitle === "" ? "" : "Searching thread: " + aTitle
     property string searchstring: searchid !== 0 ? "https://forum.sailfishos.org/search.json?context=topic&context_id=" + searchid + "&q=" : "https://forum.sailfishos.org/search.json?q="
+    property bool haveResults: false
 
     function _reset() {
         list.headerItem.searchField.text = ""
         list.model.clear()
 
-        viewPlaceholder.text = "Type at least 3 letters in the field above"
-        viewPlaceholder.hintText = hint
-
+        viewPlaceholder.text = ""
+        viewPlaceholder.hintText = (aTitle !== "" ? qsTr("Searching in “%1”").arg(aTitle) : "")
         list.headerItem.searchField.forceActiveFocus()
     }
 function getcomments(text){
+    busyIndicator.running = true;
             var xhr = new XMLHttpRequest;
             xhr.open("GET", searchstring + text);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
+                    busyIndicator.running = false;
                     var data = JSON.parse(xhr.responseText);
                     list.model.clear();
                  if(data.posts[0] !== undefined){
 
+
+                     haveResults = true;
 
                 for (var i=0;i<data.posts.length;i++) {
                     if(searchid === 0){
@@ -37,10 +67,10 @@ function getcomments(text){
                     }
                 }
                 } else {
-                            viewPlaceholder.text = "No results"
-
-            }
-
+                     viewPlaceholder.text = qsTr("No results");
+                     viewPlaceholder.hintText = (aTitle !== "" ? qsTr("in “%1”").arg(aTitle) : "")
+                     haveResults = false;
+                 }
             }
             }
             xhr.send();
@@ -72,28 +102,46 @@ function getcomments(text){
         id: list
         anchors.fill: parent
         model: ListModel { id: model}
+
         delegate: BackgroundItem {
             width: parent.width
-            height:  Theme.paddingLarge + theTitle.contentHeight
-        Label {
-                id:  theTitle
-                text: "<b>" + title + "</b><br></br>" + blurb
+            height: delegateCol.height + Theme.paddingLarge
 
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
+            Column {
+                id: delegateCol
+                height: childrenRect.height
+                width: parent.width - 2*Theme.horizontalPageMargin
+                spacing: Theme.paddingSmall
                 anchors {
-                    left: parent.left
-                    right: parent.right
-                    margins: Theme.paddingMedium
                     verticalCenter: parent.verticalCenter
-                    }
-        }
-            onClicked: {
+                    horizontalCenter: parent.horizontalCenter
+                }
 
-                var name = list.model.get(index).name
-                if(viewPlaceholder.text !== "No results"){
-                pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "post_number": post_number, "posts_count": posts_count, "post_id": post_id, "highest_post_number": highest_post_number});
+                Label {
+                    text: title
+                    wrapMode: Text.Wrap
+                    maximumLineCount: 2
+                    elide: Text.ElideRight
+                    width: parent.width
+                    font.pixelSize: Theme.fontSizeSmall
+                }
+
+                Label {
+                    text: blurb
+                    wrapMode: Text.Wrap
+                    elide: Text.ElideRight
+                    width: parent.width
+                    color: highlighted ? Theme.secondaryHighlightColor
+                                       : Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                }
             }
+
+            onClicked: {
+                var name = list.model.get(index).name
+                if(haveResults) {
+                    pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "post_number": post_number, "posts_count": posts_count, "post_id": post_id, "highest_post_number": highest_post_number});
+                }
             }
         }
 
@@ -111,7 +159,8 @@ function getcomments(text){
                 id: searchField
                 width: parent.width
 
-                placeholderText: "Search"
+                placeholderText: aTitle === "" ? qsTr("Search in all threads")
+                                               : qsTr("Search in the current thread")
 
                 EnterKey.enabled: text.length > 2
                 EnterKey.iconSource: "image://theme/icon-m-enter-accept"
@@ -127,17 +176,14 @@ function getcomments(text){
 
         ViewPlaceholder {
             id: viewPlaceholder
-            enabled: text
+            enabled: list.count === 0 && !busyIndicator.running
         }
-
-
-
 
         BusyIndicator {
             id: busyIndicator
             size: BusyIndicatorSize.Large
             anchors.centerIn: parent
-            running: parent.count === 0 && !viewPlaceholder.enabled
+            running: false
         }
     }
 }

@@ -1,3 +1,30 @@
+/*
+ * This file is part of harbour-sfos-forum-viewer.
+ *
+ * MIT License
+ *
+ * Copyright (c) 2020 szopin
+ * Copyright (C) 2020 Mirian Margiani
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 
@@ -62,8 +89,13 @@ xhr.send();
     SilicaListView {
         id: list
         header: PageHeader {
-            title: aTitle
             id: pageHeader
+            title: aTitle
+            wrapMode: Text.Wrap
+        }
+        footer: Item {
+            width: parent.width
+            height: Theme.horizontalPageMargin
         }
         width: parent.width
         height: parent.height
@@ -71,16 +103,16 @@ xhr.send();
         VerticalScrollDecorator {}
         PullDownMenu{
         MenuItem {
-            text: "Open in browser"
+            text: qsTr("Open in external browser")
             onClicked: Qt.openUrlExternally(source + topicid)
             }
         MenuItem {
-            text: "Open in webview"
+            text: qsTr("Open directly")
             onClicked: pageStack.push("webView.qml", {"pageurl": source + topicid });
 
             }
         MenuItem {
-            text: "Search thread"
+            text: qsTr("Search thread")
             onClicked: pageStack.push("SearchPage.qml", {"searchid": topicid, "aTitle": aTitle });
 
             }
@@ -94,56 +126,82 @@ xhr.send();
         }
 
         model: ListModel { id: commodel}
-          delegate: Item {
-            width: list.width
-            height: extras.visible ? cid.height + Theme.paddingMedium + extras.height : cid.height + Theme.paddingMedium
+        delegate: Item {
+            width: parent.width - 2*Theme.horizontalPageMargin
+            height: delegateCol.height + Theme.paddingLarge
+            anchors.horizontalCenter: parent.horizontalCenter
 
-            anchors  {
-                left: parent.left
-                right: parent.right
-
-                }
-
-            Label {
-                id:  cid
-                text: "<style>a {color:" + Theme.highlightColor + " } </style>" +
-                      "<p> <b>" + username + "</b> (" + created_at.substring(0,10) + " " + created_at.substring(11,19) + ")</p><p><i>" + cooked + "</i></p>\n"
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                anchors {
-                    leftMargin: Theme.paddingMedium// * indent
-                    rightMargin: Theme.paddingSmall
-                    left: parent.left
-                    right: parent.right
-                    }
-                onLinkActivated: {
-                    var dialog = pageStack.push("OpenLink.qml", {link: link});
-                }
-            }
-            Label {
-                id: extras
-                visible: likes > 0 || (version > 1 && updated_at !== created_at)
-                horizontalAlignment: Text.AlignRight
-                text: likes > 0 ? (version > 1 ? "(✍️: " + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ") (❤:" + likes + ")" : "(❤:" + likes + ")") : (version > 1 ? "(✍️: " + updated_at.substring(0,10) + " " + updated_at.substring(11,19) + ")" : "")
-                font.pixelSize: Theme.fontSizeSmall
-                anchors {
-                    top: cid.bottom
-                    leftMargin: Theme.paddingMedium
-                    rightMargin: Theme.paddingSmall
-                    left: parent.left
-                    right: parent.right
-                }
-            }
-
-            Separator {
-                color: Theme.highlightColor
-                height: 3
+            Column {
+                id: delegateCol
                 width: parent.width
-                anchors.margins: Theme.paddingLarge
-                horizontalAlignment: Qt.AlignHCenter
+                height: childrenRect.height
+                anchors.verticalCenter: parent.verticalCenter
+                spacing: Theme.paddingMedium
+
+                Separator {
+                    color: Theme.highlightColor
+                    width: parent.width
+                    horizontalAlignment: Qt.AlignHCenter
+                }
+
+                Row {
+                    width: parent.width
+                    spacing: Theme.paddingSmall
+
+                    Column {
+                        width: parent.width - subMetadata.width
+
+                        Label {
+                            id: mainMetadata
+                            text: username
+                            textFormat: Text.RichText
+                            truncationMode: TruncationMode.Fade
+                            elide: Text.ElideRight
+                            width: parent.width
+                            font.pixelSize: Theme.fontSizeMedium
+                        }
+                        Label {
+                            visible: likes > 0
+                            text: qsTr("%n like(s)", "", likes)
+                            color: Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                        }
+                    }
+
+                    Column {
+                        id: subMetadata
+                        Label {
+                            text: formatJsonDate(created_at)
+                            color: Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            anchors.right: parent.right
+                        }
+                        Label {
+                            text: (version > 1 && updated_at !== created_at) ?
+                                      qsTr("✍️: %1").arg(formatJsonDate(updated_at)) : ""
+                            color: Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            anchors.right: parent.right
+                        }
+                    }
+                }
+
+                Label {
+                    text: "<style>" +
+                          "a { color: %1 }".arg(Theme.highlightColor) +
+                          "</style>" +
+                          "<p>" + cooked + "</p>"
+                    width: parent.width
+                    textFormat: Text.RichText
+                    wrapMode: Text.Wrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    onLinkActivated: {
+                        var dialog = pageStack.push("OpenLink.qml", {link: link});
+                    }
+                }
             }
-          }
+        }
+
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
               // Lets not parse the whole thread but only suspect posts from the search, ~33% speed improvement in a thread with 57 posts

@@ -3,7 +3,7 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-sfos-forum-viewer
 Exec=sailfish-qml harbour-sfos-forum-viewer
-Name=SFOS Forum 
+Name=SFOS Forum
 # translation example:
 # your app name in German locale (de)
 #
@@ -11,3 +11,6 @@ Name=SFOS Forum
 # a different app name in German locale (de).
 #Name[de]=harbour-sfos-forum-viewer
 Name[es]=SFOS Foro
+Name[de]=SFOS-Forum
+Name[en]=SFOS Forum
+Name[fr]=Forum SFOS

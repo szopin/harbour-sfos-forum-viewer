@@ -1,3 +1,30 @@
+/*
+ * This file is part of harbour-sfos-forum-viewer.
+ *
+ * MIT License
+ *
+ * Copyright (c) 2020 szopin
+ * Copyright (C) 2020 Mirian Margiani
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 
@@ -8,10 +35,10 @@ import Sailfish.Silica 1.0
         property string source: "https://forum.sailfishos.org/"
         property string tid
         property int pageno: 0
-        property string viewmode : "latest"
+        property string viewmode
         property string textname
-        property string pagetitle:  textname == "" ? "SFOS Forum - " + viewmode : "SFOS Forum - " + textname
         property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
+        property bool networkError: false
 
     function clearview(){
         list.model.clear();
@@ -24,8 +51,15 @@ import Sailfish.Silica 1.0
             xhr.open("GET", combined);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhr.responseText);
+                    if (xhr.responseText === "") {
+                        list.model.clear();
+                        networkError = true;
+                        return;
+                    } else {
+                        networkError = false;
+                    }
 
+                    var data = JSON.parse(xhr.responseText);
 
                     if (viewmode === "latest" && tid === ""){
 
@@ -58,9 +92,38 @@ import Sailfish.Silica 1.0
             xhr.send();
         }
 
+    function showLatest() {
+        tid = "";
+        textname = qsTr("Latest");
+        viewmode = "latest";
+        clearview();
+    }
+
+    function showTop() {
+        viewmode = "top";
+        tid = "";
+        textname = qsTr("Top");
+        clearview();
+    }
+
+    function showCategory(showTopic, showTextname) {
+        tid = showTopic;
+        textname = showTextname;
+        clearview();
+    }
+
     onStatusChanged: {
         if (status === PageStatus.Active){
-            pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"))
+            pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"));
+        }
+    }
+
+    Connections {
+        target: application
+        onReload: {
+            pageno = 0;
+            list.model.clear()
+            firstPage.updateview()
         }
     }
 
@@ -70,99 +133,115 @@ import Sailfish.Silica 1.0
 
         header: PageHeader {
             id: header
-            title: pagetitle
+            title: textname === "" ? viewmode : textname
+            description: qsTr("SailfishOS Forum")
+        }
+
+        footer: Item {
+            width: parent.width
+            height: Theme.horizontalPageMargin
         }
 
         PullDownMenu {
-            //busy: model.count == 0
+            id: pulley
+            busy: application.fetching
 
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push("About.qml");
             }
-
             MenuItem {
                 text: "Search"
                 onClicked: pageStack.push("SearchPage.qml");
 
             }
             MenuItem {
-                text: "Latest"
-                visible: viewmode == "top" || tid !== ""
+                text: qsTr("Reload")
                 onClicked: {
-                    list.model.clear()
-                    pageno = 0;
-                    tid = ""
-                    textname = ""
-                    viewmode = "latest"
-                    firstPage.updateview()
-                }
-            }
-            MenuItem {
-                text: "Top"
-                visible: viewmode == "latest" || tid !== ""
-                onClicked: {
-                    viewmode = "top"
-                    pageno = 0;
-                    tid = ""
-                    textname = ""
-                    list.model.clear()
-                    firstPage.updateview()
-                }
-            }
-
-
-            MenuItem {
-                text: "Reload"
-                onClicked: {
-                    pageno = 0;
-                    list.model.clear()
-                    firstPage.updateview()
+                    pulley.close()
+                    application.reload()
                 }
             }
         }
 
         BusyIndicator {
-            id: vplaceholder
-            running: model.count == 0
+            visible: running
+            running: model.count === 0 && !networkError
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
         }
 
+        ViewPlaceholder {
+            enabled: model.count === 0 && networkError
+            text: qsTr("Nothing to show")
+            hintText: qsTr("Is the network enabled?")
+        }
+
         model: ListModel { id: model}
         VerticalScrollDecorator {}
-        Component.onCompleted: {firstPage.updateview(); application.fetchLatestPosts();}
+        Component.onCompleted: {
+            showLatest();
+            application.fetchLatestPosts();
+        }
 
-
-          delegate: BackgroundItem {
+        delegate: BackgroundItem {
             width: parent.width
-            height:  Theme.paddingMedium + column.height
+            height: delegateCol.height + Theme.paddingLarge
 
             Column {
-                id: column
-                width: parent.width
-                anchors.verticalCenter: parent.verticalCenter
-
-                Label {
-                    id:  theTitle
-                    text: title
-                    wrapMode: Text.Wrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: Theme.paddingMedium
-                    }
+                id: delegateCol
+                height: childrenRect.height
+                width: parent.width - 2*Theme.horizontalPageMargin
+                spacing: Theme.paddingSmall
+                anchors {
+                    verticalCenter: parent.verticalCenter
+                    horizontalCenter: parent.horizontalCenter
                 }
-                Label {
-                    text: "(Posts: " + posts_count + "; Last bump: " + bumped.substring(0,10) + " " + bumped.substring(11,19) + ")"
-                    wrapMode: Text.Wrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: Theme.secondaryColor
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        margins: Theme.paddingMedium
+
+                Row {
+                    width: parent.width
+                    spacing: 1.5*Theme.paddingMedium
+                    Label {
+                        id: postsLabel
+                        text: posts_count
+                        minimumPixelSize: Theme.fontSizeTiny
+                        fontSizeMode: "Fit"
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.primaryColor
+                        opacity: Theme.opacityHigh
+                        height: 1.2*Theme.fontSizeSmall; width: height
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        anchors.top: parent.top
+
+                        Rectangle {
+                            anchors.centerIn: parent
+                            width: parent.width+Theme.paddingSmall; height: parent.height
+                            radius: 20
+                            opacity: Theme.opacityLow
+                            color: Theme.secondaryColor
+                        }
+                    }
+
+                    Column {
+                        width: parent.width - postsLabel.width - parent.spacing
+
+                        Label {
+                            text: title
+                            width: parent.width
+                            wrapMode: Text.Wrap
+                            font.pixelSize: Theme.fontSizeSmall
+                        }
+                        Label {
+                            text: formatJsonDate(bumped)
+                            wrapMode: Text.Wrap
+                            elide: Text.ElideRight
+                            width: parent.width
+                            color: highlighted ? Theme.secondaryHighlightColor
+                                               : Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            horizontalAlignment: Text.AlignLeft
+                        }
                     }
                 }
             }
@@ -172,6 +251,7 @@ import Sailfish.Silica 1.0
                 pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
             }
         }
+
           PushUpMenu {
               id: pupmenu
               visible: pageno != 0;
