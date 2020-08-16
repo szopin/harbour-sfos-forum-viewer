@@ -43,14 +43,14 @@ Page {
 
             PageHeader {
                 id: header;
-                title: "About"
+                title: qsTr("About")
             }
 
             Image {
                 id: appIcon
                 fillMode: Image.PreserveAspectFit
                 smooth: true
-                source: "../img/harbour-sfos-forum-viewer.png"
+                source: "./icons/128x128/harbour-sfos-forum-viewer.png
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -100,7 +100,7 @@ Page {
             Button {
                 id: github
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Github"
+                text: qsTr("Source")
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer");
             }
 
@@ -112,7 +112,7 @@ Page {
             Button {
                 id: license
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "License"
+                text: qsTr("License")
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer/blob/master/LICENSE");
             }
 
