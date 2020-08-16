@@ -83,7 +83,7 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: qsTr("SFOS Forum Viewer for Sailfish OS v0.7.6\n" +
+                text: qsTr("SFOS Forum Viewer for Sailfish OS v0.8\n" +
                            "By szopin\n" +
                            "Licensed under MIT\n\n" +
                            "App icon by dseight\n" +

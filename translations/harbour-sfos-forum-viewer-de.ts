@@ -9,7 +9,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SFOS Forum Viewer for Sailfish OS v0.7.6
+        <source>SFOS Forum Viewer for Sailfish OS v0.8
 By szopin
 Licensed under MIT
 

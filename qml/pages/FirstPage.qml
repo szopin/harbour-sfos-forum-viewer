@@ -29,68 +29,70 @@ import QtQuick 2.2
 import Sailfish.Silica 1.0
 
 
- Page {
-        id: firstPage
-        allowedOrientations: Orientation.All
-        property string source: "https://forum.sailfishos.org/"
-        property string tid
-        property int pageno: 0
-        property string viewmode
-        property string textname
-        property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
-        property bool networkError: false
+Page {
+    id: firstPage
+    allowedOrientations: Orientation.All
+    property string source: "https://forum.sailfishos.org/"
+    property string tid
+    property int pageno: 0
+    property string viewmode
+    property string textname
+    property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
+    property bool networkError: false
+    property bool loadedMore: false
 
     function clearview(){
         list.model.clear();
         pageno = 0;
+        loadedMore = false;
         updateview();
     }
-        function updateview() {
-            var xhr = new XMLHttpRequest;
+    function updateview() {
+        var xhr = new XMLHttpRequest;
 
-            xhr.open("GET", combined);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.responseText === "") {
-                        list.model.clear();
-                        networkError = true;
-                        return;
-                    } else {
-                        networkError = false;
-                    }
+        xhr.open("GET", combined);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.responseText === "") {
+                    list.model.clear();
+                    networkError = true;
+                    return;
+                } else {
+                    networkError = false;
+                }
 
-                    var data = JSON.parse(xhr.responseText);
+                var data = JSON.parse(xhr.responseText);
 
-                    if (viewmode === "latest" && tid === ""){
+                if (viewmode === "latest" && tid === ""){
 
                     for (var i=0;i<data.topic_list.topics.length;i++) {
                         if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                        list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"], bumped: data.topic_list.topics[i]["bumped_at"]});
+                            list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"], bumped: data.topic_list.topics[i]["bumped_at"]});
 
 
-                    }
+                        }
                     }
 
                 } else {
-                        for (var j=0;j<data.topic_list.topics.length;j++) {
-                            list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"], bumped: data.topic_list.topics[j]["bumped_at"]});
+                    for (var j=0;j<data.topic_list.topics.length;j++) {
+                        list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"], bumped: data.topic_list.topics[j]["bumped_at"]});
 
-                        }
+                    }
 
-                        }
-                    var more = 'more_topics_url';
-                    if (data.topic_list[more]){
-                        pageno++;
+                }
+                var more = 'more_topics_url';
+                if (data.topic_list[more]){
+                    pageno++;
 
-                    } else {
-                        pageno = 0;
+                } else {
+                    pageno = 0;
 
-                        }
                 }
             }
-
-            xhr.send();
         }
+
+        xhr.send();
+    }
 
     function showLatest() {
         tid = "";
@@ -107,6 +109,7 @@ import Sailfish.Silica 1.0
     }
 
     function showCategory(showTopic, showTextname) {
+        viewmode = "";
         tid = showTopic;
         textname = showTextname;
         clearview();
@@ -121,9 +124,11 @@ import Sailfish.Silica 1.0
     Connections {
         target: application
         onReload: {
-            pageno = 0;
-            list.model.clear()
-            firstPage.updateview()
+            if (!loadedMore || viewmode === "latest"){
+                pageno = 0;
+                list.model.clear();
+                firstPage.updateview();
+            }
         }
     }
 
@@ -159,7 +164,7 @@ import Sailfish.Silica 1.0
                 text: qsTr("Reload")
                 onClicked: {
                     pulley.close()
-                    application.reload()
+                    clearview()
                 }
             }
         }
@@ -252,18 +257,19 @@ import Sailfish.Silica 1.0
             }
         }
 
-          PushUpMenu {
-              id: pupmenu
-              visible: pageno != 0;
-              MenuItem {
+        PushUpMenu {
+            id: pupmenu
+            visible: pageno != 0;
+            MenuItem {
 
-                  text: "Load more"
-                  onClicked: {
-                      pupmenu.close();
-                      firstPage.updateview();
-                  }
-              }
+                text: "Load more"
+                onClicked: {
+                    pupmenu.close();
+                    loadedMore = true;
+                    firstPage.updateview();
+                }
+            }
 
-          }
+        }
     }
 }
