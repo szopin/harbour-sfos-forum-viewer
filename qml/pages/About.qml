@@ -50,7 +50,7 @@ Page {
                 id: appIcon
                 fillMode: Image.PreserveAspectFit
                 smooth: true
-                source: "./icons/128x128/harbour-sfos-forum-viewer.png
+                source: "./icons/128x128/harbour-sfos-forum-viewer.png"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
