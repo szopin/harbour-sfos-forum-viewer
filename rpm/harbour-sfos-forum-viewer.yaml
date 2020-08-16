@@ -1,6 +1,6 @@
 Name: harbour-sfos-forum-viewer
 Summary: Viewer for SailfishOS forums
-Version: 0.8.2.1
+Version: 0.8.3
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
