@@ -34,10 +34,18 @@ ApplicationWindow
     id: application
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+
+    // ================================
+    // ATTENTION: UPDATE BEFORE RELEASE
+    // --------------------------------
+    readonly property string appVersion: "0.8"
+    // ================================
+
     property bool fetching: false
     property var latest: ListModel{id: latest}
     property string source: "https://forum.sailfishos.org/"
-    readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'", "date format including date and time but no weekday")
+    //: date format including date and time but no weekday
+    readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'")
 
     signal reload()
     onReload: fetchLatestPosts()

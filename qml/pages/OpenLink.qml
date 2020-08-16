@@ -33,8 +33,7 @@ Dialog {
                 horizontalAlignment: Text.AlignHCenter
 
                 wrapMode: Text.WrapAnywhere
-                text: "Open URL in webview?"
-
+                text: qsTr("Open URL in webview?")
             }
 
             Label {
@@ -50,7 +49,7 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 Button {
-                    text: "Open externally"
+                    text: qsTr("Open externally")
 
                     onClicked: {
                         Qt.openUrlExternally(link);

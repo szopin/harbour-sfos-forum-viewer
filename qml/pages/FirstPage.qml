@@ -261,8 +261,7 @@ Page {
             id: pupmenu
             visible: pageno != 0;
             MenuItem {
-
-                text: "Load more"
+                text: qsTr("Load more")
                 onClicked: {
                     pupmenu.close();
                     loadedMore = true;

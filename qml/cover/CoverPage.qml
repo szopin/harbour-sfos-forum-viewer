@@ -68,11 +68,11 @@ CoverBackground {
                         width: 0.9*parent.width; height: 0.9*parent.height
                         text: posts_count
                         minimumPixelSize: 0.6*Theme.fontSizeTiny
-                        fontSizeMode: "Fit"
+                        fontSizeMode: Text.Fit
                         font.pixelSize: Theme.fontSizeTiny
                         color: Theme.primaryColor
                         opacity: Theme.opacityHigh
-                        horizontalAlignment: "AlignHCenter"
+                        horizontalAlignment: Text.AlignHCenter
                     }
 
                     Rectangle {
@@ -108,6 +108,7 @@ CoverBackground {
             Label {
                 width: parent.width; horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere; font.pixelSize: Theme.fontSizeLarge
+                //: part of 'SailfishOS Forum Viewer'
                 text: qsTr("SailfishOS")
                 color: Theme.highlightColor
                 opacity: 1.0
@@ -117,6 +118,7 @@ CoverBackground {
                 width: parent.width; horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.Wrap; font.pixelSize: Theme.fontSizeMedium
                 opacity: Theme.opacityHigh
+                //: part of 'SailfishOS Forum Viewer'
                 text: qsTr("Forum Viewer")
                 color: Theme.highlightColor
                 maximumLineCount: 5
