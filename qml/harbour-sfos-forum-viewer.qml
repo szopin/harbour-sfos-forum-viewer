@@ -39,6 +39,9 @@ ApplicationWindow
     property string source: "https://forum.sailfishos.org/"
     readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'", "date format including date and time but no weekday")
 
+    signal reload()
+    onReload: fetchLatestPosts()
+
     function formatJsonDate(date) {
         return new Date(date).toLocaleString(Qt.locale(), dateTimeFormat);
     }
@@ -50,20 +53,20 @@ ApplicationWindow
         xhr.open("GET", source + "latest.json");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                var data = JSON.parse(xhr.responseText);
+                if (xhr.responseText !== "") {
+                    var data = JSON.parse(xhr.responseText);
 
-
-                for (var i=0;i<data.topic_list.topics.length;i++) {
-                    if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                        if (i <= 10) {
-                            application.latest.append({title: data.topic_list.topics[i]["title"], posts_count: data.topic_list.topics[i]["posts_count"]})
+                    for (var i=0;i<data.topic_list.topics.length;i++) {
+                        if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
+                            if (i <= 10) {
+                                application.latest.append({title: data.topic_list.topics[i]["title"], posts_count: data.topic_list.topics[i]["posts_count"]})
+                            }
                         }
                     }
                 }
 
+                fetching = false
             }
-
-            fetching = false
         }
         xhr.send();
     }

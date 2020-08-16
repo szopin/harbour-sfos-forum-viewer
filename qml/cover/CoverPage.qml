@@ -44,7 +44,7 @@ CoverBackground {
         header: Label {
             text: qsTr("Latest posts")
             font.pixelSize: Theme.fontSizeSmall
-            visible: !application.fetching
+            visible: view.model.count > 0 && !application.fetching
         }
 
         model: application.latest
@@ -97,7 +97,7 @@ CoverBackground {
 
         Column {
             id: placeholderColumn
-            visible: view.count === 0 && !application.fetching
+            visible: view.count === 0
 
             spacing: Theme.paddingSmall
             anchors {
@@ -123,22 +123,24 @@ CoverBackground {
                 truncationMode: TruncationMode.Fade
                 elide: Text.ElideRight
             }
-        }
-    }
 
-    BusyIndicator {
-        anchors.centerIn: parent
-        running: true
-        Behavior on opacity { NumberAnimation { duration: 100 } }
-        opacity: application.fetching ? 1.0 : 0.0
+            Item { width: parent.width; height: 2*Theme.paddingMedium }
 
-        // BusyIndicator animations are normally disabled
-        // on the cover page, so we have to animate it manually
-        NumberAnimation on rotation {
-            from: 0; to: 360
-            duration: 2500
-            loops: Animation.Infinite
-            running: application.fetching
+            BusyIndicator {
+                anchors.horizontalCenter: parent.horizontalCenter
+                running: true
+                Behavior on opacity { NumberAnimation { duration: 100 } }
+                opacity: application.fetching ? 1.0 : 0.0
+
+                // BusyIndicator animations are normally disabled
+                // on the cover page, so we have to animate it manually
+                NumberAnimation on rotation {
+                    from: 0; to: 360
+                    duration: 2500
+                    loops: Animation.Infinite
+                    running: application.fetching
+                }
+            }
         }
     }
 
@@ -147,7 +149,7 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-refresh"
             onTriggered: {
-                application.fetchLatestPosts()
+                application.reload()
             }
         }
     }

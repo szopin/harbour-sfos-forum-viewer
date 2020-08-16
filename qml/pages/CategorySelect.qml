@@ -31,6 +31,7 @@ import Sailfish.Silica 1.0
 Page {
     id: categorySelectPage
     allowedOrientations: Orientation.All
+    property bool networkError: false
 
     function findFirstPage() {
         return pageStack.find(function(page) { return (page._depth === 0); });
@@ -38,11 +39,18 @@ Page {
 
    SilicaListView {
        id:list
-       ViewPlaceholder {
-           id: vplaceholder
-           enabled: catmodel.count == 0
-           text: "Loading..."
 
+       BusyIndicator {
+           visible: running
+           running: catmodel.count === 0 && !networkError
+           anchors.centerIn: parent
+           size: BusyIndicatorSize.Large
+       }
+
+       ViewPlaceholder {
+           enabled: catmodel.count === 0 && networkError
+           text: qsTr("Nothing to show")
+           hintText: qsTr("Is the network enabled?")
        }
 
        header: Column {
@@ -86,11 +94,28 @@ Page {
        VerticalScrollDecorator {}
        model: ListModel { id: catmodel}
 
-       Component.onCompleted: {
+       Connections {
+           target: application
+           onReload: {
+               if (catmodel.count === 0) {
+                   list.reload();
+               }
+           }
+       }
+
+       Component.onCompleted: reload()
+
+       function reload() {
            var xhr = new XMLHttpRequest;
            xhr.open("GET", "https://forum.sailfishos.org/categories.json");
            xhr.onreadystatechange = function() {
                if (xhr.readyState === XMLHttpRequest.DONE) {
+                   if (xhr.responseText === "") {
+                       catmodel.clear();
+                       networkError = true;
+                       return;
+                   }
+
                    var data = JSON.parse(xhr.responseText);
                    catmodel.clear();
 

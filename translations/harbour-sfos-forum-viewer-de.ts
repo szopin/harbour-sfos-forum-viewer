@@ -35,6 +35,14 @@ Special thanks to contributors:
         <source>Top</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -65,19 +73,16 @@ Special thanks to contributors:
         <source>SailfishOS Forum</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>FirstPage copy</name>
     <message>
-        <source>Latest</source>
+        <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Top</source>
+        <source>Nothing to show</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SailfishOS Forum</source>
+        <source>Is the network enabled?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

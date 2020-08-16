@@ -38,6 +38,7 @@ import Sailfish.Silica 1.0
         property string viewmode
         property string textname
         property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
+        property bool networkError: false
 
     function clearview(){
         list.model.clear();
@@ -50,8 +51,15 @@ import Sailfish.Silica 1.0
             xhr.open("GET", combined);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhr.responseText);
+                    if (xhr.responseText === "") {
+                        list.model.clear();
+                        networkError = true;
+                        return;
+                    } else {
+                        networkError = false;
+                    }
 
+                    var data = JSON.parse(xhr.responseText);
 
                     if (viewmode === "latest" && tid === ""){
 
@@ -110,6 +118,15 @@ import Sailfish.Silica 1.0
         }
     }
 
+    Connections {
+        target: application
+        onReload: {
+            pageno = 0;
+            list.model.clear()
+            firstPage.updateview()
+        }
+    }
+
     SilicaListView {
         id:list
         anchors.fill: parent
@@ -126,6 +143,7 @@ import Sailfish.Silica 1.0
         }
 
         PullDownMenu {
+            id: pulley
             busy: application.fetching
 
             MenuItem {
@@ -138,20 +156,25 @@ import Sailfish.Silica 1.0
 
             }
             MenuItem {
-                text: "Reload"
+                text: qsTr("Reload")
                 onClicked: {
-                    pageno = 0;
-                    list.model.clear()
-                    firstPage.updateview()
+                    pulley.close()
+                    application.reload()
                 }
             }
         }
 
         BusyIndicator {
-            id: vplaceholder
-            running: model.count == 0
+            visible: running
+            running: model.count === 0 && !networkError
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
+        }
+
+        ViewPlaceholder {
+            enabled: model.count === 0 && networkError
+            text: qsTr("Nothing to show")
+            hintText: qsTr("Is the network enabled?")
         }
 
         model: ListModel { id: model}
