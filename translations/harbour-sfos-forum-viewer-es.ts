@@ -201,7 +201,8 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/pages/ThreadView.qml" line="165"/>
         <source>%n like(s)</source>
         <translation>
-            <numerusform>%n gusta(s)<</numerusform>
+            <numerusform>%n gusta</numerusform>
+            <numerusform>%n gustas</numerusform>
         </translation>
     </message>
     <message>
