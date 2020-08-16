@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="46"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="86"/>
@@ -19,23 +19,31 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>SFOS Foro para Sailfish SO
+Por szopin    
+Licencia  MIT 
+            
+Icono de apls por dseight          
+AboutPage arte por Hanibu  
+            
+Agradecimiento especial a los contribuyentes:           
+</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="94"/>
         <source>, </source>
         <extracomment>contributors list separator</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>, </translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="104"/>
         <source>Source code</source>
-        <translation type="unfinished"></translation>
+        <translation>Código fuente</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="116"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencia</translation>
     </message>
 </context>
 <context>
@@ -43,27 +51,27 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="52"/>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nada que mostrar</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="53"/>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está habilitada la red?</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="62"/>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Categorías</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="70"/>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Últimos</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="77"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Arriba</translation>
     </message>
 </context>
 <context>
@@ -71,19 +79,19 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="45"/>
         <source>Latest posts</source>
-        <translation type="unfinished"></translation>
+        <translation>Últimas publicaciones</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>SailfishSO</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="122"/>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Forum Viewer</translation>
     </message>
 </context>
 <context>
@@ -91,37 +99,37 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="99"/>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Últimos</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="107"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Arriba</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="142"/>
         <source>SailfishOS Forum</source>
-        <translation type="unfinished"></translation>
+        <translation>SailfishSO foro</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="164"/>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Recargar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="181"/>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nada que mostrar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="182"/>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Está habilitada la red?</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="264"/>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargar más</translation>
     </message>
 </context>
 <context>
@@ -129,12 +137,12 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/OpenLink.qml" line="36"/>
         <source>Open URL in webview?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Abrir vista web?</translation>
     </message>
     <message>
         <location filename="../qml/pages/OpenLink.qml" line="52"/>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir externamente</translation>
     </message>
 </context>
 <context>
@@ -142,34 +150,34 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="44"/>
         <source>Searching in “%1”</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando en “%1”</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="71"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>No hay resultados</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="74"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>en “%1”</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="158"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="165"/>
         <source>Search in all threads</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar en todos los hilos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="166"/>
         <source>Search in the current thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar en el actual hilo</translation>
     </message>
 </context>
 <context>
@@ -177,29 +185,29 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="106"/>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en un navegador externo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="110"/>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir directamente</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="115"/>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar hilo</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/pages/ThreadView.qml" line="165"/>
         <source>%n like(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n gusta(s)<</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="181"/>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
 </context>
 <context>
@@ -208,7 +216,7 @@ Special thanks to contributors:
         <location filename="../qml/harbour-sfos-forum-viewer.qml" line="48"/>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <extracomment>date format including date and time but no weekday</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>d/M/año &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
 </context>
 </TS>
