@@ -152,7 +152,7 @@ function getcomments(text){
 
             PageHeader {
 
-                title: "Search"
+                title: qsTr("Search")
             }
 
             SearchField {
