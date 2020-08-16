@@ -4,12 +4,11 @@
 <context>
     <name>About</name>
     <message>
-        <source>, </source>
-        <comment>contributors list separator</comment>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SFOS Forum Viewer for Sailfish OS v0.8
+        <source>SFOS Forum Viewer for Sailfish OS v%1
 By szopin
 Licensed under MIT
 
@@ -18,6 +17,19 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>, </source>
+        <extracomment>contributors list separator</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -52,10 +64,12 @@ Special thanks to contributors:
     </message>
     <message>
         <source>SailfishOS</source>
+        <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Forum Viewer</source>
+        <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -85,6 +99,21 @@ Special thanks to contributors:
         <source>Is the network enabled?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Load more</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OpenLink</name>
+    <message>
+        <source>Open URL in webview?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
@@ -94,10 +123,12 @@ Special thanks to contributors:
     </message>
     <message>
         <source>No results</source>
+        <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>in “%1”</source>
+        <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -106,6 +137,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Search in the current thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -138,7 +173,7 @@ Special thanks to contributors:
     <name>harbour-sfos-forum-viewer</name>
     <message>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
-        <comment>date format including date and time but no weekday</comment>
+        <extracomment>date format including date and time but no weekday</extracomment>
         <translation type="unfinished"></translation>
     </message>
 </context>

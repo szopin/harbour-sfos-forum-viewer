@@ -43,7 +43,7 @@ Page {
 
             PageHeader {
                 id: header;
-                title: "About"
+                title: qsTr("About")
             }
 
             Image {
@@ -61,7 +61,7 @@ Page {
 
             Label {
                 id: appName
-                text: "SFOS Forum Viewer"
+                text: "SFOS Forum Viewer" // not to be translated for now
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.fontSizeLarge
@@ -83,14 +83,15 @@ Page {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: qsTr("SFOS Forum Viewer for Sailfish OS v0.8\n" +
+                text: qsTr("SFOS Forum Viewer for Sailfish OS v%1\n" +
                            "By szopin\n" +
                            "Licensed under MIT\n\n" +
                            "App icon by dseight\n" +
                            "AboutPage art by Hanibu\n\n" +
-                           "Special thanks to contributors:\n") +
+                           "Special thanks to contributors:\n").arg(application.appVersion) +
                       ["carlosgonz", "elros34", "ichthyosaurus", "Moppa5"].join(
-                          qsTr(", ", "contributors list separator"));
+                          //: contributors list separator
+                          qsTr(", "));
             }
             Item {
                 width: parent.width
@@ -100,7 +101,7 @@ Page {
             Button {
                 id: github
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Github"
+                text: qsTr("Source code")
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer");
             }
 
@@ -112,7 +113,7 @@ Page {
             Button {
                 id: license
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "License"
+                text: qsTr("License")
                 onClicked: Qt.openUrlExternally("https://github.com/szopin/harbour-sfos-forum-viewer/blob/master/LICENSE");
             }
 

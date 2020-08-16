@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="de_DE">
+<TS version="2.1" language="en_US">
 <context>
     <name>About</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
+    </message>
+    <message>
+        <source>, </source>
+        <extracomment>contributors list separator</extracomment>
+        <translation>, </translation>
+    </message>
+    <message>
+        <source>Source code</source>
+        <translation>Source code</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>License</translation>
     </message>
     <message>
         <source>SFOS Forum Viewer for Sailfish OS v%1
@@ -17,157 +30,152 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>, </source>
-        <extracomment>contributors list separator</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Source code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>SFOS Forum Viewer for Sailfish OS v%1
+By szopin
+Licensed under MIT
+
+App icon by dseight
+AboutPage art by Hanibu
+
+Special thanks to contributors:
+</translation>
     </message>
 </context>
 <context>
     <name>CategorySelect</name>
     <message>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Categories</translation>
     </message>
     <message>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Latest</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Top</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nothing to show</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>Is the network enabled?</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Latest posts</source>
-        <translation type="unfinished"></translation>
+        <translation>Latest posts</translation>
     </message>
     <message>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>SailfishOS</translation>
     </message>
     <message>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Forum Viewer</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Latest</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Top</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation type="unfinished"></translation>
+        <translation>SailfishOS Forum</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Reload</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nothing to show</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>Is the network enabled?</translation>
     </message>
     <message>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Load more</translation>
     </message>
 </context>
 <context>
     <name>OpenLink</name>
     <message>
         <source>Open URL in webview?</source>
-        <translation type="unfinished"></translation>
+        <translation>Open URL in webview?</translation>
     </message>
     <message>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>Open externally</translation>
     </message>
 </context>
 <context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
-        <translation type="unfinished"></translation>
+        <translation>Searching in “%1”</translation>
     </message>
     <message>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>No results</translation>
     </message>
     <message>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>in “%1”</translation>
     </message>
     <message>
         <source>Search in all threads</source>
-        <translation type="unfinished"></translation>
+        <translation>Search in all threads</translation>
     </message>
     <message>
         <source>Search in the current thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Search in the current thread</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Search</translation>
     </message>
 </context>
 <context>
     <name>ThreadView</name>
     <message>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Open in external browser</translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Open directly</translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Search thread</translation>
     </message>
     <message numerus="yes">
         <source>%n like(s)</source>
         <translation>
-            <numerusform>%n Like</numerusform>
-            <numerusform>%n Likes</numerusform>
+            <numerusform>%n like</numerusform>
+            <numerusform>%n likes</numerusform>
         </translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
 </context>
 <context>
@@ -175,7 +183,7 @@ Special thanks to contributors:
     <message>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <extracomment>date format including date and time but no weekday</extracomment>
-        <translation>d. M. yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+        <translation>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
 </context>
 </TS>

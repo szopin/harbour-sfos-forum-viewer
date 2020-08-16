@@ -67,8 +67,11 @@ function getcomments(text){
                     }
                 }
                 } else {
+                     //: part of 'No results in "foo"'
                      viewPlaceholder.text = qsTr("No results");
-                     viewPlaceholder.hintText = (aTitle !== "" ? qsTr("in “%1”").arg(aTitle) : "")
+                     viewPlaceholder.hintText = (aTitle === "" ?
+                                                     //: part of 'No results in "foo"'
+                                                     "" : qsTr("in “%1”").arg(aTitle))
                      haveResults = false;
                  }
             }
@@ -152,7 +155,7 @@ function getcomments(text){
 
             PageHeader {
 
-                title: "Search"
+                title: qsTr("Search")
             }
 
             SearchField {
