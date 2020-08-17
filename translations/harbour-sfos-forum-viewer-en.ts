@@ -111,6 +111,14 @@ Special thanks to contributors:
         <source>Load more</source>
         <translation>Load more</translation>
     </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">About</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Search</translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>

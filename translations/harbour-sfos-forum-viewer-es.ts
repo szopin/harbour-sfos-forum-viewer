@@ -112,6 +112,16 @@ Agradecimiento especial a los contribuyentes:
         <translation>SailfishSO foro</translation>
     </message>
     <message>
+        <location filename="../qml/pages/FirstPage.qml" line="155"/>
+        <source>About</source>
+        <translation type="unfinished">Acerca de</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="159"/>
+        <source>Search</source>
+        <translation type="unfinished">Buscar</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/FirstPage.qml" line="164"/>
         <source>Reload</source>
         <translation>Recargar</translation>
