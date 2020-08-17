@@ -152,11 +152,11 @@ Page {
             busy: application.fetching
 
             MenuItem {
-                text: "About"
+                text: qsTr("About")
                 onClicked: pageStack.push("About.qml");
             }
             MenuItem {
-                text: "Search"
+                text: qsTr("Search")
                 onClicked: pageStack.push("SearchPage.qml");
 
             }
