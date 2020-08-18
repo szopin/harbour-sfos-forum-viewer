@@ -203,7 +203,7 @@ Page {
             menu: ContextMenu{
                 hasContent: version > 1 && updated_at !== created_at
                 MenuItem {
-                    text: "Revision history"
+                    text: qsTr("Revision history")
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {"postid": postid});
                 }
             }

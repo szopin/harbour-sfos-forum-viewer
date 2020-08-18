@@ -176,6 +176,10 @@ Special thanks to contributors:
         <source>✍️: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Revision history</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-sfos-forum-viewer</name>

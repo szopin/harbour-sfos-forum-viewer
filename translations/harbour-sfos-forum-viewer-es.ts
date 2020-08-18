@@ -220,6 +220,11 @@ Agradecimiento especial a los contribuyentes:
         <source>✍️: %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="206"/>
+        <source>Revision history</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-sfos-forum-viewer</name>
