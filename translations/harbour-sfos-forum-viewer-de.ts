@@ -168,9 +168,9 @@ Special thanks to contributors:
     </message>
     <message numerus="yes">
         <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n Like</numerusform>
-            <numerusform>%n Likes</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

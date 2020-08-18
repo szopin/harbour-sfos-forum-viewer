@@ -195,30 +195,30 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="106"/>
         <source>Open in external browser</source>
-        <translation>Abrir en un navegador externo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="110"/>
         <source>Open directly</source>
-        <translation>Abrir directamente</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="115"/>
         <source>Search thread</source>
-        <translation>Buscar hilo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/pages/ThreadView.qml" line="165"/>
         <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n gusta</numerusform>
-            <numerusform>%n gustas</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="181"/>
         <source>✍️: %1</source>
-        <translation>✍️: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

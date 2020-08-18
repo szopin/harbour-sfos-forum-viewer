@@ -164,26 +164,26 @@ Special thanks to contributors:
     <name>ThreadView</name>
     <message>
         <source>Open in external browser</source>
-        <translation>Open in external browser</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation>Open directly</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation>Search thread</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n like</numerusform>
-            <numerusform>%n likes</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation>✍️: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

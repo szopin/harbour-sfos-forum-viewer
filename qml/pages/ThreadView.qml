@@ -126,9 +126,9 @@ Page {
         }
 
         model: ListModel { id: commodel}
-        delegate: Item {
+        delegate: ListItem {
             width: parent.width - 2*Theme.horizontalPageMargin
-            height: delegateCol.height + Theme.paddingLarge
+            contentHeight: delegateCol.height + Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
 
             Column {
@@ -198,6 +198,13 @@ Page {
                     onLinkActivated: {
                         var dialog = pageStack.push("OpenLink.qml", {link: link});
                     }
+                }
+            }
+            menu: ContextMenu{
+                hasContent: version > 1 && updated_at !== created_at
+                MenuItem {
+                    text: "Revision history"
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {"postid": postid});
                 }
             }
         }
