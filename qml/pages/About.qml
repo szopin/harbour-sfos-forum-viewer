@@ -89,7 +89,7 @@ Page {
                            "App icon by dseight\n" +
                            "AboutPage art by Hanibu\n\n" +
                            "Special thanks to contributors:\n").arg(application.appVersion) +
-                      ["carlosgonz", "elros34", "ichthyosaurus", "Moppa5"].join(
+                      ["carlosgonz", "elros34", "ichthyosaurus", "mentaljam", "Moppa5"].join(
                           //: contributors list separator
                           qsTr(", "));
             }

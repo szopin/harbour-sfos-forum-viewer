@@ -97,47 +97,47 @@ Special thanks to contributors:
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="99"/>
+        <location filename="../qml/pages/FirstPage.qml" line="92"/>
         <source>Latest</source>
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="107"/>
+        <location filename="../qml/pages/FirstPage.qml" line="100"/>
         <source>Top</source>
         <translation>Топ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="142"/>
+        <location filename="../qml/pages/FirstPage.qml" line="135"/>
         <source>SailfishOS Forum</source>
         <translation>Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="155"/>
+        <location filename="../qml/pages/FirstPage.qml" line="148"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="159"/>
+        <location filename="../qml/pages/FirstPage.qml" line="152"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="164"/>
+        <location filename="../qml/pages/FirstPage.qml" line="157"/>
         <source>Reload</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="181"/>
+        <location filename="../qml/pages/FirstPage.qml" line="174"/>
         <source>Nothing to show</source>
         <translation>Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="182"/>
+        <location filename="../qml/pages/FirstPage.qml" line="175"/>
         <source>Is the network enabled?</source>
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="264"/>
+        <location filename="../qml/pages/FirstPage.qml" line="257"/>
         <source>Load more</source>
         <translation>Загрузить еще</translation>
     </message>
@@ -156,36 +156,44 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
+    <name>PostView</name>
+    <message>
+        <location filename="../qml/pages/PostView.qml" line="46"/>
+        <source>Revision history</source>
+        <translation type="unfinished">История правок</translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="44"/>
+        <location filename="../qml/pages/SearchPage.qml" line="51"/>
         <source>Searching in “%1”</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="71"/>
+        <location filename="../qml/pages/SearchPage.qml" line="77"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>Нет результатов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="74"/>
+        <location filename="../qml/pages/SearchPage.qml" line="79"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="158"/>
+        <location filename="../qml/pages/SearchPage.qml" line="163"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="165"/>
+        <location filename="../qml/pages/SearchPage.qml" line="170"/>
         <source>Search in all threads</source>
         <translation>Искать по всем темам</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="166"/>
+        <location filename="../qml/pages/SearchPage.qml" line="171"/>
         <source>Search in the current thread</source>
         <translation>Искать в текущей теме</translation>
     </message>
@@ -193,22 +201,22 @@ Special thanks to contributors:
 <context>
     <name>ThreadView</name>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="106"/>
+        <location filename="../qml/pages/ThreadView.qml" line="111"/>
         <source>Open in external browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="110"/>
+        <location filename="../qml/pages/ThreadView.qml" line="115"/>
         <source>Open directly</source>
         <translation>Открыть в приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="115"/>
+        <location filename="../qml/pages/ThreadView.qml" line="120"/>
         <source>Search thread</source>
         <translation>Искать в теме</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/ThreadView.qml" line="165"/>
+        <location filename="../qml/pages/ThreadView.qml" line="170"/>
         <source>%n like(s)</source>
         <translation>
             <numerusform>%n нравится</numerusform>
@@ -217,12 +225,12 @@ Special thanks to contributors:
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="181"/>
+        <location filename="../qml/pages/ThreadView.qml" line="186"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="206"/>
+        <location filename="../qml/pages/ThreadView.qml" line="209"/>
         <source>Revision history</source>
         <translation>История правок</translation>
     </message>

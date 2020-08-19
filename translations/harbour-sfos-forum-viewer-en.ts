@@ -132,6 +132,13 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
+    <name>PostView</name>
+    <message>
+        <source>Revision history</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
