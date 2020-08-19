@@ -33,6 +33,20 @@ Page {
     allowedOrientations: Orientation.All
     property bool networkError: false
 
+    property var categoryTranslations: [
+        QT_TR_NOOP("Get Started"),
+        QT_TR_NOOP("Announcements"),
+        QT_TR_NOOP("Applications"),
+        QT_TR_NOOP("Platform Development"),
+        QT_TR_NOOP("Localisation"),
+        QT_TR_NOOP("Hardware Adaptation"),
+        QT_TR_NOOP("Design"),
+        QT_TR_NOOP("Bug Reports"),
+        QT_TR_NOOP("Store QA"),
+        QT_TR_NOOP("General"),
+        QT_TR_NOOP("Site Feedback"),
+    ]
+
     function findFirstPage() {
         return pageStack.find(function(page) { return (page._depth === 0); });
     }
@@ -123,7 +137,7 @@ Page {
                    var categories_length = categories.length
                    for (var i=0;i<categories_length;i++) {
                        var cat = categories[i]
-                       catmodel.append({textname: cat.name, topic: cat.id});
+                       catmodel.append({textname: qsTr(cat.name), topic: cat.id});
                    }
                }
            }
