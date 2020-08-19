@@ -132,6 +132,7 @@ Page {
 
         model: ListModel { id: commodel}
         delegate: ListItem {
+            enabled: menu.hasContent
             width: parent.width
             contentHeight: delegateCol.height + Theme.paddingLarge
             anchors.horizontalCenter: parent.horizontalCenter
@@ -206,7 +207,7 @@ Page {
                     onLinkActivated: pageStack.push("OpenLink.qml", {link: link});
                 }
             }
-            menu: ContextMenu{
+            menu: ContextMenu {
                 hasContent: version > 1 && updated_at !== created_at
                 MenuItem {
                     text: qsTr("Revision history")
