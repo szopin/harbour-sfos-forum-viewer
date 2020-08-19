@@ -47,8 +47,55 @@ ApplicationWindow
     //: date format including date and time but no weekday
     readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'")
 
+    property QtObject categories: QtObject {
+        property bool networkError: false
+        property var model: ListModel { id: categoriesModel }
+        property var lookup: ({})
+
+        function fetch() {
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", application.source + "categories.json");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.responseText === "") {
+                        model.clear();
+                        networkError = true;
+                        return;
+                    }
+
+                    var data = JSON.parse(xhr.responseText);
+                    model.clear();
+                    lookup = {};
+
+                    for (var i = 0; i < data.category_list.categories.length; i++) {
+                        var item = data.category_list.categories[i];
+                        var append = {
+                            name: item['name'],
+                            topic: item['id'],
+                            color: item['color'],
+                            topic_count: item['topic_count'],
+                            description_text: item['description_text']
+                        };
+
+                        lookup[item['id']] = append;
+                        model.append(append);
+                    }
+
+                    lookupChanged();
+                }
+            }
+            xhr.send();
+        }
+    }
+
     signal reload()
-    onReload: fetchLatestPosts()
+    onReload: {
+        fetchLatestPosts();
+
+        if (categories.model.count === 0) {
+            categories.fetch();
+        }
+    }
 
     function formatJsonDate(date) {
         return new Date(date).toLocaleString(Qt.locale(), dateTimeFormat);
@@ -78,5 +125,10 @@ ApplicationWindow
             }
         }
         xhr.send();
+    }
+
+    Component.onCompleted: {
+        categories.fetch();
+        fetchLatestPosts();
     }
 }
