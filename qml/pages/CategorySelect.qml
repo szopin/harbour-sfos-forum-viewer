@@ -107,7 +107,7 @@ Page {
 
        function reload() {
            var xhr = new XMLHttpRequest;
-           xhr.open("GET", "https://forum.sailfishos.org/categories.json");
+           xhr.open("GET", application.source + "categories.json");
            xhr.onreadystatechange = function() {
                if (xhr.readyState === XMLHttpRequest.DONE) {
                    if (xhr.responseText === "") {

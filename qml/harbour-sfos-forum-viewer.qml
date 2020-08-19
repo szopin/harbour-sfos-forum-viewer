@@ -43,7 +43,7 @@ ApplicationWindow
 
     property bool fetching: false
     property var latest: ListModel{id: latest}
-    property string source: "https://forum.sailfishos.org/"
+    readonly property string source: "https://forum.sailfishos.org/"
     //: date format including date and time but no weekday
     readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'")
 

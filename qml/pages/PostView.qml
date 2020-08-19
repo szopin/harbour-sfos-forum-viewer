@@ -8,9 +8,7 @@ Page {
     property int postid
     property int highest_post_number
     property int post_number
-    property string source: "https://forum.sailfishos.org/posts/"
 
-    property string loadmore: source + topicid + "/posts.json?post_ids[]="
     property int topicid
     property string url
     property string aTitle
@@ -19,7 +17,7 @@ Page {
 
     function getcomments(){
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", source +  postid + "/revisions/latest.json");
+        xhr.open("GET", application.source + "posts/" + postid + "/revisions/latest.json");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);

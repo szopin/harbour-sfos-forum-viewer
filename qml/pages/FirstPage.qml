@@ -32,12 +32,11 @@ import Sailfish.Silica 1.0
 Page {
     id: firstPage
     allowedOrientations: Orientation.All
-    property string source: "https://forum.sailfishos.org/"
     property string tid
     property int pageno: 0
     property string viewmode
     property string textname
-    property string combined: tid == "" ? source + viewmode + ".json?page=" + pageno : source + "c/" + tid + ".json?page=" + pageno
+    property string combined: application.source + (tid ? "c/" + tid : viewmode) + ".json?page=" + pageno
     property bool networkError: false
     property bool loadedMore: false
 
