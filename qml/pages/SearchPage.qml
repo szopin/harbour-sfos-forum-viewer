@@ -33,7 +33,14 @@ Page {
     property string initialSearch
     property int searchid
     property string aTitle
-    property string searchstring: searchid !== 0 ? "https://forum.sailfishos.org/search.json?context=topic&context_id=" + searchid + "&q=" : "https://forum.sailfishos.org/search.json?q="
+    readonly property string searchstring: {
+        var res = application.source + "search.json?"
+        if (searchid) {
+            res += "context=topic&context_id=" + searchid + "&"
+        }
+        res += "q="
+        return res
+    }
     property bool haveResults: false
 
     function _reset() {
@@ -41,46 +48,44 @@ Page {
         list.model.clear()
 
         viewPlaceholder.text = ""
-        viewPlaceholder.hintText = (aTitle !== "" ? qsTr("Searching in “%1”").arg(aTitle) : "")
+        viewPlaceholder.hintText = aTitle && qsTr("Searching in “%1”").arg(aTitle)
         list.headerItem.searchField.forceActiveFocus()
     }
-function getcomments(text){
-    busyIndicator.running = true;
-            var xhr = new XMLHttpRequest;
-            xhr.open("GET", searchstring + text);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    busyIndicator.running = false;
-                    var data = JSON.parse(xhr.responseText);
-                    list.model.clear();
-                 if(data.posts[0] !== undefined){
 
-
-                     haveResults = true;
-
-                for (var i=0;i<data.posts.length;i++) {
-                    if(searchid === 0){
-
-                        list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[i]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[i]["posts_count"], post_id: data.posts[i]["id"], highest_post_number: data.topics[i]["highest_post_number"]});
-                } else {
-                        list.model.append({blurb: data.posts[i]["blurb"], topicid: data.posts[i]["topic_id"], title: data.topics[0]["title"], post_number: data.posts[i]["post_number"], posts_count: data.topics[0]["posts_count"], post_id: data.posts[i]["id"], highest_post_number: data.topics[0]["highest_post_number"]});
+    function getcomments(text){
+        busyIndicator.running = true;
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", searchstring + text);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                busyIndicator.running = false;
+                var data   = JSON.parse(xhr.responseText);
+                var posts  = data.posts;
+                var topics = data.topics;
+                var firstTopic = topics[0];
+                list.model.clear();
+                if(posts[0]){
+                    haveResults = true;
+                    var posts_length = posts.length
+                    for (var i=0;i<posts_length;i++) {
+                        var post = posts[i]
+                        var topic = searchid ? firstTopic : topics[i]
+                        list.model.append({blurb: post.blurb, topicid: post.topic_id, title: topic.title, post_number: post.post_number, posts_count: topic.posts_count, post_id: post.id, highest_post_number: topic.highest_post_number});
                     }
-                }
                 } else {
-                     //: part of 'No results in "foo"'
-                     viewPlaceholder.text = qsTr("No results");
-                     viewPlaceholder.hintText = (aTitle === "" ?
-                                                     //: part of 'No results in "foo"'
-                                                     "" : qsTr("in “%1”").arg(aTitle))
-                     haveResults = false;
-                 }
+                    //: part of 'No results in "foo"'
+                    viewPlaceholder.text = qsTr("No results");
+                    //: part of 'No results in "foo"'
+                    viewPlaceholder.hintText = aTitle && qsTr("in “%1”").arg(aTitle)
+                    haveResults = false;
+                }
             }
-            }
-            xhr.send();
+        }
+        xhr.send();
     }
 
     function _search(text) {
-        list.headerItem.searchField.text  = text
+        list.headerItem.searchField.text = text
         viewPlaceholder.text = ""
         getcomments(text);
         forceActiveFocus()

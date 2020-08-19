@@ -35,52 +35,57 @@ Page {
     property int post_id
     property int highest_post_number
     property int post_number
-    property string source: "https://forum.sailfishos.org/t/"
-    property string loadmore: source + topicid + "/posts.json?post_ids[]="
+    readonly property string source: application.source + "t/" + topicid
+    property string loadmore: source + "/posts.json?post_ids[]="
     property int topicid
     property string url
     property string aTitle
     property int posts_count
 
+    function appendPosts(posts) {
+        var posts_length = posts.length;
+        for (var i=0;i<posts_length;i++) {
+            var post = posts[i];
+            var action = post.actions_summary[0];
+            likes = action && action.id === 2
+                ? action.count : 0;
+            list.model.append({
+                cooked: post.cooked,
+                username: post.username,
+                updated_at: post.updated_at,
+                likes: likes,
+                created_at: post.created_at,
+                version: post.version,
+                postid: post.id,
+            });
+        }
+    }
 
     function getcomments(){
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", source +  topicid + ".json");
+        xhr.open("GET", source + ".json");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
+                var post_stream = data.post_stream;
                 if (posts_count >= 20){
+                    var stream = post_stream.stream;
                     for(var j=20;j<posts_count;j++)
-                        loadmore = loadmore + data.post_stream.stream[j] + "&post_ids[]="
-
+                        loadmore += stream[j] + "&post_ids[]="
                 }
                 var xhr2 = new XMLHttpRequest;
                 xhr2.open("GET", loadmore);
                 xhr2.onreadystatechange = function() {
                     if (xhr2.readyState === XMLHttpRequest.DONE) {
-                        var data2 = JSON.parse(xhr2.responseText);
-
-
-
                         list.model.clear();
 
-                        for (var i=0;i<data.post_stream.posts.length;i++) {
-                            if(data.post_stream.posts[i]["actions_summary"][0] && data.post_stream.posts[i]["actions_summary"][0]["id"] === 2){
-                                likes = data.post_stream.posts[i]["actions_summary"][0]["count"];
-                            } else likes = 0;
-                            list.model.append({cooked: data.post_stream.posts[i]["cooked"], username: data.post_stream.posts[i]["username"], updated_at: data.post_stream.posts[i]["updated_at"], likes: likes, created_at: data.post_stream.posts[i]["created_at"], version: data.post_stream.posts[i]["version"], postid: data.post_stream.posts[i]["id"]});
-                        }
-                        for (var j=0;j<data2.post_stream.posts.length;j++) {
-                            if(data2.post_stream.posts[j]["actions_summary"][0] && data2.post_stream.posts[j]["actions_summary"][0]["id"] === 2){
-                                likes = data2.post_stream.posts[j]["actions_summary"][0]["count"];
-                            } else likes = 0;
-                            list.model.append({cooked: data2.post_stream.posts[j]["cooked"], username: data2.post_stream.posts[j]["username"], updated_at: data2.post_stream.posts[j]["updated_at"], likes: likes, created_at: data2.post_stream.posts[j]["created_at"], version: data2.post_stream.posts[j]["version"], postid: data2.post_stream.posts[j]["id"]});
+                        appendPosts(post_stream.posts);
 
-                        }
+                        var data2 = JSON.parse(xhr2.responseText);
+                        appendPosts(data2.post_stream.posts)
                     }
                 }
                 xhr2.send();
-
             }
         }
         xhr.send();
@@ -104,11 +109,11 @@ Page {
         PullDownMenu{
             MenuItem {
                 text: qsTr("Open in external browser")
-                onClicked: Qt.openUrlExternally(source + topicid)
+                onClicked: Qt.openUrlExternally(source)
             }
             MenuItem {
                 text: qsTr("Open directly")
-                onClicked: pageStack.push("webView.qml", {"pageurl": source + topicid });
+                onClicked: pageStack.push("webView.qml", {"pageurl": source});
 
             }
             MenuItem {
@@ -195,16 +200,14 @@ Page {
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
                     font.pixelSize: Theme.fontSizeSmall
-                    onLinkActivated: {
-                        var dialog = pageStack.push("OpenLink.qml", {link: link});
-                    }
+                    onLinkActivated: pageStack.push("OpenLink.qml", {link: link});
                 }
             }
             menu: ContextMenu{
                 hasContent: version > 1 && updated_at !== created_at
                 MenuItem {
                     text: qsTr("Revision history")
-                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {"postid": postid});
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle});
                 }
             }
         }
@@ -212,7 +215,8 @@ Page {
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
             for(var i=post_number - (highest_post_number - posts_count) - 1;i<=post_number;i++){
-                if (post_id !== "" && list.model.get(i) !== undefined && list.model.get(i).postid === post_id){
+                var comment = list.model.get(i)
+                if (post_id && comment && comment.postid === post_id){
                     positionViewAtIndex(i, ListView.Beginning);
                 }
             }

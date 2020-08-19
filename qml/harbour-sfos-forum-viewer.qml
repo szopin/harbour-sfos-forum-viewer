@@ -43,7 +43,7 @@ ApplicationWindow
 
     property bool fetching: false
     property var latest: ListModel{id: latest}
-    property string source: "https://forum.sailfishos.org/"
+    readonly property string source: "https://forum.sailfishos.org/"
     //: date format including date and time but no weekday
     readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'")
 
@@ -63,12 +63,13 @@ ApplicationWindow
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.responseText !== "") {
                     var data = JSON.parse(xhr.responseText);
+                    var topics = data.topic_list.topics;
+                    var topics_length = Math.min(topics.length, 11);
 
-                    for (var i=0;i<data.topic_list.topics.length;i++) {
-                        if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                            if (i <= 10) {
-                                application.latest.append({title: data.topic_list.topics[i]["title"], posts_count: data.topic_list.topics[i]["posts_count"]})
-                            }
+                    for (var i=0;i<topics_length;i++) {
+                        var topic = topics[i];
+                        if (topic.bumped){
+                            application.latest.append({title: topic.title, posts_count: topic.posts_count})
                         }
                     }
                 }
