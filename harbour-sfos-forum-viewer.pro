@@ -44,4 +44,5 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
     translations/harbour-sfos-forum-viewer-de.ts \
     translations/harbour-sfos-forum-viewer-en.ts \
-    translations/harbour-sfos-forum-viewer-es.ts
+    translations/harbour-sfos-forum-viewer-es.ts \
+    translations/harbour-sfos-forum-viewer-ru.ts
