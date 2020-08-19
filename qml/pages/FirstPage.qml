@@ -62,31 +62,25 @@ Page {
                 }
 
                 var data = JSON.parse(xhr.responseText);
+                var topics = data.topic_list.topics;
 
+                // Filter bumped if required
                 if (viewmode === "latest" && tid === ""){
-
-                    for (var i=0;i<data.topic_list.topics.length;i++) {
-                        if ("bumped" in data.topic_list.topics[i] && data.topic_list.topics[i]["bumped"] === true){
-                            list.model.append({title: data.topic_list.topics[i]["title"], topicid: data.topic_list.topics[i]["id"], posts_count: data.topic_list.topics[i]["posts_count"], bumped: data.topic_list.topics[i]["bumped_at"]});
-
-
-                        }
-                    }
-
-                } else {
-                    for (var j=0;j<data.topic_list.topics.length;j++) {
-                        list.model.append({title: data.topic_list.topics[j]["title"], topicid: data.topic_list.topics[j]["id"], posts_count: data.topic_list.topics[j]["posts_count"], bumped: data.topic_list.topics[j]["bumped_at"]});
-
-                    }
-
+                    topics = topics.filter(function(t) {
+                        return t.bumped
+                    })
                 }
-                var more = 'more_topics_url';
-                if (data.topic_list[more]){
-                    pageno++;
 
+                var topics_length = topics.length;
+                for (var i=0;i<topics_length;i++) {
+                    var topic = topics[i];
+                    list.model.append({title: topic.title, topicid: topic.id, posts_count: topic.posts_count, bumped: topic.bumped_at});
+                }
+
+                if (data.topic_list.more_topics_url){
+                    pageno++;
                 } else {
                     pageno = 0;
-
                 }
             }
         }
