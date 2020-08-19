@@ -119,10 +119,11 @@ Page {
                    var data = JSON.parse(xhr.responseText);
                    catmodel.clear();
 
-                   for (var i=0;i<data.category_list.categories.length;i++) {
-
-                         catmodel.append({textname: data.category_list.categories[i]["name"], topic: data.category_list.categories[i]["id"]});
-
+                   var categories = data.category_list.categories
+                   var categories_length = categories.length
+                   for (var i=0;i<categories_length;i++) {
+                       var cat = categories[i]
+                       catmodel.append({textname: cat.name, topic: cat.id});
                    }
                }
            }
