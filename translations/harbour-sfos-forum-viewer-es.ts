@@ -19,11 +19,11 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation>SFOS Foro para Sailfish SO
+        <translation>SFSO Foro para Sailfish SO
 Por szopin    
 Licencia  MIT 
             
-Icono de apls por dseight          
+Icono de apl por dseight          
 AboutPage arte por Hanibu  
             
 Agradecimiento especial a los contribuyentes:           
@@ -91,7 +91,7 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/cover/CoverPage.qml" line="122"/>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation>Forum Viewer</translation>
+        <translation>Visor de foros</translation>
     </message>
 </context>
 <context>
@@ -114,12 +114,12 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="155"/>
         <source>About</source>
-        <translation type="unfinished">Acerca de</translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="159"/>
         <source>Search</source>
-        <translation type="unfinished">Buscar</translation>
+        <translation>Buscar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="164"/>
@@ -182,12 +182,12 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="165"/>
         <source>Search in all threads</source>
-        <translation>Buscar en todos los hilos</translation>
+        <translation>Busca en todos los hilos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="166"/>
         <source>Search in the current thread</source>
-        <translation>Buscar en el actual hilo</translation>
+        <translation>Busca en el actual hilo</translation>
     </message>
 </context>
 <context>
@@ -195,35 +195,35 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="106"/>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en navegador externo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="110"/>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir directamente</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="115"/>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar hilo</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/pages/ThreadView.qml" line="165"/>
         <source>%n like(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n me gusta</numerusform>
+            <numerusform>%n me gustas</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="181"/>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="206"/>
         <source>Revision history</source>
-        <translation type="unfinished"></translation>
+        <translation>Historial de revisiones</translation>
     </message>
 </context>
 <context>
