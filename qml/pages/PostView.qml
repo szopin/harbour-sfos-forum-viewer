@@ -4,16 +4,9 @@ import Sailfish.Silica 1.0
 Page {
     id: posthistory
     allowedOrientations: Orientation.All
-    property int likes
     property int postid
-    property int highest_post_number
-    property int post_number
-
-    property int topicid
-    property string url
     property string aTitle
-    property int posts_count
-
+    property string revisions
 
     function getcomments(){
         var xhr = new XMLHttpRequest;
@@ -21,65 +14,53 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
-
-                list.model.append({cooked: data.body_changes["side_by_side_markdown"]});
-
-
+                revisions = data.body_changes.side_by_side_markdown
             }
         }
         xhr.send();
     }
 
-    SilicaListView {
-        id: list
-        header: PageHeader {
-            title: aTitle
-            id: pageHeader
-        }
-        width: parent.width
-        height: parent.height
-        anchors.top: header.bottom
+    BusyIndicator {
+        id: vplaceholder
+        anchors.centerIn: parent
+        running: !revisions
+        size: BusyIndicatorSize.Large
+    }
+
+    SilicaFlickable {
+        id: flickable
+        anchors.fill: parent
+        visible: revisions
+        contentHeight: content.height
+
+        Component.onCompleted: posthistory.getcomments();
+
         VerticalScrollDecorator {}
 
+        Column {
+            id: content
+            width: parent.width
 
-        BusyIndicator {
-            id: vplaceholder
-            running: commodel.count == 0
-            anchors.centerIn: parent
-            size: BusyIndicatorSize.Large
-        }
-
-        model: ListModel { id: commodel}
-        delegate: Item {
-            width: list.width
-            height: cid.height
-            anchors  {
-                left: parent.left
-                right: parent.right
-
+            PageHeader {
+                id: pageHeader
+                title: qsTr("Revision history")
+                description: aTitle
             }
 
             Label {
-                id:  cid
-                text: cooked
-                textFormat: Text.RichText
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
+                id: cid
                 anchors {
-                    leftMargin: Theme.paddingMedium// * indent
+                    leftMargin: Theme.paddingMedium
                     rightMargin: Theme.paddingSmall
                     left: parent.left
                     right: parent.right
                 }
-                onLinkActivated: {
-                    var dialog = pageStack.push("OpenLink.qml", {link: link});
-                }
+                text: revisions
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                onLinkActivated: pageStack.push("OpenLink.qml", {link: link});
             }
-
         }
-        Component.onCompleted: posthistory.getcomments();
-
     }
 }
-
-
