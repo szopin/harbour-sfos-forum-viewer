@@ -240,7 +240,7 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/harbour-sfos-forum-viewer.qml" line="48"/>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <extracomment>date format including date and time but no weekday</extracomment>
-        <translation>d/M/año &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+        <translation>dd.MM.yyyy hh:mm</translation>
     </message>
 </context>
 </TS>
