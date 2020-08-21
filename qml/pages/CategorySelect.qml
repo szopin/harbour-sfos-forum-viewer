@@ -31,7 +31,6 @@ import Sailfish.Silica 1.0
 Page {
     id: categorySelectPage
     allowedOrientations: Orientation.All
-    property bool networkError: false
 
     function findFirstPage() {
         return pageStack.find(function(page) { return (page._depth === 0); });
@@ -42,13 +41,13 @@ Page {
 
        BusyIndicator {
            visible: running
-           running: catmodel.count === 0 && !networkError
+           running: categories.model.count === 0 && !categories.networkError
            anchors.centerIn: parent
            size: BusyIndicatorSize.Large
        }
 
        ViewPlaceholder {
-           enabled: catmodel.count === 0 && networkError
+           enabled: categories.model.count === 0 && categories.networkError
            text: qsTr("Nothing to show")
            hintText: qsTr("Is the network enabled?")
        }
@@ -82,7 +81,7 @@ Page {
                }
            }
 
-           Item { width: parent.width; height: Theme.paddingSmall }
+           Item { width: parent.width; height: 2*Theme.paddingMedium }
        }
 
        footer: Item { width: parent.width; height: Theme.horizontalPageMargin }
@@ -92,59 +91,52 @@ Page {
        height: parent.height
 
        VerticalScrollDecorator {}
-       model: ListModel { id: catmodel}
+       model: categories.model
+       spacing: Theme.paddingLarge
 
-       Connections {
-           target: application
-           onReload: {
-               if (catmodel.count === 0) {
-                   list.reload();
-               }
-           }
-       }
-
-       Component.onCompleted: reload()
-
-       function reload() {
-           var xhr = new XMLHttpRequest;
-           xhr.open("GET", application.source + "categories.json");
-           xhr.onreadystatechange = function() {
-               if (xhr.readyState === XMLHttpRequest.DONE) {
-                   if (xhr.responseText === "") {
-                       catmodel.clear();
-                       networkError = true;
-                       return;
-                   }
-
-                   var data = JSON.parse(xhr.responseText);
-                   catmodel.clear();
-
-                   for (var i=0;i<data.category_list.categories.length;i++) {
-
-                         catmodel.append({textname: data.category_list.categories[i]["name"], topic: data.category_list.categories[i]["id"]});
-
-                   }
-               }
-           }
-           xhr.send();
-       }
-
-       delegate: BackgroundItem {
+       delegate: ListItem {
+           id: item
            width: parent.width
-           height: Theme.itemSizeSmall
+           contentHeight: contentCol.height
            onClicked: {
-               findFirstPage().showCategory(topic, textname);
+               findFirstPage().showCategory(topic, name);
                pageStack.navigateBack();
            }
 
-           Label {
-               id: theTitle
-               text: textname
-               wrapMode: Text.Wrap
+           Rectangle {
+               id: rect
                anchors {
                    left: parent.left; leftMargin: Theme.horizontalPageMargin
-                   right: parent.right; rightMargin: Theme.horizontalPageMargin
-                   verticalCenter: parent.verticalCenter
+                   verticalCenter: contentCol.verticalCenter
+               }
+               height: contentCol.height*0.95
+               width: Theme.horizontalPageMargin/3
+               color: '#'+model.color
+               radius: 30
+           }
+
+           Column {
+               id: contentCol
+               width: parent.width - 2*Theme.horizontalPageMargin - rect.width - Theme.paddingMedium
+               anchors {
+                   right: parent.right
+                   rightMargin: Theme.horizontalPageMargin
+               }
+
+               Label {
+                   width: parent.width
+                   text: name
+                   wrapMode: Text.Wrap
+               }
+
+               Label {
+                   width: parent.width
+                   elide: Text.ElideRight
+                   textFormat: Text.RichText
+                   text: description_text
+                   wrapMode: Text.Wrap
+                   font.pixelSize: Theme.fontSizeExtraSmall
+                   color: Theme.secondaryColor
                }
            }
        }

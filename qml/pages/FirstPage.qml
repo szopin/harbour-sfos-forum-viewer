@@ -73,7 +73,12 @@ Page {
                 var topics_length = topics.length;
                 for (var i=0;i<topics_length;i++) {
                     var topic = topics[i];
-                    list.model.append({title: topic.title, topicid: topic.id, posts_count: topic.posts_count, bumped: topic.bumped_at});
+                    list.model.append({ title: topic.title,
+                                          topicid: topic.id,
+                                          posts_count: topic.posts_count,
+                                          bumped: topic.bumped_at,
+                                          category_id: topic.category_id
+                                      });
                 }
 
                 if (data.topic_list.more_topics_url){
@@ -179,7 +184,6 @@ Page {
         VerticalScrollDecorator {}
         Component.onCompleted: {
             showLatest();
-            application.fetchLatestPosts();
         }
 
         delegate: BackgroundItem {
@@ -230,16 +234,47 @@ Page {
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
                         }
-                        Label {
-                            text: formatJsonDate(bumped)
-                            wrapMode: Text.Wrap
-                            elide: Text.ElideRight
-                            width: parent.width
-                            color: highlighted ? Theme.secondaryHighlightColor
-                                               : Theme.secondaryColor
-                            font.pixelSize: Theme.fontSizeSmall
-                            horizontalAlignment: Text.AlignLeft
+
+                        Row {
+                           width: parent.width
+                           spacing: Theme.paddingMedium
+
+                           Label {
+                               id: dateLabel
+                               text: formatJsonDate(bumped)
+                               wrapMode: Text.Wrap
+                               elide: Text.ElideRight
+                               width: (parent.width - 2*parent.spacing - catRect.width)/2
+                               color: highlighted ? Theme.secondaryHighlightColor
+                                                  : Theme.secondaryColor
+                               font.pixelSize: Theme.fontSizeSmall
+                               horizontalAlignment: Text.AlignLeft
+                           }
+
+                           Label {
+                               visible: catRect.visible
+                               text: categories.lookup[category_id].name
+                               wrapMode: Text.Wrap
+                               elide: Text.ElideRight
+                               width: dateLabel.width
+                               color: highlighted ? Theme.secondaryHighlightColor
+                                                  : Theme.secondaryColor
+                               font.pixelSize: Theme.fontSizeSmall
+                               horizontalAlignment: Text.AlignRight
+                           }
+
+                           Rectangle {
+                               id: catRect
+                               visible: tid === ""
+                               color: '#'+categories.lookup[category_id].color
+                               width: 2*Theme.horizontalPageMargin
+                               height: Theme.horizontalPageMargin/3
+                               radius: 45
+                               anchors.verticalCenter: parent.verticalCenter
+                               opacity: Theme.opacityLow
+                           }
                         }
+
                     }
                 }
             }
