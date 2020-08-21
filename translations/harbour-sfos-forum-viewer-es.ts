@@ -66,7 +66,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="70"/>
         <source>Latest</source>
-        <translation>Últimos</translation>
+        <translation>Recientes</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="77"/>
@@ -79,7 +79,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="45"/>
         <source>Latest posts</source>
-        <translation>Últimas publicaciones</translation>
+        <translation>Publicaciones recientes</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
@@ -99,7 +99,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="92"/>
         <source>Latest</source>
-        <translation>Últimos</translation>
+        <translation>Recientes</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="100"/>
@@ -160,7 +160,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/PostView.qml" line="46"/>
         <source>Revision history</source>
-        <translation type="unfinished">Historial de revisiones</translation>
+        <translation>Historial de revisiones</translation>
     </message>
 </context>
 <context>
@@ -195,7 +195,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="171"/>
         <source>Search in the current thread</source>
-        <translation>Busca en el actual hilo</translation>
+        <translation>Busca en el hilo actual</translation>
     </message>
 </context>
 <context>
@@ -203,7 +203,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="111"/>
         <source>Open in external browser</source>
-        <translation>Abrir en navegador externo</translation>
+        <translation>Abrir navegador</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="115"/>
@@ -240,7 +240,7 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/harbour-sfos-forum-viewer.qml" line="48"/>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <extracomment>date format including date and time but no weekday</extracomment>
-        <translation>d/M/año &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+        <translation>dd.MM.yyyy hh:mm</translation>
     </message>
 </context>
 </TS>
