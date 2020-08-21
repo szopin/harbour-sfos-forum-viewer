@@ -49,27 +49,27 @@ Special thanks to contributors:
 <context>
     <name>CategorySelect</name>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="52"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="51"/>
         <source>Nothing to show</source>
         <translation>Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="53"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="52"/>
         <source>Is the network enabled?</source>
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="62"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="61"/>
         <source>Categories</source>
         <translation>Категории</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="70"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="69"/>
         <source>Latest</source>
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="77"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="76"/>
         <source>Top</source>
         <translation>Топ</translation>
     </message>
@@ -97,47 +97,47 @@ Special thanks to contributors:
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="92"/>
+        <location filename="../qml/pages/FirstPage.qml" line="97"/>
         <source>Latest</source>
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="100"/>
+        <location filename="../qml/pages/FirstPage.qml" line="105"/>
         <source>Top</source>
         <translation>Топ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="135"/>
+        <location filename="../qml/pages/FirstPage.qml" line="140"/>
         <source>SailfishOS Forum</source>
         <translation>Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="148"/>
+        <location filename="../qml/pages/FirstPage.qml" line="153"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="152"/>
+        <location filename="../qml/pages/FirstPage.qml" line="157"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="157"/>
+        <location filename="../qml/pages/FirstPage.qml" line="162"/>
         <source>Reload</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="174"/>
+        <location filename="../qml/pages/FirstPage.qml" line="179"/>
         <source>Nothing to show</source>
         <translation>Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="175"/>
+        <location filename="../qml/pages/FirstPage.qml" line="180"/>
         <source>Is the network enabled?</source>
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="257"/>
+        <location filename="../qml/pages/FirstPage.qml" line="292"/>
         <source>Load more</source>
         <translation>Загрузить еще</translation>
     </message>
@@ -216,7 +216,7 @@ Special thanks to contributors:
         <translation>Искать в теме</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/ThreadView.qml" line="170"/>
+        <location filename="../qml/pages/ThreadView.qml" line="174"/>
         <source>%n like(s)</source>
         <translation>
             <numerusform>%n нравится</numerusform>
@@ -225,12 +225,12 @@ Special thanks to contributors:
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="186"/>
+        <location filename="../qml/pages/ThreadView.qml" line="190"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="209"/>
+        <location filename="../qml/pages/ThreadView.qml" line="213"/>
         <source>Revision history</source>
         <translation>История правок</translation>
     </message>
