@@ -79,7 +79,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="45"/>
         <source>Latest posts</source>
-        <translation>Publicaciones recientes</translation>
+        <translation>Publicac. recientes</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
@@ -160,12 +160,12 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/PostView.qml" line="50"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location filename="../qml/pages/PostView.qml" line="56"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../qml/pages/PostView.qml" line="67"/>
