@@ -20,11 +20,11 @@ AboutPage art by Hanibu
 Special thanks to contributors:
 </source>
         <translation>SFSO Foro para Sailfish SO
-Por szopin    
-Licencia  MIT 
+Por: szopin    
+Licencia: MIT 
             
-Icono de apl por dseight          
-AboutPage arte por Hanibu  
+Icono de apl por: dseight          
+Arte en AboutPage por: Hanibu  
             
 Agradecimiento especial a los contribuyentes:           
 </translation>
