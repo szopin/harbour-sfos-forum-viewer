@@ -71,7 +71,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="76"/>
         <source>Top</source>
-        <translation>Arriba</translation>
+        <translation>Relevantes</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="105"/>
         <source>Top</source>
-        <translation>Arriba</translation>
+        <translation>Relevantes</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="140"/>
