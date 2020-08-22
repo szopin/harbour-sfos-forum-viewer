@@ -158,7 +158,17 @@ Special thanks to contributors:
 <context>
     <name>PostView</name>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="46"/>
+        <location filename="../qml/pages/PostView.qml" line="50"/>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PostView.qml" line="56"/>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PostView.qml" line="67"/>
         <source>Revision history</source>
         <translation type="unfinished">История правок</translation>
     </message>

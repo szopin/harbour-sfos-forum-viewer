@@ -137,6 +137,14 @@ Special thanks to contributors:
         <source>Revision history</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
