@@ -20,11 +20,11 @@ AboutPage art by Hanibu
 Special thanks to contributors:
 </source>
         <translation>SFSO Foro para Sailfish SO
-Por szopin    
-Licencia  MIT 
+Por: szopin    
+Licencia: MIT 
             
-Icono de apl por dseight          
-AboutPage arte por Hanibu  
+Icono de apl por: dseight          
+Arte en AboutPage por: Hanibu  
             
 Agradecimiento especial a los contribuyentes:           
 </translation>
@@ -71,7 +71,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="76"/>
         <source>Top</source>
-        <translation>Arriba</translation>
+        <translation>Relevantes</translation>
     </message>
 </context>
 <context>
@@ -79,7 +79,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="45"/>
         <source>Latest posts</source>
-        <translation>Publicaciones recientes</translation>
+        <translation>Publicac. recientes</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
@@ -104,7 +104,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="105"/>
         <source>Top</source>
-        <translation>Arriba</translation>
+        <translation>Relevantes</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="140"/>
@@ -160,12 +160,12 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/PostView.qml" line="50"/>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Anterior</translation>
     </message>
     <message>
         <location filename="../qml/pages/PostView.qml" line="56"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../qml/pages/PostView.qml" line="67"/>
