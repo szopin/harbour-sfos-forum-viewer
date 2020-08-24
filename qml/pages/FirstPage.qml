@@ -339,7 +339,8 @@ Page {
                                    "aTitle": title,
                                    "topicid": topicid,
                                    "posts_count": posts_count,
-                                   "last_seen": lastPostNumber
+                                   "post_number": lastPostNumber,
+                                   "highest_post_number": highest_post_number
                                });
             }
         }
