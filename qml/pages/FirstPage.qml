@@ -79,6 +79,7 @@ Page {
                                           posts_count: topic.posts_count,
                                           bumped: topic.bumped_at,
                                           category_id: topic.category_id,
+                                          has_accepted_answer: topic.has_accepted_answer,
                                           highest_post_number: topic.highest_post_number
                                       });
                 }
@@ -265,6 +266,14 @@ Page {
                                            Theme.secondaryHighlightColor :
                                            Theme.secondaryColor
                             }
+                        }
+
+                        Icon {
+                            visible: has_accepted_answer
+                            source: "image://theme/icon-s-accept"
+                            width: Theme.iconSizeSmall
+                            height: width
+                            opacity: Theme.opacityLow
                         }
                     }
 
