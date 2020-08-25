@@ -334,12 +334,13 @@ Page {
             onClicked: {
                 var name = list.model.get(index).name
                 postCountConfig.setValue(topicid, highest_post_number);
+                var oldLast = lastPostNumber;
                 lastPostNumber = highest_post_number;
                 pageStack.push("ThreadView.qml", {
                                    "aTitle": title,
                                    "topicid": topicid,
                                    "posts_count": posts_count,
-                                   "post_number": lastPostNumber,
+                                   "post_number": oldLast,
                                    "highest_post_number": highest_post_number
                                });
             }
