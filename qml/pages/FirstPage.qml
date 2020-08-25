@@ -217,6 +217,7 @@ Page {
             height: delegateCol.height + Theme.paddingLarge
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)
             // Component.onCompleted: console.debug("lastPostNumber [%1]:\tlast=%2\tnow=%3".arg(topicid).arg(lastPostNumber).arg(highest_post_number))
 
             Column {
@@ -247,7 +248,7 @@ Page {
                             font.pixelSize: Theme.fontSizeSmall
                             color: item.lastPostNumber < 0 ?
                                        Theme.primaryColor :
-                                       (item.lastPostNumber < highest_post_number ?
+                                       (item.hasNews ?
                                             Theme.highlightColor :
                                             Theme.secondaryColor)
                             opacity: Theme.opacityHigh
@@ -262,7 +263,7 @@ Page {
                                 opacity: item.lastPostNumber < highest_post_number ?
                                              Theme.opacityLow :
                                              Theme.opacityFaint
-                                color: (item.lastPostNumber > 0 && item.lastPostNumber < highest_post_number) ?
+                                color: item.hasNews ?
                                            Theme.secondaryHighlightColor :
                                            Theme.secondaryColor
                             }
@@ -285,6 +286,8 @@ Page {
                             width: parent.width
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
+                            color: highlighted || item.hasNews ? Theme.highlightColor
+                                                               : Theme.primaryColor
                         }
 
                         Row {
@@ -297,7 +300,7 @@ Page {
                                wrapMode: Text.Wrap
                                elide: Text.ElideRight
                                width: (parent.width - 2*parent.spacing - catRect.width)/2
-                               color: highlighted ? Theme.secondaryHighlightColor
+                               color: highlighted || item.hasNews ? Theme.secondaryHighlightColor
                                                   : Theme.secondaryColor
                                font.pixelSize: Theme.fontSizeSmall
                                horizontalAlignment: Text.AlignLeft
@@ -309,7 +312,7 @@ Page {
                                wrapMode: Text.Wrap
                                elide: Text.ElideRight
                                width: dateLabel.width
-                               color: highlighted ? Theme.secondaryHighlightColor
+                               color: highlighted || item.hasNews ? Theme.secondaryHighlightColor
                                                   : Theme.secondaryColor
                                font.pixelSize: Theme.fontSizeSmall
                                horizontalAlignment: Text.AlignRight
