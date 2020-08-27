@@ -27,7 +27,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
-
+import Nemo.Configuration 1.0
 
 Page {
     id: firstPage
@@ -46,6 +46,7 @@ Page {
         loadedMore = false;
         updateview();
     }
+
     function updateview() {
         var xhr = new XMLHttpRequest;
 
@@ -77,7 +78,9 @@ Page {
                                           topicid: topic.id,
                                           posts_count: topic.posts_count,
                                           bumped: topic.bumped_at,
-                                          category_id: topic.category_id
+                                          category_id: topic.category_id,
+                                          has_accepted_answer: topic.has_accepted_answer,
+                                          highest_post_number: topic.highest_post_number
                                       });
                 }
 
@@ -116,6 +119,28 @@ Page {
     onStatusChanged: {
         if (status === PageStatus.Active){
             pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"));
+        }
+    }
+
+    ConfigurationGroup {
+        id: mainConfig
+        path: "/apps/harbour-sfos-forum-viewer"
+
+        // We save metadata for every thread the user opened. We
+        // have a nested ConfigurationGroup for every value
+        // we track. The key is always the id (topicid).
+
+        ConfigurationGroup {
+            id: postCountConfig
+            path: "/highest_post_number"
+        }
+
+        ConfigurationGroup {
+            // We don't use this yet. We can use it to perform
+            // some cleanup in the future, e.g. deleting all entries
+            // that haven't been updated for 30 days.
+            id: bumpedConfig
+            path: "/bumped_at"
         }
     }
 
@@ -187,8 +212,13 @@ Page {
         }
 
         delegate: BackgroundItem {
+            id: item
             width: parent.width
             height: delegateCol.height + Theme.paddingLarge
+
+            property int lastPostNumber: postCountConfig.value(topicid, -1)
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)
+            // Component.onCompleted: console.debug("lastPostNumber [%1]:\tlast=%2\tnow=%3".arg(topicid).arg(lastPostNumber).arg(highest_post_number))
 
             Column {
                 id: delegateCol
@@ -203,25 +233,48 @@ Page {
                 Row {
                     width: parent.width
                     spacing: 1.5*Theme.paddingMedium
-                    Label {
-                        id: postsLabel
-                        text: posts_count
-                        minimumPixelSize: Theme.fontSizeTiny
-                        fontSizeMode: "Fit"
-                        font.pixelSize: Theme.fontSizeSmall
-                        color: Theme.primaryColor
-                        opacity: Theme.opacityHigh
-                        height: 1.2*Theme.fontSizeSmall; width: height
-                        horizontalAlignment: Text.AlignHCenter
-                        verticalAlignment: Text.AlignVCenter
-                        anchors.top: parent.top
 
-                        Rectangle {
-                            anchors.centerIn: parent
-                            width: parent.width+Theme.paddingSmall; height: parent.height
-                            radius: 20
+                    Column {
+                        width: postsLabel.width
+                        height: childrenRect.height
+                        anchors.top: parent.top
+                        spacing: Theme.paddingSmall
+
+                        Label {
+                            id: postsLabel
+                            text: posts_count
+                            minimumPixelSize: Theme.fontSizeTiny
+                            fontSizeMode: "Fit"
+                            font.pixelSize: Theme.fontSizeSmall
+                            color: item.lastPostNumber < 0 ?
+                                       Theme.primaryColor :
+                                       (item.hasNews ?
+                                            Theme.highlightColor :
+                                            Theme.secondaryColor)
+                            opacity: Theme.opacityHigh
+                            height: 1.2*Theme.fontSizeSmall; width: height
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+
+                            Rectangle {
+                                anchors.centerIn: parent
+                                width: parent.width+Theme.paddingSmall; height: parent.height
+                                radius: 20
+                                opacity: item.lastPostNumber < highest_post_number ?
+                                             Theme.opacityLow :
+                                             Theme.opacityFaint
+                                color: item.hasNews ?
+                                           Theme.secondaryHighlightColor :
+                                           Theme.secondaryColor
+                            }
+                        }
+
+                        Icon {
+                            visible: has_accepted_answer
+                            source: "image://theme/icon-s-accept"
+                            width: Theme.iconSizeSmall
+                            height: width
                             opacity: Theme.opacityLow
-                            color: Theme.secondaryColor
                         }
                     }
 
@@ -233,6 +286,8 @@ Page {
                             width: parent.width
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
+                            color: highlighted || item.hasNews ? Theme.highlightColor
+                                                               : Theme.primaryColor
                         }
 
                         Row {
@@ -245,7 +300,7 @@ Page {
                                wrapMode: Text.Wrap
                                elide: Text.ElideRight
                                width: (parent.width - 2*parent.spacing - catRect.width)/2
-                               color: highlighted ? Theme.secondaryHighlightColor
+                               color: highlighted || item.hasNews ? Theme.secondaryHighlightColor
                                                   : Theme.secondaryColor
                                font.pixelSize: Theme.fontSizeSmall
                                horizontalAlignment: Text.AlignLeft
@@ -257,7 +312,7 @@ Page {
                                wrapMode: Text.Wrap
                                elide: Text.ElideRight
                                width: dateLabel.width
-                               color: highlighted ? Theme.secondaryHighlightColor
+                               color: highlighted || item.hasNews ? Theme.secondaryHighlightColor
                                                   : Theme.secondaryColor
                                font.pixelSize: Theme.fontSizeSmall
                                horizontalAlignment: Text.AlignRight
@@ -281,7 +336,16 @@ Page {
 
             onClicked: {
                 var name = list.model.get(index).name
-                pageStack.push("ThreadView.qml", {"aTitle": title, "topicid": topicid, "posts_count": posts_count});
+                postCountConfig.setValue(topicid, highest_post_number);
+                var oldLast = lastPostNumber;
+                lastPostNumber = highest_post_number;
+                pageStack.push("ThreadView.qml", {
+                                   "aTitle": title,
+                                   "topicid": topicid,
+                                   "posts_count": posts_count,
+                                   "post_number": oldLast,
+                                   "highest_post_number": highest_post_number
+                               });
             }
         }
 

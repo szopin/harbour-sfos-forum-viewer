@@ -32,9 +32,9 @@ Page {
     id: commentpage
     allowedOrientations: Orientation.All
     property int likes
-    property int post_id
+    property int post_id: -1
     property int highest_post_number
-    property int post_number
+    property int post_number: -1
     readonly property string source: application.source + "t/" + topicid
     property string loadmore: source + "/posts.json?post_ids[]="
     property int topicid
@@ -57,6 +57,7 @@ Page {
                 created_at: post.created_at,
                 version: post.version,
                 postid: post.id,
+                post_number: post.post_number,
             });
         }
     }
@@ -219,14 +220,24 @@ Page {
 
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
-            for(var i=post_number - (highest_post_number - posts_count) - 1;i<=post_number;i++){
-                var comment = list.model.get(i)
-                if (post_id && comment && comment.postid === post_id){
-                    positionViewAtIndex(i, ListView.Beginning);
+            if (post_number < 0) return;
+            var comment;
+
+            if (post_id === -1 && post_number >= 0 && post_number !== highest_post_number) {
+                for (var j = 0; j < list.count; j++) {
+                    comment = list.model.get(j);
+                    if (comment && comment.post_number === post_number) {
+                        positionViewAtIndex(j, ListView.Beginning);
+                    }
+                }
+            } else if (post_id >= 0) {
+                for(var i=post_number - (highest_post_number - posts_count) - 1;i<=post_number;i++){
+                    comment = list.model.get(i)
+                    if (post_id && comment && comment.postid === post_id){
+                        positionViewAtIndex(i, ListView.Beginning);
+                    }
                 }
             }
         }
     }
 }
-
-
