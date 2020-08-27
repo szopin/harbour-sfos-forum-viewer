@@ -97,47 +97,47 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="97"/>
+        <location filename="../qml/pages/FirstPage.qml" line="100"/>
         <source>Latest</source>
         <translation>Recientes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="105"/>
+        <location filename="../qml/pages/FirstPage.qml" line="108"/>
         <source>Top</source>
         <translation>Relevantes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="140"/>
+        <location filename="../qml/pages/FirstPage.qml" line="165"/>
         <source>SailfishOS Forum</source>
         <translation>Foro S a i l f i s h</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="153"/>
+        <location filename="../qml/pages/FirstPage.qml" line="178"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="157"/>
+        <location filename="../qml/pages/FirstPage.qml" line="182"/>
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="162"/>
+        <location filename="../qml/pages/FirstPage.qml" line="187"/>
         <source>Reload</source>
         <translation>Recargar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="179"/>
+        <location filename="../qml/pages/FirstPage.qml" line="204"/>
         <source>Nothing to show</source>
         <translation>Nada que mostrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="180"/>
+        <location filename="../qml/pages/FirstPage.qml" line="205"/>
         <source>Is the network enabled?</source>
         <translation>¿Está habilitada la red?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="292"/>
+        <location filename="../qml/pages/FirstPage.qml" line="356"/>
         <source>Load more</source>
         <translation>Cargar más</translation>
     </message>
@@ -211,22 +211,22 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>ThreadView</name>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="111"/>
+        <location filename="../qml/pages/ThreadView.qml" line="112"/>
         <source>Open in external browser</source>
         <translation>Abrir navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="115"/>
+        <location filename="../qml/pages/ThreadView.qml" line="116"/>
         <source>Open directly</source>
         <translation>Abrir directamente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="120"/>
+        <location filename="../qml/pages/ThreadView.qml" line="121"/>
         <source>Search thread</source>
         <translation>Buscar hilo</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/ThreadView.qml" line="174"/>
+        <location filename="../qml/pages/ThreadView.qml" line="175"/>
         <source>%n like(s)</source>
         <translation>
             <numerusform>%n me gusta</numerusform>
@@ -234,12 +234,12 @@ Agradecimiento especial a los contribuyentes:
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="190"/>
+        <location filename="../qml/pages/ThreadView.qml" line="191"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="213"/>
+        <location filename="../qml/pages/ThreadView.qml" line="214"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
