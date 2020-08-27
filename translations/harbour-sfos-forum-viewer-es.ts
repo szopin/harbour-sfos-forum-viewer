@@ -19,7 +19,7 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation>SFSO Foro para Sailfish SO
+        <translation>Un foro cliente para SailfishSO
 Por: szopin    
 Licencia: MIT 
             
@@ -56,7 +56,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="52"/>
         <source>Is the network enabled?</source>
-        <translation>¿Está habilitada la red?</translation>
+        <translation>¿Está conectado a internet?</translation>
     </message>
     <message>
         <location filename="../qml/pages/CategorySelect.qml" line="61"/>
@@ -79,7 +79,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="45"/>
         <source>Latest posts</source>
-        <translation>Publicac. recientes</translation>
+        <translation>Publicaci. recientes</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
@@ -91,7 +91,7 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/cover/CoverPage.qml" line="122"/>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation>Visor de foros</translation>
+        <translation>Visor de foro</translation>
     </message>
 </context>
 <context>
@@ -109,7 +109,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="140"/>
         <source>SailfishOS Forum</source>
-        <translation>SailfishSO foro</translation>
+        <translation>Foro S a i l f i s h</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="153"/>
