@@ -8,21 +8,6 @@
         <translation>关于</translation>
     </message>
     <message>
-        <source>SFOS Forum Viewer for Sailfish OS v%1
-By szopin
-Licensed under MIT
-App icon by dseight
-AboutPage art by Hanibu
-Special thanks to contributors:
-</source>
-        <translation>适用于旗鱼系统版本 v%1 的旗鱼系统论坛查看器
-开发者为 szopin
-使用 MIT 许可协议
-图标制作者为 dseight
-关于页艺术设计者为 Hanibu
-特别感谢贡献者：</translation>
-    </message>
-    <message>
         <source>, </source>
         <extracomment>contributors list separator</extracomment>
         <translation>， </translation>
@@ -34,6 +19,23 @@ Special thanks to contributors:
     <message>
         <source>License</source>
         <translation>许可协议</translation>
+    </message>
+    <message>
+        <source>SFOS Forum Viewer for Sailfish OS v%1
+By szopin
+Licensed under MIT
+
+App icon by dseight
+AboutPage art by Hanibu
+
+Special thanks to contributors:
+</source>
+        <translation>适用于旗鱼系统版本 v%1 的旗鱼系统论坛查看器
+开发者为 szopin
+使用 MIT 许可协议
+图标制作者为 dseight
+关于页艺术设计者为 Hanibu
+特别感谢贡献者：</translation>
     </message>
 </context>
 <context>
@@ -132,6 +134,14 @@ Special thanks to contributors:
         <source>Revision history</source>
         <translation>编辑历史</translation>
     </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
@@ -179,7 +189,7 @@ Special thanks to contributors:
     <message numerus="yes">
         <source>%n like(s)</source>
         <translation>
-        <numerusform>%n 个赞</numerusform>
+            <numerusform>%n 个赞</numerusform>
         </translation>
     </message>
     <message>
