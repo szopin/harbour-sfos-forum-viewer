@@ -46,4 +46,6 @@ TRANSLATIONS += \
     translations/harbour-sfos-forum-viewer-en.ts \
     translations/harbour-sfos-forum-viewer-es.ts \
     translations/harbour-sfos-forum-viewer-ru.ts \
+    translations/harbour-sfos-forum-viewer-sv.ts \
     translations/harbour-sfos-forum-viewer-zh_CN.ts
+
