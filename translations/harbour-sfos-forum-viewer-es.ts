@@ -137,7 +137,7 @@ Agradecimiento especial a los contribuyentes:
         <translation>¿Está habilitada la red?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="356"/>
+        <location filename="../qml/pages/FirstPage.qml" line="359"/>
         <source>Load more</source>
         <translation>Cargar más</translation>
     </message>

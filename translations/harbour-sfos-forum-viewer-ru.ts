@@ -137,7 +137,7 @@ Special thanks to contributors:
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="356"/>
+        <location filename="../qml/pages/FirstPage.qml" line="359"/>
         <source>Load more</source>
         <translation>Загрузить еще</translation>
     </message>

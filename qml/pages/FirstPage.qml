@@ -286,8 +286,11 @@ Page {
                             width: parent.width
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
-                            color: highlighted || item.hasNews ? Theme.highlightColor
-                                                               : Theme.primaryColor
+                            color: highlighted || item.hasNews
+                                   ? Theme.highlightColor
+                                   : (item.lastPostNumber < highest_post_number
+                                      ? Theme.primaryColor
+                                      : Theme.secondaryColor)
                         }
 
                         Row {
