@@ -5,7 +5,7 @@
     <name>About</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>SFOS Forum Viewer for Sailfish OS v%1
@@ -17,169 +17,177 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>SFOS Forum Viewer für Sailfish OS v%1
+Von szopin
+Lizenziert unter der MIT Lizenz
+
+App icon von dseight
+AboutPage Design von Hanibu
+
+Vielen Dank an die Mitwirkenden:
+</translation>
     </message>
     <message>
         <source>, </source>
         <extracomment>contributors list separator</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>, </translation>
     </message>
     <message>
         <source>Source code</source>
-        <translation type="unfinished"></translation>
+        <translation>Quellcode</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lizenz</translation>
     </message>
 </context>
 <context>
     <name>CategorySelect</name>
     <message>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Letzte</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Top</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nichts zum anzeigen</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ist die Netzwerkverbindung aktiviert?</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Latest posts</source>
-        <translation type="unfinished"></translation>
+        <translation>Letzte Beiträge</translation>
     </message>
     <message>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>SailfishOS</translation>
     </message>
     <message>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Forum Viewer</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation type="unfinished"></translation>
+        <translation>Letzte</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Top</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation type="unfinished"></translation>
+        <translation>SailfishOS Forum</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Neu laden</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation>Nichts zum anzuzeigen</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ist die Netzwerkverbindung aktiviert?</translation>
     </message>
     <message>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehr laden</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchen</translation>
     </message>
 </context>
 <context>
     <name>OpenLink</name>
     <message>
         <source>Open URL in webview?</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne URL in Webview?</translation>
     </message>
     <message>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>Extern öffnen</translation>
     </message>
 </context>
 <context>
     <name>PostView</name>
     <message>
         <source>Revision history</source>
-        <translation type="unfinished"></translation>
+        <translation>Revisions Historie</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorheriger</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Nächster</translation>
     </message>
 </context>
 <context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche in &quot;%1&quot;</translation>
     </message>
     <message>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Keine Ergebnisse</translation>
     </message>
     <message>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>in &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Search in all threads</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche in allen Threads</translation>
     </message>
     <message>
         <source>Search in the current thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche im aktuellen Thread</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchen</translation>
     </message>
 </context>
 <context>
     <name>ThreadView</name>
     <message>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Im externen Browser öffnen</translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Direkt öffnen</translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche Thread</translation>
     </message>
     <message numerus="yes">
         <source>%n like(s)</source>
@@ -194,7 +202,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Revision history</source>
-        <translation type="unfinished"></translation>
+        <translation>Revisions Historie</translation>
     </message>
 </context>
 <context>
