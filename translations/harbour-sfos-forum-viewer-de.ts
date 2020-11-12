@@ -17,12 +17,12 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation>SFOS Forum Viewer für Sailfish OS v%1
-Von szopin
-Lizenziert unter der MIT Lizenz
+        <translation>SFOS-Forenbetrachter für Sailfish OS v%1
+von szopin
+Lizenziert unter der MIT-Lizenz
 
-App icon von dseight
-AboutPage Design von Hanibu
+App-Icon von dseight
+Design der „Über“-Seite von Hanibu
 
 Vielen Dank an die Mitwirkenden:
 </translation>
@@ -45,11 +45,11 @@ Vielen Dank an die Mitwirkenden:
     <name>CategorySelect</name>
     <message>
         <source>Categories</source>
-        <translation>Kategorie</translation>
+        <translation>Kategorien</translation>
     </message>
     <message>
         <source>Latest</source>
-        <translation>Letzte</translation>
+        <translation>Neuigkeiten</translation>
     </message>
     <message>
         <source>Top</source>
@@ -57,7 +57,7 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation>Nichts zum anzeigen</translation>
+        <translation>Nichts anzuzeigen</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
@@ -78,14 +78,14 @@ Vielen Dank an die Mitwirkenden:
     <message>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation>Forum Viewer</translation>
+        <translation>Forenbetrachter</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation>Letzte</translation>
+        <translation>Neuigkeiten</translation>
     </message>
     <message>
         <source>Top</source>
@@ -93,7 +93,7 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation>SailfishOS Forum</translation>
+        <translation>SailfishOS-Forum</translation>
     </message>
     <message>
         <source>Reload</source>
@@ -101,7 +101,7 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation>Nichts zum anzuzeigen</translation>
+        <translation>Nichts anzuzeigen</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
@@ -124,7 +124,7 @@ Vielen Dank an die Mitwirkenden:
     <name>OpenLink</name>
     <message>
         <source>Open URL in webview?</source>
-        <translation>Öffne URL in Webview?</translation>
+        <translation>URL in der Webansicht öffnen?</translation>
     </message>
     <message>
         <source>Open externally</source>
@@ -135,7 +135,7 @@ Vielen Dank an die Mitwirkenden:
     <name>PostView</name>
     <message>
         <source>Revision history</source>
-        <translation>Revisions Historie</translation>
+        <translation>Änderungsverlauf</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -187,22 +187,22 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Search thread</source>
-        <translation>Suche Thread</translation>
+        <translation>Suche im Thread</translation>
     </message>
     <message numerus="yes">
         <source>%n like(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Like</numerusform>
+            <numerusform>%n Likes</numerusform>
         </translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <source>Revision history</source>
-        <translation>Revisions Historie</translation>
+        <translation>Änderungsverlauf</translation>
     </message>
 </context>
 <context>
