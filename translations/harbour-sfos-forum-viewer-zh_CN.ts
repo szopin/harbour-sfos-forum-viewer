@@ -10,7 +10,7 @@
     <message>
         <source>, </source>
         <extracomment>contributors list separator</extracomment>
-        <translation>， </translation>
+        <translation>, </translation>
     </message>
     <message>
         <source>Source code</source>
@@ -32,7 +32,7 @@ Special thanks to contributors:
 </source>
         <translation>适用于旗鱼系统版本 v%1 的旗鱼系统论坛查看器
 开发者为 szopin
-使用 MIT 许可协议
+采用 MIT 许可协议
 图标制作者为 dseight
 关于页艺术设计者为 Hanibu
 特别感谢贡献者：</translation>
@@ -86,7 +86,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Top</source>
-        <translation>顶部</translation>
+        <translation>排行</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
@@ -121,7 +121,7 @@ Special thanks to contributors:
     <name>OpenLink</name>
     <message>
         <source>Open URL in webview?</source>
-        <translation>用 webview 打开 URL</translation>
+        <translation>是否使用 webview 打开 URL？</translation>
     </message>
     <message>
         <source>Open externally</source>
@@ -136,11 +136,11 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>上一页</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>下一页</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@ Special thanks to contributors:
     <name>ThreadView</name>
     <message>
         <source>Open in external browser</source>
-        <translation>用外部浏览器打开</translation>
+        <translation>使用外部浏览器打开</translation>
     </message>
     <message>
         <source>Open directly</source>
