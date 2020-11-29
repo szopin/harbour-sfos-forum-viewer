@@ -139,15 +139,15 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Föregående</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Nästa</translation>
     </message>
     <message>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ formatering</translation>
     </message>
 </context>
 <context>
@@ -210,7 +210,7 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternativ formatering</translation>
     </message>
 </context>
 <context>
