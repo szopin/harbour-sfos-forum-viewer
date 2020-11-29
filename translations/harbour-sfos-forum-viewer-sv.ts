@@ -145,6 +145,10 @@ Speciellt tack till medverkande:
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
@@ -203,6 +207,10 @@ Speciellt tack till medverkande:
     <message>
         <source>Revision history</source>
         <translation>Revisionshistorik</translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

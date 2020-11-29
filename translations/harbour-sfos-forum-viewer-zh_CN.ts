@@ -142,6 +142,10 @@ Special thanks to contributors:
         <source>Next</source>
         <translation>下一页</translation>
     </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
@@ -199,6 +203,10 @@ Special thanks to contributors:
     <message>
         <source>Revision history</source>
         <translation>编辑历史</translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

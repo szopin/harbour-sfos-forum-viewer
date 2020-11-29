@@ -158,19 +158,24 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>PostView</name>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="50"/>
+        <location filename="../qml/pages/PostView.qml" line="59"/>
         <source>Previous</source>
         <translation>Anterior</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="56"/>
+        <location filename="../qml/pages/PostView.qml" line="53"/>
         <source>Next</source>
         <translation>Siguiente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="67"/>
+        <location filename="../qml/pages/PostView.qml" line="70"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/PostView.qml" line="70"/>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -239,9 +244,14 @@ Agradecimiento especial a los contribuyentes:
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="214"/>
+        <location filename="../qml/pages/ThreadView.qml" line="215"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="220"/>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -209,10 +209,16 @@ Page {
                 }
             }
             menu: ContextMenu {
-                hasContent: version > 1 && updated_at !== created_at
+                hasContent: (version > 1 && updated_at !== created_at) || cooked.indexOf("<code") !== -1
                 MenuItem {
+                    visible: version > 1 && updated_at !== created_at
                     text: qsTr("Revision history")
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version});
+                }
+                MenuItem {
+                    visible: cooked.indexOf("<code") !== -1
+                    text: qsTr("Alternative formatting")
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked});
                 }
             }
         }

@@ -145,6 +145,10 @@ Special thanks to contributors:
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SearchPage</name>
@@ -202,6 +206,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Revision history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
