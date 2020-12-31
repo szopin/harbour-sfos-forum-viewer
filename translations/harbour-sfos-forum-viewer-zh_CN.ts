@@ -144,7 +144,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>替代格式</translation>
     </message>
 </context>
 <context>
@@ -206,7 +206,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>替代格式</translation>
     </message>
 </context>
 <context>
