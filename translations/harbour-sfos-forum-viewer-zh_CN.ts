@@ -50,7 +50,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Top</source>
-        <translation>顶部</translation>
+        <translation>排行</translation>
     </message>
     <message>
         <source>Nothing to show</source>
