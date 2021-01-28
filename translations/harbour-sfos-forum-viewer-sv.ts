@@ -214,7 +214,7 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Copy link to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera länk till urklipp</translation>
     </message>
 </context>
 <context>
