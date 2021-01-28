@@ -109,6 +109,10 @@ Page {
         VerticalScrollDecorator {}
         PullDownMenu{
             MenuItem {
+                text: qsTr("Copy link to clipboard")
+                onClicked: Clipboard.text = source
+            }
+            MenuItem {
                 text: qsTr("Open in external browser")
                 onClicked: Qt.openUrlExternally(source)
             }

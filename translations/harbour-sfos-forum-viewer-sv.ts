@@ -212,6 +212,10 @@ Speciellt tack till medverkande:
         <source>Alternative formatting</source>
         <translation>Alternativ formatering</translation>
     </message>
+    <message>
+        <source>Copy link to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-sfos-forum-viewer</name>

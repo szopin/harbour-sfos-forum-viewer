@@ -217,21 +217,26 @@ Agradecimiento especial a los contribuyentes:
     <name>ThreadView</name>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="112"/>
+        <source>Copy link to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="116"/>
         <source>Open in external browser</source>
         <translation>Abrir navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="116"/>
+        <location filename="../qml/pages/ThreadView.qml" line="120"/>
         <source>Open directly</source>
         <translation>Abrir directamente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="121"/>
+        <location filename="../qml/pages/ThreadView.qml" line="125"/>
         <source>Search thread</source>
         <translation>Buscar hilo</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/ThreadView.qml" line="175"/>
+        <location filename="../qml/pages/ThreadView.qml" line="179"/>
         <source>%n like(s)</source>
         <translation>
             <numerusform>%n me gusta</numerusform>
@@ -239,17 +244,17 @@ Agradecimiento especial a los contribuyentes:
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="191"/>
+        <location filename="../qml/pages/ThreadView.qml" line="195"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="215"/>
+        <location filename="../qml/pages/ThreadView.qml" line="219"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="220"/>
+        <location filename="../qml/pages/ThreadView.qml" line="224"/>
         <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
