@@ -210,7 +210,7 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Copy link to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>复制链接到剪切板</translation>
     </message>
 </context>
 <context>
