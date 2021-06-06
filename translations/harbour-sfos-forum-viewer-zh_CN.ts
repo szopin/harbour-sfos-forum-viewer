@@ -212,6 +212,10 @@ Special thanks to contributors:
         <source>Copy link to clipboard</source>
         <translation>复制链接到剪切板</translation>
     </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-sfos-forum-viewer</name>

@@ -213,7 +213,12 @@ Page {
                 }
             }
             menu: ContextMenu {
-                hasContent: (version > 1 && updated_at !== created_at) || cooked.indexOf("<code") !== -1
+                //hasContent: (version > 1 && updated_at !== created_at) || cooked.indexOf("<code") !== -1
+                MenuItem{
+                    text: qsTr("Copy to clipboard");
+                    onClicked: Clipboard.text = cooked
+                }
+
                 MenuItem {
                     visible: version > 1 && updated_at !== created_at
                     text: qsTr("Revision history")

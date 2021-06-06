@@ -249,12 +249,17 @@ Agradecimiento especial a los contribuyentes:
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="219"/>
+        <location filename="../qml/pages/ThreadView.qml" line="218"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="224"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="224"/>
+        <location filename="../qml/pages/ThreadView.qml" line="229"/>
         <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
