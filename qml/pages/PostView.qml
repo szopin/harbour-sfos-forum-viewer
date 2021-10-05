@@ -5,6 +5,7 @@ Page {
     id: posthistory
     allowedOrientations: Orientation.All
     property int postid
+    property int vmode
     property int curRev
     property string prevRev
     property string nexRev
@@ -12,6 +13,7 @@ Page {
     property string aTitle
     property string revisions
     property string titles
+    property string username 
 
     function getcomments(i){
             var xhr = new XMLHttpRequest;
@@ -67,7 +69,7 @@ Page {
 
             PageHeader {
                 id: pageHeader
-                title: cooked ? qsTr("Alternative formatting") : qsTr("Revision history")
+                title: cooked ? username ? username : qsTr("Alternative formatting") : qsTr("Revision history")
                 description: cooked ? "" : aTitle
             }
 
@@ -85,7 +87,7 @@ Page {
                             "  color: " + Theme.highlightColor + ";" +
                             "} " +
                             "</style>" +titles + "</p>" +revisions
-                textFormat: cooked ? Text.StyledText : Text.RichText
+                textFormat: cooked ? username ? Text.RichText : Text.StyledText : Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 onLinkActivated: pageStack.push("OpenLink.qml", {link: link});

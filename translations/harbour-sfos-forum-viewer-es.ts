@@ -158,22 +158,22 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>PostView</name>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="59"/>
+        <location filename="../qml/pages/PostView.qml" line="61"/>
         <source>Previous</source>
         <translation>Anterior</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="53"/>
+        <location filename="../qml/pages/PostView.qml" line="55"/>
         <source>Next</source>
         <translation>Siguiente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="70"/>
+        <location filename="../qml/pages/PostView.qml" line="72"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/PostView.qml" line="70"/>
+        <location filename="../qml/pages/PostView.qml" line="72"/>
         <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -216,27 +216,27 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>ThreadView</name>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="112"/>
+        <location filename="../qml/pages/ThreadView.qml" line="159"/>
         <source>Copy link to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="116"/>
+        <location filename="../qml/pages/ThreadView.qml" line="163"/>
         <source>Open in external browser</source>
         <translation>Abrir navegador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="120"/>
+        <location filename="../qml/pages/ThreadView.qml" line="167"/>
         <source>Open directly</source>
         <translation>Abrir directamente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="125"/>
+        <location filename="../qml/pages/ThreadView.qml" line="172"/>
         <source>Search thread</source>
         <translation>Buscar hilo</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/pages/ThreadView.qml" line="179"/>
+        <location filename="../qml/pages/ThreadView.qml" line="226"/>
         <source>%n like(s)</source>
         <translation>
             <numerusform>%n me gusta</numerusform>
@@ -244,23 +244,33 @@ Agradecimiento especial a los contribuyentes:
         </translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="195"/>
+        <location filename="../qml/pages/ThreadView.qml" line="242"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="218"/>
+        <location filename="../qml/pages/ThreadView.qml" line="280"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="224"/>
+        <location filename="../qml/pages/ThreadView.qml" line="286"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="229"/>
+        <location filename="../qml/pages/ThreadView.qml" line="291"/>
         <source>Alternative formatting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="296"/>
+        <source>Show replied to post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="302"/>
+        <source>Uncensor post</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -211,6 +211,14 @@ Special thanks to contributors:
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show replied to post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uncensor post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-sfos-forum-viewer</name>

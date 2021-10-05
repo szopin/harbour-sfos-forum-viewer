@@ -37,11 +37,52 @@ Page {
     property int post_number: -1
     readonly property string source: application.source + "t/" + topicid
     property string loadmore: source + "/posts.json?post_ids[]="
-    property int topicid
+    property string topicid
     property string url
     property string aTitle
+    property var reply_to
+    property int last_post: 0
     property int posts_count
+    property bool cooked_hidden
 
+            function getRedirect(link){
+        var xhr = new XMLHttpRequest;
+        xhr.open("GET", link);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                var xhrlocation = xhr.getResponseHeader("location");
+
+                var testa =  /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/(\d+)\/?(\d+)?$/.exec(xhrlocation);
+                pageStack.push("ThreadView.qml", { "topicid":  testa[1]});
+            }    
+        }
+        xhr.send();
+
+    }
+    
+    function findOP(filter){
+        for (var j=0; j < commodel.count; j++){
+            if (commodel.get(j).post_number == filter){
+
+                pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
+            }
+        }
+    }
+    function uncensor(postid, index){
+        var xhr3 = new XMLHttpRequest;
+        xhr3.open("GET", "https://forum.sailfishos.org/posts/" + postid + "/cooked.json");
+        xhr3.onreadystatechange = function() {
+            if (xhr3.readyState === XMLHttpRequest.DONE)   var data = JSON.parse(xhr3.responseText);
+
+            list.model.setProperty(index, "cooked", data.cooked);
+            list.model.setProperty(index, "cooked_hidden", false);
+        }
+        xhr3.send();
+
+    }
+        
+    
+                
     function appendPosts(posts) {
         var posts_length = posts.length;
         for (var i=0;i<posts_length;i++) {
@@ -58,7 +99,11 @@ Page {
                 version: post.version,
                 postid: post.id,
                 post_number: post.post_number,
+                reply_to: post.reply_to_post_number,
+                last_postid: last_post,
+                cooked_hidden: post.cooked_hidden 
             });
+            last_post = post.post_number;
         }
     }
 
@@ -68,6 +113,8 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
+                if (aTitle == "") aTitle = data.title;
+                posts_count = data.posts_count;
                 var post_stream = data.post_stream;
                 if (posts_count >= 20){
                     var stream = post_stream.stream;
@@ -197,6 +244,12 @@ Page {
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
                         }
+                        Label {
+                            text: reply_to >0 && reply_to !== last_postid ?  "💬"  : ""
+                            color: Theme.secondaryColor
+                            font.pixelSize: Theme.fontSizeSmall
+                            anchors.right: parent.right
+                        }
                     }
                 }
 
@@ -209,11 +262,20 @@ Page {
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
                     font.pixelSize: Theme.fontSizeSmall
-                    onLinkActivated: pageStack.push("OpenLink.qml", {link: link});
+                    onLinkActivated:{
+                        var link1= /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/?(\d+)?\/?(\d+)?$/.exec(link)
+                        if (!link1){
+                        pageStack.push("OpenLink.qml", {link: link});
+                        } else if (/^https:\/\/forum.sailfishos.org\/t\/([\w-]+)\/?$/.exec(link)){
+                            getRedirect(link);
+                        }  else {
+                            pageStack.push("ThreadView.qml", { "topicid": link1[1], "post_number": link1[2]-1 });
+                        }
+                    }
                 }
             }
             menu: ContextMenu {
-                //hasContent: (version > 1 && updated_at !== created_at) || cooked.indexOf("<code") !== -1
+
                 MenuItem{
                     text: qsTr("Copy to clipboard");
                     onClicked: Clipboard.text = cooked
@@ -222,13 +284,26 @@ Page {
                 MenuItem {
                     visible: version > 1 && updated_at !== created_at
                     text: qsTr("Revision history")
-                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version});
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, vmode: 0});
                 }
                 MenuItem {
                     visible: cooked.indexOf("<code") !== -1
                     text: qsTr("Alternative formatting")
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked});
                 }
+                MenuItem {
+                    visible: reply_to > 0 && reply_to !== last_postid
+                    text: qsTr("Show replied to post")
+                    onClicked: findOP(reply_to);                    
+               
+                }
+            MenuItem {
+                    visible: cooked_hidden
+                    text: qsTr("Uncensor post")
+                    onClicked: uncensor(postid, index);
+                    
+        
+        }
             }
         }
 
