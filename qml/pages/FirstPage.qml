@@ -34,6 +34,7 @@ Page {
     allowedOrientations: Orientation.All
     property string tid
     property int pageno: 0
+    property string login
     property string viewmode
     property string textname
     property string combined: application.source + (tid ? "c/" + tid : viewmode) + ".json?page=" + pageno
@@ -115,7 +116,10 @@ Page {
         textname = showTextname;
         clearview();
     }
-
+ConfigurationValue {
+        id: loggedin
+        key: "/apps/harbour-sfos-forum-viewer/key"
+    }
     onStatusChanged: {
         if (status === PageStatus.Active){
             pageStack.pushAttached(Qt.resolvedUrl("CategorySelect.qml"));
@@ -178,6 +182,19 @@ Page {
                 text: qsTr("About")
                 onClicked: pageStack.push("About.qml");
             }
+
+            MenuItem {
+                text: qsTr("Login")
+                visible:  loggedin.value != "-1" ? false : true
+                onClicked: pageStack.push("LoginPage.qml");
+            }
+
+            MenuItem {
+                text: qsTr("Logout")
+                visible: loggedin.value != "-1" ? true : false
+                onClicked: mainConfig.setValue("key", "-1");
+            }
+
             MenuItem {
                 text: qsTr("Search")
                 onClicked: pageStack.push("SearchPage.qml");
@@ -208,7 +225,9 @@ Page {
         model: ListModel { id: model}
         VerticalScrollDecorator {}
         Component.onCompleted: {
+            login = mainConfig.value("key", "-1");
             showLatest();
+            console.log(login, mainConfig.value("key", 11));
         }
 
         delegate: BackgroundItem {

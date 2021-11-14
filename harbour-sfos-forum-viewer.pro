@@ -13,6 +13,7 @@
 TARGET = harbour-sfos-forum-viewer
 
 CONFIG += sailfishapp_qml
+PKGCONFIG += sailfishsecrets sailfishcrypto
 
 DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/img/harbour-sfos-forum-viewer.png \
@@ -20,6 +21,9 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/pages/About.qml \
     qml/pages/CategorySelect.qml \
     qml/pages/FirstPage.qml \
+    qml/pages/LoginPage.qml \
+    qml/pages/LoginWeb.qml \
+    qml/pages/NewPost.qml \
     qml/pages/OpenLink.qml \
     qml/pages/SearchPage.qml \
     qml/pages/ThreadView.qml \

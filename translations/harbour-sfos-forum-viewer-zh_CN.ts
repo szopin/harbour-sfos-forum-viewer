@@ -116,6 +116,21 @@ Special thanks to contributors:
         <source>Search</source>
         <translation>搜索</translation>
     </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewPost</name>
+    <message>
+        <source>Enter post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>
@@ -190,12 +205,6 @@ Special thanks to contributors:
         <source>Search thread</source>
         <translation>搜索帖子</translation>
     </message>
-    <message numerus="yes">
-        <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n 个赞</numerusform>
-        </translation>
-    </message>
     <message>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
@@ -222,6 +231,22 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Uncensor post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Like</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlike</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

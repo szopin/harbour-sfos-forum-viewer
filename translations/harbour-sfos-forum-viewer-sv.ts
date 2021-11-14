@@ -119,6 +119,21 @@ Speciellt tack till medverkande:
         <source>Search</source>
         <translation>Sök</translation>
     </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewPost</name>
+    <message>
+        <source>Enter post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>
@@ -193,13 +208,6 @@ Speciellt tack till medverkande:
         <source>Search thread</source>
         <translation>Sök tråd</translation>
     </message>
-    <message numerus="yes">
-        <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n like</numerusform>
-            <numerusform>%n likes</numerusform>
-        </translation>
-    </message>
     <message>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
@@ -226,6 +234,22 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Uncensor post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Like</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlike</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

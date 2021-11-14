@@ -119,6 +119,21 @@ Vielen Dank an die Mitwirkenden:
         <source>Search</source>
         <translation>Suchen</translation>
     </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewPost</name>
+    <message>
+        <source>Enter post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>
@@ -193,13 +208,6 @@ Vielen Dank an die Mitwirkenden:
         <source>Search thread</source>
         <translation>Suche im Thread</translation>
     </message>
-    <message numerus="yes">
-        <source>%n like(s)</source>
-        <translation>
-            <numerusform>%n Like</numerusform>
-            <numerusform>%n Likes</numerusform>
-        </translation>
-    </message>
     <message>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
@@ -226,6 +234,22 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Uncensor post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Like</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlike</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -27,6 +27,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+import Nemo.Configuration 1.0
 
 Page {
     id: commentpage
@@ -37,6 +38,7 @@ Page {
     property int post_number: -1
     readonly property string source: application.source + "t/" + topicid
     property string loadmore: source + "/posts.json?post_ids[]="
+    property string loggedin
     property string topicid
     property string url
     property string aTitle
@@ -44,6 +46,9 @@ Page {
     property int last_post: 0
     property int posts_count
     property bool cooked_hidden
+    property bool acted
+    property bool can_act
+    property bool can_undo
 
             function getRedirect(link){
         var xhr = new XMLHttpRequest;
@@ -51,19 +56,16 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var xhrlocation = xhr.getResponseHeader("location");
-
                 var testa =  /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/(\d+)\/?(\d+)?$/.exec(xhrlocation);
                 pageStack.push("ThreadView.qml", { "topicid":  testa[1]});
-            }    
+            }
         }
         xhr.send();
-
     }
-    
+
     function findOP(filter){
         for (var j=0; j < commodel.count; j++){
             if (commodel.get(j).post_number == filter){
-
                 pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
             }
         }
@@ -73,35 +75,132 @@ Page {
         xhr3.open("GET", "https://forum.sailfishos.org/posts/" + postid + "/cooked.json");
         xhr3.onreadystatechange = function() {
             if (xhr3.readyState === XMLHttpRequest.DONE)   var data = JSON.parse(xhr3.responseText);
-
             list.model.setProperty(index, "cooked", data.cooked);
             list.model.setProperty(index, "cooked_hidden", false);
         }
         xhr3.send();
-
     }
-        
-    
-                
+
+        function like(postid, index){
+        var xhr4 = new XMLHttpRequest;
+        xhr4.open("POST", "https://forum.sailfishos.org/post_actions?id=" + postid + "&post_action_type_id=2&flag_topic=false");
+        xhr4.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr4.onreadystatechange = function() {
+            if (xhr4.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr4.responseText);
+            console.log(data["actions_summary"][0]["count"]);
+            list.model.setProperty(index, "likes", data["actions_summary"][0]["count"]);
+            list.model.setProperty(index, "can_undo", data["actions_summary"][0]["can_undo"]);
+            list.model.setProperty(index, "acted", true);
+        }
+        }
+        xhr4.send();
+    }
+
+        function unlike(postid, index){
+        var xhr4 = new XMLHttpRequest;
+        xhr4.open("DELETE", "https://forum.sailfishos.org/post_actions/" + postid + "?post_action_type_id=2");
+        xhr4.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr4.onreadystatechange = function() {
+            if (xhr4.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr4.responseText);
+            console.log(xhr4.responseText);
+            list.model.setProperty(index, "likes", list.model.get(index).likes - 1);
+            list.model.setProperty(index, "acted", false);
+        }
+        }
+        xhr4.send();
+}
+    function newpost(){
+        var dialog = pageStack.push("NewPost.qml", {topicid: topicid});
+    }
+       function reply(raw, topicid){
+        var xhr = new XMLHttpRequest;
+ const json = {
+    "topic_id": topicid ,
+    "raw": raw
+};
+        console.log(JSON.stringify(json), raw, topicid);
+        xhr.open("POST", "https://forum.sailfishos.org/posts");
+       xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE)   var data = xhr.responseText;
+         console.log(data);
+            list.model.clear();
+            commentpage.getcomments();
+        }
+        xhr.send(JSON.stringify(json));
+}
+
+       function del(postid, index){
+        var xhr = new XMLHttpRequest;
+        xhr.open("DELETE", "https://forum.sailfishos.org/posts/" + postid);
+       xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE)   var data = xhr.responseText;
+         console.log(data);
+            list.model.setProperty(index, "cooked", "(post withdrawn by author, will be automatically deleted in 24 hours unless flagged)");
+            list.model.setProperty(index, "can_delete", false);
+        }
+        xhr.send();
+    }
+
+       function newtopic(raw, title, category){
+        var xhr = new XMLHttpRequest;
+ const json = {
+    "raw": raw,
+    "title": title,
+    "category": category
+};
+        xhr.open("POST", "https://forum.sailfishos.org/posts/");
+       xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE)   var data = JSON.parse(xhr.responseText);
+         console.log(data);
+        }
+        xhr.send(JSON.stringify(json));
+}
+
+       function edit(raw, postid){
+        var xhr = new XMLHttpRequest;
+ const json = [ { "post": { "raw": raw} } ];
+        xhr.open("PUT", "https://forum.sailfishos.org/posts/" +postid);
+       xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE)   var data = JSON.parse(xhr.responseText);
+         console.log(data);
+        }
+        xhr.send(JSON.stringify(json));
+}
+
     function appendPosts(posts) {
         var posts_length = posts.length;
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
+            var yours =  (loggedin.value == "-1") ? false : post.yours
             var action = post.actions_summary[0];
-            likes = action && action.id === 2
-                ? action.count : 0;
+            likes = (loggedin.value == "-1") ? ((action && action.id === 2)
+                ? action.count : 0) : (action.count && action.id === 2
+                ? action.count : 0);
+     can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
+                ? action.can_undo : false
+            acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
             list.model.append({
                 cooked: post.cooked,
                 username: post.username,
                 updated_at: post.updated_at,
                 likes: likes,
+                acted: acted,
+                can_undo: can_undo,
+                yours: yours,
+                can_edit: post.can_edit,
+                can_delete: post.can_delete,
                 created_at: post.created_at,
                 version: post.version,
                 postid: post.id,
                 post_number: post.post_number,
                 reply_to: post.reply_to_post_number,
                 last_postid: last_post,
-                cooked_hidden: post.cooked_hidden 
+                cooked_hidden: post.cooked_hidden
             });
             last_post = post.post_number;
         }
@@ -110,6 +209,7 @@ Page {
     function getcomments(){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", source + ".json");
+        if (loggedin.value != "-1") xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
@@ -123,6 +223,8 @@ Page {
                 }
                 var xhr2 = new XMLHttpRequest;
                 xhr2.open("GET", loadmore);
+                if (loggedin.value != "-1") xhr2.setRequestHeader("User-Api-Key", loggedin.value);
+
                 xhr2.onreadystatechange = function() {
                     if (xhr2.readyState === XMLHttpRequest.DONE) {
                         list.model.clear();
@@ -138,7 +240,10 @@ Page {
         }
         xhr.send();
     }
-
+ConfigurationValue {
+        id: loggedin
+        key: "/apps/harbour-sfos-forum-viewer/key"
+    }
     SilicaListView {
         id: list
         header: PageHeader {
@@ -173,6 +278,11 @@ Page {
                 onClicked: pageStack.push("SearchPage.qml", {"searchid": topicid, "aTitle": aTitle });
 
             }
+            MenuItem {
+                text: qsTr("Post reply")
+                visible: loggedin.value != "-1"
+                onClicked: newpost();
+        }
         }
 
         BusyIndicator {
@@ -223,7 +333,7 @@ Page {
                         }
                         Label {
                             visible: likes > 0
-                            text: qsTr("%n like(s)", "", likes)
+                            text: !acted ? likes + "♥" : likes + "💘"
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                         }
@@ -294,19 +404,31 @@ Page {
                 MenuItem {
                     visible: reply_to > 0 && reply_to !== last_postid
                     text: qsTr("Show replied to post")
-                    onClicked: findOP(reply_to);                    
-               
+                    onClicked: findOP(reply_to);
+
                 }
             MenuItem {
                     visible: cooked_hidden
                     text: qsTr("Uncensor post")
                     onClicked: uncensor(postid, index);
-                    
-        
+                }
+                MenuItem {
+                    visible: loggedin.value != "-1" && !acted && !yours
+                    text: qsTr("Like")
+                    onClicked: like(postid, index);
+                }
+        MenuItem {
+                    visible: loggedin.value != "-1" && acted && !yours && can_undo
+                    text: qsTr("Unlike")
+                    onClicked: unlike(postid, index);
         }
+                MenuItem {
+                    visible: loggedin.value != "-1"  && yours && can_delete
+                    text: qsTr("Delete")
+                    onClicked: del(postid, index);
+                }
             }
         }
-
 
         Component.onCompleted: commentpage.getcomments();
         onCountChanged: {
