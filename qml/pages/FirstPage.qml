@@ -226,8 +226,9 @@ ConfigurationValue {
         VerticalScrollDecorator {}
         Component.onCompleted: {
             login = mainConfig.value("key", "-1");
+            mainConfig.setValue("key", login);
             showLatest();
-            console.log(login, mainConfig.value("key", 11));
+            //console.log(login, mainConfig.value("key", 11));
         }
 
         delegate: BackgroundItem {
