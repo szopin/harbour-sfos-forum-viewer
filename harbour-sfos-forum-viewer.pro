@@ -14,6 +14,7 @@ TARGET = harbour-sfos-forum-viewer
 
 CONFIG += sailfishapp_qml
 PKGCONFIG += sailfishsecrets sailfishcrypto
+CONFIG += link_pkgconfig
 
 DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/img/harbour-sfos-forum-viewer.png \
