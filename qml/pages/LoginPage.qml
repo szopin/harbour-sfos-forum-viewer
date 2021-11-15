@@ -100,7 +100,8 @@ function dec(payload){
                    pubkey = gkr.generatedKey.publicKey
 
                     console.log(pubkey)
-                                        var dialog = pageStack.push("LoginWeb.qml", {pubkey: pubkey});
+                    pageStack.completeAnimation();
+                    var dialog = pageStack.push("LoginWeb.qml", {pubkey: pubkey});
                 }
 }
 }
