@@ -11,8 +11,9 @@ Dialog {id: loginDialog
     property string pubkey
     property string encoded: encodeURIComponent(pubkey)
     property string redirect_uri: "https://forum.sailfishos.org/login"
+    property string rand
 
-    property string auth_url: "https://forum.sailfishos.org/user-api-key/new?nonce=12345678&scopes=read,write&client_id=1337&application_name=SFOS-Forum-Viewer&public_key=" + encoded  //"https://forum.sailfishos.org/user-api-key/new?nonce=" + rand + rand2 + "&scopes=read,write&client_id=" + rand2 + rand + rand + rand2 + "&application_name=SFOS-Forum-Viewer" + rand + "&public_key=" + encoded
+    property string auth_url: "https://forum.sailfishos.org/user-api-key/new?nonce=12345678&scopes=read,write&client_id=" + rand + "&application_name=SFOS-Forum-Viewer&public_key=" + encoded  //"https://forum.sailfishos.org/user-api-key/new?nonce=" + rand + rand2 + "&scopes=read,write&client_id=" + rand2 + rand + rand + rand2 + "&application_name=SFOS-Forum-Viewer" + rand + "&public_key=" + encoded
 
     property bool showWebview: true
 

@@ -7,11 +7,12 @@ import Nemo.Configuration 1.0
 
 Page {
 
-        id: page
+    id: page
 
-     property string pubkey
+    property string pubkey
     property var payload
     property var plaintext: dr.plaintext
+    property string rand
 
 
 function dec(payload){
@@ -98,10 +99,11 @@ function dec(payload){
                 } else if (result.code == Crypto.Result.Succeeded) {
                     console.log("GKR: succeeded")
                    pubkey = gkr.generatedKey.publicKey
+                    rand = Math.random().toString().substr(2,8);
 
                     console.log(pubkey)
                     pageStack.completeAnimation();
-                    var dialog = pageStack.push("LoginWeb.qml", {pubkey: pubkey});
+                    var dialog = pageStack.push("LoginWeb.qml", {pubkey: pubkey, rand: rand});
                 }
 }
 }
