@@ -224,36 +224,40 @@ Special thanks to contributors:
 <context>
     <name>ThreadView</name>
     <message>
+        <source>Copy link to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Open in external browser</source>
-        <translation>使用外部浏览器打开</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation>直接打开</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation>搜索帖子</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation>✍️: %1</translation>
-    </message>
-    <message>
-        <source>Revision history</source>
-        <translation>编辑历史</translation>
-    </message>
-    <message>
-        <source>Alternative formatting</source>
-        <translation>替代格式</translation>
-    </message>
-    <message>
-        <source>Copy link to clipboard</source>
-        <translation>复制链接到剪切板</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revision history</source>
+        <translation type="unfinished">编辑历史</translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished">替代格式</translation>
     </message>
     <message>
         <source>Show replied to post</source>
@@ -264,11 +268,11 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Post reply</source>
+        <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Like</source>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -277,10 +281,6 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

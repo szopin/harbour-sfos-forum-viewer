@@ -146,11 +146,11 @@ const json = {
            if(data.errors[0]){
                    pageStack.completeAnimation();
                pageStack.push("Error.qml", {errortext: xhr.responseText});
-               }else{
+               }
         console.log(data);
            list.model.clear();
            commentpage.getcomments();
-               }
+
            }
        }
        xhr.send(JSON.stringify(json));
@@ -171,11 +171,11 @@ const json = {
            if(data.errors[0]){
                    pageStack.completeAnimation();
                pageStack.push("Error.qml", {errortext: xhr.responseText});
-               }else{
-        console.log(data);
+               }
+        console.log(xhr.responseText);
            list.model.clear();
            commentpage.getcomments();
-               }
+
            }
        }
        xhr.send(JSON.stringify(json));
@@ -185,14 +185,21 @@ const json = {
        xhr.open("DELETE", "https://forum.sailfishos.org/posts/" + postid);
       xhr.setRequestHeader("User-Api-Key", loggedin.value);
        xhr.onreadystatechange = function() {
-           if (xhr.readyState === XMLHttpRequest.DONE)   var data = xhr.responseText;
-        console.log(data);
+           if (xhr.readyState === XMLHttpRequest.DONE){
+               var data = JSON.parse(xhr.responseText);
+               if(data.errors[0]){
+                   pageStack.completeAnimation();
+                   pageStack.push("Error.qml", {errortext: xhr.responseText});
+                   }
+                 console.log(xhr.responseText);
            list.model.setProperty(index, "cooked", "(post withdrawn by author, will be automatically deleted in 24 hours unless flagged)");
            list.model.setProperty(index, "can_delete", false);
+
+           }
        }
        xhr.send();
-   }
 
+}
       function edit(raw, postid){
        var xhr = new XMLHttpRequest;
 const json = [ { "post": { "raw": raw} } ];

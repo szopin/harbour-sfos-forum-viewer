@@ -227,36 +227,40 @@ Speciellt tack till medverkande:
 <context>
     <name>ThreadView</name>
     <message>
+        <source>Copy link to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Open in external browser</source>
-        <translation>Öppna i extern webbläsare</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation>Öppna direkt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation>Sök tråd</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation>✍️: %1</translation>
-    </message>
-    <message>
-        <source>Revision history</source>
-        <translation>Revisionshistorik</translation>
-    </message>
-    <message>
-        <source>Alternative formatting</source>
-        <translation>Alternativ formatering</translation>
-    </message>
-    <message>
-        <source>Copy link to clipboard</source>
-        <translation>Kopiera länk till urklipp</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revision history</source>
+        <translation type="unfinished">Revisionshistorik</translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
+        <translation type="unfinished">Alternativ formatering</translation>
     </message>
     <message>
         <source>Show replied to post</source>
@@ -267,11 +271,11 @@ Speciellt tack till medverkande:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Post reply</source>
+        <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Like</source>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -280,10 +284,6 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

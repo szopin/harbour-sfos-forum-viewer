@@ -227,35 +227,39 @@ Vielen Dank an die Mitwirkenden:
 <context>
     <name>ThreadView</name>
     <message>
-        <source>Open in external browser</source>
-        <translation>Im externen Browser öffnen</translation>
-    </message>
-    <message>
-        <source>Open directly</source>
-        <translation>Direkt öffnen</translation>
-    </message>
-    <message>
-        <source>Search thread</source>
-        <translation>Suche im Thread</translation>
-    </message>
-    <message>
-        <source>✍️: %1</source>
-        <translation>✍️: %1</translation>
-    </message>
-    <message>
-        <source>Revision history</source>
-        <translation>Änderungsverlauf</translation>
-    </message>
-    <message>
-        <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy link to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Open in external browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open directly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revision history</source>
+        <translation type="unfinished">Änderungsverlauf</translation>
+    </message>
+    <message>
+        <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -267,11 +271,11 @@ Vielen Dank an die Mitwirkenden:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Post reply</source>
+        <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Like</source>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -280,10 +284,6 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

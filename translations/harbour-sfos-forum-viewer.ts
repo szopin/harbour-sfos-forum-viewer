@@ -219,6 +219,10 @@ Special thanks to contributors:
 <context>
     <name>ThreadView</name>
     <message>
+        <source>Copy link to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Open in external browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -231,7 +235,15 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Post reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>✍️: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -243,14 +255,6 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Copy link to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show replied to post</source>
         <translation type="unfinished"></translation>
     </message>
@@ -259,11 +263,11 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Post reply</source>
+        <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Like</source>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -272,10 +276,6 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
