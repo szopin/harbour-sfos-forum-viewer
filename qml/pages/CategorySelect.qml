@@ -99,7 +99,7 @@ Page {
            width: parent.width
            contentHeight: contentCol.height
            onClicked: {
-               findFirstPage().showCategory(slug + "/" + topic, name);
+               findFirstPage().showCategory(slug + "/" + topic, name, topic_template, topic);
                pageStack.navigateBack();
            }
 

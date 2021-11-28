@@ -74,6 +74,13 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
+    <name>Error</name>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
@@ -119,11 +126,34 @@ Special thanks to contributors:
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New thread</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
     <message>
         <source>Enter post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Body</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewThread</name>
+    <message>
+        <source>Enter thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -242,6 +272,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

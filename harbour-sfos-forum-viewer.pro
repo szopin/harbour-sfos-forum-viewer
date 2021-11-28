@@ -21,10 +21,12 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/cover/CoverPage.qml \
     qml/pages/About.qml \
     qml/pages/CategorySelect.qml \
+    qml/pages/Error.qml \
     qml/pages/FirstPage.qml \
     qml/pages/LoginPage.qml \
     qml/pages/LoginWeb.qml \
     qml/pages/NewPost.qml \
+    qml/pages/NewThread.qml \
     qml/pages/OpenLink.qml \
     qml/pages/SearchPage.qml \
     qml/pages/ThreadView.qml \

@@ -95,59 +95,72 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
+    <name>Error</name>
+    <message>
+        <location filename="../qml/pages/Error.qml" line="10"/>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="101"/>
+        <location filename="../qml/pages/FirstPage.qml" line="126"/>
         <source>Latest</source>
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="109"/>
+        <location filename="../qml/pages/FirstPage.qml" line="134"/>
         <source>Top</source>
         <translation>Топ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="169"/>
+        <location filename="../qml/pages/FirstPage.qml" line="197"/>
         <source>SailfishOS Forum</source>
         <translation>Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="182"/>
+        <location filename="../qml/pages/FirstPage.qml" line="210"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="187"/>
+        <location filename="../qml/pages/FirstPage.qml" line="215"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="193"/>
+        <location filename="../qml/pages/FirstPage.qml" line="221"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="199"/>
+        <location filename="../qml/pages/FirstPage.qml" line="226"/>
+        <source>New thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="232"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="204"/>
+        <location filename="../qml/pages/FirstPage.qml" line="237"/>
         <source>Reload</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="221"/>
+        <location filename="../qml/pages/FirstPage.qml" line="254"/>
         <source>Nothing to show</source>
         <translation>Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="222"/>
+        <location filename="../qml/pages/FirstPage.qml" line="255"/>
         <source>Is the network enabled?</source>
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="379"/>
+        <location filename="../qml/pages/FirstPage.qml" line="412"/>
         <source>Load more</source>
         <translation>Загрузить еще</translation>
     </message>
@@ -155,8 +168,31 @@ Special thanks to contributors:
 <context>
     <name>NewPost</name>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="21"/>
+        <location filename="../qml/pages/NewPost.qml" line="43"/>
         <source>Enter post</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="55"/>
+        <source>Body</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewThread</name>
+    <message>
+        <location filename="../qml/pages/NewThread.qml" line="26"/>
+        <source>Enter thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewThread.qml" line="33"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewThread.qml" line="44"/>
+        <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -234,72 +270,77 @@ Special thanks to contributors:
 <context>
     <name>ThreadView</name>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="264"/>
+        <location filename="../qml/pages/ThreadView.qml" line="298"/>
         <source>Copy link to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="268"/>
+        <location filename="../qml/pages/ThreadView.qml" line="302"/>
         <source>Open in external browser</source>
         <translation>Открыть в браузере</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="272"/>
+        <location filename="../qml/pages/ThreadView.qml" line="306"/>
         <source>Open directly</source>
         <translation>Открыть в приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="277"/>
+        <location filename="../qml/pages/ThreadView.qml" line="311"/>
         <source>Search thread</source>
         <translation>Искать в теме</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="282"/>
+        <location filename="../qml/pages/ThreadView.qml" line="316"/>
         <source>Post reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="352"/>
+        <location filename="../qml/pages/ThreadView.qml" line="386"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="390"/>
+        <location filename="../qml/pages/ThreadView.qml" line="424"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="396"/>
+        <location filename="../qml/pages/ThreadView.qml" line="430"/>
         <source>Revision history</source>
         <translation>История правок</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="401"/>
+        <location filename="../qml/pages/ThreadView.qml" line="435"/>
         <source>Alternative formatting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="406"/>
+        <location filename="../qml/pages/ThreadView.qml" line="440"/>
         <source>Show replied to post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="412"/>
+        <location filename="../qml/pages/ThreadView.qml" line="446"/>
         <source>Uncensor post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="417"/>
+        <location filename="../qml/pages/ThreadView.qml" line="451"/>
         <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="422"/>
+        <location filename="../qml/pages/ThreadView.qml" line="456"/>
+        <source>Reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ThreadView.qml" line="461"/>
         <source>Unlike</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="427"/>
+        <location filename="../qml/pages/ThreadView.qml" line="466"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
