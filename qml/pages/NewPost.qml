@@ -14,13 +14,17 @@ Dialog {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
     }
 
-            function getraw(postid){
+    function getraw(postid){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", "https://forum.sailfishos.org/posts/" + postid + ".json");
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
-            raw = data["raw"];
-                postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n";
+                raw = data["raw"];
+                if(username){
+                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n";
+                } else {
+                    postbody.text = raw;
+                }
                 return raw;
             }
         }
@@ -28,35 +32,37 @@ Dialog {
     }
     canAccept: postbody.text.length >19
 
-        onAccepted: {
+    onAccepted: {
         if(username){
-        findFirstPage().replytopost(postbody.text, topicid, post_number);
-    } else {
-        findFirstPage().reply(postbody.text, topicid);
+            findFirstPage().replytopost(postbody.text, topicid, post_number);
+        } else if (!postid){
+            findFirstPage().reply(postbody.text, topicid);
+        } else {
+            findFirstPage().edit(postbody.text, postid);
+        }
     }
-    }
-                SilicaFlickable{
+    SilicaFlickable{
         id: flick
         anchors.fill: parent
-                PageHeader {
-                    id: pageHeader
-                    title: qsTr("Enter post");
-                }
-                TextArea {
-                    id: postbody
-                    text: raw
-        anchors.top: pageHeader.bottom
-        width: parent.width
+        PageHeader {
+            id: pageHeader
+            title: username ? qsTr("Enter post") : !postid ? qsTr("Enter post") : qsTr("Edit post");
+        }
+        TextArea {
+            id: postbody
+            text: raw
+            anchors.top: pageHeader.bottom
+            width: parent.width
 
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        softwareInputPanelEnabled: true
-                 placeholderText: qsTr("Body");
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            softwareInputPanelEnabled: true
+            placeholderText: qsTr("Body");
 
 
-                    }
+        }
 
     }
-Component.onCompleted: getraw(postid);
-    }
+    Component.onCompleted: getraw(postid);
+}

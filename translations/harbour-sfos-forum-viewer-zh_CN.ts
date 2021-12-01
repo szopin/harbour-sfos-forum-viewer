@@ -146,6 +146,10 @@ Special thanks to contributors:
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewThread</name>
@@ -281,6 +285,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

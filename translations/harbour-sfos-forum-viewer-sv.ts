@@ -149,6 +149,10 @@ Speciellt tack till medverkande:
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit post</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewThread</name>
@@ -284,6 +288,10 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
