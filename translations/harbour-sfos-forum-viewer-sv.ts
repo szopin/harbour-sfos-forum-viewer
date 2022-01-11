@@ -85,7 +85,7 @@ Speciellt tack till medverkande:
     <name>Error</name>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel:</translation>
     </message>
 </context>
 <context>
@@ -128,45 +128,45 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga in</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga ut</translation>
     </message>
     <message>
         <source>New thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny tråd</translation>
     </message>
 </context>
 <context>
     <name>NewPost</name>
     <message>
         <source>Enter post</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka inlägget</translation>
     </message>
     <message>
         <source>Body</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
     <message>
         <source>Edit post</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera inlägget</translation>
     </message>
 </context>
 <context>
     <name>NewThread</name>
     <message>
         <source>Enter thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka tråden</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Rubrik</translation>
     </message>
     <message>
         <source>Body</source>
-        <translation type="unfinished"></translation>
+        <translation>Text</translation>
     </message>
 </context>
 <context>
@@ -232,67 +232,67 @@ Speciellt tack till medverkande:
     <name>ThreadView</name>
     <message>
         <source>Copy link to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera länk till urklipp</translation>
     </message>
     <message>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna i extern webbläsare</translation>
     </message>
     <message>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna direkt</translation>
     </message>
     <message>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök tråd</translation>
     </message>
     <message>
         <source>Post reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka svar</translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera till urklipp</translation>
     </message>
     <message>
         <source>Revision history</source>
-        <translation type="unfinished">Revisionshistorik</translation>
+        <translation>Revisionshistorik</translation>
     </message>
     <message>
         <source>Alternative formatting</source>
-        <translation type="unfinished">Alternativ formatering</translation>
+        <translation>Alternativ formatering</translation>
     </message>
     <message>
         <source>Show replied to post</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa besvarat inlägg</translation>
     </message>
     <message>
         <source>Uncensor post</source>
-        <translation type="unfinished"></translation>
+        <translation>Censurera inte inlägget</translation>
     </message>
     <message>
         <source>Like</source>
-        <translation type="unfinished"></translation>
+        <translation>Gilla</translation>
     </message>
     <message>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Svara</translation>
     </message>
     <message>
         <source>Unlike</source>
-        <translation type="unfinished"></translation>
+        <translation>Gilla inte</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigera</translation>
     </message>
 </context>
 <context>
