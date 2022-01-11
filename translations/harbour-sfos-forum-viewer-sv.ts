@@ -153,6 +153,10 @@ Speciellt tack till medverkande:
         <source>Edit post</source>
         <translation>Redigera inlägget</translation>
     </message>
+    <message>
+        <source>Insert quote</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewThread</name>

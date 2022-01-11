@@ -347,6 +347,14 @@ Page {
                 onClicked: newpost();
             }
         }
+            PushUpMenu{
+                visible: loggedin.value != "-1" && !tclosed
+                MenuItem {
+                    text: qsTr("Post reply")
+                    visible: loggedin.value != "-1" && !tclosed
+                    onClicked: newpost();
+                }
+            }
 
         BusyIndicator {
             id: vplaceholder

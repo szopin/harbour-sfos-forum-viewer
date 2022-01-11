@@ -153,6 +153,10 @@ Vielen Dank an die Mitwirkenden:
         <source>Edit post</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Insert quote</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewThread</name>

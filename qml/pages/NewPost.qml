@@ -44,6 +44,16 @@ Dialog {
     SilicaFlickable{
         id: flick
         anchors.fill: parent
+
+        PullDownMenu{
+            visible: postid
+
+            MenuItem{
+                text: qsTr("Insert quote")
+                onClicked: getraw(postid)
+            }
+        }
+
         PageHeader {
             id: pageHeader
             title: username ? qsTr("Enter post") : !postid ? qsTr("Enter post") : qsTr("Edit post");
@@ -64,5 +74,5 @@ Dialog {
         }
 
     }
-    Component.onCompleted: getraw(postid);
+    //Component.onCompleted: getraw(postid);
 }
