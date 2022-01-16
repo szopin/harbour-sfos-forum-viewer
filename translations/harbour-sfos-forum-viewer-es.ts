@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.1" language="es">
 <context>
     <name>About</name>
     <message>
@@ -19,7 +19,7 @@ AboutPage art by Hanibu
 
 Special thanks to contributors:
 </source>
-        <translation>Un foro cliente para SailfishSO
+        <translation>Un foro cliente para Sailfish SO
 Por: szopin    
 Licencia: MIT 
             
@@ -85,7 +85,7 @@ Agradecimiento especial a los contribuyentes:
         <location filename="../qml/cover/CoverPage.qml" line="112"/>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
-        <translation>SailfishSO</translation>
+        <translation>Sailfish SO</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="122"/>
@@ -99,7 +99,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/Error.qml" line="10"/>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Error:</translation>
     </message>
 </context>
 <context>
@@ -117,7 +117,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="199"/>
         <source>SailfishOS Forum</source>
-        <translation>Foro S a i l f i s h</translation>
+        <translation>Foro de S a i l f i s h</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
@@ -127,17 +127,17 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="217"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar sesión</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="223"/>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar sesión</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="228"/>
         <source>New thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo hilo</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="234"/>
@@ -170,22 +170,22 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/NewPost.qml" line="52"/>
         <source>Insert quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Insertar comillas</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewPost.qml" line="59"/>
         <source>Enter post</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar publicación</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewPost.qml" line="59"/>
         <source>Edit post</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar publicación</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewPost.qml" line="71"/>
         <source>Body</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuerpo</translation>
     </message>
 </context>
 <context>
@@ -193,17 +193,17 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/NewThread.qml" line="26"/>
         <source>Enter thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Marcar hilo</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewThread.qml" line="33"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Título</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewThread.qml" line="44"/>
         <source>Body</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuerpo</translation>
     </message>
 </context>
 <context>
@@ -239,7 +239,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/PostView.qml" line="72"/>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato alternativo</translation>
     </message>
 </context>
 <context>
@@ -274,7 +274,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/SearchPage.qml" line="171"/>
         <source>Search in the current thread</source>
-        <translation>Busca en el hilo actual</translation>
+        <translation>Busca en hilo actual</translation>
     </message>
 </context>
 <context>
@@ -282,83 +282,83 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="327"/>
         <source>Copy link to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar enlace al portapapeles</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="331"/>
         <source>Open in external browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir en navegador externo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="335"/>
         <source>Open directly</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir directamente</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="340"/>
         <source>Search thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar hilo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="345"/>
         <location filename="../qml/pages/ThreadView.qml" line="353"/>
         <source>Post reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Responder a publicación</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="423"/>
         <source>✍️: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="461"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar al portapapeles</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="467"/>
         <source>Revision history</source>
-        <translation type="unfinished">Historial de revisiones</translation>
+        <translation>Historial de revisiones</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="472"/>
         <source>Alternative formatting</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato alternativo</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="477"/>
         <source>Show replied to post</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar respondida la publicación</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="483"/>
         <source>Uncensor post</source>
-        <translation type="unfinished"></translation>
+        <translation>Publicación sin censura</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="488"/>
         <source>Like</source>
-        <translation type="unfinished"></translation>
+        <translation>Gustar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="493"/>
         <source>Reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Responder</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="498"/>
         <source>Unlike</source>
-        <translation type="unfinished"></translation>
+        <translation>No gustar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="503"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ThreadView.qml" line="508"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar</translation>
     </message>
 </context>
 <context>
