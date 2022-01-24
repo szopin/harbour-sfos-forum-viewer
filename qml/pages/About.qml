@@ -50,7 +50,7 @@ Page {
                 id: appIcon
                 fillMode: Image.PreserveAspectFit
                 smooth: true
-                source: "../img/harbour-sfos-forum-viewer.png"
+                source: "../icons/86x86/harbour-sfos-forum-viewer.png"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -61,7 +61,7 @@ Page {
 
             Label {
                 id: appName
-                text: "SFOS Forum Viewer" // not to be translated for now
+                text: qsTr("SFOS Forum") 
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.fontSizeLarge
