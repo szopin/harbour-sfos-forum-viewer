@@ -440,11 +440,12 @@ Page {
                           "</style>" +
                           "<p>" + cooked + "</p>"
                     width: parent.width
+                    baseUrl: application.source
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
                     font.pixelSize: Theme.fontSizeSmall
                     onLinkActivated:{
-                        var link1= /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/?(\d+)?\/?(\d+)?$/.exec(link)
+                        var link1= /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/?(\d+)?\/?(\d+)?/.exec(link)
                         if (!link1){
                             pageStack.push("OpenLink.qml", {link: link});
                         } else if (/^https:\/\/forum.sailfishos.org\/t\/([\w-]+)\/?$/.exec(link)){

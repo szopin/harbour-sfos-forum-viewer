@@ -15,3 +15,6 @@ Name[de]=SFOS-Forum
 Name[en]=SFOS Forum
 Name[fr]=Forum SFOS
 Name[ru]=Форум SFOS
+
+[X-Sailjail]
+Permissions=Internet;WebView;Secrets
