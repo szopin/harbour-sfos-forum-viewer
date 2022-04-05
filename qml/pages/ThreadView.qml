@@ -38,6 +38,7 @@ Page {
     property int post_number: -1
     readonly property string source: application.source + "t/" + topicid
     property string loadmore: source + "/posts.json?post_ids[]="
+    property string loadmore2: source + "/posts.json?post_ids[]="
     property string loggedin
     property string raw
     property string topicid
@@ -279,10 +280,17 @@ Page {
                 if (aTitle == "") aTitle = data.title;
                 posts_count = data.posts_count;
                 var post_stream = data.post_stream;
-                if (posts_count >= 20){
+                if (posts_count >= 20 && posts_count <= 400){
                     var stream = post_stream.stream;
                     for(var j=20;j<posts_count;j++)
                         loadmore += stream[j] + "&post_ids[]="
+                } else {
+                    var stream = post_stream.stream;
+                    for(var k=20;k<400;k++)
+                        loadmore += stream[k] + "&post_ids[]="
+
+                    for(var l=400;l<posts_count;l++)
+                        loadmore2 += stream[l] + "&post_ids[]="
                 }
                 var xhr2 = new XMLHttpRequest;
                 xhr2.open("GET", loadmore);
@@ -290,15 +298,28 @@ Page {
 
                 xhr2.onreadystatechange = function() {
                     if (xhr2.readyState === XMLHttpRequest.DONE) {
+                     var xhr3 = new XMLHttpRequest;
+                xhr3.open("GET", loadmore2);
+                if (loggedin.value != "-1") xhr3.setRequestHeader("User-Api-Key", loggedin.value);
+
+                xhr3.onreadystatechange = function() {
+                    if (xhr3.readyState === XMLHttpRequest.DONE) {
                         list.model.clear();
-
                         appendPosts(post_stream.posts);
-
                         var data2 = JSON.parse(xhr2.responseText);
                         appendPosts(data2.post_stream.posts)
+                        var data3 = JSON.parse(xhr3.responseText);
+                        appendPosts(data3.post_stream.posts)
+                    }
+
+                        }
+                            xhr3.send();
+
                     }
                 }
                 xhr2.send();
+
+
             }
         }
         xhr.send();
@@ -445,13 +466,13 @@ Page {
                     wrapMode: Text.Wrap
                     font.pixelSize: Theme.fontSizeSmall
                     onLinkActivated:{
-                        var link1= /^https:\/\/forum.sailfishos.org\/t\/[\w-]+\/?(\d+)?\/?(\d+)?/.exec(link)
+                        var link1= /^https:\/\/forum.sailfishos.org\/t\/([\w-]*[a-z-]+[\w-]+\/)?(\d+)\/?(\d+)*/.exec(link)
                         if (!link1){
                             pageStack.push("OpenLink.qml", {link: link});
                         } else if (/^https:\/\/forum.sailfishos.org\/t\/([\w-]+)\/?$/.exec(link)){
                             getRedirect(link);
                         }  else {
-                            pageStack.push("ThreadView.qml", { "topicid": link1[1], "post_number": link1[2]-1 });
+                            pageStack.push("ThreadView.qml", { "topicid": link1[2], "post_number": link1[3] });
                         }
                     }
                 }
@@ -521,7 +542,7 @@ Page {
                 for (var j = 0; j < list.count; j++) {
                     comment = list.model.get(j);
                     if (comment && comment.post_number === post_number) {
-                        positionViewAtIndex(j + 1, ListView.Beginning);
+                        positionViewAtIndex(j, ListView.Beginning);
                     }
                 }
             } else if (post_id >= 0) {

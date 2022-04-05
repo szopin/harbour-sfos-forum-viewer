@@ -236,6 +236,11 @@ Page {
 
             }
             MenuItem {
+                text: qsTr("Notifications")
+                visible: loggedin.value != "-1"
+                onClicked: pageStack.push("Notifications.qml", {loggedin: loggedin.value});
+            }
+            MenuItem {
                 text: qsTr("Reload")
                 onClicked: {
                     pulley.close()

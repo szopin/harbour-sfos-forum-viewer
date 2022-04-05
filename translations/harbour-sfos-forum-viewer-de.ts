@@ -138,6 +138,10 @@ Vielen Dank an die Mitwirkenden:
         <source>New thread</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -171,6 +175,25 @@ Vielen Dank an die Mitwirkenden:
     <message>
         <source>Body</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Notifications</name>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailfishOS Forum</source>
+        <translation type="unfinished">SailfishOS-Forum</translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished">Nichts anzuzeigen</translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished">Ist die Netzwerkverbindung aktiviert?</translation>
     </message>
 </context>
 <context>

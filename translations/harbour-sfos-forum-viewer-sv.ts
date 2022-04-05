@@ -138,6 +138,10 @@ Speciellt tack till medverkande:
         <source>New thread</source>
         <translation>Ny tråd</translation>
     </message>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -171,6 +175,25 @@ Speciellt tack till medverkande:
     <message>
         <source>Body</source>
         <translation>Text</translation>
+    </message>
+</context>
+<context>
+    <name>Notifications</name>
+    <message>
+        <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SailfishOS Forum</source>
+        <translation type="unfinished">SailfishOS Forum</translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished">Inget att visa</translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished">Är nätverket aktiverat?</translation>
     </message>
 </context>
 <context>
