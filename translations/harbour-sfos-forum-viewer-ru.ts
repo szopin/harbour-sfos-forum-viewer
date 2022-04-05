@@ -214,22 +214,22 @@ Special thanks to contributors:
 <context>
     <name>Notifications</name>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="70"/>
+        <location filename="../qml/pages/Notifications.qml" line="71"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="71"/>
+        <location filename="../qml/pages/Notifications.qml" line="72"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="88"/>
+        <location filename="../qml/pages/Notifications.qml" line="89"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="89"/>
+        <location filename="../qml/pages/Notifications.qml" line="90"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">Проверьте подключение</translation>
     </message>
