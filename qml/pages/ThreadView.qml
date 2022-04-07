@@ -86,6 +86,7 @@ Page {
     function getraw(postid, oper){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", "https://forum.sailfishos.org/posts/" + postid + ".json");
+        if (loggedin.value != "-1") xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
                 raw = data["raw"];
@@ -142,7 +143,7 @@ Page {
     }
     function postreply(topicid, post_number, postid, username){
 
-        var dialog = pageStack.push("NewPost.qml", {topicid: topicid, post_number: post_number, postid: postid, username: username});
+        var dialog = pageStack.push("NewPost.qml", {topicid: topicid, post_number: post_number, postid: postid, username: username, loggedin: loggedin.value});
     }
     function newedit(postid){
 

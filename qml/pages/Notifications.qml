@@ -33,6 +33,29 @@ Page {
         xhr.send();
         getnotifications();
     }
+    function mark(notid, index) {
+        var xhr = new XMLHttpRequest;
+         const json = {
+            "id": notid
+        };
+        console.log(JSON.stringify(json),notid);
+        xhr.open("PUT", application.source + "notifications/mark-read.json");
+          xhr.setRequestHeader("User-Api-Key", loggedin);
+         xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+               if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+            console.log(xhr.responseText)
+
+                    list.model.setProperty(index, "read", true);
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
+    }
     function getnotifications(){
         var xhr2 = new XMLHttpRequest;
 
@@ -53,7 +76,7 @@ Page {
                         fancy_title = notific.data.topic_title
                         var orig_name = notific.data.original_username
                         var disp_name = notific.data.display_username
-                        list.model.append({ type: notific.notification_type,
+                        list.model.append({ type: notific.notification_type, notid: notific.id,
                                               read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: orig_name ? orig_name : disp_name});
                     }
                     }
@@ -148,6 +171,7 @@ Page {
             onClicked: {
 
                 if(topic_id){
+                    if(!read) mark(notid, index);
                     pageStack.push("ThreadView.qml", {
                                        "topicid": topic_id,
                                        "post_number": post_number

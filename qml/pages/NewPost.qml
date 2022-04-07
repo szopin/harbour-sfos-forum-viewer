@@ -9,6 +9,7 @@ Dialog {
     property string username
     property string postid
     property string raw
+    property string loggedin
 
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
@@ -17,6 +18,7 @@ Dialog {
     function getraw(postid){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", "https://forum.sailfishos.org/posts/" + postid + ".json");
+        xhr.setRequestHeader("User-Api-Key", loggedin);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
                 raw = data["raw"];
