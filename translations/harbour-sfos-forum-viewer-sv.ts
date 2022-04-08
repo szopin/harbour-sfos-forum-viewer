@@ -92,54 +92,54 @@ Speciellt tack till medverkande:
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation>Senast</translation>
+        <translation type="unfinished">Senast</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation>Topp</translation>
+        <translation type="unfinished">Topp</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation>SailfishOS Forum</translation>
-    </message>
-    <message>
-        <source>Reload</source>
-        <translation>Hämta om</translation>
-    </message>
-    <message>
-        <source>Nothing to show</source>
-        <translation>Inget att visa</translation>
-    </message>
-    <message>
-        <source>Is the network enabled?</source>
-        <translation>Är nätverket aktiverat?</translation>
-    </message>
-    <message>
-        <source>Load more</source>
-        <translation>Hämta mer</translation>
+        <translation type="unfinished">SailfishOS Forum</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Om</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Sök</translation>
+        <translation type="unfinished">Om</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Logga in</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>Logga ut</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New thread</source>
-        <translation>Ny tråd</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished">Sök</translation>
     </message>
     <message>
         <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished">Inget att visa</translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished">Är nätverket aktiverat?</translation>
+    </message>
+    <message>
+        <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -245,7 +245,7 @@ Page {
                 onClicked: {
                     pulley.close()
                     clearview()
-                    application.reload()
+
                 }
             }
         }

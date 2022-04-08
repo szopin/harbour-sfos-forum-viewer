@@ -107,22 +107,22 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="128"/>
         <source>Latest</source>
-        <translation>Последние</translation>
+        <translation type="unfinished">Последние</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="136"/>
         <source>Top</source>
-        <translation>Топ</translation>
+        <translation type="unfinished">Топ</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="199"/>
         <source>SailfishOS Forum</source>
-        <translation>Форум SailfishOS</translation>
+        <translation type="unfinished">Форум SailfishOS</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>About</source>
-        <translation>О приложении</translation>
+        <translation type="unfinished">О приложении</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="217"/>
@@ -142,7 +142,7 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="234"/>
         <source>Search</source>
-        <translation>Поиск</translation>
+        <translation type="unfinished">Поиск</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="239"/>
@@ -152,22 +152,22 @@ Special thanks to contributors:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="244"/>
         <source>Reload</source>
-        <translation>Перезагрузить</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="262"/>
         <source>Nothing to show</source>
-        <translation>Ничего нет</translation>
+        <translation type="unfinished">Ничего нет</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="263"/>
         <source>Is the network enabled?</source>
-        <translation>Проверьте подключение</translation>
+        <translation type="unfinished">Проверьте подключение</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="420"/>
         <source>Load more</source>
-        <translation>Загрузить еще</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

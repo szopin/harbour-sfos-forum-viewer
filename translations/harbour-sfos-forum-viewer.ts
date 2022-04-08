@@ -95,27 +95,7 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Reload</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Load more</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -131,7 +111,27 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

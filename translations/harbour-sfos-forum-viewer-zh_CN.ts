@@ -89,39 +89,19 @@ Special thanks to contributors:
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation>最近</translation>
+        <translation type="unfinished">最近</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation>排行</translation>
+        <translation type="unfinished">排行</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation>旗鱼系统论坛</translation>
-    </message>
-    <message>
-        <source>Reload</source>
-        <translation>重新加载</translation>
-    </message>
-    <message>
-        <source>Nothing to show</source>
-        <translation>没有可供显示的内容</translation>
-    </message>
-    <message>
-        <source>Is the network enabled?</source>
-        <translation>是否已连接到网络？</translation>
-    </message>
-    <message>
-        <source>Load more</source>
-        <translation>加载更多</translation>
+        <translation type="unfinished">旗鱼系统论坛</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>关于</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>搜索</translation>
+        <translation type="unfinished">关于</translation>
     </message>
     <message>
         <source>Login</source>
@@ -136,7 +116,27 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Search</source>
+        <translation type="unfinished">搜索</translation>
+    </message>
+    <message>
         <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished">暂无可供显示内容</translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished">是否已打开网络？</translation>
+    </message>
+    <message>
+        <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -186,11 +186,11 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">暂无可供显示内容</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">是否已打开网络？</translation>
     </message>
 </context>
 <context>

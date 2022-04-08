@@ -543,7 +543,11 @@ Page {
                 for (var j = 0; j < list.count; j++) {
                     comment = list.model.get(j);
                     if (comment && comment.post_number === post_number) {
-                        positionViewAtIndex(j, ListView.Beginning);
+                        if (highest_post_number){
+                        positionViewAtIndex(j + 1, ListView.Beginning);
+                        } else {
+                            positionViewAtIndex(j, ListView.Beginning);
+                        }
                     }
                 }
             } else if (post_id >= 0) {

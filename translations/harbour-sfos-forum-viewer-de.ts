@@ -92,39 +92,19 @@ Vielen Dank an die Mitwirkenden:
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation>Neuigkeiten</translation>
+        <translation type="unfinished">Neuigkeiten</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation>Top</translation>
+        <translation type="unfinished">Top</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation>SailfishOS-Forum</translation>
-    </message>
-    <message>
-        <source>Reload</source>
-        <translation>Neu laden</translation>
-    </message>
-    <message>
-        <source>Nothing to show</source>
-        <translation>Nichts anzuzeigen</translation>
-    </message>
-    <message>
-        <source>Is the network enabled?</source>
-        <translation>Ist die Netzwerkverbindung aktiviert?</translation>
-    </message>
-    <message>
-        <source>Load more</source>
-        <translation>Mehr laden</translation>
+        <translation type="unfinished">SailfishOS-Forum</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Über</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation>Suchen</translation>
+        <translation type="unfinished">Über</translation>
     </message>
     <message>
         <source>Login</source>
@@ -139,7 +119,27 @@ Vielen Dank an die Mitwirkenden:
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Search</source>
+        <translation type="unfinished">Suchen</translation>
+    </message>
+    <message>
         <source>Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing to show</source>
+        <translation type="unfinished">Nichts anzuzeigen</translation>
+    </message>
+    <message>
+        <source>Is the network enabled?</source>
+        <translation type="unfinished">Ist die Netzwerkverbindung aktiviert?</translation>
+    </message>
+    <message>
+        <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -107,42 +107,42 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="128"/>
         <source>Latest</source>
-        <translation>Recientes</translation>
+        <translation type="unfinished">Recientes</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="136"/>
         <source>Top</source>
-        <translation>Relevantes</translation>
+        <translation type="unfinished">Relevantes</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="199"/>
         <source>SailfishOS Forum</source>
-        <translation>Foro de S a i l f i s h</translation>
+        <translation type="unfinished">Foro de S a i l f i s h</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation type="unfinished">Acerca de</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="217"/>
         <source>Login</source>
-        <translation>Iniciar sesión</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="223"/>
         <source>Logout</source>
-        <translation>Cerrar sesión</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="228"/>
         <source>New thread</source>
-        <translation>Nuevo hilo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="234"/>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation type="unfinished">Buscar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="239"/>
@@ -152,22 +152,22 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="244"/>
         <source>Reload</source>
-        <translation>Recargar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="262"/>
         <source>Nothing to show</source>
-        <translation>Nada que mostrar</translation>
+        <translation type="unfinished">Nada que mostrar</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="263"/>
         <source>Is the network enabled?</source>
-        <translation>¿Está habilitada la red?</translation>
+        <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="420"/>
         <source>Load more</source>
-        <translation>Cargar más</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -231,7 +231,7 @@ Agradecimiento especial a los contribuyentes:
     <message>
         <location filename="../qml/pages/Notifications.qml" line="113"/>
         <source>Is the network enabled?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
 </context>
 <context>
