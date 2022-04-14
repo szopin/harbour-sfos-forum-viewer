@@ -92,55 +92,55 @@ Speciellt tack till medverkande:
     <name>FirstPage</name>
     <message>
         <source>Latest</source>
-        <translation type="unfinished">Senast</translation>
+        <translation>Senast</translation>
     </message>
     <message>
         <source>Top</source>
-        <translation type="unfinished">Topp</translation>
+        <translation>Topp</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation type="unfinished">SailfishOS Forum</translation>
+        <translation>SailfishOS Forum</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga in</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation>Logga ut</translation>
     </message>
     <message>
         <source>New thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny tråd</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished">Sök</translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviseringar</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished">Inget att visa</translation>
+        <translation>Inget att visa</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished">Är nätverket aktiverat?</translation>
+        <translation>Är nätverket aktiverat?</translation>
     </message>
     <message>
         <source>Load more</source>
-        <translation type="unfinished"></translation>
+        <translation>Läs in mer</translation>
     </message>
 </context>
 <context>
@@ -159,11 +159,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Insert quote</source>
-        <translation type="unfinished"></translation>
+        <translation>Infoga citat</translation>
     </message>
     <message>
         <source>Upload image (through ImgBB)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda upp bild (via ImgBB)</translation>
     </message>
 </context>
 <context>
@@ -185,19 +185,19 @@ Speciellt tack till medverkande:
     <name>Notifications</name>
     <message>
         <source>Notifications</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviseringar</translation>
     </message>
     <message>
         <source>SailfishOS Forum</source>
-        <translation type="unfinished">SailfishOS Forum</translation>
+        <translation>SailfishOS Forum</translation>
     </message>
     <message>
         <source>Nothing to show</source>
-        <translation type="unfinished">Inget att visa</translation>
+        <translation>Inget att visa</translation>
     </message>
     <message>
         <source>Is the network enabled?</source>
-        <translation type="unfinished">Är nätverket aktiverat?</translation>
+        <translation>Är nätverket aktiverat?</translation>
     </message>
 </context>
 <context>
