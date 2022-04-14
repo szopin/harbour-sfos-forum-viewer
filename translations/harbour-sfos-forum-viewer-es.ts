@@ -173,22 +173,27 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>NewPost</name>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="54"/>
+        <location filename="../qml/pages/NewPost.qml" line="121"/>
+        <source>Upload image (through ImgBB)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="126"/>
         <source>Insert quote</source>
         <translation>Insertar comillas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="61"/>
+        <location filename="../qml/pages/NewPost.qml" line="133"/>
         <source>Enter post</source>
         <translation>Marcar publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="61"/>
+        <location filename="../qml/pages/NewPost.qml" line="133"/>
         <source>Edit post</source>
         <translation>Editar publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="73"/>
+        <location filename="../qml/pages/NewPost.qml" line="145"/>
         <source>Body</source>
         <translation>Cuerpo</translation>
     </message>

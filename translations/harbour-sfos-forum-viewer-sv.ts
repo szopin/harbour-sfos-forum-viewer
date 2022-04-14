@@ -161,6 +161,10 @@ Speciellt tack till medverkande:
         <source>Insert quote</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Upload image (through ImgBB)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewThread</name>

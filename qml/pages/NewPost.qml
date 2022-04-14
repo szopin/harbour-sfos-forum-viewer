@@ -1,5 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Configuration 1.0
+import Sailfish.Pickers 1.0
 
 Dialog {
     id: dialog
@@ -11,6 +13,72 @@ Dialog {
     property string raw
     property string loggedin
 
+    function gen_multipart(image) {
+
+    var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
+        return multi;
+    }
+
+    function upload(b64) {
+
+        var request = gen_multipart(b64);
+        var xhr = new XMLHttpRequest;
+            xhr.open("POST", "https://api.imgbb.com/1/upload");
+
+            xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=END_OF_PART");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE){
+                    if(xhr.statusText !== "OK"){
+                        pageStack.completeAnimation();
+                        pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    } else {
+                    var data = JSON.parse(xhr.responseText);
+                    mainConfig.setValue("uploads/" + data.data.title,data.data.delete_url);
+                        postbody.text = postbody.text + "![](" + data.data.url + ")\n";
+                    }
+                }
+            }
+        xhr.send(request);
+    }
+
+    function getfile(filepath){
+            var xhr = new XMLHttpRequest;
+            xhr.open("GET", "file://" + filepath);
+             xhr.responseType = 'arraybuffer';
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE){
+                    var response = new Uint8Array(xhr.response);
+                        var raw = "";
+                        for (var i = 0; i < response.byteLength; i++) {
+                            raw += String.fromCharCode(response[i]);
+                        }
+
+                        function base64Encode (input) {
+                            var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+                            var str = String(input);
+                            for (
+                                var block, charCode, idx = 0, map = chars, output = '';
+                                str.charAt(idx | 0) || (map = '=', idx % 1);
+                                output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+                                ) {
+                                charCode = str.charCodeAt(idx += 3/4);
+                                if (charCode > 0xFF) {
+                                    throw new Error("Base64 encoding failed: The string to be encoded contains characters outside of the Latin1 range.");
+                                }
+                                block = block << 8 | charCode;
+                            }
+                            return output;
+                        }
+                    upload(base64Encode(raw));
+                }
+            }
+            xhr.send();
+    }
+
+            ConfigurationGroup {
+            id: mainConfig
+            path: "/apps/harbour-sfos-forum-viewer"
+        }
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
     }
@@ -23,7 +91,7 @@ Dialog {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
                 raw = data["raw"];
                 if(username){
-                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n";
+                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + postbody.text;
                 } else {
                     postbody.text = raw;
                 }
@@ -48,9 +116,13 @@ Dialog {
         anchors.fill: parent
 
         PullDownMenu{
-            visible: postid
 
             MenuItem{
+                text: qsTr("Upload image (through ImgBB)")
+                onClicked: pageStack.push(filePickerPage)
+            }
+            MenuItem{
+                visible: postid
                 text: qsTr("Insert quote")
                 onClicked: getraw(postid)
             }
@@ -76,5 +148,13 @@ Dialog {
         }
 
     }
-    //Component.onCompleted: getraw(postid);
+    Component {
+        id: filePickerPage
+        ImagePickerPage {
+            onSelectedContentPropertiesChanged: {
+                var filepath = selectedContentProperties.filePath
+                getfile(filepath);
+            }
+        }
+    }
 }
