@@ -15,7 +15,7 @@ Dialog {
 
     function gen_multipart(image) {
 
-    var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
+    var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="expiration"\n\n600\n','--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
         return multi;
     }
 
