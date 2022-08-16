@@ -219,22 +219,22 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>Notifications</name>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="94"/>
+        <location filename="../qml/pages/Notifications.qml" line="98"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="95"/>
+        <location filename="../qml/pages/Notifications.qml" line="99"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Foro de S a i l f i s h</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="112"/>
+        <location filename="../qml/pages/Notifications.qml" line="116"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Nada que mostrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="113"/>
+        <location filename="../qml/pages/Notifications.qml" line="117"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
