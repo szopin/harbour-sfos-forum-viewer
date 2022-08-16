@@ -72,7 +72,11 @@ Page {
                     var notlen = notifications.length;
                     for (var i=0;i<notlen;i++) {
                         var notific = notifications[i];
-                        if (notific.notification_type != 12){
+                        if (notific.notification_type == 16) {
+                            fancy_title = "You have " + notific.data.inbox_count + " messages in your " + notific.data.group_name + " mailbox"
+                            list.model.append({type: notific.notification_type, notid: notific.id,
+                                               read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: notific.data.username})
+                        } else if (notific.notification_type != 12){
                         fancy_title = notific.data.topic_title
                         var orig_name = notific.data.original_username
                         var disp_name = notific.data.display_username
