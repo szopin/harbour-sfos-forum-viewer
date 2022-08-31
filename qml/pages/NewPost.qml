@@ -122,7 +122,7 @@ Dialog {
                 onClicked: pageStack.push(filePickerPage)
             }
             MenuItem{
-                visible: postid
+                visible: postid && username
                 text: qsTr("Insert quote")
                 onClicked: getraw(postid)
             }
@@ -148,6 +148,12 @@ Dialog {
         }
 
     }
+    Component.onCompleted: {
+        if(!username && postid){
+            getraw(postid);
+        }
+    }
+
     Component {
         id: filePickerPage
         ImagePickerPage {

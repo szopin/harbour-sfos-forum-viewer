@@ -147,7 +147,7 @@ Page {
     }
     function newedit(postid){
 
-        var dialog = pageStack.push("NewPost.qml", {postid: postid});
+        var dialog = pageStack.push("NewPost.qml", {postid: postid, loggedin: loggedin.value});
     }
     function reply(raw, topicid){
         var xhr = new XMLHttpRequest;
@@ -218,7 +218,7 @@ Page {
     }
     function edit(raw, postid){
         var xhr = new XMLHttpRequest;
-        const json = [ { "post": { "raw": raw} } ];
+        const json = { "post": { "raw": raw} };
         console.log(JSON.stringify(json));
         xhr.open("PUT", "https://forum.sailfishos.org/posts/" +postid);
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
@@ -230,6 +230,8 @@ Page {
                     pageStack.push("Error.qml", {errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
+                    list.model.clear();
+                    commentpage.getcomments();
                 }
             }
         }
@@ -522,15 +524,16 @@ Page {
                     onClicked: unlike(postid, index);
                 }
                 MenuItem {
+                    visible: loggedin.value != "-1"  && yours && can_edit
+                    text: qsTr("Edit")
+                    onClicked: newedit(postid);
+                }
+                MenuItem {
                     visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
                     onClicked: del(postid, index);
                 }
-                MenuItem {
-                    visible: false //loggedin.value != "-1"  && yours && can_edit
-                    text: qsTr("Edit")
-                    onClicked: newedit(postid);
-                }
+
             }
         }
 
