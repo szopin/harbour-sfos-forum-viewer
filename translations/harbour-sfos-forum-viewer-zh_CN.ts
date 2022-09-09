@@ -139,6 +139,14 @@ Special thanks to contributors:
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -175,6 +183,21 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Body</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotificationSettings</name>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -320,6 +343,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -27,6 +27,7 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/pages/LoginWeb.qml \
     qml/pages/NewPost.qml \
     qml/pages/NewThread.qml \
+    qml/pages/NotificationSettings.qml \
     qml/pages/Notifications.qml \
     qml/pages/OpenLink.qml \
     qml/pages/SearchPage.qml \

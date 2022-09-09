@@ -142,6 +142,14 @@ Remerciements aux contributeurs :
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -179,6 +187,21 @@ Remerciements aux contributeurs :
     <message>
         <source>Body</source>
         <translation>Corps</translation>
+    </message>
+</context>
+<context>
+    <name>NotificationSettings</name>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -324,6 +347,10 @@ Remerciements aux contributeurs :
     <message>
         <source>Edit</source>
         <translation>Éditer</translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

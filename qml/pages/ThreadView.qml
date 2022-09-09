@@ -48,6 +48,7 @@ Page {
     property int last_post: 0
     property int posts_count
     property bool tclosed
+    property string tags
     property bool cooked_hidden
     property bool acted
     property bool can_act
@@ -279,6 +280,11 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
+                if(data.tags){
+                    for(var t=0;t<data.tags.length;t++){
+                        tags = tags + data.tags[t] + " "
+                    }
+                }
                 tclosed = data.closed;
                 if (aTitle == "") aTitle = data.title;
                 posts_count = data.posts_count;
@@ -301,22 +307,22 @@ Page {
 
                 xhr2.onreadystatechange = function() {
                     if (xhr2.readyState === XMLHttpRequest.DONE) {
-                     var xhr3 = new XMLHttpRequest;
-                xhr3.open("GET", loadmore2);
-                if (loggedin.value != "-1") xhr3.setRequestHeader("User-Api-Key", loggedin.value);
+                        var xhr3 = new XMLHttpRequest;
+                        xhr3.open("GET", loadmore2);
+                        if (loggedin.value != "-1") xhr3.setRequestHeader("User-Api-Key", loggedin.value);
 
-                xhr3.onreadystatechange = function() {
-                    if (xhr3.readyState === XMLHttpRequest.DONE) {
-                        list.model.clear();
-                        appendPosts(post_stream.posts);
-                        var data2 = JSON.parse(xhr2.responseText);
-                        appendPosts(data2.post_stream.posts)
-                        var data3 = JSON.parse(xhr3.responseText);
-                        appendPosts(data3.post_stream.posts)
-                    }
+                        xhr3.onreadystatechange = function() {
+                            if (xhr3.readyState === XMLHttpRequest.DONE) {
+                                list.model.clear();
+                                appendPosts(post_stream.posts);
+                                var data2 = JSON.parse(xhr2.responseText);
+                                appendPosts(data2.post_stream.posts)
+                                var data3 = JSON.parse(xhr3.responseText);
+                                appendPosts(data3.post_stream.posts)
+                            }
 
                         }
-                            xhr3.send();
+                        xhr3.send();
 
                     }
                 }
@@ -336,6 +342,7 @@ Page {
         header: PageHeader {
             id: pageHeader
             title: tclosed ? "🔐" + aTitle : aTitle
+            description: tags ? qsTr("tags") + ": " + tags : ""
             wrapMode: Text.Wrap
         }
         footer: Item {
@@ -371,14 +378,14 @@ Page {
                 onClicked: newpost();
             }
         }
-            PushUpMenu{
+        PushUpMenu{
+            visible: loggedin.value != "-1" && !tclosed
+            MenuItem {
+                text: qsTr("Post reply")
                 visible: loggedin.value != "-1" && !tclosed
-                MenuItem {
-                    text: qsTr("Post reply")
-                    visible: loggedin.value != "-1" && !tclosed
-                    onClicked: newpost();
-                }
+                onClicked: newpost();
             }
+        }
 
         BusyIndicator {
             id: vplaceholder
@@ -470,10 +477,11 @@ Page {
                     font.pixelSize: Theme.fontSizeSmall
                     onLinkActivated:{
                         var link1= /^https:\/\/forum.sailfishos.org\/t\/([\w-]*[a-z-]+[\w-]+\/)?(\d+)\/?(\d+)*/.exec(link)
-                        if (!link1){
-                            pageStack.push("OpenLink.qml", {link: link});
-                        } else if (/^https:\/\/forum.sailfishos.org\/t\/([\w-]+)\/?$/.exec(link)){
+                        if (!link1 && /^https:\/\/forum.sailfishos.org\/t\/[\w-]+?\/?/.exec(link)){
                             getRedirect(link);
+                        } else if ( !link1){
+                            pageStack.push("OpenLink.qml", {link: link});
+
                         }  else {
                             pageStack.push("ThreadView.qml", { "topicid": link1[2], "post_number": link1[3] });
                         }
@@ -547,7 +555,7 @@ Page {
                     comment = list.model.get(j);
                     if (comment && comment.post_number === post_number) {
                         if (highest_post_number){
-                        positionViewAtIndex(j + 1, ListView.Beginning);
+                            positionViewAtIndex(j + 1, ListView.Beginning);
                         } else {
                             positionViewAtIndex(j, ListView.Beginning);
                         }

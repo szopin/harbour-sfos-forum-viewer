@@ -28,6 +28,8 @@
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
+import Nemo.Notifications 1.0
+import Nemo.KeepAlive 1.2
 
 Page {
     id: firstPage
@@ -36,12 +38,22 @@ Page {
     property string category
     property string topic_template
     property int pageno: 0
+    property int timerv
+    property string lastnotv
+    property var tags
+    property string fancy_title
+    property string orig_name
+    property string disp_name
+    property bool checkemb
+    property bool read
     property string login
     property string viewmode
     property string textname
     property string combined: application.source + (tid ? "c/" + tid : viewmode) + ".json?page=" + pageno
+    property string combined2: application.source + "notifications.json"
     property bool networkError: false
     property bool loadedMore: false
+
 
     function newtopic(raw, title, category){
         var xhr = new XMLHttpRequest;
@@ -102,11 +114,18 @@ Page {
                 var topics_length = topics.length;
                 for (var i=0;i<topics_length;i++) {
                     var topic = topics[i];
+                    tags = ""
+                    if(topic.tags){
+                        for(var t=0;t<topic.tags.length;t++){
+                            tags = tags + topic.tags[t] + " "
+                        }
+                    }
                     list.model.append({ title: topic.title,
                                           topicid: topic.id,
                                           posts_count: topic.posts_count,
                                           bumped: topic.bumped_at,
                                           category_id: topic.category_id,
+                                          ttags: tags,
                                           has_accepted_answer: topic.has_accepted_answer,
                                           highest_post_number: topic.highest_post_number
                                       });
@@ -123,6 +142,37 @@ Page {
         xhr.send();
     }
 
+    function checknotifications(){
+        var xhr2 = new XMLHttpRequest;
+        xhr2.open("GET", combined2);
+        xhr2.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr2.onreadystatechange = function() {
+            if (xhr2.readyState === XMLHttpRequest.DONE){
+                if(xhr2.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr2.responseText});
+                } else {
+                    var data2 = JSON.parse(xhr2.responseText);
+                    var notifications = data2.notifications;
+                    var notific = notifications[0];
+                    if (notific.notification_type != 12){
+                        var notid = notific.id
+
+                        orig_name = notific.data.original_username
+                        disp_name = notific.data.display_username
+                        read = notific.read
+                        fancy_title = notific.data.topic_title
+                        if(notid != lastnot.value && lastnot.value != "-1" && !read){
+                            notification.publish();
+                        }
+                        mainConfig.setValue("lastnot", notid);
+
+                    }
+                }
+            }
+        }
+        xhr2.send();
+    }
     function showLatest() {
         tid = "";
         textname = qsTr("Latest");
@@ -149,6 +199,18 @@ Page {
     ConfigurationValue {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
+    }
+    ConfigurationValue {
+        id: checkem
+        key: "/apps/harbour-sfos-forum-viewer/checkem"
+    }
+    ConfigurationValue {
+        id: timer
+        key: "/apps/harbour-sfos-forum-viewer/timer"
+    }
+    ConfigurationValue {
+        id: lastnot
+        key: "/apps/harbour-sfos-forum-viewer/lastnot"
     }
     onStatusChanged: {
         if (status === PageStatus.Active){
@@ -177,7 +239,21 @@ Page {
             path: "/bumped_at"
         }
     }
-
+    Notification {
+        id: notification
+        category: "x-nemo.messaging.im"
+        appName: "SFOS Forum Viewer"
+        replacesId: 0
+        appIcon: "/usr/share/icons/hicolor/86x86/apps/harbour-sfos-forum-viewer.png"
+        summary: qsTr("New notification")
+        urgency: Notification.Normal
+        body: orig_name ? orig_name + " - " + fancy_title : disp_name  + " - " + fancy_title
+        remoteActions: [ {"name": "default"}]
+        onClicked: {
+            application.activate()
+            pageStack.push("Notifications.qml", {loggedin: loggedin.value});
+        }
+    }
     Connections {
         target: application
         onReload: {
@@ -268,8 +344,13 @@ Page {
         Component.onCompleted: {
             login = mainConfig.value("key", "-1");
             mainConfig.setValue("key", login);
+            checkemb = mainConfig.value("checkem", false);
+            mainConfig.setValue("checkem", checkemb);
+            timerv = mainConfig.value("timer", "10");
+            mainConfig.setValue("timer", timerv);
+            lastnotv = mainConfig.value("lastnot", "-1");
+            mainConfig.setValue("lastnot", lastnotv);
             showLatest();
-            //console.log(login, mainConfig.value("key", 11));
         }
 
         delegate: BackgroundItem {
@@ -279,7 +360,6 @@ Page {
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
             property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)
-            // Component.onCompleted: console.debug("lastPostNumber [%1]:\tlast=%2\tnow=%3".arg(topicid).arg(lastPostNumber).arg(highest_post_number))
 
             Column {
                 id: delegateCol
@@ -392,6 +472,24 @@ Page {
                                 anchors.verticalCenter: parent.verticalCenter
                                 opacity: Theme.opacityLow
                             }
+
+                        }
+                        Row {
+                            visible: ttags
+                            width: parent.width
+                            spacing: Theme.paddingMedium
+                            Label {
+                                id: tags
+                                visible: ttags
+                                text: qsTr("tags") + ": " + ttags
+                                wrapMode: Text.Wrap
+                                elide: Text.ElideRight
+                                width: parent.width
+                                color: highlighted || item.hasNews ? Theme.secondaryHighlightColor
+                                                                   : Theme.secondaryColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                horizontalAlignment: Text.AlignLeft
+                            }
                         }
 
                     }
@@ -410,6 +508,16 @@ Page {
                                    "post_number": oldLast,
                                    "highest_post_number": highest_post_number
                                });
+            }
+        }
+        BackgroundJob {
+            id: wakeup
+            triggeredOnEnable: true
+            enabled: checkem.value && loggedin.value != "-1"
+            frequency: BackgroundJob.ThirtySeconds * 2 * timer.value
+            onTriggered: {
+                checknotifications();
+                wakeup.finished();
             }
         }
 

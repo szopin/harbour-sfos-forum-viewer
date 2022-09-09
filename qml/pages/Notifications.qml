@@ -6,6 +6,7 @@ Page {
     id: notificationsPage
     allowedOrientations: Orientation.All
     property var notif
+    property bool checkem: false
     property string loggedin
     property string fancy_title
     property string combined: application.source + "site.json" // x-discourse-username
@@ -35,20 +36,20 @@ Page {
     }
     function mark(notid, index) {
         var xhr = new XMLHttpRequest;
-         const json = {
+        const json = {
             "id": notid
         };
         console.log(JSON.stringify(json),notid);
         xhr.open("PUT", application.source + "notifications/mark-read.json");
-          xhr.setRequestHeader("User-Api-Key", loggedin);
-         xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.setRequestHeader("User-Api-Key", loggedin);
+        xhr.setRequestHeader("Content-Type", 'application/json');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-               if(xhr.statusText !== "OK"){
+                if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortext: xhr.responseText});
                 } else {
-            console.log(xhr.responseText)
+                    console.log(xhr.responseText)
 
                     list.model.setProperty(index, "read", true);
                 }
@@ -70,26 +71,41 @@ Page {
                     var data2 = JSON.parse(xhr2.responseText);
                     var notifications = data2.notifications;
                     var notlen = notifications.length;
+                    mainConfig.setValue("lastnot", notifications[0].id);
+                    console.log(notifications[0].id);
                     for (var i=0;i<notlen;i++) {
                         var notific = notifications[i];
                         if (notific.notification_type == 16) {
                             fancy_title = "You have " + notific.data.inbox_count + " messages in your " + notific.data.group_name + " mailbox"
                             list.model.append({type: notific.notification_type, notid: notific.id,
-                                               read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: notific.data.username})
+                                                  read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: notific.data.username})
                         } else if (notific.notification_type != 12){
-                        fancy_title = notific.data.topic_title
-                        var orig_name = notific.data.original_username
-                        var disp_name = notific.data.display_username
-                        list.model.append({ type: notific.notification_type, notid: notific.id,
-                                              read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: orig_name ? orig_name : disp_name});
-                    }
+                            fancy_title = notific.data.topic_title
+                            var orig_name = notific.data.original_username
+                            var disp_name = notific.data.display_username
+                            list.model.append({ type: notific.notification_type, notid: notific.id,
+                                                  read: notific.read, bumped: notific.created_at, post_number: notific.post_number, topic_id: notific.topic_id, fancy_title: fancy_title, username: orig_name ? orig_name : disp_name});
+                        }
                     }
                 }
             }
         }
         xhr2.send();
     }
+    onStatusChanged: {
+        if (status === PageStatus.Active){
+            pageStack.pushAttached(Qt.resolvedUrl("NotificationSettings.qml"));
+        }
+    }
+    ConfigurationGroup {
+        id: mainConfig
+        path: "/apps/harbour-sfos-forum-viewer"
 
+    }
+    ConfigurationValue {
+        id: lastnot
+        key: "/apps/harbour-sfos-forum-viewer/lastnot"
+    }
     SilicaListView {
         id:list
         anchors.fill: parent
@@ -98,6 +114,7 @@ Page {
             title: qsTr("Notifications")
             description: qsTr("SailfishOS Forum")
         }
+
 
         footer: Item {
             width: parent.width

@@ -142,6 +142,14 @@ Speciellt tack till medverkande:
         <source>Load more</source>
         <translation>Läs in mer</translation>
     </message>
+    <message>
+        <source>New notification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -179,6 +187,21 @@ Speciellt tack till medverkande:
     <message>
         <source>Body</source>
         <translation>Text</translation>
+    </message>
+</context>
+<context>
+    <name>NotificationSettings</name>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minutes: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -324,6 +347,10 @@ Speciellt tack till medverkande:
     <message>
         <source>Edit</source>
         <translation>Redigera</translation>
+    </message>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
