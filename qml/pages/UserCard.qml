@@ -89,7 +89,7 @@ Page {
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.primaryColor
             wrapMode: Text.WordWrap
-            text: "?? " + clocation
+            text: "🌎 " + clocation
         }
         Label {
             id: www
@@ -108,7 +108,7 @@ Page {
             wrapMode: Text.WordWrap
             text:"<style>" +
                  "a { color: %1 }".arg(Theme.highlightColor) +
-                 "</style>" +  "?? <a href=\"" + website + "\">" + website_name + "</a>"
+                 "</style>" +  "🌐 <a href=\"" + website + "\">" + website_name + "</a>"
             onLinkActivated: pageStack.push("OpenLink.qml", {link: website});
         }
         Image {
