@@ -26,6 +26,7 @@
 */
 
 import QtQuick 2.2
+import QtGraphicalEffects 1.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 
@@ -49,10 +50,12 @@ Page {
     property int posts_count
     property bool tclosed
     property string tags
+    property string avatar
     property bool cooked_hidden
     property bool acted
     property bool can_act
     property bool can_undo
+    property bool accepted_answer
 
     function getRedirect(link){
         var xhr = new XMLHttpRequest;
@@ -241,19 +244,24 @@ Page {
 
     function appendPosts(posts) {
         var posts_length = posts.length;
+        console.log(posts_length);
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
-            var action = post.actions_summary[0];
-            likes = (loggedin.value == "-1") ? ((action && action.id === 2)
-                                                ? action.count : 0) : (action.count && action.id === 2
-                                                                       ? action.count : 0);
-            can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
-                                                  ? action.can_undo : false
-            acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
+            if (post.actions_summary.length > 0){
+                var action = post.actions_summary[0];
+                likes = (loggedin.value == "-1") ? ((action && action.id === 2)
+                                                    ? action.count : 0) : (action.count && action.id === 2
+                                                                           ? action.count : 0);
+
+                can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
+                                                      ? action.can_undo : false
+                acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
+            }
             list.model.append({
                                   cooked: post.cooked,
                                   username: post.username,
+                                  avatar: post.avatar_template,//.replace("{size}", 2* Theme.paddingLarge),
                                   updated_at: post.updated_at,
                                   likes: likes,
                                   acted: acted,
@@ -267,7 +275,8 @@ Page {
                                   post_number: post.post_number,
                                   reply_to: post.reply_to_post_number,
                                   last_postid: last_post,
-                                  cooked_hidden: post.cooked_hidden
+                                  cooked_hidden: post.cooked_hidden,
+                                  accepted_answer: post.accepted_answer
                               });
             last_post = post.post_number;
         }
@@ -293,13 +302,15 @@ Page {
                     var stream = post_stream.stream;
                     for(var j=20;j<posts_count;j++)
                         loadmore += stream[j] + "&post_ids[]="
+                    console.log("1")
                 } else {
                     var stream = post_stream.stream;
                     for(var k=20;k<400;k++)
                         loadmore += stream[k] + "&post_ids[]="
-
+                    console.log("2")
                     for(var l=400;l<posts_count;l++)
                         loadmore2 += stream[l] + "&post_ids[]="
+                    console.log("3")
                 }
                 var xhr2 = new XMLHttpRequest;
                 xhr2.open("GET", loadmore);
@@ -420,24 +431,50 @@ Page {
                 Row {
                     width: parent.width
                     spacing: Theme.paddingSmall
-
                     Column {
-                        width: parent.width - subMetadata.width
+                        Image {
+                            id: ava
+                            height:  3* Theme.paddingLarge
+                            width:  3* Theme.paddingLarge
+                            source: application.source + avatar.replace("{size}",  3* Theme.paddingLarge)
+                            layer.enabled: true
+                            layer.effect: OpacityMask {
+                                maskSource: Item {
+                                    width: ava.width
+                                    height: ava.height
 
+                                    Rectangle {
+                                        anchors.centerIn: parent
+                                        width: Math.min(ava.width, ava.height)
+                                        height: ava.height
+                                        radius: Math.min(width, height)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Column {
+                        width: parent.width - subMetadata.width - ava.width
                         Label {
                             id: mainMetadata
-                            text: username
+                            text: loggedin.value != "-1" ? "<style>" +
+                                                           "a { color: %1 }".arg(Theme.highlightColor) +
+                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + "</a>" : username
+                            onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
                             textFormat: Text.RichText
                             truncationMode: TruncationMode.Fade
                             elide: Text.ElideRight
                             width: parent.width
                             font.pixelSize: Theme.fontSizeMedium
                         }
+
+
                         Label {
                             visible: likes > 0
                             text: !acted ? likes + "♥" : likes + "💘"
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
+
                         }
                     }
 
@@ -461,6 +498,14 @@ Page {
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
+                        }
+                        Icon {
+                            visible: accepted_answer
+                            source: "image://theme/icon-s-accept"
+                            width: Theme.iconSizeSmall
+                            height: width
+                            anchors.right: parent.right
+                            opacity: Theme.opacityLow
                         }
                     }
                 }
@@ -522,7 +567,7 @@ Page {
                     onClicked: like(postid, index);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1"
+                    visible: loggedin.value != "-1" && !tclosed
                     text: qsTr("Reply")
                     onClicked: postreply(topicid, post_number, postid, username);
                 }

@@ -188,6 +188,10 @@ Special thanks to contributors:
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enter PM to </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NotificationSettings</name>
@@ -221,6 +225,14 @@ Special thanks to contributors:
     <message>
         <source>Is the network enabled?</source>
         <translation type="unfinished">Is the network enabled?</translation>
+    </message>
+    <message>
+        <source>PMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PMs - sent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -350,6 +362,13 @@ Special thanks to contributors:
     </message>
     <message>
         <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserCard</name>
+    <message>
+        <source>PM</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -80,6 +80,36 @@ Page {
         xhr.send(JSON.stringify(json));
     }
 
+    function newPM(raw, title, target_recipients){
+        var xhr = new XMLHttpRequest;
+        const json = {
+            "raw": raw,
+            "title": title,
+            "target_recipients": target_recipients,
+            "archetype": "private_message"
+        };
+        xhr.open("POST", "https://forum.sailfishos.org/posts/");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+
+                    console.log(xhr.responseText);
+                    var data = JSON.parse(xhr.responseText);
+                    pageStack.push("ThreadView.qml", {
+                                       "topicid": data.topic_id,
+                                       "post_number": 0
+                                   });
+                    //   clearview();
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
+    }
     function clearview(){
         list.model.clear();
         pageno = 0;

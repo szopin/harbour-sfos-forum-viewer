@@ -32,6 +32,7 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/pages/OpenLink.qml \
     qml/pages/SearchPage.qml \
     qml/pages/ThreadView.qml \
+    qml/pages/UserCard.qml \
     qml/pages/webView.qml \
     rpm/harbour-sfos-forum-viewer.changes.in \
     rpm/harbour-sfos-forum-viewer.changes.run.in \

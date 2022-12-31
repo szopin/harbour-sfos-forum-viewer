@@ -7,8 +7,12 @@ Page {
     allowedOrientations: Orientation.All
     property var notif
     property bool checkem: false
+    property int pMs: 0
     property string loggedin
     property string fancy_title
+    property string loggedinname
+    property string highest_post_number
+    property string last_read_post_number
     property string combined: application.source + "site.json" // x-discourse-username
     property string combined2: application.source + "notifications.json"
     property bool networkError: false
@@ -34,6 +38,42 @@ Page {
         xhr.send();
         getnotifications();
     }
+    function getPMs() {
+        var xhr3 = new XMLHttpRequest;
+
+        xhr3.open("GET", combined2);
+        xhr3.setRequestHeader("User-Api-Key", loggedin);
+        xhr3.onreadystatechange = function() {
+            if (xhr3.readyState === XMLHttpRequest.DONE) {
+                if (xhr3.responseText === "") {
+                    list.model.clear();
+                    networkError = true;
+                    return;
+                } else {
+                    networkError = false;
+                }
+
+                var data = JSON.parse(xhr3.responseText);
+                var topics = data.topic_list.topics;
+                list.model.clear();
+                var topics_length = topics.length;
+                for (var i=0;i<topics_length;i++) {
+                    var topic = topics[i];
+
+                    list.model.append({ title: topic.title,
+                                          username: topic.last_poster_username,
+                                          topic_id: topic.id,
+                                          fancy_title: topic.fancy_title,
+                                          bumped: topic.bumped_at,
+                                          read:  true, //topic.last_read_post_number === topic.highest_post_number ,
+                                          post_number: topic.last_read_post_number
+                                      });
+                }
+            }
+        }
+
+        xhr3.send();
+    }
     function mark(notid, index) {
         var xhr = new XMLHttpRequest;
         const json = {
@@ -57,6 +97,7 @@ Page {
         }
         xhr.send(JSON.stringify(json));
     }
+
     function getnotifications(){
         var xhr2 = new XMLHttpRequest;
 
@@ -68,11 +109,11 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortext: xhr2.responseText});
                 } else {
+                    loggedinname = xhr2.getResponseHeader('x-discourse-username');
                     var data2 = JSON.parse(xhr2.responseText);
                     var notifications = data2.notifications;
                     var notlen = notifications.length;
                     mainConfig.setValue("lastnot", notifications[0].id);
-                    console.log(notifications[0].id);
                     for (var i=0;i<notlen;i++) {
                         var notific = notifications[i];
                         if (notific.notification_type == 16) {
@@ -111,11 +152,45 @@ Page {
         anchors.fill: parent
         header: PageHeader {
             id: header
-            title: qsTr("Notifications")
+            title: pMs == 0 ? qsTr("Notifications") : pMs == 1 ? qsTr("PMs") : qsTr("PMs - sent")
             description: qsTr("SailfishOS Forum")
         }
+        PullDownMenu {
+            id: pms
 
+            MenuItem {
+                visible: pMs != 1
+                text: qsTr("PMs")
 
+                onClicked: {
+                    pMs = 1
+                    combined2 = application.source +"topics/private-messages/" + loggedinname + ".json"
+                    getPMs();
+                }
+            }
+            MenuItem {
+                visible: pMs != 2
+                text: qsTr("PMs - sent")
+
+                onClicked: {
+                    pMs = 2
+                    combined2 = application.source +"topics/private-messages-sent/" + loggedinname + ".json"
+                    getPMs();
+                }
+            }
+
+            MenuItem {
+                visible: pMs != 0
+                text: qsTr("Notifications")
+
+                onClicked: {
+                    pMs = 0
+                    combined2 = application.source + "notifications.json"
+                    list.model.clear();
+                    getnotifications();
+                }
+            }
+        }
         footer: Item {
             width: parent.width
             height: Theme.horizontalPageMargin
@@ -163,8 +238,9 @@ Page {
                         width: parent.width - parent.spacing
 
                         Label {
-                            text: username + " - " + Object.keys(notif)[type - 1] + " - " + fancy_title
+                            text: !pMs ? username + " - " + Object.keys(notif)[type - 1] + " - " + fancy_title : username + " - " + fancy_title
                             width: parent.width
+                            textFormat: Text.RichText
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
                             color: read ? Theme.primaryColor : Theme.highlightColor
@@ -190,9 +266,8 @@ Page {
             }
 
             onClicked: {
-
                 if(topic_id){
-                    if(!read) mark(notid, index);
+                    if(!read && !pMs) mark(notid, index);
                     pageStack.push("ThreadView.qml", {
                                        "topicid": topic_id,
                                        "post_number": post_number

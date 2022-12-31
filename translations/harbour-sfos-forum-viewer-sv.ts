@@ -188,6 +188,10 @@ Speciellt tack till medverkande:
         <source>Body</source>
         <translation>Text</translation>
     </message>
+    <message>
+        <source>Enter PM to </source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NotificationSettings</name>
@@ -221,6 +225,14 @@ Speciellt tack till medverkande:
     <message>
         <source>Is the network enabled?</source>
         <translation>Är nätverket aktiverat?</translation>
+    </message>
+    <message>
+        <source>PMs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PMs - sent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -350,6 +362,13 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UserCard</name>
+    <message>
+        <source>PM</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
