@@ -38,7 +38,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.6.1"
+    readonly property string appVersion: "1.6.2"
     // ================================
 
     property bool fetching: false

@@ -577,7 +577,7 @@ Page {
                     onClicked: unlike(postid, index);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1"  && yours && can_edit
+                    visible: loggedin.value != "-1"  && can_edit
                     text: qsTr("Edit")
                     onClicked: newedit(postid);
                 }
