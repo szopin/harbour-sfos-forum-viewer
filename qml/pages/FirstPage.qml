@@ -121,7 +121,7 @@ Page {
         var xhr = new XMLHttpRequest;
 
         xhr.open("GET", combined);
-        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        if (loggedin.value !== "-1") xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.responseText === "") {
