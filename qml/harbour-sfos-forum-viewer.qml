@@ -52,6 +52,7 @@ ApplicationWindow
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
     }
+
     property QtObject categories: QtObject {
         property bool networkError: false
         property var model: ListModel { id: categoriesModel }
@@ -60,7 +61,7 @@ ApplicationWindow
         function fetch() {
             var xhr = new XMLHttpRequest;
             xhr.open("GET", application.source + "categories.json?include_subcategories=true");
-            if (loggedin.value != -1) xhr.setRequestHeader("User-Api-Key", loggedin.value);
+            if (loggedin.value && (loggedin.value != -1)) xhr.setRequestHeader("User-Api-Key", loggedin.value);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.responseText === "") {
@@ -125,7 +126,7 @@ ApplicationWindow
         fetching = true
         var xhr = new XMLHttpRequest;
         xhr.open("GET", source + "latest.json");
-        if (loggedin.value != -1) xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        if (loggedin.value && (loggedin.value != -1)) xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.responseText !== "") {
