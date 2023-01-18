@@ -60,6 +60,7 @@ Page {
     function getRedirect(link){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", link);
+        if (loggedin.value != "-1") xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var xhrlocation = xhr.getResponseHeader("location");

@@ -121,6 +121,7 @@ Page {
         var xhr = new XMLHttpRequest;
 
         xhr.open("GET", combined);
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.responseText === "") {
@@ -226,10 +227,12 @@ Page {
         clearview();
 
     }
+
     ConfigurationValue {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
     }
+
     ConfigurationValue {
         id: checkem
         key: "/apps/harbour-sfos-forum-viewer/checkem"
