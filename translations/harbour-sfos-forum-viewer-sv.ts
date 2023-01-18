@@ -144,11 +144,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>New notification</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny avisering</translation>
     </message>
     <message>
         <source>tags</source>
-        <translation type="unfinished"></translation>
+        <translation>taggar</translation>
     </message>
 </context>
 <context>
@@ -190,22 +190,22 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Enter PM to </source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka PM till </translation>
     </message>
 </context>
 <context>
     <name>NotificationSettings</name>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Acceptera</translation>
     </message>
     <message>
         <source>Check automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolla automatiskt</translation>
     </message>
     <message>
         <source>Minutes: </source>
-        <translation type="unfinished"></translation>
+        <translation>Minuter: </translation>
     </message>
 </context>
 <context>
@@ -228,11 +228,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>PMs</source>
-        <translation type="unfinished"></translation>
+        <translation>PM</translation>
     </message>
     <message>
         <source>PMs - sent</source>
-        <translation type="unfinished"></translation>
+        <translation>PM - skickat</translation>
     </message>
 </context>
 <context>
@@ -362,14 +362,14 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>tags</source>
-        <translation type="unfinished"></translation>
+        <translation>taggar</translation>
     </message>
 </context>
 <context>
     <name>UserCard</name>
     <message>
         <source>PM</source>
-        <translation type="unfinished"></translation>
+        <translation>PM</translation>
     </message>
 </context>
 <context>
