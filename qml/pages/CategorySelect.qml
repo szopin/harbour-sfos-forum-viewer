@@ -96,13 +96,13 @@ Page {
 
        delegate: ListItem {
            id: item
-           width: parent.width
+           width: ListView.view.width
            contentHeight: contentCol.height
+
            onClicked: {
-               findFirstPage().showCategory(slug + "/" + topic, name, topic_template, topic);
+               findFirstPage().showCategory( ((is_subcategory) ? categories.lookup[parent_category_id].slug + "/" : "") + slug + "/" + topic, name, topic_template, topic);
                pageStack.navigateBack();
            }
-
            Rectangle {
                id: rect
                anchors {
@@ -125,7 +125,7 @@ Page {
 
                Label {
                    width: parent.width
-                   text: name
+                   text: (is_subcategory ? categories.lookup[parent_category_id].name + ": " : "" ) + name
                    wrapMode: Text.Wrap
                }
 

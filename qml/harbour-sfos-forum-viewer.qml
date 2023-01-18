@@ -54,7 +54,7 @@ ApplicationWindow
 
         function fetch() {
             var xhr = new XMLHttpRequest;
-            xhr.open("GET", application.source + "categories.json");
+            xhr.open("GET", application.source + "categories.json?include_subcategories=true");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.responseText === "") {
@@ -67,8 +67,7 @@ ApplicationWindow
                     model.clear();
                     lookup = {};
 
-                    for (var i = 0; i < data.category_list.categories.length; i++) {
-                        var item = data.category_list.categories[i];
+                    function addCategory(item, isSub) {
                         var append = {
                             name: item['name'],
                             topic: item['id'],
@@ -76,11 +75,23 @@ ApplicationWindow
                             topic_count: item['topic_count'],
                             description_text: item['description_text'],
                             slug: item['slug'],
-                            topic_template: item['topic_template']
+                            topic_template: item['topic_template'],
+                            is_subcategory: (!!isSub),
+                            parent_category_id: isSub ? item['parent_category_id'] : -1
                         };
-
                         lookup[item['id']] = append;
                         model.append(append);
+                    }
+
+                    for (var i = 0; i < data.category_list.categories.length; i++) {
+                        var item = data.category_list.categories[i];
+                        addCategory(item, false);
+                        if (item['has_children']) {
+                            for (var i = 0; i < item.subcategory_list.length; i++) {
+                                addCategory(item.subcategory_list[i], true);
+                            }
+                        }
+
                     }
 
                     lookupChanged();
