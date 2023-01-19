@@ -38,7 +38,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.7.0"
+    readonly property string appVersion: "1.7.1"
     // ================================
 
     property bool fetching: false
@@ -87,8 +87,8 @@ ApplicationWindow
                         var item = data.category_list.categories[i];
                         addCategory(item, false);
                         if (item['has_children']) {
-                            for (var i = 0; i < item.subcategory_list.length; i++) {
-                                addCategory(item.subcategory_list[i], true);
+                            for (var j = 0; j < item.subcategory_list.length; j++) {
+                                addCategory(item.subcategory_list[j], true);
                             }
                         }
 
