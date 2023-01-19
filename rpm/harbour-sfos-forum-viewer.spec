@@ -27,6 +27,8 @@ Requires:   libsailfishcryptoplugin
 Requires:   sailfishsecretsdaemon-cryptoplugins-default
 Requires:   sailfishsecretsdaemon-secretsplugins-default
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
+BuildRequires:  pkgconfig(sailfishsecrets)
+BuildRequires:  pkgconfig(sailfishcrypto)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
