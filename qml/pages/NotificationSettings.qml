@@ -4,6 +4,9 @@ import Nemo.Configuration 1.0
 
 Dialog{
     id: settings
+
+    allowedOrientations: Orientation.All
+
     property bool checkemb: checkem.value
 
     ConfigurationGroup {

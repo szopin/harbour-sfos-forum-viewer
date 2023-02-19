@@ -5,6 +5,8 @@ import Sailfish.Silica 1.0
 Dialog {
     id: dialog2
 
+    allowedOrientations: Orientation.All
+
     property string category
     property string raw
     property string target_recipients

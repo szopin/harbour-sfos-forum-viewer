@@ -6,6 +6,8 @@ Dialog {
     id: openLink
     property string link
 
+    allowedOrientations: Orientation.All
+
     onAccepted: {
 
                 pageStack.replace("webView.qml", {"pageurl": link });
