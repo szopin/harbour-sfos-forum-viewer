@@ -26,6 +26,9 @@ Requires:   libsailfishcrypto
 Requires:   libsailfishcryptoplugin
 Requires:   sailfishsecretsdaemon-cryptoplugins-default
 Requires:   sailfishsecretsdaemon-secretsplugins-default
+Requires:   sailfish-components-webview-qt5
+Requires:   sailfish-components-webview-qt5-popups
+Requires:   sailfish-components-webview-qt5-pickers
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  pkgconfig(sailfishcrypto)
