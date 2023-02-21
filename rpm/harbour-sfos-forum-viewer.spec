@@ -9,7 +9,7 @@ Name:       harbour-sfos-forum-viewer
 # << macros
 
 Summary:    Viewer for SailfishOS forums
-Version:    1.7.1
+Version:    1.8.0
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -20,15 +20,12 @@ Source100:  harbour-sfos-forum-viewer.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher
 Requires:   sailfishsecretsdaemon
-Requires:   libsailfishsecrets.so.0
-Requires:   libsailfishcrypto.so.0
-Requires:   qml(Sailfish.Crypto)
-Requires:   qml(Sailfish.Secrets)
+Requires:   libsailfishsecrets
+Requires:   libsailfishsecretsplugin
+Requires:   libsailfishcrypto
+Requires:   libsailfishcryptoplugin
 Requires:   sailfishsecretsdaemon-cryptoplugins-default
 Requires:   sailfishsecretsdaemon-secretsplugins-default
-Requires:   sailfish-components-webview-qt5
-Requires:   sailfish-components-webview-qt5-popups
-Requires:   sailfish-components-webview-qt5-pickers
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  pkgconfig(sailfishcrypto)
