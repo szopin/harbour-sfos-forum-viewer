@@ -1,11 +1,11 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
-import QtWebKit 3.0
-import QtWebKit.experimental 1.0
+import Sailfish.WebView 1.0
+import Sailfish.WebEngine 1.0
 
-
-Dialog {id: loginDialog
+WebViewPage {
+    id: loginDialog
 
     property var payload
     property string pubkey
@@ -21,46 +21,36 @@ Dialog {id: loginDialog
         return pageStack.find(function(page) { return page.hasOwnProperty('plaintext'); });
     }
 
-
     function getAuthorizationCode(code) {
-        payload = payload.substring(6, payload.length - 8)
-        findFirstPage().dec(payload);
-        close()
-
+        if (code.length > 8) {
+            payload = code.substring(6, code.length - 8)
+            findFirstPage().dec(payload)
+            pageStack.pop()
+        }
     }
 
-    SilicaWebView {
-        id: webview
-        anchors.fill: parent
-                smooth: true
+        WebView {
+            id: webview
+            anchors.fill: parent
+            url: auth_url
 
-        url: auth_url
-        experimental.preferences.navigatorQtObjectEnabled: true;
-        anchors {
-           top: parent.top
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-        }
-        onLoadingChanged: {
-
-                if (status===WebView.LoadSucceededStatus){
-                experimental.evaluateJavaScript("navigator.qt.postMessage(document.getElementsByTagName('code')[0].outerHTML)");
-
-            if (url.toString().indexOf(redirect_uri) == 0) {
-
-                        url= "https://forum.sailfishos.org/auth/oauth2_basic"
-
-            }
+            property var alreadyloaded: false
+            
+            onLoadingChanged: {
+                console.log("onLoadingChanged")
+                if (alreadyloaded) {
+                    console.log("alreadyloaded")
+                    runJavaScript("return document.getElementsByTagName('code')[0].outerHTML;", function(result) {getAuthorizationCode(result);});
                 }
-        }
-            experimental.onMessageReceived: {
-                payload = message.data
-                    console.log(message.data)
-                getAuthorizationCode(payload)
-
+                if (loaded){
+                    console.log("loaded")
+                    alreadyloaded = true
+                    WebEngineSettings.setPreference("security.csp.enable",
+                                                    false,
+                                                    WebEngineSettings.BoolPref)
+                }
             }
-    }
+        }
 }
 
 

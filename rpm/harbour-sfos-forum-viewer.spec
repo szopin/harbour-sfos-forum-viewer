@@ -20,12 +20,15 @@ Source100:  harbour-sfos-forum-viewer.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher
 Requires:   sailfishsecretsdaemon
-Requires:   libsailfishsecrets
-Requires:   libsailfishsecretsplugin
-Requires:   libsailfishcrypto
-Requires:   libsailfishcryptoplugin
+Requires:   libsailfishsecrets.so.0
+Requires:   libsailfishcrypto.so.0
+Requires:   qml(Sailfish.Crypto)
+Requires:   qml(Sailfish.Secrets)
 Requires:   sailfishsecretsdaemon-cryptoplugins-default
 Requires:   sailfishsecretsdaemon-secretsplugins-default
+Requires:   sailfish-components-webview-qt5
+Requires:   sailfish-components-webview-qt5-popups
+Requires:   sailfish-components-webview-qt5-pickers
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  pkgconfig(sailfishcrypto)
