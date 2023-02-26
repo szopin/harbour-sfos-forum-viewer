@@ -289,6 +289,7 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
+                tags = "";
                 if(data.tags){
                     for(var t=0;t<data.tags.length;t++){
                         tags = tags + data.tags[t] + " "
