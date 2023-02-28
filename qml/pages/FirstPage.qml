@@ -121,7 +121,7 @@ Page {
         var xhr = new XMLHttpRequest;
 
         xhr.open("GET", combined);
-        if (loggedin.value !== "-1") xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        if (loggedin.value !== "-1" && loggedin.value) xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.responseText === "") {
@@ -378,6 +378,7 @@ Page {
             mainConfig.setValue("timer", timerv);
             lastnotv = mainConfig.value("lastnot", "-1");
             mainConfig.setValue("lastnot", lastnotv);
+            console.log(checkem.value, loggedin.value)
             showLatest();
         }
 
@@ -541,7 +542,7 @@ Page {
         BackgroundJob {
             id: wakeup
             triggeredOnEnable: true
-            enabled: checkem.value && loggedin.value != "-1"
+            enabled: checkemb && loggedin.value != "-1" && loggedin.value
             frequency: BackgroundJob.ThirtySeconds * 2 * timer.value
             onTriggered: {
                 checknotifications();

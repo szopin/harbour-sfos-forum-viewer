@@ -39,15 +39,24 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.8.0"
+    readonly property string appVersion: "1.8.1"
     // ================================
 
     property bool fetching: false
+    property string login
+    property bool checkemb
     property var latest: ListModel{id: latest}
     readonly property string source: "https://forum.sailfishos.org/"
     //: date format including date and time but no weekday
     readonly property string dateTimeFormat: qsTr("d/M/yyyy '('hh':'mm')'")
-
+    ConfigurationGroup {
+        id: mainConfig
+        path: "/apps/harbour-sfos-forum-viewer"
+    }
+    ConfigurationValue {
+        id: checkem
+        key: "/apps/harbour-sfos-forum-viewer/checkem"
+    }
     ConfigurationValue {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
@@ -149,6 +158,11 @@ ApplicationWindow
     }
 
     Component.onCompleted: {
+        login = mainConfig.value("key", "-1");
+        mainConfig.setValue("key", login);
+        checkemb = mainConfig.value("checkem", false);
+        mainConfig.setValue("checkem", checkemb);
+        console.log(checkem.value, loggedin.value)
         categories.fetch();
         fetchLatestPosts();
     }

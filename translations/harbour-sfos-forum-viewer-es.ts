@@ -105,77 +105,77 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="208"/>
+        <location filename="../qml/pages/FirstPage.qml" line="204"/>
         <source>Latest</source>
         <translation type="unfinished">Recientes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="216"/>
+        <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>Top</source>
         <translation type="unfinished">Relevantes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="278"/>
+        <location filename="../qml/pages/FirstPage.qml" line="276"/>
         <source>New notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="305"/>
+        <location filename="../qml/pages/FirstPage.qml" line="303"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Foro de S a i l f i s h</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="318"/>
+        <location filename="../qml/pages/FirstPage.qml" line="316"/>
         <source>About</source>
         <translation type="unfinished">Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="323"/>
+        <location filename="../qml/pages/FirstPage.qml" line="321"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="329"/>
+        <location filename="../qml/pages/FirstPage.qml" line="327"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="334"/>
+        <location filename="../qml/pages/FirstPage.qml" line="332"/>
         <source>New thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="340"/>
+        <location filename="../qml/pages/FirstPage.qml" line="338"/>
         <source>Search</source>
         <translation type="unfinished">Buscar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="345"/>
+        <location filename="../qml/pages/FirstPage.qml" line="343"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="350"/>
+        <location filename="../qml/pages/FirstPage.qml" line="348"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="368"/>
+        <location filename="../qml/pages/FirstPage.qml" line="366"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Nada que mostrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="369"/>
+        <location filename="../qml/pages/FirstPage.qml" line="367"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="514"/>
+        <location filename="../qml/pages/FirstPage.qml" line="513"/>
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="558"/>
+        <location filename="../qml/pages/FirstPage.qml" line="557"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -359,88 +359,88 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>ThreadView</name>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="356"/>
+        <location filename="../qml/pages/ThreadView.qml" line="353"/>
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="369"/>
+        <location filename="../qml/pages/ThreadView.qml" line="366"/>
         <source>Copy link to clipboard</source>
         <translation>Copiar enlace al portapapeles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="373"/>
+        <location filename="../qml/pages/ThreadView.qml" line="370"/>
         <source>Open in external browser</source>
         <translation>Abrir en navegador externo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="377"/>
+        <location filename="../qml/pages/ThreadView.qml" line="374"/>
         <source>Open directly</source>
         <translation>Abrir directamente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="382"/>
+        <location filename="../qml/pages/ThreadView.qml" line="379"/>
         <source>Search thread</source>
         <translation>Buscar hilo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="387"/>
-        <location filename="../qml/pages/ThreadView.qml" line="395"/>
+        <location filename="../qml/pages/ThreadView.qml" line="384"/>
+        <location filename="../qml/pages/ThreadView.qml" line="392"/>
         <source>Post reply</source>
         <translation>Responder a publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="491"/>
+        <location filename="../qml/pages/ThreadView.qml" line="488"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="539"/>
+        <location filename="../qml/pages/ThreadView.qml" line="536"/>
         <source>Copy to clipboard</source>
         <translation>Copiar al portapapeles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="545"/>
+        <location filename="../qml/pages/ThreadView.qml" line="542"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="550"/>
+        <location filename="../qml/pages/ThreadView.qml" line="547"/>
         <source>Alternative formatting</source>
         <translation>Formato alternativo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="555"/>
+        <location filename="../qml/pages/ThreadView.qml" line="552"/>
         <source>Show replied to post</source>
         <translation>Mostrar respondida la publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="561"/>
+        <location filename="../qml/pages/ThreadView.qml" line="558"/>
         <source>Uncensor post</source>
         <translation>Publicación sin censura</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="566"/>
+        <location filename="../qml/pages/ThreadView.qml" line="563"/>
         <source>Like</source>
         <translation>Gustar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="571"/>
+        <location filename="../qml/pages/ThreadView.qml" line="568"/>
         <source>Reply</source>
         <translation>Responder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="576"/>
+        <location filename="../qml/pages/ThreadView.qml" line="573"/>
         <source>Unlike</source>
         <translation>No gustar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="586"/>
+        <location filename="../qml/pages/ThreadView.qml" line="583"/>
         <source>Delete</source>
         <translation>Borrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="581"/>
+        <location filename="../qml/pages/ThreadView.qml" line="578"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
@@ -456,7 +456,7 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>harbour-sfos-forum-viewer</name>
     <message>
-        <location filename="../qml/harbour-sfos-forum-viewer.qml" line="48"/>
+        <location filename="../qml/harbour-sfos-forum-viewer.qml" line="51"/>
         <source>d/M/yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <extracomment>date format including date and time but no weekday</extracomment>
         <translation>dd.MM.yyyy hh:mm</translation>
