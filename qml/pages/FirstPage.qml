@@ -145,12 +145,7 @@ Page {
                 var topics_length = topics.length;
                 for (var i=0;i<topics_length;i++) {
                     var topic = topics[i];
-                    tags = ""
-                    if(topic.tags){
-                        for(var t=0;t<topic.tags.length;t++){
-                            tags = tags + topic.tags[t] + " "
-                        }
-                    }
+                    if (topic.tags) tags = topic.tags.join(" ");
                     list.model.append({ title: topic.title,
                                           topicid: topic.id,
                                           posts_count: topic.posts_count,
