@@ -150,6 +150,10 @@ Vielen Dank an die Mitwirkenden:
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Mark as Read</source>
+        <translation>Als Gelesen markieren</translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
