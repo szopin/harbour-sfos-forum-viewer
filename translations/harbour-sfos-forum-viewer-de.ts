@@ -151,8 +151,12 @@ Vielen Dank an die Mitwirkenden:
         <translation>Tags</translation>
     </message>
     <message>
-        <source>Mark as Read</source>
-        <translation>Als Gelesen markieren</translation>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t track</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

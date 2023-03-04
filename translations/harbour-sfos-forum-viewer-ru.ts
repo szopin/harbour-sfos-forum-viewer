@@ -175,7 +175,17 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="557"/>
+        <location filename="../qml/pages/FirstPage.qml" line="530"/>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="537"/>
+        <source>Don&apos;t track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="574"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>

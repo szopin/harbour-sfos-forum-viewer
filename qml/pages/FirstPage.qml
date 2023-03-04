@@ -526,10 +526,19 @@ Page {
             }
 
             menu: ContextMenu {
-                      MenuItem { text: qsTr("Mark as Read")
+                hasContent: lastPostNumber > 0
+                      MenuItem { text: qsTr("Mark as read")
+                          visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                           onDelayedClick: {
                               postCountConfig.setValue(topicid, highest_post_number);
                               lastPostNumber = highest_post_number;
+                          }
+                      }
+                      MenuItem { text: qsTr("Don't track")
+                          visible: lastPostNumber > 0
+                          onDelayedClick: {
+                              postCountConfig.setValue(topicid, "-1");
+                              lastPostNumber = -1;
                           }
                       }
             }

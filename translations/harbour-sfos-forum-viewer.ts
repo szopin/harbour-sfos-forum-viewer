@@ -142,6 +142,14 @@ Special thanks to contributors:
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Mark as read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t track</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
