@@ -382,10 +382,10 @@ Page {
             showLatest();
         }
 
-        delegate: BackgroundItem {
+        delegate: ListItem {
             id: item
             width: parent.width
-            height: delegateCol.height + Theme.paddingLarge
+            contentHeight: delegateCol.height + Theme.paddingLarge
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
             property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)
@@ -525,6 +525,14 @@ Page {
                 }
             }
 
+            menu: ContextMenu {
+                      MenuItem { text: qsTr("Mark as Read")
+                          onDelayedClick: {
+                              postCountConfig.setValue(topicid, highest_post_number);
+                              lastPostNumber = highest_post_number;
+                          }
+                      }
+            }
             onClicked: {
                 var name = list.model.get(index).name
                 postCountConfig.setValue(topicid, highest_post_number);
