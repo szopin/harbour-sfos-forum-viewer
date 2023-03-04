@@ -152,7 +152,7 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Als Gelesen markieren</translation>
     </message>
     <message>
         <source>Don&apos;t track</source>
