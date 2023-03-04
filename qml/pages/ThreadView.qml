@@ -536,6 +536,10 @@ Page {
                     text: qsTr("Copy to clipboard");
                     onClicked: getraw(postid, 1);
                 }
+                MenuItem {
+                    text: qsTr("Copy link to clipboard")
+                    onClicked: Clipboard.text = source + "/" + post_number
+                }
 
                 MenuItem {
                     visible: version > 1 && updated_at !== created_at
