@@ -152,11 +152,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Mark as read</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera som läst</translation>
     </message>
     <message>
         <source>Don&apos;t track</source>
-        <translation type="unfinished"></translation>
+        <translation>Spåra inte</translation>
     </message>
 </context>
 <context>
