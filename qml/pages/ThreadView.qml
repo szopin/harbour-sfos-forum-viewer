@@ -30,6 +30,7 @@ import QtGraphicalEffects 1.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 
+
 Page {
     id: commentpage
     allowedOrientations: Orientation.All
@@ -56,6 +57,10 @@ Page {
     property bool can_act
     property bool can_undo
     property bool accepted_answer
+    property bool busy: true
+    property int xi
+    property int yi
+    property int zi
 
     function getRedirect(link){
         var xhr = new XMLHttpRequest;
@@ -243,6 +248,18 @@ Page {
         xhr.send(JSON.stringify(json));
     }
 
+    WorkerScript {
+        id: worker
+        source: "worker.js"
+        onMessage: {
+            var data2 = JSON.parse(messageObject.data);
+            appendPosts(data2.post_stream.posts)
+            busy = !messageObject.last
+
+            if (messageObject.last) busy = false// list.positionViewAtIndex(post_number - 1, ListView.Beginning);
+        }
+    }
+
     function appendPosts(posts) {
         var posts_length = posts.length;
         console.log(posts_length);
@@ -295,50 +312,53 @@ Page {
                 if (aTitle == "") aTitle = data.title;
                 posts_count = data.posts_count;
                 var post_stream = data.post_stream;
-                if (posts_count >= 20 && posts_count <= 400){
-                    var stream = post_stream.stream;
-                    for(var j=20;j<posts_count;j++)
-                        loadmore += stream[j] + "&post_ids[]="
-                    console.log("1")
-                } else {
-                    var stream = post_stream.stream;
-                    for(var k=20;k<400;k++)
-                        loadmore += stream[k] + "&post_ids[]="
-                    console.log("2")
-                    for(var l=400;l<posts_count;l++)
-                        loadmore2 += stream[l] + "&post_ids[]="
-                    console.log("3")
-                }
-                var xhr2 = new XMLHttpRequest;
-                xhr2.open("GET", loadmore);
-                if (loggedin.value != "-1") xhr2.setRequestHeader("User-Api-Key", loggedin.value);
-
-                xhr2.onreadystatechange = function() {
-                    if (xhr2.readyState === XMLHttpRequest.DONE) {
-                        var xhr3 = new XMLHttpRequest;
-                        xhr3.open("GET", loadmore2);
-                        if (loggedin.value != "-1") xhr3.setRequestHeader("User-Api-Key", loggedin.value);
-
-                        xhr3.onreadystatechange = function() {
-                            if (xhr3.readyState === XMLHttpRequest.DONE) {
-                                list.model.clear();
-                                appendPosts(post_stream.posts);
-                                var data2 = JSON.parse(xhr2.responseText);
-                                appendPosts(data2.post_stream.posts)
-                                var data3 = JSON.parse(xhr3.responseText);
-                                appendPosts(data3.post_stream.posts)
-                            }
-
+                list.model.clear();
+                appendPosts(post_stream.posts);
+                var stream = post_stream.stream;
+                if (posts_count >= 20){
+                    xi = Math.floor((posts_count - 20) / 400)
+                    yi = (posts_count - 20) % 400
+                    for( zi = 0;zi<xi;zi++){
+                        loadmore =  source + "/posts.json?post_ids[]="
+                        for (var v = (20 + (zi * 400)); v < (20 +( (zi+1)*400));v++){
+                            loadmore += stream[v] + "&post_ids[]="
                         }
-                        xhr3.send();
+                        busy = true
 
+                        var msg = {
+                            'loadmore': loadmore,
+                            'login': loggedin.value,
+                            'last': false
+                        };
+
+                        worker.sendMessage(msg)
                     }
+                } else {
+                    busy = false
                 }
-                xhr2.send();
 
+                if( zi == xi && posts_count >= 20) {
+                    busy = true
+                    loadmore =  source + "/posts.json?post_ids[]="
+                    for(yi<posts_count - (zi*400);yi>0;yi--){
+                        loadmore += stream[posts_count - yi] + "&post_ids[]="
+                    }
 
+                    var msg = {
+                        'loadmore': loadmore,
+                        'login': loggedin.value,
+                        'last': true
+                    };
+                    worker.sendMessage(msg)
+
+                }
             }
+
+
         }
+
+
+
         xhr.send();
     }
     ConfigurationValue {
@@ -397,7 +417,7 @@ Page {
 
         BusyIndicator {
             id: vplaceholder
-            running: commodel.count == 0
+            running: busy //commodel.count == 0
             anchors.centerIn: parent
             size: BusyIndicatorSize.Large
         }
@@ -592,7 +612,10 @@ Page {
         }
 
         Component.onCompleted: commentpage.getcomments();
-        onCountChanged: {
+
+    }
+    onBusyChanged: {
+        if(busy == false){
             if (post_number < 0) return;
             var comment;
 
@@ -601,9 +624,9 @@ Page {
                     comment = list.model.get(j);
                     if (comment && comment.post_number === post_number) {
                         if (highest_post_number){
-                            positionViewAtIndex(j + 1, ListView.Beginning);
+                            list.positionViewAtIndex(j + 1, ListView.Beginning);
                         } else {
-                            positionViewAtIndex(j, ListView.Beginning);
+                            list.positionViewAtIndex(j, ListView.Beginning);
                         }
                     }
                 }
@@ -611,10 +634,12 @@ Page {
                 for(var i=post_number - (highest_post_number - posts_count) - 1;i<=post_number;i++){
                     comment = list.model.get(i)
                     if (post_id && comment && comment.postid === post_id){
-                        positionViewAtIndex(i, ListView.Beginning);
+                        list.positionViewAtIndex(i, ListView.Beginning);
                     }
                 }
             }
+
+
         }
     }
 }
