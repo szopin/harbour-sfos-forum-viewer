@@ -52,7 +52,7 @@ Page {
     property bool tclosed
     property string tags
     property string avatar
-    property bool cooked_hidden
+    property bool cooked_hidden: false
     property bool acted
     property bool can_act
     property bool can_undo
@@ -275,6 +275,7 @@ Page {
                 can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
                                                       ? action.can_undo : false
                 acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
+                post.cooked_hidden !== undefined ? cooked_hidden = post.cooked_hidden : cooked_hidden = false
             }
             list.model.append({
                                   cooked: post.cooked,
@@ -293,7 +294,7 @@ Page {
                                   post_number: post.post_number,
                                   reply_to: post.reply_to_post_number,
                                   last_postid: last_post,
-                                  cooked_hidden: post.cooked_hidden,
+                                  cooked_hidden: cooked_hidden,
                                   accepted_answer: post.accepted_answer
                               });
             last_post = post.post_number;
