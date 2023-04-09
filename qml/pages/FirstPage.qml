@@ -559,7 +559,7 @@ Page {
         BackgroundJob {
             id: wakeup
             triggeredOnEnable: true
-            enabled: checkemb && loggedin.value != "-1" && loggedin.value
+            enabled: checkem.value && loggedin.value != "-1" && loggedin.value
             frequency: BackgroundJob.ThirtySeconds * 2 * timer.value
             onTriggered: {
                 checknotifications();
