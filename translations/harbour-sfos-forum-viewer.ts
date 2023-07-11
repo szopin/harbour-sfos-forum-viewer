@@ -150,6 +150,14 @@ Special thanks to contributors:
         <source>Don&apos;t track</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Clear filter list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter OP</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -362,6 +370,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter user</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -247,7 +247,10 @@ Page {
         }
         xhr.send(JSON.stringify(json));
     }
-
+    ConfigurationGroup {
+        id: filterlist
+        path: "/apps/harbour-sfos-forum-viewer/filterlist"
+    }
     WorkerScript {
         id: worker
         source: "worker.js"
@@ -276,6 +279,7 @@ Page {
                                                       ? action.can_undo : false
                 acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
                 post.cooked_hidden !== undefined ? cooked_hidden = post.cooked_hidden : cooked_hidden = false
+                var spam =( filterlist.value(post.user_id, -1)  < 0) ? false : true
             }
             list.model.append({
                                   cooked: post.cooked,
@@ -291,6 +295,8 @@ Page {
                                   created_at: post.created_at,
                                   version: post.version,
                                   postid: post.id,
+                                  user_id: post.user_id,
+                                  spam: spam,
                                   post_number: post.post_number,
                                   reply_to: post.reply_to_post_number,
                                   last_postid: last_post,
@@ -427,7 +433,8 @@ Page {
         delegate: ListItem {
             enabled: menu.hasContent
             width: parent.width
-            contentHeight: delegateCol.height + Theme.paddingLarge
+            visible: !spam
+            contentHeight: !spam ? delegateCol.height + Theme.paddingLarge : 0
             anchors.horizontalCenter: parent.horizontalCenter
 
             Column {
@@ -607,6 +614,14 @@ Page {
                     visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
                     onClicked: del(postid, index);
+                }
+                MenuItem { text: qsTr("Filter user")
+
+                    onClicked: {
+                        //         getusername(user_id);
+                        filterlist.setValue(user_id, username);
+                        filterlist.setValue("set", 1);
+                    }
                 }
 
             }

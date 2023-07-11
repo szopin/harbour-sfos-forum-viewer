@@ -158,6 +158,14 @@ Speciellt tack till medverkande:
         <source>Don&apos;t track</source>
         <translation>Spåra inte</translation>
     </message>
+    <message>
+        <source>Clear filter list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter OP</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -371,6 +379,10 @@ Speciellt tack till medverkande:
     <message>
         <source>tags</source>
         <translation>taggar</translation>
+    </message>
+    <message>
+        <source>Filter user</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
