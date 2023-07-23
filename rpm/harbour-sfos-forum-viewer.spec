@@ -35,6 +35,7 @@ BuildRequires:  desktop-file-utils
 %description
 Viewer for SailfishOS forums
 
+%define _binary_payload w2.xzdio
 
 %prep
 %setup -q -n %{name}-%{version}
