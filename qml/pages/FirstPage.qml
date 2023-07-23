@@ -106,7 +106,6 @@ Page {
                                        "topicid": data.topic_id,
                                        "post_number": 0
                                    });
-                    //   clearview();
                 }
             }
         }
@@ -430,7 +429,6 @@ Page {
         delegate: ListItem {
             id: item
             width: parent.width
-            //visible: filterlist.value(user_id, -1)  < 0
             contentHeight: user_id ?  normrow.height + Theme.paddingLarge : spamrow.height
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
@@ -439,7 +437,6 @@ Page {
 
             Column {
                 id: delegateCol
-                //        visible: user_id //filterlist.value(user_id, -1)  < 0
                 height: user_id ? normrow.height : spamrow.height
                 width: parent.width - 2*Theme.horizontalPageMargin
                 spacing: Theme.paddingSmall
@@ -455,14 +452,9 @@ Page {
                     Label {
                         id: spamLabel
                         text: 'spam'
-
-                        //  filterlist.value(user_id, -1)  > 0
-                        //             minimumPixelSize: Theme.fontSizeTiny
-                        //             fontSizeMode: "Fit"
                         font.pixelSize: Theme.fontSizeSmall
                         color:
                             Theme.primaryColor
-                        //         height: 1.2*Theme.fontSizeSmall; width: parent.width
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                     }
