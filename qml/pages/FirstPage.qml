@@ -71,7 +71,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.statusText});
+                    pageStack.push("Error.qml", {errorcode: xhr.status, errortext: xhr.statusText});
                 } else {
 
                     console.log(xhr.responseText);
@@ -97,7 +97,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.statusText});
+                    pageStack.push("Error.qml", {errorcode: xhr.status, errortext: xhr.statusText});
                 } else {
 
                     console.log(xhr.responseText);
