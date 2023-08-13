@@ -3,15 +3,17 @@ import Sailfish.Silica 1.0
 
 Page {
     id: errors
-    property string errortext: qsTr("An unknown Error occurred.")
+    property string errortext: ''
+    property string errorcode: ''
 
     PageHeader {
         id: pageHeader
-        title: qsTr("Error:");
+        title: qsTr("Error:") + ( (errorcode != '') ? ' ' + errorcode : errorcode)
     }
     TextArea {
         id: errorbody
-        text: errortext
+        text: (errortext != '') ? errortext : qsTr("An unknown Error occurred.")
+        readOnly: true
         anchors.top: pageHeader.bottom
         anchors.left: parent.left
         anchors.right: parent.right

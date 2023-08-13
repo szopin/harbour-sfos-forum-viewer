@@ -71,7 +71,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortext: xhr.statusText});
                 } else {
 
                     console.log(xhr.responseText);
@@ -97,7 +97,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortext: xhr.statusText});
                 } else {
 
                     console.log(xhr.responseText);
@@ -205,9 +205,9 @@ Page {
                     pageStack.completeAnimation();
                     // guard against error pages stacking up when backgroundjob wakes up and checking fails
                     if (pageStack.currentPage.objectName == "NotificationError") {
-                            pageStack.currentPage.errortext = xhr2.responseText
+                            pageStack.currentPage.errortext = xhr2.statusText
                     } else {
-                            pageStack.push("Error.qml", {objectName: "NotificationError", errortext: xhr2.responseText})
+                            pageStack.push("Error.qml", {objectName: "NotificationError", errortext: xhr2.statusText})
                     };
                 } else {
                     var data2 = JSON.parse(xhr2.responseText);
