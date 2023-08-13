@@ -203,7 +203,12 @@ Page {
             if (xhr2.readyState === XMLHttpRequest.DONE){
                 if(xhr2.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr2.responseText});
+                    // guard against error pages stacking up when backgroundjob wakes up and checking fails
+                    if (pageStack.currentPage.objectName == "NotificationError") {
+                            pageStack.currentPage.errortext = xhr2.responseText
+                    } else {
+                            pageStack.push("Error.qml", {objectName: "NotificationError", errortext: xhr2.responseText})
+                    };
                 } else {
                     var data2 = JSON.parse(xhr2.responseText);
                     var notifications = data2.notifications;
