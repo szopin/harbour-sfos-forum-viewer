@@ -314,7 +314,7 @@ Vielen Dank an die Mitwirkenden:
     <name>ThreadView</name>
     <message>
         <source>Copy link to clipboard</source>
-        <translation>Alternative Formatierung</translation>
+        <translation>In die Zwischenablage kopieren</translation>
     </message>
     <message>
         <source>Open in external browser</source>
