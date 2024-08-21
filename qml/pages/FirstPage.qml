@@ -169,7 +169,8 @@ Page {
                                           spamop: topic.posters[0].user_id,
                                           user_id: spammerop,
                                           has_accepted_answer: topic.has_accepted_answer,
-                                          highest_post_number: topic.highest_post_number
+                                          highest_post_number: topic.highest_post_number,
+                                          notification_level: topic.notification_level
                                       });
                     console.log(topic.posters[0].user_id);
                 }
