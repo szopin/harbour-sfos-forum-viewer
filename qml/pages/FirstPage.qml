@@ -624,6 +624,7 @@ Page {
 
             menu: ContextMenu {
                 hasContent: lastPostNumber > 0 || !loadedMore
+                MenuLabel { text: watchlevels[notification_level] }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                     onDelayedClick: {
@@ -631,6 +632,50 @@ Page {
                         lastPostNumber = highest_post_number;
                     }
                 }
+                /*
+                MenuLabel { text: ""; height: sl.height
+                    Slider{ id: sl
+                    width: parent.width
+                    stepSize: 1
+                    minimumValue: 0
+                    maximumValue: 3
+                    value: notification_level
+                    valueText: watchlevels[sliderValue]
+                    label: qsTr("Tracking Level")
+                }
+            }
+            */
+            MenuItem { text: qsTr("Mute")
+                visible: (notification_level != 0)
+                onDelayedClick: {
+                    // muting hides the topic completely, with no way in the app to undo.
+                    // so, lets remorse it.
+                    Remorse.itemAction(item, qsTr("Muted"), function() { const newlevel = "0"; setNotificationLevel(topicid, newlevel) })
+                }
+            }
+            MenuItem { text: qsTr("Normal")
+                    visible: (notification_level != 1)
+                    onDelayedClick: {
+                        const newlevel = "1"
+                        setNotificationLevel(topicid, newlevel)
+                    }
+            }
+            MenuItem { text: qsTr("Track")
+                visible: (notification_level < 2)
+                onDelayedClick: {
+                    const newlevel = "2"
+                    setNotificationLevel(topicid, newlevel)
+                }
+            }
+            // only shown when state is Tracking, keep the menu shorter
+            MenuItem { text: qsTr("Watch")
+                    visible: (notification_level == 2)
+                    onDelayedClick: {
+                        const newlevel = "3"
+                        setNotificationLevel(topicid, newlevel)
+                    }
+                }
+                /*
                 MenuItem { text: qsTr("Don't track")
                     visible: lastPostNumber > 0
                     onDelayedClick: {
@@ -638,6 +683,7 @@ Page {
                         lastPostNumber = -1;
                     }
                 }
+                */
                 MenuItem { text: qsTr("Filter OP")
                     visible: !loadedMore
                     onDelayedClick: {
