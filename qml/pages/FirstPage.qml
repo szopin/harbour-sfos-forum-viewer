@@ -250,6 +250,39 @@ Page {
 
     }
 
+    readonly property var watchlevels: [
+            qsTr("Muted",    "Topic watch level"),
+            qsTr("Normal",   "Topic watch level"),
+            qsTr("Tracking", "Topic watch level"),
+            qsTr("Watching", "Topic watch level")
+    ]
+    function setNotificationLevel(topicid, level){
+        console.debug("Setting watch level to", level, ",", watchlevels[Number(level)])
+        var xhr = new XMLHttpRequest;
+        const json = {
+            // 0, 1, 2, 3
+            // muted, normal, tracking, watching
+            // string! so "0", not 0
+            "notification_level": level
+        };
+        xhr.open("POST", "https://forum.sailfishos.org/t/" + topicid + "/notifications.json");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+                    console.log(xhr.responseText);
+                    // FIXME: update to reload the topic properties
+                    clearview()
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
+    }
+
     ConfigurationValue {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
