@@ -258,16 +258,15 @@ Page {
         { "name": qsTr("Tracking", "Topic watch level (state)"), "action": qsTr("Track",  "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite-selected" },
         { "name": qsTr("Watching", "Topic watch level (state)"), "action": qsTr("Watch",  "Topic watch action (verb)"), "icon": "image://theme/icon-splus-show-password" }
     ]
+    // level being one of 0, 1, 2, 3; erepresenting muted, normal, tracking, watching
+    // !! payload wants a string so "0", not 0
     function setNotificationLevel(topicid, level){
         console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
         var xhr = new XMLHttpRequest;
         const json = {
-            // 0, 1, 2, 3
-            // muted, normal, tracking, watching
-            // string! so "0", not 0
             "notification_level": level
         };
-        xhr.open("POST", "https://forum.sailfishos.org/t/" + topicid + "/notifications.json");
+        xhr.open("POST", application.source + "/t/" + topicid + "/notifications.json");
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.setRequestHeader("Content-Type", 'application/json');
         xhr.onreadystatechange = function() {
