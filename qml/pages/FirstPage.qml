@@ -538,11 +538,16 @@ Page {
                         }
 
                         Icon {
-                            visible: has_accepted_answer
-                            source: "image://theme/icon-s-accept"
+                            //visible: has_accepted_answer
+                            //source: "image://theme/icon-s-accept"
+                            visible: source != ""
+                            source: has_accepted_answer ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
+                                                        : ((notification_level >= 0)
+                                                            ? watchlevel[notification_level].icon + "?" + Theme.rgba(postsLabel.color, 1.0)
+                                                            : "")
                             width: Theme.iconSizeSmall
                             height: width
-                            opacity: Theme.opacityLow
+                            opacity: (notification_level > 1) ? postsLabel.opacity : Theme.opacityLow
                         }
                     }
 
