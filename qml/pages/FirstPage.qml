@@ -635,40 +635,40 @@ Page {
                 /*
                 MenuLabel { text: ""; height: sl.height
                     Slider{ id: sl
-                    width: parent.width
-                    stepSize: 1
-                    minimumValue: 0
-                    maximumValue: 3
-                    value: notification_level
-                    valueText: watchlevels[sliderValue]
-                    label: qsTr("Tracking Level")
+                        width: parent.width
+                        stepSize: 1
+                        minimumValue: 0
+                        maximumValue: 3
+                        value: notification_level
+                        valueText: watchlevels[sliderValue]
+                        label: qsTr("Tracking Level")
+                    }
                 }
-            }
-            */
-            MenuItem { text: qsTr("Mute")
-                visible: (notification_level != 0)
-                onDelayedClick: {
-                    // muting hides the topic completely, with no way in the app to undo.
-                    // so, lets remorse it.
-                    Remorse.itemAction(item, qsTr("Muted"), function() { const newlevel = "0"; setNotificationLevel(topicid, newlevel) })
+                */
+                MenuItem { text: qsTr("Mute")
+                    visible: (notification_level != 0)
+                    onDelayedClick: {
+                        // muting hides the topic completely, with no way in the app to undo.
+                        // so, lets remorse it.
+                        Remorse.itemAction(item, qsTr("Muted"), function() { const newlevel = "0"; setNotificationLevel(topicid, newlevel) })
+                    }
                 }
-            }
-            MenuItem { text: qsTr("Normal")
+                MenuItem { text: qsTr("Normal")
                     visible: (notification_level != 1)
                     onDelayedClick: {
                         const newlevel = "1"
                         setNotificationLevel(topicid, newlevel)
                     }
-            }
-            MenuItem { text: qsTr("Track")
-                visible: (notification_level < 2)
-                onDelayedClick: {
-                    const newlevel = "2"
-                    setNotificationLevel(topicid, newlevel)
                 }
-            }
-            // only shown when state is Tracking, keep the menu shorter
-            MenuItem { text: qsTr("Watch")
+                MenuItem { text: qsTr("Track")
+                    visible: (notification_level < 2)
+                    onDelayedClick: {
+                        const newlevel = "2"
+                        setNotificationLevel(topicid, newlevel)
+                    }
+                }
+                // only shown when state is Tracking, keep the menu shorter
+                MenuItem { text: qsTr("Watch")
                     visible: (notification_level == 2)
                     onDelayedClick: {
                         const newlevel = "3"
@@ -692,7 +692,6 @@ Page {
                         filterlist.setValue(spamop, getusername(spamop));
                         filterlist.sync();
                         clearview();
-
                     }
                 }
             }
