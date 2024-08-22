@@ -251,14 +251,15 @@ Page {
 
     }
 
-    readonly property var watchlevels: [
-            qsTr("Muted",    "Topic watch level"),
-            qsTr("Normal",   "Topic watch level"),
-            qsTr("Tracking", "Topic watch level"),
-            qsTr("Watching", "Topic watch level")
+    readonly property var watchlevel: [
+        //{ "name": qsTr("Muted",    "Topic watch level"), "action": qsTr("Mute",   "Topic watch action (verb)"), "icon": "image://theme/icon-s-blocked" },
+        { "name": qsTr("Muted",    "Topic watch level (state)"), "action": qsTr("Mute",   "Topic watch action (verb)"), "icon": "image://theme/icon-m-speaker-mute" },
+        { "name": qsTr("Normal",   "Topic watch level (state)"), "action": qsTr("Normal", "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite" },
+        { "name": qsTr("Tracking", "Topic watch level (state)"), "action": qsTr("Track",  "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite-selected" },
+        { "name": qsTr("Watching", "Topic watch level (state)"), "action": qsTr("Watch",  "Topic watch action (verb)"), "icon": "image://theme/icon-splus-show-password" }
     ]
     function setNotificationLevel(topicid, level){
-        console.debug("Setting watch level to", level, ",", watchlevels[Number(level)])
+        console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
         var xhr = new XMLHttpRequest;
         const json = {
             // 0, 1, 2, 3
@@ -624,7 +625,7 @@ Page {
 
             menu: ContextMenu {
                 hasContent: lastPostNumber > 0 || !loadedMore
-                MenuLabel { text: watchlevels[notification_level]; visible: (notification_level >=0) }
+                MenuLabel { text: !!watchlevel[notification_level] ? watchlevel[notification_level].name : ""; visible: (notification_level >=0) }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                     onDelayedClick: {
@@ -640,12 +641,12 @@ Page {
                         minimumValue: 0
                         maximumValue: 3
                         value: notification_level
-                        valueText: watchlevels[sliderValue]
+                        valueText: watchlevel[sliderValue].name
                         label: qsTr("Tracking Level")
                     }
                 }
                 */
-                MenuItem { text: qsTr("Mute")
+                MenuItem { text: watchlevel[0].action // "Mute"
                     visible: (notification_level >= 0) && (notification_level != 0)
                     onDelayedClick: {
                         // muting hides the topic completely, with no way in the app to undo.
@@ -653,14 +654,14 @@ Page {
                         Remorse.itemAction(item, qsTr("Muted"), function() { const newlevel = "0"; setNotificationLevel(topicid, newlevel) })
                     }
                 }
-                MenuItem { text: qsTr("Normal")
+                MenuItem { text: watchlevel[1].action // "Normal"
                     visible: (notification_level >= 0) && (notification_level != 1)
                     onDelayedClick: {
                         const newlevel = "1"
                         setNotificationLevel(topicid, newlevel)
                     }
                 }
-                MenuItem { text: qsTr("Track")
+                MenuItem { text: watchlevel[2].action  // "Track"
                     visible: (notification_level >= 0) && (notification_level < 2)
                     onDelayedClick: {
                         const newlevel = "2"
@@ -668,7 +669,7 @@ Page {
                     }
                 }
                 // only shown when state is Tracking, keep the menu shorter
-                MenuItem { text: qsTr("Watch")
+                MenuItem { text: watchlevel[3].action // "Watch"
                     visible: (notification_level >= 0) && (notification_level == 2)
                     onDelayedClick: {
                         const newlevel = "3"
