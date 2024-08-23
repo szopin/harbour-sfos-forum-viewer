@@ -556,10 +556,11 @@ Page {
                             //visible: has_accepted_answer
                             //source: "image://theme/icon-s-accept"
                             visible: source != ""
-                            source: has_accepted_answer ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
-                                                        : ((notification_level >= 0)
-                                                            ? watchlevel[notification_level].smallicon
-                                                            : "")
+                            source: has_accepted_answer
+                                        ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
+                                        : ((notification_level >= 0)
+                                            ? watchlevel[notification_level].smallicon
+                                            : "")
                             width: Theme.iconSizeSmall
                             height: width
                             opacity: has_accepted_answer ? Theme.opacityLow : 1.0
