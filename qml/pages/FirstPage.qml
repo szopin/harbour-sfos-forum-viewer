@@ -258,9 +258,10 @@ Page {
         { "name": qsTr("Tracking", "Topic watch level (state)"), "action": qsTr("Track",  "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite-selected" },
         { "name": qsTr("Watching", "Topic watch level (state)"), "action": qsTr("Watch",  "Topic watch action (verb)"), "icon": "image://theme/icon-splus-show-password" }
     ]
-    // level being one of 0, 1, 2, 3; erepresenting muted, normal, tracking, watching
+    // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
     // !! payload wants a string so "0", not 0
     function setNotificationLevel(topicid, level){
+        if (loggedin.value == "-1") return
         console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
         var xhr = new XMLHttpRequest;
         const json = {
