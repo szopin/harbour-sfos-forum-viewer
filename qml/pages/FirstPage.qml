@@ -684,7 +684,7 @@ Page {
                                     Label {
                                         anchors.horizontalCenter: icon.horizontalCenter
                                         text: modelData.action
-                                        font.pixelSize: Theme.fontSizeSmall
+                                        font.pixelSize: Theme.fontSizeExtraSmall
                                         color: icon.highlighted ? Theme.highlightColor : Theme.primaryColor
                                         highlighted: icon.highlighted
                                     }
