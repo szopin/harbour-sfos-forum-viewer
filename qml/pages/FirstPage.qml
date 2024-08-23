@@ -252,11 +252,26 @@ Page {
     }
 
     readonly property var watchlevel: [
-        //{ "name": qsTr("Muted",    "Topic watch level"), "action": qsTr("Mute",   "Topic watch action (verb)"), "icon": "image://theme/icon-s-blocked" },
-        { "name": qsTr("Muted",    "Topic watch level (state)"), "action": qsTr("Mute",   "Topic watch action (verb)"), "icon": "image://theme/icon-m-speaker-mute" },
-        { "name": qsTr("Normal",   "Topic watch level (state)"), "action": qsTr("Normal", "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite" },
-        { "name": qsTr("Tracking", "Topic watch level (state)"), "action": qsTr("Track",  "Topic watch action (verb)"), "icon": "image://theme/icon-m-favorite-selected" },
-        { "name": qsTr("Watching", "Topic watch level (state)"), "action": qsTr("Watch",  "Topic watch action (verb)"), "icon": "image://theme/icon-splus-show-password" }
+        { "name": qsTr("Muted",    "Topic watch level (state)"),
+          "action": qsTr("Mute",   "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-speaker-mute",
+          "icon": "image://theme/icon-m-speaker-mute"
+        },
+        { "name": qsTr("Normal",   "Topic watch level (state)"),
+          "action": qsTr("Normal", "Topic watch action (verb)"),
+          "smallicon": "",
+          "icon": "image://theme/icon-m-favorite"
+        },
+        { "name": qsTr("Tracking", "Topic watch level (state)"),
+          "action": qsTr("Track",  "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-favorite",
+          "icon": "image://theme/icon-m-favorite-selected"
+        },
+        { "name": qsTr("Watching", "Topic watch level (state)"),
+          "action": qsTr("Watch",  "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-alarm",
+          "icon": "image://theme/icon-m-alarm"
+        }
     ]
     // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
     // !! payload wants a string so "0", not 0
@@ -543,7 +558,7 @@ Page {
                             visible: source != ""
                             source: has_accepted_answer ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
                                                         : ((notification_level >= 0)
-                                                            ? watchlevel[notification_level].icon + "?" + Theme.rgba(postsLabel.color, 1.0)
+                                                            ? watchlevel[notification_level].smallicon
                                                             : "")
                             width: Theme.iconSizeSmall
                             height: width
