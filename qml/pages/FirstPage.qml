@@ -631,7 +631,7 @@ Page {
                 hasContent: lastPostNumber > 0 || !loadedMore
                 property int wantLevel: notification_level
                 onClosed: if (wantLevel != notification_level) {
-                    setNotificationLevel(item.index, topicid, wantLevel)
+                    setNotificationLevel(topicid, wantLevel)
                 }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
