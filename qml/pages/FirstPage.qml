@@ -627,9 +627,12 @@ Page {
                 }
             }
 
-            menu: ContextMenu {
+            menu: ContextMenu { id: ctxmenu
                 hasContent: lastPostNumber > 0 || !loadedMore
-                MenuLabel { text: !!watchlevel[notification_level] ? watchlevel[notification_level].name : ""; visible: (notification_level >=0) }
+                property int wantLevel: notification_level
+                onClosed: if (wantLevel != notification_level) {
+                    setNotificationLevel(item.index, topicid, wantLevel)
+                }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                     onDelayedClick: {
@@ -637,50 +640,44 @@ Page {
                         lastPostNumber = highest_post_number;
                     }
                 }
-                /*
-                MenuLabel { text: ""; height: sl.height
-                    Slider{ id: sl
-                        width: parent.width
-                        stepSize: 1
-                        minimumValue: 0
-                        maximumValue: 3
-                        value: notification_level
-                        valueText: watchlevel[sliderValue].name
-                        label: qsTr("Tracking Level")
+                MenuLabel { height: buttons.height
+                    visible: (notification_level >=0)
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Grid{ id: buttons
+                        rows: 1
+                        columns: watchlevel.length
+                        spacing: Theme.paddingLarge
+                        anchors.centerIn: parent
+                        Repeater { id: rep
+                            model: watchlevel
+                            delegate: BackgroundItem { id: bitem
+                                height: iconcol.height + Theme.paddingSmall
+                                width: iconcol.height
+                                Column { id: iconcol
+                                    width: parent.width
+                                    spacing: Theme.paddingSmall
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    Icon { id: icon
+                                        width: Theme.iconSizeSmallPlus
+                                        height: width
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        source: modelData.icon + "?" + (highlighted ? Theme.highlightColor : Theme.primaryColor)
+                                        highlighted: bitem.down || (index == ctxmenu.wantLevel)
+                                    }
+                                    Label {
+                                        anchors.horizontalCenter: icon.horizontalCenter
+                                        text: modelData.action
+                                        font.pixelSize: Theme.fontSizeSmall
+                                        color: icon.highlighted ? Theme.highlightColor : Theme.primaryColor
+                                        highlighted: icon.highlighted
+                                    }
+                                }
+                                // only change value when menu is closed
+                                onClicked: ctxmenu.wantLevel = index
+                            }
+                        }
                     }
                 }
-                */
-                MenuItem { text: watchlevel[0].action // "Mute"
-                    visible: (notification_level >= 0) && (notification_level != 0)
-                    onDelayedClick: {
-                        // muting hides the topic completely, with no way in the app to undo.
-                        // so, lets remorse it.
-                        Remorse.itemAction(item, qsTr("Muted"), function() { const newlevel = "0"; setNotificationLevel(topicid, newlevel) })
-                    }
-                }
-                MenuItem { text: watchlevel[1].action // "Normal"
-                    visible: (notification_level >= 0) && (notification_level != 1)
-                    onDelayedClick: {
-                        const newlevel = "1"
-                        setNotificationLevel(topicid, newlevel)
-                    }
-                }
-                MenuItem { text: watchlevel[2].action  // "Track"
-                    visible: (notification_level >= 0) && (notification_level < 2)
-                    onDelayedClick: {
-                        const newlevel = "2"
-                        setNotificationLevel(topicid, newlevel)
-                    }
-                }
-                // only shown when state is Tracking, keep the menu shorter
-                MenuItem { text: watchlevel[3].action // "Watch"
-                    visible: (notification_level >= 0) && (notification_level == 2)
-                    onDelayedClick: {
-                        const newlevel = "3"
-                        setNotificationLevel(topicid, newlevel)
-                    }
-                }
-                /*
                 MenuItem { text: qsTr("Don't track")
                     visible: lastPostNumber > 0
                     onDelayedClick: {
@@ -688,7 +685,6 @@ Page {
                         lastPostNumber = -1;
                     }
                 }
-                */
                 MenuItem { text: qsTr("Filter OP")
                     visible: !loadedMore
                     onDelayedClick: {
