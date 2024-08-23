@@ -546,7 +546,7 @@ Page {
                                                             : "")
                             width: Theme.iconSizeSmall
                             height: width
-                            opacity: (notification_level > 1) ? postsLabel.opacity : Theme.opacityLow
+                            opacity: has_accepted_answer ? Theme.opacityLow : 1.0
                         }
                     }
 
