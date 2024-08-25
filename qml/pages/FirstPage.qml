@@ -169,7 +169,8 @@ Page {
                                           spamop: topic.posters[0].user_id,
                                           user_id: spammerop,
                                           has_accepted_answer: topic.has_accepted_answer,
-                                          highest_post_number: topic.highest_post_number
+                                          highest_post_number: topic.highest_post_number,
+                                          notification_level: (loggedin.value == "-1") ? "-1" : topic.notification_level
                                       });
                     console.log(topic.posters[0].user_id);
                 }
@@ -248,6 +249,55 @@ Page {
         category = cat;
         clearview();
 
+    }
+
+    readonly property var watchlevel: [
+        { "name": qsTr("Muted",    "Topic watch level (state)"),
+          "action": qsTr("Mute",   "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-speaker-mute",
+          "icon": "image://theme/icon-m-speaker-mute"
+        },
+        { "name": qsTr("Normal",   "Topic watch level (state)"),
+          "action": qsTr("Normal", "Topic watch action (verb)"),
+          "smallicon": "",
+          "icon": "image://theme/icon-m-favorite"
+        },
+        { "name": qsTr("Tracking", "Topic watch level (state)"),
+          "action": qsTr("Track",  "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-favorite",
+          "icon": "image://theme/icon-m-favorite-selected"
+        },
+        { "name": qsTr("Watching", "Topic watch level (state)"),
+          "action": qsTr("Watch",  "Topic watch action (verb)"),
+          "smallicon": "image://theme/icon-m-alarm",
+          "icon": "image://theme/icon-m-alarm"
+        }
+    ]
+    // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
+    // !! payload wants a string so "0", not 0
+    function setNotificationLevel(topicid, level){
+        if (loggedin.value == "-1") return
+        console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
+        var xhr = new XMLHttpRequest;
+        const json = {
+            "notification_level": level
+        };
+        xhr.open("POST", application.source + "/t/" + topicid + "/notifications.json");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+                    console.log(xhr.responseText);
+                    // FIXME: update to reload the topic properties
+                    clearview()
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
     }
 
     ConfigurationValue {
@@ -503,11 +553,17 @@ Page {
                         }
 
                         Icon {
-                            visible: has_accepted_answer
-                            source: "image://theme/icon-s-accept"
+                            //visible: has_accepted_answer
+                            //source: "image://theme/icon-s-accept"
+                            visible: source != ""
+                            source: has_accepted_answer
+                                        ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
+                                        : ((notification_level >= 0)
+                                            ? watchlevel[notification_level].smallicon
+                                            : "")
                             width: Theme.iconSizeSmall
                             height: width
-                            opacity: Theme.opacityLow
+                            opacity: has_accepted_answer ? Theme.opacityLow : 1.0
                         }
                     }
 
@@ -588,13 +644,55 @@ Page {
                 }
             }
 
-            menu: ContextMenu {
+            menu: ContextMenu { id: ctxmenu
                 hasContent: lastPostNumber > 0 || !loadedMore
+                property int wantLevel: notification_level
+                onClosed: if (wantLevel != notification_level) {
+                    setNotificationLevel(topicid, wantLevel)
+                }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                     onDelayedClick: {
                         postCountConfig.setValue(topicid, highest_post_number);
                         lastPostNumber = highest_post_number;
+                    }
+                }
+                MenuLabel { height: buttons.height
+                    visible: (notification_level >=0)
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Grid{ id: buttons
+                        rows: 1
+                        columns: watchlevel.length
+                        spacing: Theme.paddingLarge
+                        anchors.centerIn: parent
+                        Repeater { id: rep
+                            model: watchlevel
+                            delegate: BackgroundItem { id: bitem
+                                height: iconcol.height + Theme.paddingSmall
+                                width: iconcol.height
+                                Column { id: iconcol
+                                    width: parent.width
+                                    spacing: Theme.paddingSmall
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    Icon { id: icon
+                                        width: Theme.iconSizeSmallPlus
+                                        height: width
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        source: modelData.icon + "?" + (highlighted ? Theme.highlightColor : Theme.primaryColor)
+                                        highlighted: bitem.down || (index == ctxmenu.wantLevel)
+                                    }
+                                    Label {
+                                        anchors.horizontalCenter: icon.horizontalCenter
+                                        text: modelData.action
+                                        font.pixelSize: Theme.fontSizeExtraSmall
+                                        color: icon.highlighted ? Theme.highlightColor : Theme.primaryColor
+                                        highlighted: icon.highlighted
+                                    }
+                                }
+                                // only change value when menu is closed
+                                onClicked: ctxmenu.wantLevel = index
+                            }
+                        }
                     }
                 }
                 MenuItem { text: qsTr("Don't track")
@@ -612,7 +710,6 @@ Page {
                         filterlist.setValue(spamop, getusername(spamop));
                         filterlist.sync();
                         clearview();
-
                     }
                 }
             }
