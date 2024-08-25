@@ -69,6 +69,7 @@ Page {
                                           post_number: topic.last_read_post_number
                                       });
                 }
+                busyind.running = false
             }
         }
 
@@ -133,6 +134,28 @@ Page {
         }
         xhr2.send();
     }
+
+    function resetNotificationLevel(topicid){
+
+        var xhr = new XMLHttpRequest;
+        const json = {
+            "notification_level": 1
+        };
+        xhr.open("POST", application.source + "/t/" + topicid + "/notifications.json");
+        xhr.setRequestHeader("User-Api-Key", loggedin);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+getPMs();
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
+    }
     onStatusChanged: {
         if (status === PageStatus.Active){
             pageStack.pushAttached(Qt.resolvedUrl("NotificationSettings.qml"));
@@ -152,12 +175,21 @@ Page {
         anchors.fill: parent
         header: PageHeader {
             id: header
-            title: pMs == 0 ? qsTr("Notifications") : pMs == 1 ? qsTr("PMs") : qsTr("PMs - sent")
+            title: pMs == 0 ? qsTr("Notifications") : pMs == 1 ? qsTr("PMs") : pMs == 2 ? qsTr("PMs - sent") :  qsTr("Muted topics")
             description: qsTr("SailfishOS Forum")
         }
         PullDownMenu {
             id: pms
+            MenuItem {
+                visible: pMs != 3
+                text: qsTr("Muted topics")
 
+                onClicked: {
+                    pMs = 3
+                    combined2 = application.source +"latest.json?state=muted"
+                    getPMs();
+                }
+            }
             MenuItem {
                 visible: pMs != 1
                 text: qsTr("PMs")
@@ -197,6 +229,7 @@ Page {
         }
 
         BusyIndicator {
+            id: busyind
             visible: running
             running: model.count === 0 && !networkError
             anchors.centerIn: parent
@@ -215,11 +248,22 @@ Page {
             updateView();
         }
 
-        delegate: BackgroundItem {
+        delegate: ListItem {
             id: item
             width: parent.width
-            height: delegateCol.height + Theme.paddingLarge
+            contentHeight: delegateCol.height + Theme.paddingLarge
 
+            menu: ContextMenu {
+       //         height: item.height
+                hasContent:  pMs ==3
+                    //        height: delegateCol.height + Theme.paddingLarge
+                MenuItem {
+          //          visible: pMs ==3
+                    text: qsTr("Unmute")
+
+                 onDelayedClick:   resetNotificationLevel(topic_id);
+                }
+            }
             Column {
                 id: delegateCol
                 height: childrenRect.height

@@ -290,6 +290,14 @@ Vielen Dank an die Mitwirkenden:
         <source>PMs - sent</source>
         <translation>PN - gesendet</translation>
     </message>
+    <message>
+        <source>Muted topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>

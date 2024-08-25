@@ -290,6 +290,14 @@ Un grazie speciale ai contributori:
         <source>PMs - sent</source>
         <translation>Messaggi Privati Inviati</translation>
     </message>
+    <message>
+        <source>Muted topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>

@@ -320,37 +320,48 @@ Special thanks to contributors:
 <context>
     <name>Notifications</name>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="155"/>
-        <location filename="../qml/pages/Notifications.qml" line="184"/>
+        <location filename="../qml/pages/Notifications.qml" line="178"/>
+        <location filename="../qml/pages/Notifications.qml" line="216"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="155"/>
-        <location filename="../qml/pages/Notifications.qml" line="163"/>
+        <location filename="../qml/pages/Notifications.qml" line="178"/>
+        <location filename="../qml/pages/Notifications.qml" line="195"/>
         <source>PMs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="155"/>
-        <location filename="../qml/pages/Notifications.qml" line="173"/>
+        <location filename="../qml/pages/Notifications.qml" line="178"/>
+        <location filename="../qml/pages/Notifications.qml" line="205"/>
         <source>PMs - sent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="156"/>
+        <location filename="../qml/pages/Notifications.qml" line="178"/>
+        <location filename="../qml/pages/Notifications.qml" line="185"/>
+        <source>Muted topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Notifications.qml" line="179"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="208"/>
+        <location filename="../qml/pages/Notifications.qml" line="241"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="209"/>
+        <location filename="../qml/pages/Notifications.qml" line="242"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">Проверьте подключение</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Notifications.qml" line="262"/>
+        <source>Unmute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

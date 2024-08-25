@@ -290,6 +290,14 @@ Speciellt tack till medverkande:
         <source>PMs - sent</source>
         <translation>PM - skickat</translation>
     </message>
+    <message>
+        <source>Muted topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenLink</name>
