@@ -155,16 +155,56 @@ Un grazie speciale ai contributori:
         <translation>Segna come letto</translation>
     </message>
     <message>
-        <source>Don&apos;t track</source>
-        <translation>Non seguire</translation>
-    </message>
-    <message>
         <source>Clear filter list</source>
         <translation>Pulisci lista filtri</translation>
     </message>
     <message>
         <source>Filter OP</source>
         <translation>Filtra OP</translation>
+    </message>
+    <message>
+        <source>Muted</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t track (local)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

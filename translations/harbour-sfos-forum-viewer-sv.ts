@@ -155,15 +155,55 @@ Speciellt tack till medverkande:
         <translation>Markera som läst</translation>
     </message>
     <message>
-        <source>Don&apos;t track</source>
-        <translation>Spåra inte</translation>
-    </message>
-    <message>
         <source>Clear filter list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Filter OP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Muted</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Topic watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Topic watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t track (local)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

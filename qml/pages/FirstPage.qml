@@ -170,7 +170,7 @@ Page {
                                           user_id: spammerop,
                                           has_accepted_answer: topic.has_accepted_answer,
                                           highest_post_number: topic.highest_post_number,
-                                          notification_level: (loggedin.value == "-1") ? "-1" : topic.notification_level
+                                          notification_level: topic.notification_level !== undefined ? topic.notification_level : 1
                                       });
                     console.log(topic.posters[0].user_id);
                 }
@@ -558,7 +558,7 @@ Page {
                             visible: source != ""
                             source: has_accepted_answer
                                         ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
-                                        : ((notification_level >= 0)
+                                        : ((notification_level >= 0 && loggedin.value !== "-1")
                                             ? watchlevel[notification_level].smallicon
                                             : "")
                             width: Theme.iconSizeSmall
@@ -658,7 +658,7 @@ Page {
                     }
                 }
                 MenuLabel { height: buttons.height
-                    visible: (notification_level >=0)
+                    visible: loggedin.value !== "-1"
                     anchors.horizontalCenter: parent.horizontalCenter
                     Grid{ id: buttons
                         rows: 1
@@ -695,7 +695,7 @@ Page {
                         }
                     }
                 }
-                MenuItem { text: qsTr("Don't track")
+                MenuItem { text: qsTr("Don't track (local)")
                     visible: lastPostNumber > 0
                     onDelayedClick: {
                         postCountConfig.setValue(topicid, "-1");
