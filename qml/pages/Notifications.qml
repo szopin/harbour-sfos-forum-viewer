@@ -88,7 +88,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errorcode: xhr.status, errortext: xhr.statusText});
+                    pageStack.push("Error.qml", {errortitle: xhr.status, errortext: xhr.statusText});
                 } else {
                     console.log(xhr.responseText)
 
@@ -108,7 +108,7 @@ Page {
             if (xhr2.readyState === XMLHttpRequest.DONE){
                 if(xhr2.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errorcode: xhr2.status, errortext: xhr2.statusText});
+                    pageStack.push("Error.qml", {errortitle: xhr2.status, errortext: xhr2.statusText});
                 } else {
                     loggedinname = xhr2.getResponseHeader('x-discourse-username');
                     var data2 = JSON.parse(xhr2.responseText);

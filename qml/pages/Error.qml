@@ -4,11 +4,11 @@ import Sailfish.Silica 1.0
 Page {
     id: errors
     property string errortext: ''
-    property string errorcode: ''
+    property string errortitle: ''
 
     PageHeader {
         id: pageHeader
-        title: qsTr("Error:") + ( (errorcode != '') ? ' ' + errorcode : errorcode)
+        title: qsTr("Error:") + ( (errortitle != '') ? ' ' + errortitle : errortitle)
     }
     TextArea {
         id: errorbody
