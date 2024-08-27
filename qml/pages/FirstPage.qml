@@ -275,7 +275,7 @@ Page {
     ]
     // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
     // !! payload wants a string so "0", not 0
-    function setNotificationLevel(topicid, level){
+    function setNotificationLevel(index, topicid, level){
         if (loggedin.value == "-1") return
         console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
         var xhr = new XMLHttpRequest;
@@ -292,8 +292,10 @@ Page {
                     pageStack.push("Error.qml", {errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
-                    // FIXME: update to reload the topic properties
-                    clearview()
+                    list.model.setProperty(index, "notification_level", Number(level))
+                    // simply updating the property does not cause the display to change.
+                    // lets force it:
+                    list.modelUpdated()
                 }
             }
         }
@@ -462,6 +464,13 @@ Page {
         }
 
         model: ListModel { id: model}
+
+        // force a reloading of all delegates after content changed
+        function modelUpdated() {
+            var newmodel = list.model
+            list.model = newmodel
+        }
+
         VerticalScrollDecorator {}
         Component.onCompleted: {
             login = mainConfig.value("key", "-1");
@@ -648,7 +657,7 @@ Page {
                 hasContent: lastPostNumber > 0 || !loadedMore
                 property int wantLevel: notification_level
                 onClosed: if (wantLevel != notification_level) {
-                    setNotificationLevel(topicid, wantLevel)
+                    setNotificationLevel(index, topicid, wantLevel)
                 }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
