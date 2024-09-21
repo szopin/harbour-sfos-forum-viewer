@@ -14,6 +14,10 @@ Page { id: pollpage
         "options": [
           { "id": "d3090135d6e4050a686dac81a8e56140", "html": "Vote Option Text", "votes": 0 },
           ...
+          ],
+          "voters": 2,
+          "chart_type": "bar",
+          "title": null
        }
      */
     property var polldata // input
