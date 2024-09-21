@@ -269,6 +269,9 @@ Page {
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
+            var has_poll = !!post.polls
+            var poll = has_poll ? post.polls[0] : ({})
+            var votes = has_poll ? post.polls_votes : ({})
             if (post.actions_summary.length > 0){
                 var action = post.actions_summary[0];
                 likes = (loggedin.value == "-1") ? ((action && action.id === 2)
@@ -301,7 +304,10 @@ Page {
                                   reply_to: post.reply_to_post_number,
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
-                                  accepted_answer: post.accepted_answer
+                                  accepted_answer: post.accepted_answer,
+                                  has_poll: has_poll,
+                                  poll: poll,
+                                  poll_votes: votes
                               });
             last_post = post.post_number;
         }
@@ -554,6 +560,26 @@ Page {
 
                         }  else {
                             pageStack.push("ThreadView.qml", { "topicid": link1[2], "post_number": link1[3] });
+                        }
+                    }
+                }
+                BackgroundItem { visible: has_poll
+                    width: parent.width
+                    height: Theme.itemSizeSmall
+                    onClicked: pageStack.push("PollView.qml", {"polldata": poll, "submitted_votes":  (loggedin.value != "-1" ) ? poll_votes : [] });
+                    Row { id: pollrow
+                        width: parent.width
+                        height: pollbutt.height
+                        anchors.verticalCenter: parent.verticalCenter
+                        spacing: Theme.paddingMedium
+                        Icon { id: pollbutt
+                            source: "image://theme/icon-s-maybe"
+                        }
+                        Label {
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: qsTr("View Poll")
+                            width: parent.width - pollbutt.width
+                            color: highlighted ? Theme.highlightColor : Theme.secondaryHighlightColor
                         }
                     }
                 }
