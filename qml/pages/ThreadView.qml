@@ -566,7 +566,7 @@ Page {
                 BackgroundItem { visible: has_poll
                     width: parent.width
                     height: Theme.itemSizeSmall
-                    onClicked: pageStack.push("PollView.qml", {"polldata": poll, "submitted_votes":  (loggedin.value != "-1" ) ? poll_votes : [] });
+                    onClicked: pageStack.push("PollView.qml", {"key": loggedin.value, "postid": postid, "polldata": poll, "submitted_votes":  (loggedin.value != "-1" ) ? poll_votes : [] });
                     Row { id: pollrow
                         width: parent.width
                         height: pollbutt.height

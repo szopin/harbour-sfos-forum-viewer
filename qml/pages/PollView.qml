@@ -26,6 +26,8 @@ Page { id: pollpage
       }
     */
     property var submitted_votes // input
+    property string postid // input, needed to post votes
+    property string key // input, needed to post votes
 
     property bool votemode: (polldata.status == "open") && canVote
     property bool canSubmit: { var k = Object.keys(voteTracker); return (k.length > 0) }
@@ -36,6 +38,7 @@ Page { id: pollpage
     readonly property var supported: {
         "single": true,
         "multiple": true
+        //"number": true // TODO: what is the name of a rating post?
     }
     property ListModel pollmodel: ListModel{}
 
@@ -124,6 +127,7 @@ Page { id: pollpage
                     anchors.verticalCenter: parent.verticalCenter
                 }
             }
+            // TODO: chart type *could* be "pie chart"
             Row { id: bars
                 width: parent.width
                 height: visible ? votebar.height : 0
@@ -158,12 +162,48 @@ Page { id: pollpage
                 visible: canVote
                 enabled: canSubmit
                 text: qsTr("Submit")
-                onClicked: submitPoll()
+                onClicked: {
+                    // FIXME: there's surely a more javascripty way to do that:
+                    // make an array of ids out of the object with "id" as property name
+                    var opts = []
+                    var ids = Object.keys(voteTracker)
+                    ids.forEach(function(e) { if (data[e]) opts.push(e) })
+                    submitPoll(key, postid, polldata.name, options)
+                }
             }
             MenuItem { id: switchMenu
                 text: votemode ? qsTr("View Results") : canVote ? qsTr("Vote") : qsTr("View Votes")
                 onClicked: votemode = !votemode
             }
         }
+    }
+    /* docs seem to be missing this API.
+     * according to
+     * https://github.com/discourse/discourse_api/blob/main/lib/discourse_api/api/polls.rb
+     * we need
+     *    PUT to /polls/vote/
+     *    payload: post_id, poll_name, options
+     *    where poll_name is fixed "poll"
+     *    and options is an array of option ids
+    */
+    function submitPoll(apikey, pid, name, options) {
+        var xhr = new XMLHttpRequest;
+        const json = { "post_id": pid, "poll_name": name, "options": options }
+        console.log(JSON.stringify(json));
+        xhr.open("PUT", "https://forum.sailfishos.org/polls/vote/");
+        xhr.setRequestHeader("User-Api-Key", apikey);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                } else {
+                    console.log(xhr.responseText);
+                    pageStack.pop()
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
     }
 }
