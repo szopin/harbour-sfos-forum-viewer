@@ -58,7 +58,7 @@ Page { id: pollpage
 
     SilicaListView { id: view
         anchors.fill: parent
-        spacing: Theme.paddingLarge
+        spacing: Theme.paddingMedium
 
         header: PageHeader { title: qsTr("Poll: %1").arg(polldata.title ? polldata.title : "")
                 description: qsTr("Voters: %1 Type: %2 Status: %3").arg(polldata.voters).arg(polldata.type).arg(canVote ? polldata.status : qsTr("submitted"))
