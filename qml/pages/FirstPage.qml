@@ -56,6 +56,13 @@ Page {
     property bool loadedMore: false
     property bool spam: false
 
+    function logout() {
+        Remorse.popupAction(
+            firstPage,
+            qsTr("Logged out"),
+            function() { mainConfig.setValue("key", "-1") }
+        )
+    }
 
     function newtopic(raw, title, category){
         var xhr = new XMLHttpRequest;
@@ -410,7 +417,7 @@ Page {
             MenuItem {
                 text: qsTr("Logout")
                 visible: loggedin.value != "-1" ? true : false
-                onClicked: mainConfig.setValue("key", "-1");
+                onClicked: { logout() }
             }
             MenuItem {
                 text: qsTr("New thread")
