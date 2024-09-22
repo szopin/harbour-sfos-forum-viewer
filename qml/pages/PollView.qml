@@ -70,23 +70,23 @@ Page { id: pollpage
             states: [
                 State { name: "vote"; when: votemode && canVote
                     PropertyChanges { target: pollSwitch; visible: true }
-                    PropertyChanges { target: viewText; visible: false }
                     PropertyChanges { target: bars; visible: false }
                 },
                 State { name: "voted"; when: votemode && !canVote
                     PropertyChanges { target: pollSwitch; visible: true }
-                    PropertyChanges { target: viewText; visible: false }
                     PropertyChanges { target: bars; visible: false }
                 },
                 State { name: "view"; when: !votemode
                     PropertyChanges { target: pollSwitch; visible: false }
-                    PropertyChanges { target: viewText; visible: true }
                     PropertyChanges { target: bars; visible: true }
                 }
             ]
             TextSwitch { id: pollSwitch
                 width: parent.width
+                opacity: visible ? 1.0 : 0
+                Behavior on opacity { NumberAnimation { } }
                 text: html // FIXME: html is bad here
+                description: canVote ? "" : qsTr("Votes: %1").arg(votes)
                 checked: voteTracker[model.id] || false
                 highlighted: down && canVote
                 automaticCheck: false
@@ -108,17 +108,12 @@ Page { id: pollpage
                     }
                 }
             }
-            Label {
-                visible: pollSwitch.visible
-                width: parent.width
-                x: pollSwitch.x + Theme.itemSizeSmall // width of the switch thingie
-                textFormat: Text.PlainText
-                text: qsTr("Total Votes: %1").arg(votes)
-                color: Theme.secondaryColor
-                font.pixelSize: Theme.fontSizeSmall
-            }
             Row { id: viewText
-                width: parent.width
+                visible: bars.visible
+                width: parent.width - Theme.horizontalPageMargin
+                anchors.horizontalCenter: parent.horizontalCenter
+                opacity: visible ? 1.0 : 0
+                Behavior on opacity { NumberAnimation { } }
                 Label { id: pollText
                     width: parent.width - pollNum.width
                     text: html
@@ -126,28 +121,26 @@ Page { id: pollpage
                     wrapMode: Text.Wrap
                 }
                 Label { id: pollNum
-                    text: votes
+                    text: votes //+ " (" + (votes / polldata.voters * 100).toFixed(1) + "%)"
                     color: Theme.secondaryColor
                     anchors.verticalCenter: parent.verticalCenter
                 }
             }
             // TODO: chart type *could* be "pie chart"
-            Row { id: bars
-                width: parent.width
-                height: visible ? votebar.height : 0
-                Rectangle { id: votebar
-                    //property double unit: parent.width * (polldata.min/polldata.max)
-                    property double unit: parent.width * (polldata.min/polldata.voters)
-                    height: Theme.paddingLarge
-                    width: Math.floor(unit * votes)
-                    color: Theme.highlightColor
-                }
-                Rectangle {
-                    width: parent.width - votebar.width
-                    height: votebar.height
-                    border.color: Theme.highlightColor
-                    color: "transparent"
-                }
+            //ProgressCircle { }
+            ProgressBar { id: bars
+                width: parent.width - Theme.horizontalPageMargin
+                anchors.horizontalCenter: parent.horizontalCenter
+                leftMargin: 0
+                rightMargin: 0
+                visible: bars.visible
+                // that truncates, not good for long text.
+                //label: html
+                // large and ugly when used below a text label:
+                // valueText: votes
+                minimumValue: polldata.min - 1
+                maximumValue: polldata.voters
+                value: votes
             }
         }
         VerticalScrollDecorator {}
