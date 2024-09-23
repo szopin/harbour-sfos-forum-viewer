@@ -5,6 +5,8 @@ Page { id: pollpage
 
     allowedOrientations: Orientation.All
     /*
+        Polls of type multiple have "min"/"max",
+        Polls of type regular have not
       {
         "name": "poll",
         "type": "multiple",
@@ -111,6 +113,9 @@ Page { id: pollpage
                 highlighted: down && canVote
                 automaticCheck: false
                 onClicked: {
+                    // FIXME: if poll type is multiple, we must respect:
+                    //   -  the max value, maximum allowed votes
+                    //   -  the min value, minimum allowed votes
                     if (!canVote) return
                     checked = !checked
                     if (polldata.type === "multiple") { // record this click
@@ -158,7 +163,7 @@ Page { id: pollpage
                 //label: html
                 // large and ugly when used below a text label:
                 // valueText: votes
-                minimumValue: polldata.min - 1
+                minimumValue: !!polldata.min ? polldata.min - 1 : 0
                 maximumValue: polldata.voters
                 value: votes
             }
