@@ -5,7 +5,8 @@ Page { id: pollpage
 
     allowedOrientations: Orientation.All
     /*
-        Polls of type multiple have "min"/"max",
+        Polls of type number and multiple have "min"/"max",
+        Polls of type number have "step"
         Polls of type regular have not
       {
         "name": "poll",
@@ -49,8 +50,7 @@ Page { id: pollpage
     readonly property var pollType: {
         "regular": { "supported": true, "typeName": qsTr("Single Answer Poll") },
         "multiple": { "supported": true, "typeName": qsTr("Multiple Answer Poll") },
-        // TODO: what is the name of a rating post?
-        //"number": { "supported": true, "typeName": qsTr("MultipleAnswers") },
+        "number": { "supported": false, "typeName": qsTr("Rating Poll") },
         "unsupported": { "supported": false, "typeName": qsTr("Unsupported Poll") },
     }
     property ListModel pollmodel: ListModel{}
@@ -108,6 +108,14 @@ Page { id: pollpage
                     PropertyChanges { target: bars; visible: true }
                 }
             ]
+            /* TODO: for type == "number"  */
+            /*
+             Slider { id: pollSlider
+                minimumValue: polldata.min ? polldata.min : 0
+                maximumValue: polldata.max
+                stepSize: polldata.step
+             }
+            */
             TextSwitch { id: pollSwitch
                 width: parent.width
                 opacity: visible ? 1.0 : 0
