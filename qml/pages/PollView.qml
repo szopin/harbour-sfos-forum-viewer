@@ -41,12 +41,17 @@ Page { id: pollpage
     property bool canVote: submitted_votes.length == 0
     property var voteTracker: ({})
 
-    readonly property int maxopts: 128 // guard against unwieldy polls
-    /* set a property to true if we can handle the type here.*/
-    readonly property var supported: {
-        "regular": true,
-        "multiple": true
-        //"number": true // TODO: what is the name of a rating post?
+    // guard against unwieldy polls. randomly selected amount.
+    readonly property int maxopts: 128
+    /* Lookup table.
+     * Set a property to true if we can handle the type here.
+     */
+    readonly property var pollType: {
+        "regular": { "supported": true, "typeName": qsTr("Single Answer Poll") },
+        "multiple": { "supported": true, "typeName": qsTr("Multiple Answer Poll") },
+        // TODO: what is the name of a rating post?
+        //"number": { "supported": true, "typeName": qsTr("MultipleAnswers") },
+        "unsupported": { "supported": false, "typeName": qsTr("Unsupported Poll") },
     }
     property ListModel pollmodel: ListModel{}
 
@@ -57,8 +62,8 @@ Page { id: pollpage
             placeholder.enabled = true
             return
         }
-        if (!supported[polldata.type]) {
-            placeholder.text = qsTr("This type of poll is not yet supported: %1").arg(polldata.type)
+        if (!pollType[polldata.type].supported) {
+            placeholder.text = qsTr("This type of poll is not yet supported: %1").arg(pollType[polldata.type].typeName)
             placeholder.hintText = qsTr("Please go back and open the poll in a browser window." )
             placeholder.enabled = true
             return
@@ -82,8 +87,8 @@ Page { id: pollpage
 
         property Item  placeholder: viewplaceholder
 
-        header: PageHeader { title: qsTr("Poll: %1").arg(polldata.title ? polldata.title : "")
-                description: qsTr("Voters: %1 Type: %2 Status: %3").arg(polldata.voters).arg(polldata.type).arg(canVote ? polldata.status : qsTr("submitted"))
+        header: PageHeader { title: "%1: %2".arg(pollType[polldata.type].supported ? pollType[polldata.type].typeName : pollType["unsupported"].typeName).arg(polldata.title ? polldata.title : "")
+                description: qsTr("Voters: %1 Status: %2").arg(polldata.voters).arg(canVote ? polldata.status : qsTr("submitted"))
         }
         model: pollmodel
         delegate: Column {
