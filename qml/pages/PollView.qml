@@ -33,20 +33,35 @@ Page { id: pollpage
     property string postid // input, needed to post votes
     property string key // input, needed to post votes
 
+
     property bool votemode: (polldata.status == "open") && canVote
     property bool canSubmit: { var k = Object.keys(voteTracker); return (k.length > 0) }
     property bool canVote: submitted_votes.length == 0
     property var voteTracker: ({})
 
+    readonly property int maxopts: 128 // guard against unwieldy polls
     /* set a property to true if we can handle the type here.*/
     readonly property var supported: {
-        "single": true,
+        "regular": true,
         "multiple": true
         //"number": true // TODO: what is the name of a rating post?
     }
     property ListModel pollmodel: ListModel{}
 
     Component.onCompleted: {
+        if ( polldata.options.length > maxopts ) {
+            placeholder.text = qsTr("This poll has more than %1 options, this is not supported." ).arg(maxopts)
+            placeholder.hintText = qsTr("Please go back and open the poll in a browser window." )
+            placeholder.enabled = true
+            return
+        }
+        if (!supported[polldata.type]) {
+            placeholder.text = qsTr("This type of poll is not yet supported: %1").arg(polldata.type)
+            placeholder.hintText = qsTr("Please go back and open the poll in a browser window." )
+            placeholder.enabled = true
+            return
+        }
+        // else
         populate()
     }
 
@@ -56,9 +71,14 @@ Page { id: pollpage
         submitted_votes.poll.forEach(function(o) { voteTracker[o] = true })
     }
 
+    // just so we can show something from outside the view
+    property alias placeholder: view.placeholder
+
     SilicaListView { id: view
         anchors.fill: parent
         spacing: Theme.paddingMedium
+
+        property Item  placeholder: viewplaceholder
 
         header: PageHeader { title: qsTr("Poll: %1").arg(polldata.title ? polldata.title : "")
                 description: qsTr("Voters: %1 Type: %2 Status: %3").arg(polldata.voters).arg(polldata.type).arg(canVote ? polldata.status : qsTr("submitted"))
@@ -144,10 +164,7 @@ Page { id: pollpage
             }
         }
         VerticalScrollDecorator {}
-        ViewPlaceholder {
-            enabled: !supported[polldata.type]
-            text: qsTr("This type of poll is not yet supported: %1").arg(polldata.type)
-        }
+        ViewPlaceholder { id: viewplaceholder }
         PullDownMenu{
             MenuItem { id: resetMenu
                 visible: canVote
