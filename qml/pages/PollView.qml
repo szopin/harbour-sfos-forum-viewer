@@ -118,7 +118,7 @@ Page { id: pollpage
                         va[model.id] = checked
                         voteTracker = new Object(va)
                         console.info("voted. ", JSON.stringify(voteTracker,null,2))
-                    } else if (polldata.type === "single") { // reset uservotes to contain just this
+                    } else if (polldata.type === "regular") { // reset uservotes to contain just this
                         var va = {}
                         va[model.id] = checked
                         voteTracker = new Object(va)
