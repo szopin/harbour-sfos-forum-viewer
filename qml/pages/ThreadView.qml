@@ -269,9 +269,24 @@ Page {
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
-            var has_poll = !!post.polls
-            var poll = has_poll ? post.polls[0] : ({})
-            var votes = has_poll ? post.polls_votes : ({})
+            var has_polls = !!post.polls  ? post.polls.length : 0
+            var polldata = []
+            if (i!=0) {
+                // can comments have polls?
+                if (has_polls) console.warn("Detected a comment with a poll. This is currently not supported.")
+            } else {
+                // reorganize the poll data into an array of objects, so we only
+                // have to result with the JSObject->ListModel conversion once:
+                // See also: Flow { id: pollsItem } below
+                for (var pi = 0; pi<has_polls; ++pi) {
+                    var pd = { "poll": {}, "votes": {} }
+                    pd["poll"] = post.polls[pi]
+                    if (post.polls_votes[post.polls[pi].name]) {
+                        pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                    }
+                    polldata.push(pd)
+                }
+            }
             if (post.actions_summary.length > 0){
                 var action = post.actions_summary[0];
                 likes = (loggedin.value == "-1") ? ((action && action.id === 2)
@@ -305,9 +320,8 @@ Page {
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
                                   accepted_answer: post.accepted_answer,
-                                  has_poll: has_poll,
-                                  poll: poll,
-                                  poll_votes: votes
+                                  has_polls: has_polls,
+                                  polldata: polldata
                               });
             last_post = post.post_number;
         }
@@ -437,6 +451,7 @@ Page {
 
         model: ListModel { id: commodel}
         delegate: ListItem {
+            property int postindex: index
             enabled: menu.hasContent
             width: parent.width
             visible: !spam
@@ -563,23 +578,36 @@ Page {
                         }
                     }
                 }
-                BackgroundItem { visible: has_poll
+                Flow { id: pollsItem
+                    visible: index == 0 && has_polls
+                    property int cols: 3
                     width: parent.width
-                    height: Theme.itemSizeSmall
-                    onClicked: pageStack.push("PollView.qml", {"key": loggedin.value, "postid": postid, "polldata": poll, "submitted_votes":  (loggedin.value != "-1" ) ? poll_votes : [] });
-                    Row { id: pollrow
+                    Label { id: pollHeader
                         width: parent.width
-                        height: pollbutt.height
-                        anchors.verticalCenter: parent.verticalCenter
-                        spacing: Theme.paddingMedium
-                        Icon { id: pollbutt
-                            source: "image://theme/icon-s-maybe"
+                        text: (has_polls > 1 )
+                            ? qsTr("This post contains polls.")
+                            : qsTr("This post contains a poll.")
+                            + " " + qsTr("Click to view and vote:")
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.highlightColor
+                    }
+                    Repeater {
+                        model: has_polls
+                        delegate: ValueButton { id: pollButt
+                            property int pollindex: index
+                            onClicked: {
+                                const pd = polldata.get(pollindex)
+                                console.debug("Opening poll no", pollindex, "for post", postid) //, ", data:", JSON.stringify(pd,null,2))
+                                pageStack.push("PollView.qml",
+                                { "key": loggedin.value, "postid": postid,
+                                  "polldata": pd["poll"],
+                                  "submitted_votes":  (loggedin.value != "-1" ) ? pd["votes"]["list"] : []
+                                }
+                            );
                         }
-                        Label {
-                            anchors.verticalCenter: parent.verticalCenter
-                            text: qsTr("View Poll")
-                            width: parent.width - pollbutt.width
-                            color: highlighted ? Theme.highlightColor : Theme.secondaryHighlightColor
+                            label: qsTr("Poll")
+                            value: '#' + Number(pollindex + 1)
+                            width: Math.floor(pollsItem.width/pollsItem.cols)
                         }
                     }
                 }

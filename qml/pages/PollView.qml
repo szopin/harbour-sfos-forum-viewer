@@ -18,24 +18,15 @@ Page { id: pollpage
           { "id": "d3090135d6e4050a686dac81a8e56140", "html": "Vote Option Text", "votes": 0 },
           ...
           ],
-          "voters": 2,
-          "chart_type": "bar",
-          "title": null
+        "voters": 2,
+        "chart_type": "bar",
+        "title": null
        }
      */
     property var polldata // input
-    /*
-      { "poll": [
-          "4f15caaaf5572d62cc1e4917abe25d58",
-          "d3090135d6e4050a686dac81a8e56140",
-          ...
-        ]
-      }
-    */
-    property var submitted_votes // input
+    property var submitted_votes // input: array of ids corrsponding to poll.options
     property string postid // input, needed to post votes
     property string key // input, needed to post votes
-
 
     property bool votemode: (polldata.status == "open") && canVote
     property bool canSubmit: { var k = Object.keys(voteTracker); return (k.length > 0) }
@@ -48,10 +39,10 @@ Page { id: pollpage
      * Set a property to true if we can handle the type here.
      */
     readonly property var pollType: {
-        "regular": { "supported": true, "typeName": qsTr("Single Answer Poll") },
-        "multiple": { "supported": true, "typeName": qsTr("Multiple Answer Poll") },
-        "number": { "supported": false, "typeName": qsTr("Rating Poll") },
-        "unsupported": { "supported": false, "typeName": qsTr("Unsupported Poll") },
+        "regular":     { "supported": true,  "typeDisplayName": qsTr("Single Answer Poll") },
+        "multiple":    { "supported": true,  "typeDisplayName": qsTr("Multiple Answer Poll") },
+        "number":      { "supported": false, "typeDisplayName": qsTr("Rating Poll") },
+        "unsupported": { "supported": false, "typeDisplayName": qsTr("Unsupported Poll") },
     }
     property ListModel pollmodel: ListModel{}
 
@@ -63,7 +54,7 @@ Page { id: pollpage
             return
         }
         if (!pollType[polldata.type].supported) {
-            placeholder.text = qsTr("This type of poll is not yet supported: %1").arg(pollType[polldata.type].typeName)
+            placeholder.text = qsTr("This type of poll is not yet supported: %1").arg(pollType[polldata.type].typeDisplayName)
             placeholder.hintText = qsTr("Please go back and open the poll in a browser window." )
             placeholder.enabled = true
             return
@@ -75,7 +66,7 @@ Page { id: pollpage
     function populate() {
         pollmodel.clear()
         polldata.options.forEach(function(o) { pollmodel.append(o) })
-        submitted_votes.poll.forEach(function(o) { voteTracker[o] = true })
+        submitted_votes.forEach(function(o) { voteTracker[o] = true })
     }
 
     // just so we can show something from outside the view
@@ -87,7 +78,7 @@ Page { id: pollpage
 
         property Item  placeholder: viewplaceholder
 
-        header: PageHeader { title: "%1: %2".arg(pollType[polldata.type].supported ? pollType[polldata.type].typeName : pollType["unsupported"].typeName).arg(polldata.title ? polldata.title : "")
+        header: PageHeader { title: "%1: %2".arg(pollType[polldata.type].supported ? pollType[polldata.type].typeDisplayName : pollType["unsupported"].typeDisplayName).arg(polldata.title ? polldata.title : "")
                 description: qsTr("Voters: %1 Status: %2").arg(polldata.voters).arg(canVote ? polldata.status : qsTr("submitted"))
         }
         model: pollmodel
@@ -120,13 +111,13 @@ Page { id: pollpage
                 width: parent.width
                 opacity: visible ? 1.0 : 0
                 Behavior on opacity { NumberAnimation { } }
-                text: html // FIXME: html is bad here
+                text: html // FIXME: if this actually contains HTML it may look bad
                 description: canVote ? "" : qsTr("Votes: %1").arg(votes)
                 checked: voteTracker[model.id] || false
                 highlighted: down && canVote
                 automaticCheck: false
                 onClicked: {
-                    // FIXME: if poll type is multiple, we must respect:
+                    // TODO: if poll type is multiple, we must respect:
                     //   -  the max value, maximum allowed votes
                     //   -  the min value, minimum allowed votes
                     if (!canVote) return
@@ -135,12 +126,10 @@ Page { id: pollpage
                         var va = voteTracker
                         va[model.id] = checked
                         voteTracker = new Object(va)
-                        console.info("voted. ", JSON.stringify(voteTracker,null,2))
                     } else if (polldata.type === "regular") { // reset uservotes to contain just this
                         var va = {}
                         va[model.id] = checked
                         voteTracker = new Object(va)
-                        console.info("voted. ", JSON.stringify(voteTracker,null,2))
                     } else { // not supported
                         console.warn("click in unsupported poll mode")
                     }
@@ -221,7 +210,7 @@ Page { id: pollpage
     function submitPoll(apikey, pid, name, options) {
         var xhr = new XMLHttpRequest;
         const json = { "post_id": pid, "poll_name": name, "options": options }
-        console.log(JSON.stringify(json));
+        //console.log(JSON.stringify(json));
         xhr.open("PUT", "https://forum.sailfishos.org/polls/vote/");
         xhr.setRequestHeader("User-Api-Key", apikey);
         xhr.setRequestHeader("Content-Type", 'application/json');
