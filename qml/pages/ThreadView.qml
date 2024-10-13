@@ -551,6 +551,8 @@ Page {
                         if (!link1 && /^https:\/\/forum.sailfishos.org\/t\/[\w-]+?\/?/.exec(link)){
                             getRedirect(link);
                         } else if ( !link1){
+                            if (link.indexOf("/") === 0)
+                                link = "https://forum.sailfishos.org" + link
                             pageStack.push("OpenLink.qml", {link: link});
 
                         }  else {
