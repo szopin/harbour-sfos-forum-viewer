@@ -50,6 +50,7 @@ Page {
     property int last_post: 0
     property int posts_count
     property bool tclosed
+    property string stafftag: ""
     property string tags
     property string avatar
     property bool acted
@@ -270,6 +271,12 @@ Page {
             var yours =  (loggedin.value == "-1") ? false : post.yours
             var spam = false
             var cooked_hidden = false
+            if (post.staff){
+                stafftag = " - Jolla"
+            } else {
+                stafftag = ""
+            }
+
             if (post.actions_summary.length > 0){
                 var action = post.actions_summary[0];
                 likes = (loggedin.value == "-1") ? ((action && action.id === 2)
@@ -302,7 +309,8 @@ Page {
                                   reply_to: post.reply_to_post_number,
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
-                                  accepted_answer: post.accepted_answer
+                                  accepted_answer: post.accepted_answer,
+                                  stafftag: stafftag
                               });
             last_post = post.post_number;
         }
@@ -485,7 +493,7 @@ Page {
                             id: mainMetadata
                             text: loggedin.value != "-1" ? "<style>" +
                                                            "a { color: %1 }".arg(Theme.highlightColor) +
-                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + "</a>" : username
+                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + stafftag + "</a>" : username + stafftag
                             onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
                             textFormat: Text.RichText
                             truncationMode: TruncationMode.Fade
