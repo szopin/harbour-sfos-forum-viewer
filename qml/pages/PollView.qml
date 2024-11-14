@@ -185,9 +185,9 @@ Page { id: pollpage
                 onClicked: {
                     // FIXME: there's surely a more javascripty way to do that:
                     // make an array of ids out of the object with "id" as property name
-                    var opts = []
+                    var options = []
                     var ids = Object.keys(voteTracker)
-                    ids.forEach(function(e) { if (data[e]) opts.push(e) })
+                    ids.forEach(function(e) { if (data[e]) options.push(e) })
                     submitPoll(key, postid, polldata.name, options)
                 }
             }
