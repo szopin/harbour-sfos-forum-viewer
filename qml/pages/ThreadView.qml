@@ -281,8 +281,11 @@ Page {
                 for (var pi = 0; pi<has_polls; ++pi) {
                     var pd = { "poll": {}, "votes": {} }
                     pd["poll"] = post.polls[pi]
-                    if (post.polls_votes[post.polls[pi].name]) {
-                        pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                    // polls_vote is only in the data if the user has voted already
+                    if (!!post["polls_votes"]) {
+                        if (post.polls_votes[post.polls[pi].name]) {
+                            pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                        }
                     }
                     polldata.push(pd)
                 }
@@ -601,7 +604,7 @@ Page {
                                 pageStack.push("PollView.qml",
                                     { "key": loggedin.value, "postid": postid,
                                       "polldata": pd["poll"],
-                                      "submitted_votes":  (loggedin.value != "-1" ) ? pd["votes"]["list"] : []
+                                      "submitted_votes":  ((loggedin.value != "-1" ) && pd["votes"]) ? pd["votes"]["list"] : []
                                     }
                                 );
                             }
