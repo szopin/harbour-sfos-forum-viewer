@@ -292,6 +292,8 @@ Page {
                     if (!!post["polls_votes"]) {
                         if (post.polls_votes[post.polls[pi].name]) {
                             pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                        } else {
+                            pd["votes"] = { "list": [] }
                         }
                     }
                     polldata.push(pd)
@@ -615,7 +617,7 @@ Page {
                                 pageStack.push("PollView.qml",
                                     { "key": loggedin.value, "postid": postid,
                                       "polldata": pd["poll"],
-                                      "submitted_votes":  ((loggedin.value != "-1" ) && pd["votes"]) ? pd["votes"]["list"] : []
+                                      "submitted_votes": pd["votes"]["list"]
                                     }
                                 );
                             }
