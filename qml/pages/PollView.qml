@@ -113,7 +113,7 @@ Page { id: pollpage
                 Behavior on opacity { NumberAnimation { } }
                 text: html // FIXME: if this actually contains HTML it may look bad
                 description: canVote ? "" : qsTr("Votes: %1").arg(votes)
-                checked: voteTracker[model.id] || false
+                checked: voteTracker[model.id] == true
                 highlighted: down && canVote
                 automaticCheck: false
                 onClicked: {
@@ -121,14 +121,13 @@ Page { id: pollpage
                     //   -  the max value, maximum allowed votes
                     //   -  the min value, minimum allowed votes
                     if (!canVote) return
-                    checked = !checked
                     if (polldata.type === "multiple") { // record this click
                         var va = voteTracker
-                        va[model.id] = checked
+                        va[model.id] = !checked
                         voteTracker = new Object(va)
                     } else if (polldata.type === "regular") { // reset uservotes to contain just this
                         var va = {}
-                        va[model.id] = checked
+                        va[model.id] = !checked
                         voteTracker = new Object(va)
                     } else { // not supported
                         console.warn("click in unsupported poll mode")
