@@ -599,12 +599,12 @@ Page {
                                 const pd = polldata.get(pollindex)
                                 console.debug("Opening poll no", pollindex, "for post", postid) //, ", data:", JSON.stringify(pd,null,2))
                                 pageStack.push("PollView.qml",
-                                { "key": loggedin.value, "postid": postid,
-                                  "polldata": pd["poll"],
-                                  "submitted_votes":  (loggedin.value != "-1" ) ? pd["votes"]["list"] : []
-                                }
-                            );
-                        }
+                                    { "key": loggedin.value, "postid": postid,
+                                      "polldata": pd["poll"],
+                                      "submitted_votes":  (loggedin.value != "-1" ) ? pd["votes"]["list"] : []
+                                    }
+                                );
+                            }
                             label: qsTr("Poll")
                             value: '#' + Number(pollindex + 1)
                             width: Math.floor(pollsItem.width/pollsItem.cols)
