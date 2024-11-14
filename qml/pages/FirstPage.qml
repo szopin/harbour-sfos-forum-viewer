@@ -172,9 +172,8 @@ Page {
                                           highest_post_number: topic.highest_post_number,
                                           notification_level: topic.notification_level !== undefined ? topic.notification_level : 1
                                       });
-                    console.log(topic.posters[0].user_id);
+                    //console.log(topic.posters[0].user_id)
                 }
-
                 if (data.topic_list.more_topics_url){
                     pageno++;
                 } else {

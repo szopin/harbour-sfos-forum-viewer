@@ -50,9 +50,9 @@ Page {
     property int last_post: 0
     property int posts_count
     property bool tclosed
+    property string stafftag: ""
     property string tags
     property string avatar
-    property bool cooked_hidden: false
     property bool acted
     property bool can_act
     property bool can_undo
@@ -269,6 +269,13 @@ Page {
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
+            var spam = false
+            var cooked_hidden = false
+            if (post.staff){
+                stafftag = " - Jolla"
+            } else {
+                stafftag = ""
+            }
             var has_polls = !!post.polls  ? post.polls.length : 0
             var polldata = []
             if (i!=0) {
@@ -299,8 +306,8 @@ Page {
                 can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
                                                       ? action.can_undo : false
                 acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
-                post.cooked_hidden !== undefined ? cooked_hidden = post.cooked_hidden : cooked_hidden = false
-                var spam =( filterlist.value(post.user_id, -1)  < 0) ? false : true
+                cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
+                spam = (filterlist.value(post.user_id, -1)  < 0) ? false : true
             }
             list.model.append({
                                   cooked: post.cooked,
@@ -323,6 +330,7 @@ Page {
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
                                   accepted_answer: post.accepted_answer,
+                                  stafftag: stafftag,
                                   has_polls: has_polls,
                                   polldata: polldata
                               });
@@ -508,7 +516,7 @@ Page {
                             id: mainMetadata
                             text: loggedin.value != "-1" ? "<style>" +
                                                            "a { color: %1 }".arg(Theme.highlightColor) +
-                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + "</a>" : username
+                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + stafftag + "</a>" : username + stafftag
                             onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
                             textFormat: Text.RichText
                             truncationMode: TruncationMode.Fade
@@ -574,10 +582,13 @@ Page {
                         if (!link1 && /^https:\/\/forum.sailfishos.org\/t\/[\w-]+?\/?/.exec(link)){
                             getRedirect(link);
                         } else if ( !link1){
+                            if (link.indexOf("/") === 0)
+                                link = "https://forum.sailfishos.org" + link
                             pageStack.push("OpenLink.qml", {link: link});
 
                         }  else {
-                            pageStack.push("ThreadView.qml", { "topicid": link1[2], "post_number": link1[3] });
+                            var post_number = link1[3] ? link1[3] : -1
+                            pageStack.push("ThreadView.qml", { "topicid": link1[2], "post_number": post_number });
                         }
                     }
                 }
