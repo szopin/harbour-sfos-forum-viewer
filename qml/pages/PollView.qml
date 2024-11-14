@@ -183,12 +183,9 @@ Page { id: pollpage
                 enabled: canSubmit
                 text: qsTr("Submit")
                 onClicked: {
-                    // FIXME: there's surely a more javascripty way to do that:
                     // make an array of ids out of the object with "id" as property name
-                    var options = []
-                    var ids = Object.keys(voteTracker)
-                    ids.forEach(function(e) { if (data[e]) options.push(e) })
-                    submitPoll(key, postid, polldata.name, options)
+                    var votes = Object.keys(voteTracker).map(function(id) { if (data[id]) return id })
+                    submitPoll(key, postid, polldata.name, votes)
                 }
             }
             MenuItem { id: switchMenu
