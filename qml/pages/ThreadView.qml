@@ -282,10 +282,7 @@ Page {
             }
             var has_polls = !!post.polls  ? post.polls.length : 0
             var polldata = []
-            if (i!=0) {
-                // can comments have polls?
-                if (has_polls) console.warn("Detected a comment with a poll. This is currently not supported.")
-            } else {
+
                 // reorganize the poll data into an array of objects, so we only
                 // have to result with the JSObject->ListModel conversion once:
                 // See also: Flow { id: pollsItem } below
@@ -303,7 +300,7 @@ Page {
                  //   }
                     polldata.push(pd)
                 }
-            }
+
             if (post.actions_summary.length > 0){
                 var action = post.actions_summary[0];
                 likes = (loggedin.value == "-1") ? ((action && action.id === 2)
@@ -600,7 +597,7 @@ Page {
                     }
                 }
                 Flow { id: pollsItem
-                    visible: index == 0 && has_polls
+                    visible: has_polls
                     property int cols: 3
                     width: parent.width
                     Label { id: pollHeader
