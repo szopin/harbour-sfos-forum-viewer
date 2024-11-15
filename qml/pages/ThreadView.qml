@@ -209,6 +209,10 @@ Page {
         }
         xhr.send(JSON.stringify(json));
     }
+    function refresh(){
+        list.model.clear();
+        commentpage.getcomments();
+    }
     function del(postid, index){
         var xhr = new XMLHttpRequest;
         xhr.open("DELETE", "https://forum.sailfishos.org/posts/" + postid);
@@ -292,10 +296,11 @@ Page {
                     if (!!post["polls_votes"]) {
                         if (post.polls_votes[post.polls[pi].name]) {
                             pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                        }
                         } else {
                             pd["votes"] = { "list": [] }
                         }
-                    }
+                 //   }
                     polldata.push(pd)
                 }
             }
@@ -613,7 +618,7 @@ Page {
                             property int pollindex: index
                             onClicked: {
                                 const pd = polldata.get(pollindex)
-                                console.debug("Opening poll no", pollindex, "for post", postid) //, ", data:", JSON.stringify(pd,null,2))
+                                console.debug("Opening poll no", pollindex, "for post", postid, ", data:", JSON.stringify(pd,null,2))
                                 pageStack.push("PollView.qml",
                                     { "key": loggedin.value, "postid": postid,
                                       "polldata": pd["poll"],

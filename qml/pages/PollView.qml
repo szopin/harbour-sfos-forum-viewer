@@ -30,7 +30,7 @@ Page { id: pollpage
 
     property bool votemode: (polldata.status == "open") && canVote
     property bool canSubmit: { var k = Object.keys(voteTracker); return (k.length > 0) }
-    property bool canVote: submitted_votes.length == 0
+    property bool canVote: submitted_votes.length == 0 && key != -1
     property var voteTracker: ({})
 
     // guard against unwieldy polls. randomly selected amount.
@@ -45,6 +45,10 @@ Page { id: pollpage
         "unsupported": { "supported": false, "typeDisplayName": qsTr("Unsupported Poll") },
     }
     property ListModel pollmodel: ListModel{}
+
+    function findFirstPage() {
+        return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
+    }
 
     Component.onCompleted: {
         if ( polldata.options.length > maxopts ) {
@@ -79,7 +83,7 @@ Page { id: pollpage
         property Item  placeholder: viewplaceholder
 
         header: PageHeader { title: "%1: %2".arg(pollType[polldata.type].supported ? pollType[polldata.type].typeDisplayName : pollType["unsupported"].typeDisplayName).arg(polldata.title ? polldata.title : "")
-                description: qsTr("Voters: %1 Status: %2").arg(polldata.voters).arg(canVote ? polldata.status : qsTr("submitted"))
+                description: qsTr("Voters: %1 Status: %2").arg(polldata.voters).arg(canVote ? polldata.status : key != -1 ? qsTr("submitted") : qsTr("not logged in"))
         }
         model: pollmodel
         delegate: Column {
@@ -184,7 +188,7 @@ Page { id: pollpage
                 text: qsTr("Submit")
                 onClicked: {
                     // make an array of ids out of the object with "id" as property name
-                    var votes = Object.keys(voteTracker).map(function(id) { if (data[id]) return id })
+                    var votes = Object.keys(voteTracker).map(function(id) { return id })
                     submitPoll(key, postid, polldata.name, votes)
                 }
             }
@@ -217,6 +221,7 @@ Page { id: pollpage
                     pageStack.push("Error.qml", {errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
+                    findFirstPage().refresh();
                     pageStack.pop()
                 }
             }
