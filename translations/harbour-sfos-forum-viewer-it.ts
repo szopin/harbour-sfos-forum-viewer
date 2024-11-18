@@ -87,6 +87,10 @@ Un grazie speciale ai contributori:
         <source>Error:</source>
         <translation>Errore:</translation>
     </message>
+    <message>
+        <source>An unknown Error occurred.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstPage</name>

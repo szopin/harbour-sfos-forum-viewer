@@ -178,13 +178,13 @@ Page { id: pollpage
         PullDownMenu{
             MenuItem { id: resetMenu
                 visible: canVote
-                enabled: canSubmit
+                enabled: canSubmit && polldata.status != "closed"
                 text: qsTr("Reset")
                 onClicked: { voteTracker = new Object({}); populate() }
             }
             MenuItem { id: submitMenu
                 visible: canVote
-                enabled: canSubmit
+                enabled: canSubmit && polldata.status != "closed"
                 text: qsTr("Submit")
                 onClicked: {
                     // make an array of ids out of the object with "id" as property name
@@ -193,7 +193,7 @@ Page { id: pollpage
                 }
             }
             MenuItem { id: switchMenu
-                text: votemode ? qsTr("View Results") : canVote ? qsTr("Vote") : qsTr("View Votes")
+                text: votemode ? qsTr("View Results") : canVote && polldata.status == "open" ? qsTr("Vote") : qsTr("View Votes")
                 onClicked: votemode = !votemode
             }
         }
