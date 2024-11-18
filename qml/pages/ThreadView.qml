@@ -116,7 +116,7 @@ Page {
             if (xhr4.readyState === XMLHttpRequest.DONE){
                 if(xhr4.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr4.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr4.status + " " + xhr4.statusText, errortext: xhr4.responseText});
                 } else {
                     var data = JSON.parse(xhr4.responseText);
 
@@ -137,7 +137,7 @@ Page {
             if (xhr4.readyState === XMLHttpRequest.DONE){
                 if(xhr4.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr4.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr4.status + " " + xhr4.statusText, errortext: xhr4.responseText});
                 } else {
                     var data = JSON.parse(xhr4.responseText);
 
@@ -173,7 +173,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
                     list.model.clear();
@@ -198,7 +198,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
                     list.model.clear();
@@ -221,7 +221,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
                     list.model.setProperty(index, "cooked", "(post withdrawn by author, will be automatically deleted in 24 hours unless flagged)");
                     list.model.setProperty(index, "can_delete", false);
@@ -241,7 +241,7 @@ Page {
             if (xhr.readyState === XMLHttpRequest.DONE){
                 if(xhr.statusText !== "OK"){
                     pageStack.completeAnimation();
-                    pageStack.push("Error.qml", {errortext: xhr.responseText});
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
                     console.log(xhr.responseText);
                     list.model.clear();

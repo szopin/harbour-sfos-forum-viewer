@@ -30,7 +30,7 @@ Dialog {
                 if (xhr.readyState === XMLHttpRequest.DONE){
                     if(xhr.statusText !== "OK"){
                         pageStack.completeAnimation();
-                        pageStack.push("Error.qml", {errortext: xhr.responseText});
+                        pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                     } else {
                     var data = JSON.parse(xhr.responseText);
                     mainConfig.setValue("uploads/" + data.data.title,data.data.delete_url);
