@@ -30,7 +30,8 @@ import Sailfish.Silica 1.0
 
 Page {
     id: aboutPage
-
+ allowedOrientations: Orientation.All
+ 
     SilicaFlickable {
         id: flickable
         anchors.fill: parent

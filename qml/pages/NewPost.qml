@@ -6,6 +6,8 @@ import Sailfish.Pickers 1.0
 Dialog {
     id: dialog
 
+    allowedOrientations: Orientation.All
+
     property string topicid
     property string post_number
     property string username

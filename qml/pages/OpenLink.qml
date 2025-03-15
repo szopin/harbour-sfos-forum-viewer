@@ -5,7 +5,8 @@ import Sailfish.Silica 1.0
 Dialog {
     id: openLink
     property string link
-
+  allowedOrientations: Orientation.All
+ 
     onAccepted: {
 
                 pageStack.replace("webView.qml", {"pageurl": link });

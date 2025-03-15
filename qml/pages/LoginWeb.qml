@@ -7,6 +7,8 @@ import Sailfish.WebEngine 1.0
 WebViewPage {
     id: loginDialog
 
+    allowedOrientations: Orientation.All
+
     property var payload
     property string pubkey
     property string encoded: encodeURIComponent(pubkey)
