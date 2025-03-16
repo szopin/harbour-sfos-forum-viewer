@@ -89,7 +89,7 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>An unknown Error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ett okänt fel inträffade.</translation>
     </message>
 </context>
 <context>
@@ -160,55 +160,55 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Clear filter list</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa filterlistan</translation>
     </message>
     <message>
         <source>Filter OP</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrera OP</translation>
     </message>
     <message>
         <source>Muted</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tystad</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tysta</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Spårar</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Spåra</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bevakar</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bevaka</translation>
     </message>
     <message>
         <source>Don&apos;t track (local)</source>
-        <translation type="unfinished"></translation>
+        <translation>Spåra inte (lokalt)</translation>
     </message>
 </context>
 <context>
@@ -296,11 +296,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Muted topics</source>
-        <translation type="unfinished"></translation>
+        <translation>Tystade ämnen</translation>
     </message>
     <message>
         <source>Unmute</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluta tysta</translation>
     </message>
 </context>
 <context>
@@ -318,67 +318,67 @@ Speciellt tack till medverkande:
     <name>PollView</name>
     <message>
         <source>Single Answer Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Omröstning med ett svar</translation>
     </message>
     <message>
         <source>Multiple Answer Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Omröstning med flera svar</translation>
     </message>
     <message>
         <source>Rating Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Betygsomröstning</translation>
     </message>
     <message>
         <source>Unsupported Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Omröstning som inte stöds</translation>
     </message>
     <message>
         <source>This poll has more than %1 options, this is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här undersökningen har fler än %1 alternativ, detta stöds inte.</translation>
     </message>
     <message>
         <source>Please go back and open the poll in a browser window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gå tillbaka och öppna omröstningen i ett webbläsarfönster.</translation>
     </message>
     <message>
         <source>This type of poll is not yet supported: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här typen av omröstning stöds ännu inte: %1</translation>
     </message>
     <message>
         <source>Voters: %1 Status: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Väljare: %1 Status: %2</translation>
     </message>
     <message>
         <source>submitted</source>
-        <translation type="unfinished"></translation>
+        <translation>Inskickad</translation>
     </message>
     <message>
         <source>Votes: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Röster: %1</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka</translation>
     </message>
     <message>
         <source>View Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa resultat</translation>
     </message>
     <message>
         <source>Vote</source>
-        <translation type="unfinished"></translation>
+        <translation>Rösta</translation>
     </message>
     <message>
         <source>View Votes</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa röster</translation>
     </message>
     <message>
         <source>not logged in</source>
-        <translation type="unfinished"></translation>
+        <translation>Inte inloggad</translation>
     </message>
 </context>
 <context>
@@ -501,23 +501,23 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Filter user</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrera användare</translation>
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det här inlägget innehåller omröstningar.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
-        <translation type="unfinished"></translation>
+        <translation>Detta inlägget innehåller en omröstning.</translation>
     </message>
     <message>
         <source>Click to view and vote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryck för att visa och rösta:</translation>
     </message>
     <message>
         <source>Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Omröstning</translation>
     </message>
 </context>
 <context>
