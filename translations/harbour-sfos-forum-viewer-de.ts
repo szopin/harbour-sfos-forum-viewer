@@ -433,7 +433,7 @@ Vielen Dank an die Mitwirkenden:
     <name>ThreadView</name>
     <message>
         <source>Copy link to clipboard</source>
-        <translation>In die Zwischenablage kopieren</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Open in external browser</source>
