@@ -4,12 +4,12 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="46"/>
+        <location filename="../qml/pages/About.qml" line="47"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="86"/>
+        <location filename="../qml/pages/About.qml" line="87"/>
         <source>SFOS Forum Viewer for Sailfish OS v%1
 By szopin
 Licensed under MIT
@@ -30,18 +30,18 @@ Special thanks to contributors:
 </translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="94"/>
+        <location filename="../qml/pages/About.qml" line="95"/>
         <source>, </source>
         <extracomment>contributors list separator</extracomment>
         <translation>, </translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="104"/>
+        <location filename="../qml/pages/About.qml" line="105"/>
         <source>Source code</source>
         <translation>Исходный код</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="116"/>
+        <location filename="../qml/pages/About.qml" line="117"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
@@ -256,27 +256,27 @@ Special thanks to contributors:
 <context>
     <name>NewPost</name>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="121"/>
+        <location filename="../qml/pages/NewPost.qml" line="123"/>
         <source>Upload image (through ImgBB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="126"/>
+        <location filename="../qml/pages/NewPost.qml" line="128"/>
         <source>Insert quote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="133"/>
+        <location filename="../qml/pages/NewPost.qml" line="135"/>
         <source>Enter post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="133"/>
+        <location filename="../qml/pages/NewPost.qml" line="135"/>
         <source>Edit post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="145"/>
+        <location filename="../qml/pages/NewPost.qml" line="147"/>
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
@@ -284,22 +284,22 @@ Special thanks to contributors:
 <context>
     <name>NewThread</name>
     <message>
-        <location filename="../qml/pages/NewThread.qml" line="31"/>
+        <location filename="../qml/pages/NewThread.qml" line="33"/>
         <source>Enter thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewThread.qml" line="31"/>
+        <location filename="../qml/pages/NewThread.qml" line="33"/>
         <source>Enter PM to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewThread.qml" line="38"/>
+        <location filename="../qml/pages/NewThread.qml" line="40"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewThread.qml" line="49"/>
+        <location filename="../qml/pages/NewThread.qml" line="51"/>
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
@@ -307,17 +307,17 @@ Special thanks to contributors:
 <context>
     <name>NotificationSettings</name>
     <message>
-        <location filename="../qml/pages/NotificationSettings.qml" line="34"/>
+        <location filename="../qml/pages/NotificationSettings.qml" line="37"/>
         <source>Accept</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationSettings.qml" line="40"/>
+        <location filename="../qml/pages/NotificationSettings.qml" line="43"/>
         <source>Check automatically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NotificationSettings.qml" line="57"/>
+        <location filename="../qml/pages/NotificationSettings.qml" line="60"/>
         <source>Minutes: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -372,12 +372,12 @@ Special thanks to contributors:
 <context>
     <name>OpenLink</name>
     <message>
-        <location filename="../qml/pages/OpenLink.qml" line="36"/>
+        <location filename="../qml/pages/OpenLink.qml" line="37"/>
         <source>Open URL in webview?</source>
         <translation>Открыть URL в приложении?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/OpenLink.qml" line="52"/>
+        <location filename="../qml/pages/OpenLink.qml" line="53"/>
         <source>Open externally</source>
         <translation>Открыть в браузере</translation>
     </message>
@@ -492,34 +492,34 @@ Special thanks to contributors:
 <context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="51"/>
+        <location filename="../qml/pages/SearchPage.qml" line="53"/>
         <source>Searching in “%1”</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="77"/>
+        <location filename="../qml/pages/SearchPage.qml" line="79"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>Нет результатов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="79"/>
+        <location filename="../qml/pages/SearchPage.qml" line="81"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="163"/>
+        <location filename="../qml/pages/SearchPage.qml" line="165"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="170"/>
+        <location filename="../qml/pages/SearchPage.qml" line="172"/>
         <source>Search in all threads</source>
         <translation>Искать по всем темам</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="171"/>
+        <location filename="../qml/pages/SearchPage.qml" line="173"/>
         <source>Search in the current thread</source>
         <translation>Искать в текущей теме</translation>
     </message>
