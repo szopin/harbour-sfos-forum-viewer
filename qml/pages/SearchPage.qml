@@ -30,7 +30,9 @@ import Sailfish.Silica 1.0
 
 
 Page {
+    id: page
     allowedOrientations: Orientation.All
+
 
     property string initialSearch
     property int searchid
@@ -92,9 +94,6 @@ Page {
         getcomments(text);
         forceActiveFocus()
     }
-
-    id: page
-    allowedOrientations: defaultAllowedOrientations
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
