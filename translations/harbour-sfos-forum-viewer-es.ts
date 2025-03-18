@@ -492,34 +492,34 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="53"/>
+        <location filename="../qml/pages/SearchPage.qml" line="55"/>
         <source>Searching in “%1”</source>
         <translation>Buscando en “%1”</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="79"/>
+        <location filename="../qml/pages/SearchPage.qml" line="81"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>No hay resultados</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="81"/>
+        <location filename="../qml/pages/SearchPage.qml" line="83"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>en “%1”</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="165"/>
+        <location filename="../qml/pages/SearchPage.qml" line="164"/>
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="172"/>
+        <location filename="../qml/pages/SearchPage.qml" line="171"/>
         <source>Search in all threads</source>
         <translation>Busca en todos los hilos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="173"/>
+        <location filename="../qml/pages/SearchPage.qml" line="172"/>
         <source>Search in the current thread</source>
         <translation>Busca en hilo actual</translation>
     </message>

@@ -492,34 +492,34 @@ Special thanks to contributors:
 <context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="53"/>
+        <location filename="../qml/pages/SearchPage.qml" line="55"/>
         <source>Searching in “%1”</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="79"/>
+        <location filename="../qml/pages/SearchPage.qml" line="81"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>Нет результатов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="81"/>
+        <location filename="../qml/pages/SearchPage.qml" line="83"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="165"/>
+        <location filename="../qml/pages/SearchPage.qml" line="164"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="172"/>
+        <location filename="../qml/pages/SearchPage.qml" line="171"/>
         <source>Search in all threads</source>
         <translation>Искать по всем темам</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="173"/>
+        <location filename="../qml/pages/SearchPage.qml" line="172"/>
         <source>Search in the current thread</source>
         <translation>Искать в текущей теме</translation>
     </message>
