@@ -45,6 +45,7 @@ Page { id: pollpage
         "unsupported": { "supported": false, "typeDisplayName": qsTr("Unsupported Poll") },
     }
     property ListModel pollmodel: ListModel{}
+    property ListModel pollmodel_sorted: ListModel{}
 
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
@@ -69,7 +70,21 @@ Page { id: pollpage
 
     function populate() {
         pollmodel.clear()
-        polldata.options.forEach(function(o) { pollmodel.append(o) })
+        polldata.options.forEach(function(o) {
+            pollmodel.append(o)
+            var option_count = pollmodel_sorted.count;
+            for (var i = 0; i < option_count + 1; i++) {
+                if (i == option_count) {
+                    pollmodel_sorted.append(o)
+                    break;
+                } else {
+                    if (pollmodel_sorted.get(i).votes < o.votes) {
+                        pollmodel_sorted.insert(i, o)
+                        break;
+                    }
+                }
+            }
+        })
         submitted_votes.forEach(function(o) { voteTracker[o] = true })
     }
 
@@ -85,7 +100,7 @@ Page { id: pollpage
         header: PageHeader { title: "%1: %2".arg(pollType[polldata.type].supported ? pollType[polldata.type].typeDisplayName : pollType["unsupported"].typeDisplayName).arg(polldata.title ? polldata.title : "")
                 description: qsTr("Voters: %1 Status: %2").arg(polldata.voters).arg(canVote ? polldata.status : key != -1 ? qsTr("submitted") : qsTr("not logged in"))
         }
-        model: pollmodel
+        model: votemode ? pollmodel : pollmodel_sorted
         delegate: Column {
             width: ListView.view.width - Theme.horizontalPageMargin
             anchors.horizontalCenter: parent.horizontalCenter
