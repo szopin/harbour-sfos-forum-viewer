@@ -405,63 +405,63 @@ Agradecimiento especial a los contribuyentes:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="55"/>
+        <location filename="../qml/pages/PollView.qml" line="56"/>
         <source>This poll has more than %1 options, this is not supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="56"/>
-        <location filename="../qml/pages/PollView.qml" line="62"/>
+        <location filename="../qml/pages/PollView.qml" line="57"/>
+        <location filename="../qml/pages/PollView.qml" line="63"/>
         <source>Please go back and open the poll in a browser window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="61"/>
+        <location filename="../qml/pages/PollView.qml" line="62"/>
         <source>This type of poll is not yet supported: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="86"/>
+        <location filename="../qml/pages/PollView.qml" line="101"/>
         <source>Voters: %1 Status: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="86"/>
+        <location filename="../qml/pages/PollView.qml" line="101"/>
         <source>submitted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="86"/>
+        <location filename="../qml/pages/PollView.qml" line="101"/>
         <source>not logged in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="119"/>
+        <location filename="../qml/pages/PollView.qml" line="134"/>
         <source>Votes: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="182"/>
+        <location filename="../qml/pages/PollView.qml" line="197"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="188"/>
+        <location filename="../qml/pages/PollView.qml" line="203"/>
         <source>Submit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="196"/>
+        <location filename="../qml/pages/PollView.qml" line="211"/>
         <source>View Results</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="196"/>
+        <location filename="../qml/pages/PollView.qml" line="211"/>
         <source>Vote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/PollView.qml" line="196"/>
+        <location filename="../qml/pages/PollView.qml" line="211"/>
         <source>View Votes</source>
         <translation type="unfinished"></translation>
     </message>
