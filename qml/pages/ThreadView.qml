@@ -487,7 +487,7 @@ ListModel { id: replyModel}
         }
         PushUpMenu{
         id: pumenu
-            visible: (loggedin.value != "-1" && !tclosed) || currentModel === replyModel
+
          MenuItem {
                 text: qsTr("Back to full thread")
                 visible: currentModel === replyModel
