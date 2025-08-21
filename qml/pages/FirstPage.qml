@@ -55,8 +55,29 @@ Page {
     property bool networkError: false
     property bool loadedMore: false
     property bool spam: false
+    property bool remorseActive: false
 
+function logout() {
+        remorseActive = true
+        remorsePopup.execute(
+         //   firstPage,
+            qsTr("Logging out"),
+            function() { mainConfig.setValue("key", "-1") }
+        )
+    }
+    function remspam(spamop) {
 
+        remorseActive = true
+        remorsePopup.execute(
+         //   firstPage,
+            qsTr("Filtering user"),
+            function() {
+            filterlist.setValue("set", 1);
+                        filterlist.setValue(spamop, getusername(spamop));
+                        filterlist.sync();
+                        clearview(); }
+        )
+    }
     function newtopic(raw, title, category){
         var xhr = new XMLHttpRequest;
         const json = {
@@ -383,6 +404,11 @@ Page {
         }
     }
 
+    RemorsePopup {
+        id: remorsePopup
+        onCanceled: remorseActive = false
+        onTriggered: remorseActive = false
+    }
     SilicaListView {
         id:list
         anchors.fill: parent
@@ -416,11 +442,11 @@ Page {
             MenuItem {
                 text: qsTr("Logout")
                 visible: loggedin.value != "-1" ? true : false
-                onClicked: mainConfig.setValue("key", "-1");
+                onClicked: logout();// mainConfig.setValue("key", "-1");
             }
             MenuItem {
                 text: qsTr("New thread")
-                visible: loggedin.value != "-1" && tid ? true : false
+                visible: !remorseActive && loggedin.value != "-1" && tid ? true : false
                 onClicked: pageStack.push("NewThread.qml", {category: category, raw: topic_template});
             }
             MenuItem {
@@ -440,7 +466,7 @@ Page {
             }
             MenuItem {
                 text: qsTr("Notifications")
-                visible: loggedin.value != "-1"
+                visible: !remorseActive && loggedin.value != "-1"
                 onClicked: pageStack.push("Notifications.qml", {loggedin: loggedin.value});
             }
             MenuItem {
@@ -477,7 +503,7 @@ Page {
             mainConfig.setValue("timer", timerv);
             lastnotv = mainConfig.value("lastnot", "-1");
             mainConfig.setValue("lastnot", lastnotv);
-            console.log(checkem.value, loggedin.value)
+            //console.log(checkem.value, loggedin.value)
             showLatest();
         }
 
@@ -663,7 +689,7 @@ Page {
                     }
                 }
                 MenuLabel { height: buttons.height
-                    visible: loggedin.value !== "-1"
+                    visible: !remorseActive && loggedin.value !== "-1"
                     anchors.horizontalCenter: parent.horizontalCenter
                     Grid{ id: buttons
                         rows: 1
@@ -708,17 +734,16 @@ Page {
                     }
                 }
                 MenuItem { text: qsTr("Filter OP")
-                    visible: !loadedMore
+                    visible: !loadedMore && !remorseActive
                     onDelayedClick: {
                         console.log(getusername(spamop));
-                        filterlist.setValue("set", 1);
-                        filterlist.setValue(spamop, getusername(spamop));
-                        filterlist.sync();
-                        clearview();
+                        remspam(spamop);
+
                     }
                 }
             }
             onClicked: {
+                if(!remorseActive){
                 if(user_id){
                     var name = list.model.get(index).name
                     postCountConfig.setValue(topicid, highest_post_number);
@@ -734,6 +759,7 @@ Page {
                 } else {
                     user_id = !user_id;
                 }
+            }
             }
         }
         BackgroundJob {

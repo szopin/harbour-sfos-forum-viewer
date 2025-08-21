@@ -61,7 +61,20 @@ Page {
     property int xi
     property int yi
     property int zi
+    property variant currentModel: commodel
+    property int replyindex
+    property bool spam: false
 
+    function remspam(user_id, username){
+        remorsePopup.execute(
+         //   firstPage,
+            qsTr("Filtering user"),
+            function() {
+        filterlist.setValue(user_id, username);
+                        filterlist.setValue("set", 1);
+           // refresh();
+        })
+    }
     function getRedirect(link){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", link);
@@ -77,11 +90,19 @@ Page {
     }
 
     function findOP(filter){
+
         for (var j=0; j < commodel.count; j++){
             if (commodel.get(j).post_number == filter){
-                pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
+              //  pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
+                replyModel.insert(0, commodel.get(j))
+                break
             }
         }
+        if(commodel.get(j).reply_to > 0){
+             findOP(commodel.get(j).reply_to);
+        }
+        currentModel = replyModel
+        list.scrollToBottom()
     }
     function uncensor(postid, index){
         var xhr3 = new XMLHttpRequest;
@@ -165,7 +186,7 @@ Page {
             "topic_id": topicid ,
             "raw": raw
         };
-        console.log(JSON.stringify(json), raw, topicid);
+       // console.log(JSON.stringify(json), raw, topicid);
         xhr.open("POST", "https://forum.sailfishos.org/posts");
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.setRequestHeader("Content-Type", 'application/json');
@@ -175,7 +196,7 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                    console.log(xhr.responseText);
+                   // console.log(xhr.responseText);
                     list.model.clear();
                     commentpage.getcomments();
                 }
@@ -190,7 +211,7 @@ Page {
             "raw": raw,
             "reply_to_post_number": post_number
         };
-        console.log(JSON.stringify(json), raw, topicid);
+        //console.log(JSON.stringify(json), raw, topicid);
         xhr.open("POST", "https://forum.sailfishos.org/posts");
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.setRequestHeader("Content-Type", 'application/json');
@@ -200,7 +221,7 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                    console.log(xhr.responseText);
+                   //console.log(xhr.responseText);
                     list.model.clear();
                     commentpage.getcomments();
                 }
@@ -233,7 +254,7 @@ Page {
     function edit(raw, postid){
         var xhr = new XMLHttpRequest;
         const json = { "post": { "raw": raw} };
-        console.log(JSON.stringify(json));
+        //console.log(JSON.stringify(json));
         xhr.open("PUT", "https://forum.sailfishos.org/posts/" +postid);
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.setRequestHeader("Content-Type", 'application/json');
@@ -243,7 +264,7 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                    console.log(xhr.responseText);
+                    //console.log(xhr.responseText);
                     list.model.clear();
                     commentpage.getcomments();
                 }
@@ -269,11 +290,11 @@ Page {
 
     function appendPosts(posts) {
         var posts_length = posts.length;
-        console.log(posts_length);
+        //console.log(posts_length);
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
-            var spam = false
+           // var spam = false
             var cooked_hidden = false
             if (post.staff){
                 stafftag = " - Jolla"
@@ -311,7 +332,8 @@ Page {
                                                       ? action.can_undo : false
                 acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
                 cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
-                spam = (filterlist.value(post.user_id, -1)  < 0) ? false : true
+                spam = (filterlist.value(post.user_id, -1) < 0) ? false : true
+
             }
             list.model.append({
                                   cooked: post.cooked,
@@ -407,6 +429,11 @@ Page {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
     }
+RemorsePopup {
+        id: remorsePopup
+}
+ListModel { id: commodel}
+ListModel { id: replyModel}
     SilicaListView {
         id: list
         header: PageHeader {
@@ -424,6 +451,7 @@ Page {
         anchors.top: header.bottom
         VerticalScrollDecorator {}
         PullDownMenu{
+        id: pdmenu
             MenuItem {
                 text: qsTr("Copy link to clipboard")
                 onClicked: Clipboard.text = source
@@ -447,14 +475,48 @@ Page {
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
+        MenuItem {
+                text: qsTr("Back to full thread")
+                visible: currentModel === replyModel
+                onClicked:{
+                pdmenu.close()
+                 currentModel = commodel
+                list.positionViewAtIndex(replyindex, ListView.Beginning)
+            }
+        }
         }
         PushUpMenu{
-            visible: loggedin.value != "-1" && !tclosed
+        id: pumenu
+            visible: (loggedin.value != "-1" && !tclosed) || currentModel === replyModel
+         MenuItem {
+                text: qsTr("Back to full thread")
+                visible: currentModel === replyModel
+                onClicked: {
+                pumenu.close()
+                 currentModel = commodel
+                list.positionViewAtIndex(replyindex, ListView.Beginning)
+            }
+        }
             MenuItem {
                 text: qsTr("Post reply")
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
+        MenuItem {
+                text: qsTr("Search thread")
+                onClicked: pageStack.push("SearchPage.qml", {"searchid": topicid, "aTitle": aTitle });
+
+        }
+            MenuItem {
+                text: qsTr("Open directly")
+                onClicked: pageStack.push("webView.qml", {"pageurl": source});
+
+            }
+        MenuItem {
+                text: qsTr("Open in external browser")
+                onClicked: Qt.openUrlExternally(source)
+        }
+
         }
 
         BusyIndicator {
@@ -464,7 +526,7 @@ Page {
             size: BusyIndicatorSize.Large
         }
 
-        model: ListModel { id: commodel}
+        model: currentModel // ListModel { id: commodel}
         delegate: ListItem {
             property int postindex: index
             enabled: menu.hasContent
@@ -615,7 +677,7 @@ Page {
                             property int pollindex: index
                             onClicked: {
                                 const pd = polldata.get(pollindex)
-                                console.debug("Opening poll no", pollindex, "for post", postid, ", data:", JSON.stringify(pd,null,2))
+                                //console.debug("Opening poll no", pollindex, "for post", postid, ", data:", JSON.stringify(pd,null,2))
                                 pageStack.push("PollView.qml",
                                     { "key": loggedin.value, "postid": postid,
                                       "polldata": pd["poll"],
@@ -652,18 +714,23 @@ Page {
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked});
                 }
                 MenuItem {
-                    visible: reply_to > 0 && reply_to !== last_postid
-                    text: qsTr("Show replied to post")
-                    onClicked: findOP(reply_to);
+                    visible: reply_to > 0 && reply_to !== last_postid && currentModel === commodel
+                    text: qsTr("Show replied to post(s)")
+                    onClicked: {
+                    replyindex = index
+                    replyModel.clear()
+                    replyModel.insert(0, commodel.get(index))
+                    findOP(reply_to);
+                }
 
                 }
-                MenuItem {
+          /*      MenuItem {
                     visible: cooked_hidden
                     text: qsTr("Uncensor post")
                     onClicked: uncensor(postid, index);
-                }
+                }*/
                 MenuItem {
-                    visible: loggedin.value != "-1" && !acted && !yours
+                    visible: loggedin.value != "-1" && !acted && !yours && currentModel !== replyModel
                     text: qsTr("Like")
                     onClicked: like(postid, index);
                 }
@@ -673,7 +740,7 @@ Page {
                     onClicked: postreply(topicid, post_number, postid, username);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1" && acted && !yours && can_undo
+                    visible: loggedin.value != "-1" && acted && !yours && can_undo && currentModel !== replyModel
                     text: qsTr("Unlike")
                     onClicked: unlike(postid, index);
                 }
@@ -683,16 +750,15 @@ Page {
                     onClicked: newedit(postid);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1"  && yours && can_delete
+                    visible: loggedin.value != "-1"  && yours && can_delete && currentModel !== replyModel
                     text: qsTr("Delete")
                     onClicked: del(postid, index);
                 }
                 MenuItem { text: qsTr("Filter user")
 
                     onClicked: {
-                        //         getusername(user_id);
-                        filterlist.setValue(user_id, username);
-                        filterlist.setValue("set", 1);
+                    remspam(user_id, username);
+
                     }
                 }
 

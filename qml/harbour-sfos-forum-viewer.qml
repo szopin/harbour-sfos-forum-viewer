@@ -39,7 +39,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.13.6"
+    readonly property string appVersion: "1.14.0"
     // ================================
 
     property bool fetching: false
@@ -162,7 +162,7 @@ ApplicationWindow
         mainConfig.setValue("key", login);
         checkemb = mainConfig.value("checkem", false);
         mainConfig.setValue("checkem", checkemb);
-        console.log(checkem.value, loggedin.value)
+        //console.log(checkem.value, loggedin.value)
         categories.fetch();
         fetchLatestPosts();
     }

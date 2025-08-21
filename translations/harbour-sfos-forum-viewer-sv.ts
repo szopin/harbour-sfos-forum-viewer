@@ -210,6 +210,14 @@ Speciellt tack till medverkande:
         <source>Don&apos;t track (local)</source>
         <translation>Spåra inte (lokalt)</translation>
     </message>
+    <message>
+        <source>Logging out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering user</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -468,14 +476,6 @@ Speciellt tack till medverkande:
         <translation>Alternativ formatering</translation>
     </message>
     <message>
-        <source>Show replied to post</source>
-        <translation>Visa besvarat inlägg</translation>
-    </message>
-    <message>
-        <source>Uncensor post</source>
-        <translation>Censurera inte inlägget</translation>
-    </message>
-    <message>
         <source>Like</source>
         <translation>Gilla</translation>
     </message>
@@ -518,6 +518,18 @@ Speciellt tack till medverkande:
     <message>
         <source>Poll</source>
         <translation>Omröstning</translation>
+    </message>
+    <message>
+        <source>Filtering user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show replied to post(s)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

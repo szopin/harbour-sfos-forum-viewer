@@ -210,6 +210,14 @@ Remerciements aux contributeurs :
         <source>Don&apos;t track (local)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Logging out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering user</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -468,14 +476,6 @@ Remerciements aux contributeurs :
         <translation>Formattage alternatif</translation>
     </message>
     <message>
-        <source>Show replied to post</source>
-        <translation>Afficher le message répondu</translation>
-    </message>
-    <message>
-        <source>Uncensor post</source>
-        <translation>Afficher le commentaire</translation>
-    </message>
-    <message>
         <source>Like</source>
         <translation>Aimer</translation>
     </message>
@@ -517,6 +517,18 @@ Remerciements aux contributeurs :
     </message>
     <message>
         <source>Poll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filtering user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show replied to post(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
