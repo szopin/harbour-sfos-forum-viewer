@@ -89,7 +89,7 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>An unknown Error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si è veriuficato un errore sconosciuto.</translation>
     </message>
 </context>
 <context>
@@ -169,54 +169,54 @@ Un grazie speciale ai contributori:
     <message>
         <source>Muted</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Silenziato</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Silenzia</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normale</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normalizza</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tracciamento</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Traccia</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Topic watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Osservando</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Topic watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Osserva</translation>
     </message>
     <message>
         <source>Don&apos;t track (local)</source>
-        <translation type="unfinished"></translation>
+        <translation>Non tracciare (locale)</translation>
     </message>
     <message>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Disconnessione</translation>
     </message>
     <message>
         <source>Filtering user</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrando utente</translation>
     </message>
 </context>
 <context>
@@ -246,7 +246,7 @@ Un grazie speciale ai contributori:
     <name>NewThread</name>
     <message>
         <source>Enter thread</source>
-        <translation>Inserisci argomento</translation>
+        <translation>Inserisci discussione</translation>
     </message>
     <message>
         <source>Title</source>
@@ -304,11 +304,11 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>Muted topics</source>
-        <translation type="unfinished"></translation>
+        <translation>Discussioni silenziate</translation>
     </message>
     <message>
         <source>Unmute</source>
-        <translation type="unfinished"></translation>
+        <translation>Riattiva notifiche</translation>
     </message>
 </context>
 <context>
@@ -326,67 +326,67 @@ Un grazie speciale ai contributori:
     <name>PollView</name>
     <message>
         <source>Single Answer Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>sondaggio a Risposta Singola</translation>
     </message>
     <message>
         <source>Multiple Answer Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Sondaggio a Risposta Multipla</translation>
     </message>
     <message>
         <source>Rating Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Sondaggio con percentuale</translation>
     </message>
     <message>
         <source>Unsupported Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Sondaggio non supportato</translation>
     </message>
     <message>
         <source>This poll has more than %1 options, this is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo sondaggio ha più di %1 scelte, questo non è supportato.</translation>
     </message>
     <message>
         <source>Please go back and open the poll in a browser window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Per favore, torna indietro ed apri il sondaggio in una finestra del browser.</translation>
     </message>
     <message>
         <source>This type of poll is not yet supported: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo tipo di sondaggio non è ancora supportato: %1</translation>
     </message>
     <message>
         <source>Voters: %1 Status: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Votanti: %1 Stato: %2</translation>
     </message>
     <message>
         <source>submitted</source>
-        <translation type="unfinished"></translation>
+        <translation>voto inviato</translation>
     </message>
     <message>
         <source>Votes: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Voti: %1</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristina</translation>
     </message>
     <message>
         <source>Submit</source>
-        <translation type="unfinished"></translation>
+        <translation>Invia</translation>
     </message>
     <message>
         <source>View Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedi Risultati</translation>
     </message>
     <message>
         <source>Vote</source>
-        <translation type="unfinished"></translation>
+        <translation>Vota</translation>
     </message>
     <message>
         <source>View Votes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedi Voti</translation>
     </message>
     <message>
         <source>not logged in</source>
-        <translation type="unfinished"></translation>
+        <translation>non hai effettuato l&apos;accesso</translation>
     </message>
 </context>
 <context>
@@ -505,31 +505,31 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo post contiene dei sondaggi.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
-        <translation type="unfinished"></translation>
+        <translation>Questo post contiene un sondaggio.</translation>
     </message>
     <message>
         <source>Click to view and vote:</source>
-        <translation type="unfinished"></translation>
+        <translation>Clicca per vedere e votare:</translation>
     </message>
     <message>
         <source>Poll</source>
-        <translation type="unfinished"></translation>
+        <translation>Sondaggio</translation>
     </message>
     <message>
         <source>Filtering user</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrando utente</translation>
     </message>
     <message>
         <source>Back to full thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Torna alla discussione completa</translation>
     </message>
     <message>
         <source>Show replied to post(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra risposta ai messaggi</translation>
     </message>
 </context>
 <context>
