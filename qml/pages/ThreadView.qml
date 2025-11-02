@@ -67,13 +67,13 @@ Page {
 
     function remspam(user_id, username){
         remorsePopup.execute(
-         //   firstPage,
-            qsTr("Filtering user"),
-            function() {
-        filterlist.setValue(user_id, username);
+                    //   firstPage,
+                    qsTr("Filtering user"),
+                    function() {
+                        filterlist.setValue(user_id, username);
                         filterlist.setValue("set", 1);
-           // refresh();
-        })
+                        // refresh();
+                    })
     }
     function getRedirect(link){
         var xhr = new XMLHttpRequest;
@@ -93,13 +93,13 @@ Page {
 
         for (var j=0; j < commodel.count; j++){
             if (commodel.get(j).post_number == filter){
-              //  pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
+                //  pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
                 replyModel.insert(0, commodel.get(j))
                 break
             }
         }
         if(commodel.get(j).reply_to > 0){
-             findOP(commodel.get(j).reply_to);
+            findOP(commodel.get(j).reply_to);
         }
         currentModel = replyModel
         list.scrollToBottom()
@@ -186,7 +186,7 @@ Page {
             "topic_id": topicid ,
             "raw": raw
         };
-       // console.log(JSON.stringify(json), raw, topicid);
+        // console.log(JSON.stringify(json), raw, topicid);
         xhr.open("POST", "https://forum.sailfishos.org/posts");
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.setRequestHeader("Content-Type", 'application/json');
@@ -196,7 +196,7 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                   // console.log(xhr.responseText);
+                    // console.log(xhr.responseText);
                     list.model.clear();
                     commentpage.getcomments();
                 }
@@ -221,7 +221,7 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                   //console.log(xhr.responseText);
+                    //console.log(xhr.responseText);
                     list.model.clear();
                     commentpage.getcomments();
                 }
@@ -294,7 +294,7 @@ Page {
         for (var i=0;i<posts_length;i++) {
             var post = posts[i];
             var yours =  (loggedin.value == "-1") ? false : post.yours
-           // var spam = false
+            // var spam = false
             var cooked_hidden = false
             if (post.staff){
                 stafftag = " - Jolla"
@@ -304,23 +304,24 @@ Page {
             var has_polls = !!post.polls  ? post.polls.length : 0
             var polldata = []
 
-                // reorganize the poll data into an array of objects, so we only
-                // have to result with the JSObject->ListModel conversion once:
-                // See also: Flow { id: pollsItem } below
-                for (var pi = 0; pi<has_polls; ++pi) {
-                    var pd = { "poll": {}, "votes": {} }
-                    pd["poll"] = post.polls[pi]
-                    // polls_vote is only in the data if the user has voted already
-                    if (!!post["polls_votes"]) {
-                        if (post.polls_votes[post.polls[pi].name]) {
-                            pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
-                        }
-                        } else {
-                            pd["votes"] = { "list": [] }
-                        }
-                 //   }
-                    polldata.push(pd)
+            // reorganize the poll data into an array of objects, so we only
+            // have to result with the JSObject->ListModel conversion once:
+            // See also: Flow { id: pollsItem } below
+            for (var pi = 0; pi<has_polls; ++pi) {
+                var pd = { "poll": {}, "votes": {} }
+                pd["poll"] = post.polls[pi]
+                // polls_vote is only in the data if the user has voted already
+                if (!!post["polls_votes"]) {
+                    if (post.polls_votes[post.polls[pi].name]) {
+                        pd["votes"] = { "list": post.polls_votes[post.polls[pi].name] }
+                    }
+                } else {
+                    pd["votes"] = { "list": [] }
                 }
+                //   }
+                polldata.push(pd)
+            }
+            likes = 0;
 
             if (post.actions_summary.length > 0){
                 var action = post.actions_summary[0];
@@ -331,10 +332,11 @@ Page {
                 can_undo = (loggedin.value == "-1") ? false : action && action.id === 2 && action.can_undo
                                                       ? action.can_undo : false
                 acted = loggedin.value !== "-1" ? (action.id === 2 && action.acted ? action.acted : false) : false;
-                cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
+
                 spam = (filterlist.value(post.user_id, -1) < 0) ? false : true
 
             }
+            cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
             list.model.append({
                                   cooked: post.cooked,
                                   username: post.username,
@@ -429,11 +431,11 @@ Page {
         id: loggedin
         key: "/apps/harbour-sfos-forum-viewer/key"
     }
-RemorsePopup {
+    RemorsePopup {
         id: remorsePopup
-}
-ListModel { id: commodel}
-ListModel { id: replyModel}
+    }
+    ListModel { id: commodel}
+    ListModel { id: replyModel}
     SilicaListView {
         id: list
         header: PageHeader {
@@ -451,7 +453,7 @@ ListModel { id: replyModel}
         anchors.top: header.bottom
         VerticalScrollDecorator {}
         PullDownMenu{
-        id: pdmenu
+            id: pdmenu
             MenuItem {
                 text: qsTr("Copy link to clipboard")
                 onClicked: Clipboard.text = source
@@ -475,47 +477,47 @@ ListModel { id: replyModel}
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
-        MenuItem {
+            MenuItem {
                 text: qsTr("Back to full thread")
                 visible: currentModel === replyModel
                 onClicked:{
-                pdmenu.close()
-                 currentModel = commodel
-                list.positionViewAtIndex(replyindex, ListView.Beginning)
+                    pdmenu.close()
+                    currentModel = commodel
+                    list.positionViewAtIndex(replyindex, ListView.Beginning)
+                }
             }
         }
-        }
         PushUpMenu{
-        id: pumenu
+            id: pumenu
 
-         MenuItem {
+            MenuItem {
                 text: qsTr("Back to full thread")
                 visible: currentModel === replyModel
                 onClicked: {
-                pumenu.close()
-                 currentModel = commodel
-                list.positionViewAtIndex(replyindex, ListView.Beginning)
+                    pumenu.close()
+                    currentModel = commodel
+                    list.positionViewAtIndex(replyindex, ListView.Beginning)
+                }
             }
-        }
             MenuItem {
                 text: qsTr("Post reply")
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
-        MenuItem {
+            MenuItem {
                 text: qsTr("Search thread")
                 onClicked: pageStack.push("SearchPage.qml", {"searchid": topicid, "aTitle": aTitle });
 
-        }
+            }
             MenuItem {
                 text: qsTr("Open directly")
                 onClicked: pageStack.push("webView.qml", {"pageurl": source});
 
             }
-        MenuItem {
+            MenuItem {
                 text: qsTr("Open in external browser")
                 onClicked: Qt.openUrlExternally(source)
-        }
+            }
 
         }
 
@@ -665,9 +667,9 @@ ListModel { id: replyModel}
                     Label { id: pollHeader
                         width: parent.width
                         text: (has_polls > 1 )
-                            ? qsTr("This post contains polls.")
-                            : qsTr("This post contains a poll.")
-                            + " " + qsTr("Click to view and vote:")
+                              ? qsTr("This post contains polls.")
+                              : qsTr("This post contains a poll.")
+                                + " " + qsTr("Click to view and vote:")
                         font.pixelSize: Theme.fontSizeSmall
                         color: Theme.highlightColor
                     }
@@ -679,11 +681,11 @@ ListModel { id: replyModel}
                                 const pd = polldata.get(pollindex)
                                 //console.debug("Opening poll no", pollindex, "for post", postid, ", data:", JSON.stringify(pd,null,2))
                                 pageStack.push("PollView.qml",
-                                    { "key": loggedin.value, "postid": postid,
-                                      "polldata": pd["poll"],
-                                      "submitted_votes": pd["votes"]["list"]
-                                    }
-                                );
+                                               { "key": loggedin.value, "postid": postid,
+                                                   "polldata": pd["poll"],
+                                                   "submitted_votes": pd["votes"]["list"]
+                                               }
+                                               );
                             }
                             label: qsTr("Poll")
                             value: '#' + Number(pollindex + 1)
@@ -706,25 +708,25 @@ ListModel { id: replyModel}
                 MenuItem {
                     visible: version > 1 && updated_at !== created_at
                     text: qsTr("Revision history")
-                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, vmode: 0});
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, vmode: 0, loggedin: loggedin.value});
                 }
                 MenuItem {
                     visible: cooked.indexOf("<code") !== -1
                     text: qsTr("Alternative formatting")
-                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked});
+                    onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked, loggedin: loggedin.value});
                 }
                 MenuItem {
                     visible: reply_to > 0 && reply_to !== last_postid && currentModel === commodel
                     text: qsTr("Show replied to post(s)")
                     onClicked: {
-                    replyindex = index
-                    replyModel.clear()
-                    replyModel.insert(0, commodel.get(index))
-                    findOP(reply_to);
-                }
+                        replyindex = index
+                        replyModel.clear()
+                        replyModel.insert(0, commodel.get(index))
+                        findOP(reply_to);
+                    }
 
                 }
-          /*      MenuItem {
+                /*      MenuItem {
                     visible: cooked_hidden
                     text: qsTr("Uncensor post")
                     onClicked: uncensor(postid, index);
@@ -757,7 +759,7 @@ ListModel { id: replyModel}
                 MenuItem { text: qsTr("Filter user")
 
                     onClicked: {
-                    remspam(user_id, username);
+                        remspam(user_id, username);
 
                     }
                 }

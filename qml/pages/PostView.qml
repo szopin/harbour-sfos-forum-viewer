@@ -13,15 +13,17 @@ Page {
     property string aTitle
     property string revisions
     property string titles
-    property string username 
+    property string username
+    property string loggedin: "-1"
 
     function getcomments(i){
-            var xhr = new XMLHttpRequest;
+        var xhr = new XMLHttpRequest;
         xhr.open("GET", application.source + "posts/" + postid + "/revisions/" + i + ".json");
+        if (loggedin != "-1") xhr.setRequestHeader("User-Api-Key", loggedin);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
-             //   prevRev = data.previous_revision
+                //   prevRev = data.previous_revision
                 curRev = data.current_revision
                 nexRev = data.last_revision
                 revisions = data.body_changes.side_by_side_markdown
@@ -47,8 +49,8 @@ Page {
         Component.onCompleted: posthistory.getcomments(curRev);
 
         VerticalScrollDecorator {}
-    PullDownMenu{
-        visible: (curRev > prevRev && curRev > 2) || curRev < nexRev
+        PullDownMenu{
+            visible: (curRev > prevRev && curRev > 2) || curRev < nexRev
 
             MenuItem {
                 visible: curRev < nexRev
@@ -82,11 +84,11 @@ Page {
                     right: parent.right
                 }
                 text: cooked ? cooked : "<style> " +
-                            "del { color:" + Theme.secondaryColor + "};</style><style> " +
-                            "ins { " +
-                            "  color: " + Theme.highlightColor + ";" +
-                            "} " +
-                            "</style>" +titles + "</p>" +revisions
+                               "del { color:" + Theme.secondaryColor + "};</style><style> " +
+                               "ins { " +
+                               "  color: " + Theme.highlightColor + ";" +
+                               "} " +
+                               "</style>" +titles + "</p>" +revisions
                 textFormat: cooked ? username ? Text.RichText : Text.StyledText : Text.RichText
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall

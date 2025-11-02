@@ -57,26 +57,26 @@ Page {
     property bool spam: false
     property bool remorseActive: false
 
-function logout() {
+    function logout() {
         remorseActive = true
         remorsePopup.execute(
-         //   firstPage,
-            qsTr("Logging out"),
-            function() { mainConfig.setValue("key", "-1") }
-        )
+                    //   firstPage,
+                    qsTr("Logging out"),
+                    function() { mainConfig.setValue("key", "-1") }
+                    )
     }
     function remspam(spamop) {
 
         remorseActive = true
         remorsePopup.execute(
-         //   firstPage,
-            qsTr("Filtering user"),
-            function() {
-            filterlist.setValue("set", 1);
+                    //   firstPage,
+                    qsTr("Filtering user"),
+                    function() {
+                        filterlist.setValue("set", 1);
                         filterlist.setValue(spamop, getusername(spamop));
                         filterlist.sync();
                         clearview(); }
-        )
+                    )
     }
     function newtopic(raw, title, category){
         var xhr = new XMLHttpRequest;
@@ -226,10 +226,10 @@ function logout() {
                     pageStack.completeAnimation();
                     // guard against error pages stacking up when backgroundjob wakes up and checking fails
                     if (pageStack.currentPage.objectName == "NotificationError") {
-                            pageStack.currentPage.errortitle = xhr2.statusText
-                            pageStack.currentPage.errortext = xhr2.responseText
+                        pageStack.currentPage.errortitle = xhr2.statusText
+                        pageStack.currentPage.errortext = xhr2.responseText
                     } else {
-                            pageStack.push("Error.qml", {objectName: "NotificationError", errortitle: xhr2.statusText, errortext: xhr2.responseText})
+                        pageStack.push("Error.qml", {objectName: "NotificationError", errortitle: xhr2.statusText, errortext: xhr2.responseText})
                     };
                 } else {
                     var data2 = JSON.parse(xhr2.responseText);
@@ -279,24 +279,24 @@ function logout() {
 
     readonly property var watchlevel: [
         { "name": qsTr("Muted",    "Topic watch level (state)"),
-          "action": qsTr("Mute",   "Topic watch action (verb)"),
-          "smallicon": "image://theme/icon-m-speaker-mute",
-          "icon": "image://theme/icon-m-speaker-mute"
+            "action": qsTr("Mute",   "Topic watch action (verb)"),
+            "smallicon": "image://theme/icon-m-speaker-mute",
+            "icon": "image://theme/icon-m-speaker-mute"
         },
         { "name": qsTr("Normal",   "Topic watch level (state)"),
-          "action": qsTr("Normal", "Topic watch action (verb)"),
-          "smallicon": "",
-          "icon": "image://theme/icon-m-favorite"
+            "action": qsTr("Normal", "Topic watch action (verb)"),
+            "smallicon": "",
+            "icon": "image://theme/icon-m-favorite"
         },
         { "name": qsTr("Tracking", "Topic watch level (state)"),
-          "action": qsTr("Track",  "Topic watch action (verb)"),
-          "smallicon": "image://theme/icon-m-favorite",
-          "icon": "image://theme/icon-m-favorite-selected"
+            "action": qsTr("Track",  "Topic watch action (verb)"),
+            "smallicon": "image://theme/icon-m-favorite",
+            "icon": "image://theme/icon-m-favorite-selected"
         },
         { "name": qsTr("Watching", "Topic watch level (state)"),
-          "action": qsTr("Watch",  "Topic watch action (verb)"),
-          "smallicon": "image://theme/icon-m-alarm",
-          "icon": "image://theme/icon-m-alarm"
+            "action": qsTr("Watch",  "Topic watch action (verb)"),
+            "smallicon": "image://theme/icon-m-alarm",
+            "icon": "image://theme/icon-m-alarm"
         }
     ]
     // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
@@ -588,10 +588,10 @@ function logout() {
                             //source: "image://theme/icon-s-accept"
                             visible: source != ""
                             source: has_accepted_answer
-                                        ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
-                                        : ((notification_level >= 0 && loggedin.value !== "-1")
-                                            ? watchlevel[notification_level].smallicon
-                                            : "")
+                                    ? "image://theme/icon-s-accept?" + Theme.highlightFromColor(Theme.presenceColor(Theme.PresenceAvailable), Theme.colorScheme )
+                                    : ((notification_level >= 0 && loggedin.value !== "-1")
+                                       ? watchlevel[notification_level].smallicon
+                                       : "")
                             width: Theme.iconSizeSmall
                             height: width
                             opacity: has_accepted_answer ? Theme.opacityLow : 1.0
@@ -679,8 +679,8 @@ function logout() {
                 hasContent: lastPostNumber > 0 || !loadedMore
                 property int wantLevel: notification_level
                 onClosed: if (wantLevel != notification_level) {
-                    setNotificationLevel(index, topicid, wantLevel)
-                }
+                              setNotificationLevel(index, topicid, wantLevel)
+                          }
                 MenuItem { text: qsTr("Mark as read")
                     visible: lastPostNumber > 0 && lastPostNumber < highest_post_number
                     onDelayedClick: {
@@ -744,22 +744,22 @@ function logout() {
             }
             onClicked: {
                 if(!remorseActive){
-                if(user_id){
-                    var name = list.model.get(index).name
-                    postCountConfig.setValue(topicid, highest_post_number);
-                    var oldLast = lastPostNumber;
-                    lastPostNumber = highest_post_number;
-                    pageStack.push("ThreadView.qml", {
-                                       "aTitle": title,
-                                       "topicid": topicid,
-                                       "posts_count": posts_count,
-                                       "post_number": oldLast,
-                                       "highest_post_number": highest_post_number
-                                   });
-                } else {
-                    user_id = !user_id;
+                    if(user_id){
+                        var name = list.model.get(index).name
+                        postCountConfig.setValue(topicid, highest_post_number);
+                        var oldLast = lastPostNumber;
+                        lastPostNumber = highest_post_number;
+                        pageStack.push("ThreadView.qml", {
+                                           "aTitle": title,
+                                           "topicid": topicid,
+                                           "posts_count": posts_count,
+                                           "post_number": oldLast,
+                                           "highest_post_number": highest_post_number
+                                       });
+                    } else {
+                        user_id = !user_id;
+                    }
                 }
-            }
             }
         }
         BackgroundJob {

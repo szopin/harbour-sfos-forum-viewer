@@ -39,7 +39,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.14.1"
+    readonly property string appVersion: "1.14.2"
     // ================================
 
     property bool fetching: false
@@ -141,12 +141,12 @@ ApplicationWindow
                 if (xhr.responseText !== "") {
                     var data = JSON.parse(xhr.responseText);
                     var topics = data.topic_list.topics;
-                    var topics_length = Math.min(topics.length, 11);
+                    var topics_length = Math.min(topics.length, 15);
 
                     for (var i=0;i<topics_length;i++) {
                         var topic = topics[i];
                         if (topic.bumped){
-                            application.latest.append({title: topic.title, posts_count: topic.posts_count})
+                            application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, })
                         }
                     }
                 }
