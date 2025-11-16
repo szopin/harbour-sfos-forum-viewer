@@ -212,11 +212,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Logging out</source>
-        <translation type="unfinished"></translation>
+        <translation>Loggar ut</translation>
     </message>
     <message>
         <source>Filtering user</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrerar användare</translation>
     </message>
 </context>
 <context>
@@ -521,15 +521,15 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Filtering user</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtrerar användare</translation>
     </message>
     <message>
         <source>Back to full thread</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillbaka till tråden</translation>
     </message>
     <message>
         <source>Show replied to post(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa besvarade poster</translation>
     </message>
 </context>
 <context>
