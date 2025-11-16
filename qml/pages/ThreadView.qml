@@ -530,6 +530,7 @@ Page {
 
         model: currentModel // ListModel { id: commodel}
         delegate: ListItem {
+            id: delegateItem
             property int postindex: index
             enabled: menu.hasContent
             width: parent.width
@@ -633,6 +634,18 @@ Page {
                             opacity: Theme.opacityLow
                         }
                     }
+                }
+                Label { id: pollHeaderTop
+                    visible: has_polls && (delegateItem.height > list.height)
+                    width: parent.width - x
+                    x: 3* Theme.paddingLarge + Theme.paddingSmall // align to  width
+                    text: (has_polls > 1 )
+                          ? qsTr("This post contains polls.")
+                          : qsTr("This post contains a poll.")
+                            + " " + qsTr("See the bottom of the post to participate.")
+                    wrapMode: Text.Wrap
+                    font.pixelSize: Theme.fontSizeTiny
+                    color: Theme.highlightColor
                 }
 
                 Label {
