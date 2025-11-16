@@ -760,6 +760,7 @@ Page {
                         user_id = !user_id;
                     }
                 }
+                application.fetchLatestPosts()
             }
         }
         BackgroundJob {

@@ -531,6 +531,10 @@ Un grazie speciale ai contributori:
         <source>Show replied to post(s)</source>
         <translation>Mostra risposta ai messaggi</translation>
     </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserCard</name>
