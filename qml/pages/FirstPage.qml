@@ -631,7 +631,8 @@ Page {
 
                             Label {
                                 visible: catRect.visible
-                                text: categories.lookup[category_id].name
+                                text: !!categories.lookup[category_id] ? categories.lookup[category_id].name
+                                                                       : "Unknown Category"
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: dateLabel.width
@@ -644,7 +645,8 @@ Page {
                             Rectangle {
                                 id: catRect
                                 visible: tid === ""
-                                color: '#'+categories.lookup[category_id].color
+                                color: !!categories.lookup[category_id] ? '#'+categories.lookup[category_id].color
+                                                                        : "black"
                                 width: 2*Theme.horizontalPageMargin
                                 height: Theme.horizontalPageMargin/3
                                 radius: 45
