@@ -134,7 +134,7 @@ ApplicationWindow
         application.latest.clear()
         fetching = true
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", source + "latest.json");
+        xhr.open("GET", source + "latest.json?per_page=12&order=activity");
         if (loggedin.value && (loggedin.value != -1)) xhr.setRequestHeader("User-Api-Key", loggedin.value);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
