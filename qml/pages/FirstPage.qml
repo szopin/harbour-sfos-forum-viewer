@@ -154,6 +154,8 @@ Page {
                     networkError = false;
                 }
 
+                var my_loggedinname = (loggedin.value != "-1") ? xhr.getResponseHeader('x-discourse-username') : ""
+
                 var data = JSON.parse(xhr.responseText);
                 var topics = data.topic_list.topics;
                 posters = xhr.responseText;
@@ -167,6 +169,7 @@ Page {
                 var topics_length = topics.length;
                 for (var i=0;i<topics_length;i++) {
                     spam = false;
+                    var latest_post_by_me = false;
                     var topic = topics[i];
                     for(var s=0;s<topic.posters.length;s++){
                         if(topic.posters[s].description.indexOf("Recent") > 0){
@@ -175,6 +178,13 @@ Page {
                             if(filterlist.value(spammerid, -1)  !== -1 ){
                                 spam = true;
                                 console.log("spam" + filterlist.value(spammerid, -1));
+                            }
+                        }
+                        if (loggedin.value != "-1") {
+                            // extras can be null:
+                            if(!!topic.posters[s].extras && topic.posters[s].extras == "latest") {
+                                var extrauser = getusername(topic.posters[s].user_id)
+                                latest_post_by_me = extrauser == my_loggedinname
                             }
                         }
                     }
@@ -191,7 +201,8 @@ Page {
                                           user_id: spammerop,
                                           has_accepted_answer: topic.has_accepted_answer,
                                           highest_post_number: topic.highest_post_number,
-                                          notification_level: topic.notification_level !== undefined ? topic.notification_level : 1
+                                          notification_level: topic.notification_level !== undefined ? topic.notification_level : 1,
+                                          highest_post_by_me: latest_post_by_me
                                       });
                     //console.log(topic.posters[0].user_id)
                 }
@@ -513,7 +524,7 @@ Page {
             contentHeight: user_id ?  normrow.height + Theme.paddingLarge : spamrow.height
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
-            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number) && !highest_post_by_me
 
 
             Column {
@@ -631,7 +642,8 @@ Page {
 
                             Label {
                                 visible: catRect.visible
-                                text: categories.lookup[category_id].name
+                                text: !!categories.lookup[category_id] ? categories.lookup[category_id].name
+                                                                       : "Unknown Category"
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: dateLabel.width
@@ -644,7 +656,8 @@ Page {
                             Rectangle {
                                 id: catRect
                                 visible: tid === ""
-                                color: '#'+categories.lookup[category_id].color
+                                color: !!categories.lookup[category_id] ? '#'+categories.lookup[category_id].color
+                                                                        : "black"
                                 width: 2*Theme.horizontalPageMargin
                                 height: Theme.horizontalPageMargin/3
                                 radius: 45
