@@ -297,7 +297,11 @@ Page {
             // var spam = false
             var cooked_hidden = false
             if (post.staff){
-                stafftag = " - Jolla"
+                if (post.moderator && !post.admin){
+                    stafftag = " - " + qsTr("Moderator")
+                } else {
+                    stafftag = " - Jolla"
+                }
             } else {
                 stafftag = ""
             }
