@@ -535,6 +535,10 @@ Vielen Dank an die Mitwirkenden:
         <source>See the bottom of the post to participate.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Moderator</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserCard</name>

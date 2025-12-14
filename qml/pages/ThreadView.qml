@@ -667,8 +667,16 @@ Page {
                         if (!link1 && /^https:\/\/forum.sailfishos.org\/t\/[\w-]+?\/?/.exec(link)){
                             getRedirect(link);
                         } else if ( !link1){
-                            if (link.indexOf("/") === 0)
+                            if (link.indexOf("/") === 0){
+                                if (link.indexOf("/t/") === 0){
+                                    link = "https://forum.sailfishos.org" + link
+                                    var link2= /^https:\/\/forum.sailfishos.org\/t\/([\w-]*[a-z-]+[\w-]+\/)?(\d+)\/?(\d+)*/.exec(link)
+                                    var post_number2 = link2[3] ? link2[3] : -1
+                                    pageStack.push("ThreadView.qml", { "topicid": link2[2], "post_number": post_number2 });
+                                }
+
                                 link = "https://forum.sailfishos.org" + link
+                            }
                             pageStack.push("OpenLink.qml", {link: link});
 
                         }  else {
