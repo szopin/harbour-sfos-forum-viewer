@@ -90,7 +90,7 @@ Page {
                            "App icon by dseight\n" +
                            "AboutPage art by Hanibu\n\n" +
                            "Special thanks to contributors:\n").arg(application.appVersion) +
-                      ["247", "Åke Engelbrektson", "Black Sheep", "carlosgonz", "ccontino84", "elros34", "ichthyosaurus", "mentaljam", "Moppa5", "nephros", "pherjung", "vige", "友橘 (Youju)"].join(
+                      ["247", "Åke Engelbrektson", "Black Sheep", "carlosgonz", "ccontino84", "elros34", "Frank Paul Silye", "ichthyosaurus", "mentaljam", "Moppa5", "nephros", "pherjung", "vige", "友橘 (Youju)"].join(
                           //: contributors list separator
                           qsTr(", "));
             }
