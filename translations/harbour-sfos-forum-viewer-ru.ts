@@ -125,140 +125,140 @@ Special thanks to contributors:
         <translation type="unfinished">Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="277"/>
+        <location filename="../qml/pages/FirstPage.qml" line="278"/>
         <source>Top</source>
         <translation type="unfinished">Топ</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="292"/>
+        <location filename="../qml/pages/FirstPage.qml" line="293"/>
         <source>Muted</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="293"/>
+        <location filename="../qml/pages/FirstPage.qml" line="294"/>
         <source>Mute</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="297"/>
+        <location filename="../qml/pages/FirstPage.qml" line="298"/>
         <source>Normal</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="298"/>
+        <location filename="../qml/pages/FirstPage.qml" line="299"/>
         <source>Normal</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="302"/>
+        <location filename="../qml/pages/FirstPage.qml" line="303"/>
         <source>Tracking</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="303"/>
+        <location filename="../qml/pages/FirstPage.qml" line="304"/>
         <source>Track</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="307"/>
+        <location filename="../qml/pages/FirstPage.qml" line="308"/>
         <source>Watching</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="308"/>
+        <location filename="../qml/pages/FirstPage.qml" line="309"/>
         <source>Watch</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="398"/>
+        <location filename="../qml/pages/FirstPage.qml" line="399"/>
         <source>New notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="430"/>
+        <location filename="../qml/pages/FirstPage.qml" line="431"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Форум SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="443"/>
+        <location filename="../qml/pages/FirstPage.qml" line="444"/>
         <source>About</source>
         <translation type="unfinished">О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="448"/>
+        <location filename="../qml/pages/FirstPage.qml" line="449"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="454"/>
+        <location filename="../qml/pages/FirstPage.qml" line="455"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="459"/>
+        <location filename="../qml/pages/FirstPage.qml" line="460"/>
         <source>New thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="465"/>
+        <location filename="../qml/pages/FirstPage.qml" line="466"/>
         <source>Clear filter list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="474"/>
+        <location filename="../qml/pages/FirstPage.qml" line="475"/>
         <source>Search</source>
         <translation type="unfinished">Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="479"/>
+        <location filename="../qml/pages/FirstPage.qml" line="480"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="484"/>
+        <location filename="../qml/pages/FirstPage.qml" line="485"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="502"/>
+        <location filename="../qml/pages/FirstPage.qml" line="504"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="503"/>
+        <location filename="../qml/pages/FirstPage.qml" line="505"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="676"/>
+        <location filename="../qml/pages/FirstPage.qml" line="678"/>
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="697"/>
+        <location filename="../qml/pages/FirstPage.qml" line="699"/>
         <source>Mark as read</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="742"/>
+        <location filename="../qml/pages/FirstPage.qml" line="744"/>
         <source>Don&apos;t track (local)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="749"/>
+        <location filename="../qml/pages/FirstPage.qml" line="751"/>
         <source>Filter OP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="794"/>
+        <location filename="../qml/pages/FirstPage.qml" line="796"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>

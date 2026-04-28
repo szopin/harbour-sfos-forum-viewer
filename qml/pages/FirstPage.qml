@@ -221,7 +221,7 @@ Page {
         var data = JSON.parse(posters);
         for(var i=0;i<data.users.length;i++){
             if (data.users[i].id == user_id){
-                console.log(data.users[i].username);
+         //       console.log(data.users[i].username);
                 return data.users[i].username;
             }
         }
@@ -269,6 +269,7 @@ Page {
         textname = qsTr("Latest");
         viewmode = "latest";
         clearview();
+        application.fetchLatestPosts()
     }
 
     function showTop() {
@@ -485,6 +486,7 @@ Page {
                 onClicked: {
                     pulley.close()
                     clearview()
+                    application.fetchLatestPosts()
 
                 }
             }
@@ -524,7 +526,7 @@ Page {
             contentHeight: user_id ?  normrow.height + Theme.paddingLarge : spamrow.height
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
-            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number) && !highest_post_by_me
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number)// && !highest_post_by_me
 
 
             Column {
@@ -573,7 +575,7 @@ Page {
                             font.pixelSize: Theme.fontSizeSmall
                             color: item.lastPostNumber < 0 ?
                                        Theme.primaryColor :
-                                       (item.hasNews && !spam ?
+                                       (item.hasNews && !spam && !highest_post_by_me ?
                                             Theme.highlightColor :
                                             Theme.secondaryColor)
                             opacity: Theme.opacityHigh
@@ -585,10 +587,10 @@ Page {
                                 anchors.centerIn: parent
                                 width: parent.width+Theme.paddingSmall; height: parent.height
                                 radius: 20
-                                opacity: item.lastPostNumber < highest_post_number && !spam ?
+                                opacity: item.lastPostNumber < highest_post_number && !spam && !highest_post_by_me ?
                                              Theme.opacityLow :
                                              Theme.opacityFaint
-                                color: item.hasNews && !spam ?
+                                color: item.hasNews && !spam && !highest_post_by_me ?
                                            Theme.secondaryHighlightColor :
                                            Theme.secondaryColor
                             }
@@ -617,9 +619,9 @@ Page {
                             width: parent.width
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
-                            color: highlighted || item.hasNews && !spam
+                            color: highlighted || item.hasNews && !spam && !highest_post_by_me
                                    ? Theme.highlightColor
-                                   : (item.lastPostNumber < highest_post_number && !spam
+                                   : (item.lastPostNumber < highest_post_number && !spam && !highest_post_by_me
                                       ? Theme.primaryColor
                                       : Theme.secondaryColor)
                         }
@@ -634,7 +636,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: (parent.width - 2*parent.spacing - catRect.width)/2
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
@@ -647,7 +649,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: dateLabel.width
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignRight
@@ -677,7 +679,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: parent.width
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
