@@ -91,9 +91,13 @@ Dialog {
         xhr.setRequestHeader("User-Api-Key", loggedin);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
+                var oldraw = postbody.text;
+                var curpos = postbody.cursorPosition;
+                var oldlen = oldraw.length
                 raw = data["raw"];
                 if(username){
-                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n";
+                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + oldraw;
+                    postbody.cursorPosition = postbody.text.length - oldlen + curpos
                 } else {
                     postbody.text = raw;
                 }

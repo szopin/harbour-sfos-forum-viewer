@@ -266,27 +266,27 @@ Special thanks to contributors:
 <context>
     <name>NewPost</name>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="123"/>
+        <location filename="../qml/pages/NewPost.qml" line="127"/>
         <source>Upload image (through ImgBB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="128"/>
+        <location filename="../qml/pages/NewPost.qml" line="132"/>
         <source>Insert quote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="135"/>
+        <location filename="../qml/pages/NewPost.qml" line="139"/>
         <source>Enter post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="135"/>
+        <location filename="../qml/pages/NewPost.qml" line="139"/>
         <source>Edit post</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="147"/>
+        <location filename="../qml/pages/NewPost.qml" line="151"/>
         <source>Body</source>
         <translation type="unfinished"></translation>
     </message>
