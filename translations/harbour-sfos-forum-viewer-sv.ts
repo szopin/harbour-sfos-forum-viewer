@@ -533,11 +533,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se botten på tråden för att delta.</translation>
     </message>
     <message>
         <source>Moderator</source>
-        <translation type="unfinished"></translation>
+        <translation>Moderator</translation>
     </message>
 </context>
 <context>
