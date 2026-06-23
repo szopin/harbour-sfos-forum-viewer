@@ -640,32 +640,32 @@ Special thanks to contributors:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="762"/>
+        <location filename="../qml/pages/ThreadView.qml" line="761"/>
         <source>Like</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="767"/>
+        <location filename="../qml/pages/ThreadView.qml" line="766"/>
         <source>Reply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="772"/>
+        <location filename="../qml/pages/ThreadView.qml" line="771"/>
         <source>Unlike</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="782"/>
+        <location filename="../qml/pages/ThreadView.qml" line="781"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="785"/>
+        <location filename="../qml/pages/ThreadView.qml" line="784"/>
         <source>Filter user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="777"/>
+        <location filename="../qml/pages/ThreadView.qml" line="776"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
