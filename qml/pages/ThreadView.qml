@@ -98,8 +98,8 @@ Page {
                 break
             }
         }
-        if(commodel.get(j).reply_to > 0){
-            findOP(commodel.get(j).reply_to);
+        if( commodel.get(j-1).reply_to != 0){
+            findOP(filter-1);
         }
         currentModel = replyModel
         list.scrollToBottom()
@@ -744,6 +744,7 @@ Page {
                     visible: reply_to > 0 && reply_to !== last_postid && currentModel === commodel
                     text: qsTr("Show replied to post(s)")
                     onClicked: {
+                    console.log(index, reply_to)
                         replyindex = index
                         replyModel.clear()
                         replyModel.insert(0, commodel.get(index))
