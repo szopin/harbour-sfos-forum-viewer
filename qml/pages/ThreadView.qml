@@ -65,6 +65,16 @@ Page {
     property int replyindex
     property bool spam: false
 
+    function cutYTiframes(cooked){
+        var ifram = /<iframe src="([^"]+)"[^<]+<\/iframe>/g //.exec(cooked)
+        cooked = cooked.replace(/\?feature=oembed\&amp\;wmode=opaque/g, "")
+        cooked = cooked.replace(/\/embed\//g, "/watch?v=")
+        cooked = cooked.replace(ifram, "<a href=\"" + "$1" + "\">" +"$1" + "</a>")
+        if (cooked.match(ifram)) cutYTiframes(cooked)
+
+        return cooked
+    }
+
     function remspam(user_id, username){
         remorsePopup.execute(
                     //   firstPage,
@@ -341,8 +351,15 @@ Page {
 
             }
             cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
+            var precook
+            if(post.cooked.indexOf('<iframe src="https://www.youtube' > 0)){
+
+                precook = cutYTiframes(post.cooked)
+            } else {
+                precook = post.cooked
+            }
             list.model.append({
-                                  cooked: post.cooked,
+                                  cooked: precook,
                                   username: post.username,
                                   avatar: post.avatar_template,//.replace("{size}", 2* Theme.paddingLarge),
                                   updated_at: post.updated_at,
