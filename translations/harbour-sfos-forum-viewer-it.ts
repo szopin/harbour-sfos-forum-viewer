@@ -220,6 +220,17 @@ Un grazie speciale ai contributori:
     </message>
 </context>
 <context>
+    <name>LoginWeb</name>
+    <message>
+        <source>Copy the generated API key here</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>the code you get after clicking Authorize</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>NewPost</name>
     <message>
         <source>Enter post</source>

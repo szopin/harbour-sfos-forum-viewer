@@ -5,6 +5,7 @@ import Sailfish.WebView 1.0
 import Sailfish.WebEngine 1.0
 
 WebViewPage {
+
     id: loginDialog
 
     allowedOrientations: Orientation.All
@@ -30,14 +31,42 @@ WebViewPage {
             pageStack.pop()
         }
     }
+    SilicaFlickable{
+        width: parent.width
+            height: parent.height //header.height + resultcode.height
+            PageHeader {
+                id: header
+                title: qsTr("Copy the generated API key here")
+        }
 
+
+            TextField {
+                id: resultcode
+            anchors.top: header.bottom
+                width: parent.width
+                placeholderText: qsTr("the code you get after clicking Authorize")
+        EnterKey.enabled: text.indexOf('=') > 50
+                    EnterKey.onClicked: {
+
+                    findFirstPage().dec(resultcode.text)
+            pageStack.pop()
+            }
+    }
+
+
+            Rectangle{
+                anchors.top: resultcode.bottom
+            width: parent.width
+            height: parent.height - header.height - resultcode.height
         WebView {
             id: webview
-            anchors.fill: parent
+                    anchors.fill: parent
+
+
             url: auth_url
 
             property var alreadyloaded: false
-            
+
             onLoadingChanged: {
                 console.log("onLoadingChanged")
                 if (alreadyloaded) {
@@ -53,6 +82,8 @@ WebViewPage {
                 }
             }
         }
+}
+}
 }
 
 
