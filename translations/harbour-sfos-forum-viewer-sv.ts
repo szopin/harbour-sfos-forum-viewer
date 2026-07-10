@@ -223,11 +223,11 @@ Speciellt tack till medverkande:
     <name>LoginWeb</name>
     <message>
         <source>Copy the generated API key here</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera den genererade API-nyckeln hit</translation>
     </message>
     <message>
         <source>the code you get after clicking Authorize</source>
-        <translation type="unfinished"></translation>
+        <translation>den kod du får efter tryck på Auktorisera</translation>
     </message>
 </context>
 <context>
