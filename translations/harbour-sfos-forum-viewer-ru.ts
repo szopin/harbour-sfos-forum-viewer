@@ -264,19 +264,6 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
-    <name>LoginWeb</name>
-    <message>
-        <location filename="../qml/pages/LoginWeb.qml" line="39"/>
-        <source>Copy the generated API key here</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/LoginWeb.qml" line="47"/>
-        <source>the code you get after clicking Authorize</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>NewPost</name>
     <message>
         <location filename="../qml/pages/NewPost.qml" line="127"/>

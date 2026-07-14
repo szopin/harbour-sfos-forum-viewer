@@ -56,32 +56,7 @@ WebViewPage {
             pageStack.pop()
         }
     }
-    SilicaFlickable{
-        width: parent.width
-            height: parent.height //header.height + resultcode.height
-            PageHeader {
-                id: header
-                title: qsTr("Copy the generated API key here")
-        }
 
-
-            TextField {
-                id: resultcode
-            anchors.top: header.bottom
-                width: parent.width
-                placeholderText: qsTr("the code you get after clicking Authorize")
-        EnterKey.enabled: text.indexOf('=') > 50
-                    EnterKey.onClicked: {
-
-                    findFirstPage().dec(resultcode.text)
-            pageStack.pop()
-            }
-    }
-
-            Rectangle{
-                anchors.top: resultcode.bottom
-            width: parent.width
-            height: parent.height - header.height - resultcode.height
             WebView {
             id: webview
                     anchors.fill: parent
@@ -104,7 +79,6 @@ WebViewPage {
             }
         }
 }
-}
-}
+
 
 

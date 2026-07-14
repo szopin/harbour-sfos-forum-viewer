@@ -220,17 +220,6 @@ Speciellt tack till medverkande:
     </message>
 </context>
 <context>
-    <name>LoginWeb</name>
-    <message>
-        <source>Copy the generated API key here</source>
-        <translation>Kopiera den genererade API-nyckeln hit</translation>
-    </message>
-    <message>
-        <source>the code you get after clicking Authorize</source>
-        <translation>den kod du får efter tryck på Auktorisera</translation>
-    </message>
-</context>
-<context>
     <name>NewPost</name>
     <message>
         <source>Enter post</source>
