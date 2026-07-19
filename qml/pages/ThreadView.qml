@@ -74,6 +74,15 @@ Page {
 
         return cooked
     }
+    // add some styling to "Hide Details" type post elements.
+    // These look like this: "<details>\n<summary>some text</summary>\n<p>hidden text</p>\n</details>
+    // as we can't "hide" them within a text label, style them smaller and show a description:
+    function styleDetailsElements(cooked) {
+        cooked = cooked.replace(/<summary>/g, "<summary><b>")
+        cooked = cooked.replace(/<\/summary>/g, "</b></summary><i> (hidden section)</i><font size='smaller'><blockquote>")
+        cooked = cooked.replace(/<\/details>/g, "</blockquote></font></details>")
+        return cooked
+    }
 
     function remspam(user_id, username){
         remorsePopup.execute(
@@ -351,12 +360,12 @@ Page {
 
             }
             cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
-            var precook
-            if(post.cooked.indexOf('<iframe src="https://www.youtube' > 0)){
-
-                precook = cutYTiframes(post.cooked)
-            } else {
-                precook = post.cooked
+            var precook = post.cooked
+            if(post.cooked.indexOf('<iframe src="https://www.youtube' > 0)) {
+                precook = cutYTiframes(precook)
+            }
+            if(post.cooked.indexOf('<details' > 0)) {
+                precook = styleDetailsElements(precook)
             }
             list.model.append({
                                   cooked: precook,
