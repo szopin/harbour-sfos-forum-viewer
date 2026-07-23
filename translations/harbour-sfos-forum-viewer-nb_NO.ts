@@ -409,6 +409,41 @@ En spesiell takk til bidragsytere:
     </message>
 </context>
 <context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished">tagger</translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished">Tilbake til hele tråden</translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished">✍️: %1</translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished">Dette innlegget inneholder avstemninger.</translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished">Dette innlegget inneholder en avstemning.</translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished">Se nederst i innlegget for å delta.</translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished">Klikk for å se og stemme:</translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished">Avstemning</translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
@@ -522,10 +557,6 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Filtering user</source>
         <translation>Filtrerer bruker</translation>
-    </message>
-    <message>
-        <source>Back to full thread</source>
-        <translation>Tilbake til hele tråden</translation>
     </message>
     <message>
         <source>Show replied to post(s)</source>

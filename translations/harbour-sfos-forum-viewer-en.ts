@@ -409,6 +409,41 @@ Special thanks to contributors:
     </message>
 </context>
 <context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
@@ -521,10 +556,6 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Filtering user</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Back to full thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -409,6 +409,41 @@ Un grazie speciale ai contributori:
     </message>
 </context>
 <context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished">tags</translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished">Torna alla discussione completa</translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished">✍️: %1</translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished">Questo post contiene dei sondaggi.</translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished">Questo post contiene un sondaggio.</translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished">Clicca per vedere e votare:</translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished">Sondaggio</translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
@@ -522,10 +557,6 @@ Un grazie speciale ai contributori:
     <message>
         <source>Filtering user</source>
         <translation>Filtrando utente</translation>
-    </message>
-    <message>
-        <source>Back to full thread</source>
-        <translation>Torna alla discussione completa</translation>
     </message>
     <message>
         <source>Show replied to post(s)</source>

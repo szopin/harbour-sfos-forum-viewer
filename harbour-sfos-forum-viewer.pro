@@ -30,6 +30,7 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/pages/NotificationSettings.qml \
     qml/pages/Notifications.qml \
     qml/pages/OpenLink.qml \
+    qml/pages/ReplyView.qml \
     qml/pages/SearchPage.qml \
     qml/pages/ThreadView.qml \
     qml/pages/UserCard.qml \

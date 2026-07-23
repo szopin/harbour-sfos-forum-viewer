@@ -61,7 +61,6 @@ Page {
     property int xi
     property int yi
     property int zi
-    property variant currentModel: commodel
     property int replyindex
     property bool spam: false
 
@@ -108,20 +107,25 @@ Page {
         xhr.send();
     }
 
-    function findOP(filter){
-
-        for (var j=0; j < commodel.count; j++){
+    function findOP(filter, index){
+        for (var j=0; j < index; j++){
+            if (commodel.get(j).post_number > filter){
+                break
+            }
             if (commodel.get(j).post_number == filter){
                 //  pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
                 replyModel.insert(0, commodel.get(j))
                 break
             }
         }
-        if( commodel.get(j).reply_to != 0){
-            findOP(filter-1);
+
+            if( commodel.get(j).reply_to != 0 && commodel.get(j).post_number == filter){
+            findOP(commodel.get(j).reply_to, j);
+            }
+
+         if( (commodel.get(j).reply_to == 0) || (commodel.get(j).post_number > filter && replyModel.count > 1)){
+        pageStack.push("ReplyView.qml", { "commodel":  replyModel, "aTitle": aTitle, "tags": tags, "tclosed": tclosed});
         }
-        currentModel = replyModel
-        list.scrollToBottom()
     }
     function uncensor(postid, index){
         var xhr3 = new XMLHttpRequest;
@@ -367,6 +371,7 @@ Page {
             if(post.cooked.indexOf('<details' > 0)) {
                 precook = styleDetailsElements(precook)
             }
+
             list.model.append({
                                   cooked: precook,
                                   username: post.username,
@@ -465,7 +470,8 @@ Page {
         id: remorsePopup
     }
     ListModel { id: commodel}
-    ListModel { id: replyModel}
+ListModel { id: replyModel}
+
     SilicaListView {
         id: list
         header: PageHeader {
@@ -507,28 +513,10 @@ Page {
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
-            MenuItem {
-                text: qsTr("Back to full thread")
-                visible: currentModel === replyModel
-                onClicked:{
-                    pdmenu.close()
-                    currentModel = commodel
-                    list.positionViewAtIndex(replyindex, ListView.Beginning)
-                }
-            }
+
         }
         PushUpMenu{
             id: pumenu
-
-            MenuItem {
-                text: qsTr("Back to full thread")
-                visible: currentModel === replyModel
-                onClicked: {
-                    pumenu.close()
-                    currentModel = commodel
-                    list.positionViewAtIndex(replyindex, ListView.Beginning)
-                }
-            }
             MenuItem {
                 text: qsTr("Post reply")
                 visible: loggedin.value != "-1" && !tclosed
@@ -558,7 +546,7 @@ Page {
             size: BusyIndicatorSize.Large
         }
 
-        model: currentModel // ListModel { id: commodel}
+        model: commodel
         delegate: ListItem {
             id: delegateItem
             property int postindex: index
@@ -746,6 +734,7 @@ Page {
                 }
             }
             menu: ContextMenu {
+            id: cmenu
 
                 MenuItem{
                     text: qsTr("Copy to clipboard");
@@ -767,13 +756,14 @@ Page {
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked, loggedin: loggedin.value});
                 }
                 MenuItem {
-                    visible: reply_to > 0 && reply_to !== last_postid && currentModel === commodel
+                    visible: reply_to > 0 && reply_to !== last_postid
                     text: qsTr("Show replied to post(s)")
                     onClicked: {
+                    cmenu.close()
                         replyindex = index
                         replyModel.clear()
                         replyModel.insert(0, commodel.get(index))
-                        findOP(reply_to);
+                        findOP(reply_to, index);
                     }
 
                 }
@@ -783,7 +773,7 @@ Page {
                     onClicked: uncensor(postid, index);
                 }*/
                 MenuItem {
-                    visible: loggedin.value != "-1" && !acted && !yours && currentModel !== replyModel
+                    visible: loggedin.value != "-1" && !acted && !yours
                     text: qsTr("Like")
                     onClicked: like(postid, index);
                 }
@@ -793,7 +783,7 @@ Page {
                     onClicked: postreply(topicid, post_number, postid, username);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1" && acted && !yours && can_undo && currentModel !== replyModel
+                    visible: loggedin.value != "-1" && acted && !yours && can_undo
                     text: qsTr("Unlike")
                     onClicked: unlike(postid, index);
                 }
@@ -803,7 +793,7 @@ Page {
                     onClicked: newedit(postid);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1"  && yours && can_delete && currentModel !== replyModel
+                    visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
                     onClicked: del(postid, index);
                 }

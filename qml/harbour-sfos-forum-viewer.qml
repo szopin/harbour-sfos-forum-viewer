@@ -39,7 +39,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.14.13"
+    readonly property string appVersion: "1.15.0"
     // ================================
 
     property bool fetching: false
@@ -144,10 +144,10 @@ ApplicationWindow
                     var topics_length = Math.min(topics.length, 15);
 
                     var my_loggedinname = (loggedin.value != "-1") ? xhr.getResponseHeader('x-discourse-username') : ""
-console.log(my_loggedinname)
+
                     for (var i=0;i<topics_length;i++) {
                         var topic = topics[i];
-                        console.log(my_loggedinname, topic.last_poster_username)
+
                         if (topic.bumped){
                             application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, last_poster_username: topic.last_poster_username, my_loggedinname: my_loggedinname })
                         }

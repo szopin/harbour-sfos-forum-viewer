@@ -409,6 +409,41 @@ Speciellt tack till medverkande:
     </message>
 </context>
 <context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished">taggar</translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished">Tillbaka till tråden</translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished">✍️: %1</translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished">Det här inlägget innehåller omröstningar.</translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished">Detta inlägget innehåller en omröstning.</translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished">Se botten på tråden för att delta.</translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished">Tryck för att visa och rösta:</translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished">Omröstning</translation>
+    </message>
+</context>
+<context>
     <name>SearchPage</name>
     <message>
         <source>Searching in “%1”</source>
@@ -522,10 +557,6 @@ Speciellt tack till medverkande:
     <message>
         <source>Filtering user</source>
         <translation>Filtrerar användare</translation>
-    </message>
-    <message>
-        <source>Back to full thread</source>
-        <translation>Tillbaka till tråden</translation>
     </message>
     <message>
         <source>Show replied to post(s)</source>
