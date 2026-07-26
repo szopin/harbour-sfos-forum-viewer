@@ -390,6 +390,7 @@ Page {
                                   spam: spam,
                                   post_number: post.post_number,
                                   reply_to: post.reply_to_post_number,
+                                  reply_to_user: post.reply_to_user ? post.reply_to_user["username"] : "",
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
                                   accepted_answer: post.accepted_answer,
@@ -631,14 +632,16 @@ ListModel { id: replyModel}
                             anchors.right: parent.right
                         }
                         Label {
-                            text: (version > 1 && updated_at !== created_at) ?
-                                      qsTr("✍️: %1").arg(formatJsonDate(updated_at)) : ""
+                            text: reply_to >0 && reply_to !== last_postid && reply_to_user != ""
+                                  ? ("↪ " + reply_to_user)
+                                  : ""
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
                         }
                         Label {
-                            text: reply_to >0 && reply_to !== last_postid ?  "💬"  : ""
+                            text: (version > 1 && updated_at !== created_at) ?
+                                      qsTr("✍️: %1").arg(formatJsonDate(updated_at)) : ""
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
