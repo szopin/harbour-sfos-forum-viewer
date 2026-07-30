@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 import Sailfish.Pickers 1.0
@@ -13,6 +13,7 @@ Dialog {
     property string username
     property string postid
     property string raw
+    property string cooked
     property string loggedin
 
     property bool haveDraft: false
@@ -84,23 +85,25 @@ Dialog {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
     }
 
-    function getraw(postid){
+    function getraw(postid, quote){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", "https://forum.sailfishos.org/posts/" + postid + ".json");
         xhr.setRequestHeader("User-Api-Key", loggedin);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
-                var oldraw = postbody.text;
-                var curpos = postbody.cursorPosition;
-                var oldlen = oldraw.length
-                raw = data["raw"];
-                if(username){
-                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + oldraw;
-                    postbody.cursorPosition = postbody.text.length - oldlen + curpos
-                } else {
-                    postbody.text = raw;
+                cooked = data["cooked"];
+                if (quote) {
+                    var oldraw = postbody.text;
+                    var curpos = postbody.cursorPosition;
+                    var oldlen = oldraw.length
+                    raw = data["raw"];
+                    if(username){
+                        postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + oldraw;
+                        postbody.cursorPosition = postbody.text.length - oldlen + curpos
+                    } else {
+                        postbody.text = raw;
+                    }
                 }
-                return raw;
             }
         }
         xhr.send();
@@ -142,8 +145,16 @@ Dialog {
             }
             MenuItem{
                 visible: postid && username
+                text: qsTr("Show parent")
+                onClicked: {
+                     if(!cooked) getraw(postid, false)
+                     panel.open = !panel.open
+                }
+            }
+            MenuItem{
+                visible: postid && username
                 text: qsTr("Insert quote")
-                onClicked: getraw(postid)
+                onClicked: getraw(postid, true)
             }
         }
 
@@ -178,6 +189,54 @@ Dialog {
 
         }
     }
+
+    DockedPanel { id: panel
+        width: parent.width
+        // add the height of the header:
+        height: Math.min(op.height + (dialog.isLandscape ? Theme.itemSizeSmall : Theme.itemSizeLarge), dialog.height - Theme.itemSizeLarge)
+        contentHeight: op.height
+
+        dock: Dock.Top
+        modal: true
+        focus: open
+
+        background: Component {
+            PanelBackground { palette.highlightBackgroundColor: "black" } // used in bg gradient
+        }
+
+        Column { id: op
+            anchors {
+                //bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+                topMargin: (dialog.isLandscape ? Theme.itemSizeSmall : Theme.itemSizeLarge)
+            }
+            bottomPadding: Theme.paddingLarge
+            spacing: Theme.paddingSmall
+
+            SectionHeader { text: username; font.pixelSize: Theme.fontSizeMedium }
+            Label {
+                anchors {
+                    margins: Theme.paddingLarge
+                    left: parent.left
+                    right: parent.right
+                }
+                text: cooked
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Item { height: Theme.paddingLarge; width: parent.width; visible: !raw }
+            ButtonLayout {
+                Button {
+                    text: qsTr("Insert quote")
+                    visible: !raw
+                    onClicked: { getraw(postid, true); panel.hide() }
+                }
+            }
+        }
+    }
+
     Component.onCompleted: {
         // restore draft
         var d = mainConfig.value(_draftKey, "")
@@ -186,7 +245,7 @@ Dialog {
                 dialog.haveDraft = true
         // get parent post
         } else if(!username && postid){
-            getraw(postid);
+            getraw(postid, true);
         }
     }
 
