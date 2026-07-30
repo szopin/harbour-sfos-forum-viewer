@@ -148,7 +148,8 @@ Dialog {
 
         PageHeader {
             id: pageHeader
-            title: username ? qsTr("Enter post") : !postid ? qsTr("Enter post") : qsTr("Edit post");
+            title: username ? qsTr("Enter reply") : !postid ? qsTr("Enter post") : qsTr("Edit post");
+            description: username ? qsTr("Replying to %1").arg(username) : ""
         }
         TextArea {
             id: postbody
