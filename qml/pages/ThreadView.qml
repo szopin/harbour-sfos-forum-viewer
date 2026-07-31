@@ -321,9 +321,9 @@ Page {
             var cooked_hidden = false
             if (post.staff){
                 if (post.moderator && !post.admin){
-                    stafftag = " - " + qsTr("Moderator")
+                    stafftag = qsTr("Moderator")
                 } else {
-                    stafftag = " - Jolla"
+                    stafftag = "Jolla"
                 }
             } else {
                 stafftag = ""
@@ -375,6 +375,7 @@ Page {
             list.model.append({
                                   cooked: precook,
                                   username: post.username,
+                                  usertitle: !!post.user_title ? post.user_title : "",
                                   avatar: post.avatar_template,//.replace("{size}", 2* Theme.paddingLarge),
                                   updated_at: post.updated_at,
                                   likes: likes,
@@ -600,26 +601,44 @@ ListModel { id: replyModel}
                     }
                     Column {
                         width: parent.width - subMetadata.width - ava.width
-                        Label {
-                            id: mainMetadata
-                            text: loggedin.value != "-1" ? "<style>" +
-                                                           "a { color: %1 }".arg(Theme.highlightColor) +
-                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + stafftag + "</a>" : username + stafftag
-                            onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
-                            textFormat: Text.RichText
-                            truncationMode: TruncationMode.Fade
-                            elide: Text.ElideRight
-                            width: parent.width
-                            font.pixelSize: Theme.fontSizeMedium
+                        Row {
+                            spacing: Theme.paddingMedium
+                            Label {
+                                id: mainMetadata
+                                text: loggedin.value != "-1" ? "<style>" +
+                                                               "a { color: %1 }".arg(Theme.highlightColor) +
+                                                               "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + "</a>" : username
+                                onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
+                                textFormat: Text.RichText
+                                truncationMode: TruncationMode.Fade
+                                elide: Text.ElideRight
+                                //width: parent.width
+                                font.pixelSize: Theme.fontSizeMedium
+                                anchors.bottom: parent.bottom
+                            }
+                            Label {
+                                visible: stafftag != ""
+                                text: stafftag
+                                color: Theme.secondaryHighlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                font.bold: true
+                                anchors.bottom: parent.bottom
+                            }
+                            Label {
+                                visible: usertitle != ""
+                                text: usertitle
+                                color: Theme.secondaryHighlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                font.italic: true
+                                anchors.bottom: parent.bottom
+                            }
                         }
-
 
                         Label {
                             visible: likes > 0
                             text: !acted ? likes + "♥" : likes + "💘"
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
-
                         }
                     }
 
