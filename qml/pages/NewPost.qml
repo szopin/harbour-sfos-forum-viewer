@@ -112,6 +112,9 @@ Dialog {
     }
     canAccept: postbody.text.length >19
 
+    onRejected: {
+        mainConfig.setValue(_draftKey, undefined)
+    }
     onDone: {
        if ((result === DialogResult.None) && !haveDraft && (postbody.text.length > 20) ) {
            mainConfig.setValue(_draftKey, Qt.btoa(postbody.text) );
