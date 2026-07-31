@@ -99,6 +99,16 @@ Page {
            width: ListView.view.width
            contentHeight: contentCol.height
 
+           menu: ContextMenu {
+                   MenuItem { text: qsTr("Copy RSS feed URL")
+                       onClicked: Clipboard.text = "https://forum.sailfishos.org/c/" + topic + ".rss"
+                   }
+                   /*
+                   MenuItem { text: qsTr("Open RSS feed")
+                       onClicked: Qt.openUrlExternally("https://forum.sailfishos.org/c/" + topic + ".rss")
+                   }
+                   */
+           }
            onClicked: {
                findFirstPage().showCategory( ((is_subcategory) ? categories.lookup[parent_category_id].slug + "/" : "") + slug + "/" + topic, name, topic_template, topic);
                pageStack.navigateBack();
