@@ -15,9 +15,13 @@ Dialog {
     property string raw
     property string loggedin
 
-    function gen_multipart(image) {
+    property bool haveDraft: false
+    readonly property string _draftKey: "drafts/v1/" // version in case we change something and must migrate
+                             // a litte obfuscation
+                             + Qt.md5( "draft" + postid + username + topicid)
 
-    var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="expiration"\n\n1200\n','--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
+    function gen_multipart(image) {
+        var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="expiration"\n\n1200\n','--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
         return multi;
     }
 
@@ -116,13 +120,21 @@ Dialog {
         } else {
             findFirstPage().edit(postbody.text, postid);
         }
+        mainConfig.setValue(_draftKey, undefined)
+        mainConfig.sync()
     }
     SilicaFlickable{
         id: flick
         anchors.fill: parent
 
         PullDownMenu{
-
+            MenuItem{
+                text: qsTr("Cancel and discard draft")
+                enabled: haveDraft
+                onClicked: {
+                    var confirm = pageStack.push(confirmDlg, { "acceptDestination": pageStack.previousPage(), "key": _draftKey } )
+                }
+            }
             MenuItem{
                 text: qsTr("Upload image (through ImgBB)")
                 onClicked: pageStack.push(filePickerPage)
@@ -149,14 +161,69 @@ Dialog {
             anchors.bottom: parent.bottom
             softwareInputPanelEnabled: true
             placeholderText: qsTr("Body");
-
+            label: haveDraft ? qsTr("Draft saved. (%1)").arg( new Date().toLocaleTimeString(Qt.locale(), Locale.NarrowFormat )) : ""
+            onTextChanged: if (text.length > 20 ) draftTimer.start()
+            onFocusChanged: if (!focus && (text.length > 20)) draftTimer.start()
+            Timer { id: draftTimer
+                interval: 1000*13
+                onTriggered: {
+                    mainConfig.setValue(_draftKey, Qt.btoa(postbody.text) );
+                    if (mainConfig.value(_draftKey, "") !== "") {
+                        dialog.haveDraft = true
+                    }
+                }
+            }
 
         }
-
     }
     Component.onCompleted: {
-        if(!username && postid){
+        // restore draft
+        var d = mainConfig.value(_draftKey, "")
+        if (d!=="") {
+                raw = Qt.atob(d)
+                dialog.haveDraft = true
+        // get parent post
+        } else if(!username && postid){
             getraw(postid);
+        }
+    }
+
+    Component {
+        id: confirmDlg
+        Dialog {
+            allowedOrientations: Orientation.All
+            acceptDestinationAction: PageStackAction.Pop
+            property string key
+            property bool clearAll: false
+            onAccepted: {
+                config.setValue(key, undefined)
+                if(clearAll) drafts.clear()
+            }
+            ConfigurationGroup {
+                id: config
+                path: "/apps/harbour-sfos-forum-viewer"
+            }
+            ConfigurationGroup {
+                id: drafts
+                path: "/apps/harbour-sfos-forum-viewer/drafts"
+            }
+            DialogHeader { id: header; title: qsTr("Discard draft?") }
+            Column {
+                width: parent.width
+                anchors.top: header.bottom
+                spacing: Theme.paddingLarge
+                Label {
+                    font.pixelSize: Theme.fontSizeLarge
+                    text: qsTr("You have %Ln character(s) saved").arg(config.value(key).length)
+                    horizontalAlignment: Text.AlignHCenter
+                }
+                TextSwitch {
+                    checked: clearAll
+                    text: qsTr("Delete all drafts")
+                    description: qsTr("Delete all other saved drafts as well as this one.")
+                    onCheckedChanged: clearAll = !clearAll
+                }
+            }
         }
     }
 
