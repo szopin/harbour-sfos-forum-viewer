@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 import Sailfish.Pickers 1.0
@@ -13,11 +13,16 @@ Dialog {
     property string username
     property string postid
     property string raw
+    property string cooked
     property string loggedin
 
-    function gen_multipart(image) {
+    property bool haveDraft: false
+    readonly property string _draftKey: "drafts/v1/" // version in case we change something and must migrate
+                             // a litte obfuscation
+                             + Qt.md5( "draft" + postid + username + topicid)
 
-    var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="expiration"\n\n1200\n','--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
+    function gen_multipart(image) {
+        var multi =  ['--END_OF_PART\nContent-Disposition: form-data; name="expiration"\n\n1200\n','--END_OF_PART\nContent-Disposition: form-data; name="key"\n\nAPI-KEY-HERE\n','--END_OF_PART\nContent-Disposition: form-data; name="image"\n\n', image, '\n--END_OF_PART--' ].join('');
         return multi;
     }
 
@@ -76,38 +81,40 @@ Dialog {
             }
             xhr.send();
     }
-
-            ConfigurationGroup {
-            id: mainConfig
-            path: "/apps/harbour-sfos-forum-viewer"
-        }
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('loadmore'); });
     }
 
-    function getraw(postid){
+    function getraw(postid, quote){
         var xhr = new XMLHttpRequest;
         xhr.open("GET", "https://forum.sailfishos.org/posts/" + postid + ".json");
         xhr.setRequestHeader("User-Api-Key", loggedin);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE){   var data = JSON.parse(xhr.responseText);
-                var oldraw = postbody.text;
-                var curpos = postbody.cursorPosition;
-                var oldlen = oldraw.length
-                raw = data["raw"];
-                if(username){
-                    postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + oldraw;
-                    postbody.cursorPosition = postbody.text.length - oldlen + curpos
-                } else {
-                    postbody.text = raw;
+                cooked = data["cooked"];
+                if (quote) {
+                    var oldraw = postbody.text;
+                    var curpos = postbody.cursorPosition;
+                    var oldlen = oldraw.length
+                    raw = data["raw"];
+                    if(username){
+                        postbody.text = "[quote=\"" + username +", post:" + post_number + ", topic:" + topicid +"\"]\n" + raw + "\n[/quote]\n" + oldraw;
+                        postbody.cursorPosition = postbody.text.length - oldlen + curpos
+                    } else {
+                        postbody.text = raw;
+                    }
                 }
-                return raw;
             }
         }
         xhr.send();
     }
     canAccept: postbody.text.length >19
 
+    onDone: {
+       if ((result === DialogResult.None) && !haveDraft && (postbody.text.length > 20) ) {
+           mainConfig.setValue(_draftKey, Qt.btoa(postbody.text) );
+       }
+    }
     onAccepted: {
         if(username){
             findFirstPage().replytopost(postbody.text, topicid, post_number);
@@ -116,27 +123,50 @@ Dialog {
         } else {
             findFirstPage().edit(postbody.text, postid);
         }
+        mainConfig.setValue(_draftKey, undefined)
+        mainConfig.sync()
     }
+
+    ConfigurationGroup {
+        id: mainConfig
+        path: "/apps/harbour-sfos-forum-viewer"
+    }
+
     SilicaFlickable{
         id: flick
         anchors.fill: parent
 
         PullDownMenu{
-
+            MenuItem{
+                text: qsTr("Cancel and discard draft")
+                enabled: haveDraft
+                onClicked: {
+                    var confirm = pageStack.push(confirmDlg, { "acceptDestination": pageStack.previousPage(), "key": _draftKey } )
+                }
+            }
             MenuItem{
                 text: qsTr("Upload image (through ImgBB)")
                 onClicked: pageStack.push(filePickerPage)
             }
             MenuItem{
                 visible: postid && username
+                text: qsTr("Show parent")
+                onClicked: {
+                     if(!cooked) getraw(postid, false)
+                     panel.open = !panel.open
+                }
+            }
+            MenuItem{
+                visible: postid && username
                 text: qsTr("Insert quote")
-                onClicked: getraw(postid)
+                onClicked: getraw(postid, true)
             }
         }
 
         PageHeader {
             id: pageHeader
-            title: username ? qsTr("Enter post") : !postid ? qsTr("Enter post") : qsTr("Edit post");
+            title: username ? qsTr("Enter reply") : !postid ? qsTr("Enter post") : qsTr("Edit post");
+            description: username ? qsTr("Replying to %1").arg(username) : ""
         }
         TextArea {
             id: postbody
@@ -149,14 +179,123 @@ Dialog {
             anchors.bottom: parent.bottom
             softwareInputPanelEnabled: true
             placeholderText: qsTr("Body");
-
+            label: haveDraft ? qsTr("Draft saved. (%1)").arg( new Date().toLocaleTimeString(Qt.locale(), Locale.NarrowFormat )) : ""
+            onTextChanged: if (text.length > 20 ) draftTimer.start()
+            onFocusChanged: if (!focus && (text.length > 20)) draftTimer.start()
+            Timer { id: draftTimer
+                interval: 1000*13
+                onTriggered: {
+                    mainConfig.setValue(_draftKey, Qt.btoa(postbody.text) );
+                    if (mainConfig.value(_draftKey, "") !== "") {
+                        dialog.haveDraft = true
+                    }
+                }
+            }
 
         }
-
     }
+
+    DockedPanel { id: panel
+        width: parent.width
+        // add the height of the header:
+        height: Math.min(op.height + (dialog.isLandscape ? Theme.itemSizeSmall : Theme.itemSizeLarge), dialog.height - Theme.itemSizeLarge)
+        contentHeight: op.height
+
+        dock: Dock.Top
+        modal: true
+        focus: open
+
+        background: Component {
+            PanelBackground { palette.highlightBackgroundColor: "black" } // used in bg gradient
+        }
+
+        Column { id: op
+            anchors {
+                //bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+                topMargin: (dialog.isLandscape ? Theme.itemSizeSmall : Theme.itemSizeLarge)
+            }
+            bottomPadding: Theme.paddingLarge
+            spacing: Theme.paddingSmall
+
+            PageHeader { title: qsTr("Replying to"); interactive: false }
+            SectionHeader { text: username; font.pixelSize: Theme.fontSizeMedium }
+            Label {
+                anchors {
+                    margins: Theme.paddingLarge
+                    left: parent.left
+                    right: parent.right
+                }
+                text: cooked
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Item { height: Theme.paddingLarge; width: parent.width; visible: !raw }
+            ButtonLayout {
+                Button {
+                    text: qsTr("Insert quote")
+                    visible: !raw
+                    onClicked: { getraw(postid, true); panel.hide() }
+                }
+            }
+        }
+    }
+
     Component.onCompleted: {
-        if(!username && postid){
-            getraw(postid);
+        // restore draft
+        var d = mainConfig.value(_draftKey, "")
+        if (d!=="") {
+                raw = Qt.atob(d)
+                dialog.haveDraft = true
+        // get parent post
+        } else if(!username && postid){
+            getraw(postid, true);
+        }
+    }
+
+    Component {
+        id: confirmDlg
+        Dialog {
+            allowedOrientations: Orientation.All
+            acceptDestinationAction: PageStackAction.Pop
+            property string key
+            property bool clearAll: false
+            onAccepted: {
+                config.setValue(key, undefined)
+                if(clearAll) drafts.clear()
+            }
+            ConfigurationGroup {
+                id: config
+                path: "/apps/harbour-sfos-forum-viewer"
+            }
+            ConfigurationGroup {
+                id: drafts
+                path: "/apps/harbour-sfos-forum-viewer/drafts"
+            }
+            DialogHeader { id: header; title: qsTr("Discard draft?") }
+            Column {
+                width: parent.width
+                anchors.top: header.bottom
+                spacing: Theme.paddingLarge
+                Label {
+                    width: parent.width - Theme.horizontalPageMargin*2
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: qsTr("%1 will forget the current post text and return to the topic.\n%2 will bring you back to your drafted text.").arg(header.acceptText).arg(header.cancelText)
+                    color: Theme.secondaryHighlightColor
+                    wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignJustify
+
+                }
+                TextSwitch {
+                    checked: clearAll
+                    text: qsTr("Delete all drafts")
+                    description: qsTr("Delete all other saved drafts as well as this one.")
+                        + "\n" + qsTr("You should clean up unused drafts from time to time using this switch.")
+                    onCheckedChanged: clearAll = !clearAll
+                }
+            }
         }
     }
 
