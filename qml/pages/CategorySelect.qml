@@ -60,6 +60,11 @@ Page {
             "action": qsTr("Watch",  "Category watch action (verb)"),
             "smallicon": "image://theme/icon-m-alarm",
             "icon": "image://theme/icon-m-alarm"
+        },
+        { "name": qsTr("Watching First Post", "Category watch level (state)"),
+            "action": qsTr("First post",  "Category watch action (verb)"),
+            "smallicon": "image://theme/icon-m-notifications",
+            "icon": "image://theme/icon-m-notifications"
         }
     ]
     // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
