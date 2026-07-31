@@ -308,6 +308,7 @@ Page {
             busy = !messageObject.last
 
             if (messageObject.last) busy = false// list.positionViewAtIndex(post_number - 1, ListView.Beginning);
+            if(loggedin.value !== "-1") timestamp(list.model.get(list.model.count - 1).post_number)
         }
     }
 
@@ -402,6 +403,22 @@ Page {
             last_post = post.post_number;
         }
     }
+    function timestamp(post_number){
+        var xhr = new XMLHttpRequest;
+    const payload = "timings%5B" + post_number + "%5D=1000&topic_time=5000&topic_id=" + topicid
+        xhr.open("POST", "https://forum.sailfishos.org/topics/timings");
+         xhr.setRequestHeader("User-Api-Key", loggedin.value);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+               if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                }
+        }
+    }
+        xhr.send(payload);
+}
 
     function getcomments(){
         var xhr = new XMLHttpRequest;
@@ -438,6 +455,7 @@ Page {
                     }
                 } else {
                     busy = false
+                    if(loggedin.value !== "-1") timestamp(list.model.get(list.model.count - 1).post_number)
                 }
 
                 if( zi == xi && posts_count >= 20) {
@@ -789,11 +807,7 @@ ListModel { id: replyModel}
                     }
 
                 }
-                /*      MenuItem {
-                    visible: cooked_hidden
-                    text: qsTr("Uncensor post")
-                    onClicked: uncensor(postid, index);
-                }*/
+
                 MenuItem {
                     visible: loggedin.value != "-1" && !acted && !yours
                     text: qsTr("Like")

@@ -60,7 +60,7 @@ CoverBackground {
         model: application.latest
         delegate: ListItem {
             property int lastPostNumber: postCountConfig.value(topicid, -1)
-            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number) && my_loggedinname != last_poster_username
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number && lastread < highest_post_number) || ( lastread < highest_post_number && lastread > 0 && lastPostNumber < highest_post_number ) && lastPostNumber!= 0 && my_loggedinname != last_poster_username //(lastPostNumber > 0 && lastPostNumber < highest_post_number) && my_loggedinname != last_poster_username && lastPostNumber != 0
             id: item
             anchors.topMargin: Theme.paddingSmall
             height: postsLabel.height + Theme.paddingSmall
@@ -82,7 +82,7 @@ CoverBackground {
                         minimumPixelSize: 0.6*Theme.fontSizeTiny
                         fontSizeMode: Text.Fit
                         font.pixelSize: Theme.fontSizeTiny
-                        color: item.lastPostNumber < 0 ?
+                        color: item.lastPostNumber <= 0 ?
                                    Theme.primaryColor :
                                    (item.hasNews  ?
                                         Theme.highlightColor :
@@ -102,7 +102,7 @@ CoverBackground {
 
                 Label {
                     id: entryLabel
-                    color: item.lastPostNumber < 0 ?
+                    color: item.lastPostNumber <= 0 ?
                                Theme.primaryColor :
                                (item.hasNews ?
                                     Theme.highlightColor :

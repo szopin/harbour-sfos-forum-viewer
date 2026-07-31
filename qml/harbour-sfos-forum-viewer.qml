@@ -39,7 +39,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.15.1"
+    readonly property string appVersion: "1.16.0"
     // ================================
 
     property bool fetching: false
@@ -147,9 +147,9 @@ ApplicationWindow
 
                     for (var i=0;i<topics_length;i++) {
                         var topic = topics[i];
-
+var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
                         if (topic.bumped){
-                            application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, last_poster_username: topic.last_poster_username, my_loggedinname: my_loggedinname })
+                            application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, last_poster_username: topic.last_poster_username, my_loggedinname: my_loggedinname, lastread: lastread })
                         }
                     }
                 }

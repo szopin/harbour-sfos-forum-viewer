@@ -218,6 +218,10 @@ Vielen Dank an die Mitwirkenden:
         <source>Filtering user</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -240,6 +244,51 @@ Vielen Dank an die Mitwirkenden:
     <message>
         <source>Upload image (through ImgBB)</source>
         <translation>Bild hochladen (via ImgBB)</translation>
+    </message>
+    <message>
+        <source>Cancel and discard draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft saved. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 will forget the current post text and return to the topic.
+%2 will bring you back to your drafted text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all other saved drafts as well as this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You should clean up unused drafts from time to time using this switch.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -308,6 +357,14 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

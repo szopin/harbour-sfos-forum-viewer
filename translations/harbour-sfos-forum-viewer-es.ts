@@ -110,155 +110,160 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="64"/>
+        <location filename="../qml/pages/FirstPage.qml" line="85"/>
         <source>Logging out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="73"/>
+        <location filename="../qml/pages/FirstPage.qml" line="94"/>
         <source>Filtering user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="269"/>
+        <location filename="../qml/pages/FirstPage.qml" line="294"/>
         <source>Latest</source>
         <translation type="unfinished">Recientes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="278"/>
+        <location filename="../qml/pages/FirstPage.qml" line="303"/>
         <source>Top</source>
         <translation type="unfinished">Relevantes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="293"/>
+        <location filename="../qml/pages/FirstPage.qml" line="318"/>
         <source>Muted</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="294"/>
+        <location filename="../qml/pages/FirstPage.qml" line="319"/>
         <source>Mute</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="298"/>
+        <location filename="../qml/pages/FirstPage.qml" line="323"/>
         <source>Normal</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="299"/>
+        <location filename="../qml/pages/FirstPage.qml" line="324"/>
         <source>Normal</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="303"/>
+        <location filename="../qml/pages/FirstPage.qml" line="328"/>
         <source>Tracking</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="304"/>
+        <location filename="../qml/pages/FirstPage.qml" line="329"/>
         <source>Track</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="308"/>
+        <location filename="../qml/pages/FirstPage.qml" line="333"/>
         <source>Watching</source>
         <comment>Topic watch level (state)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="309"/>
+        <location filename="../qml/pages/FirstPage.qml" line="334"/>
         <source>Watch</source>
         <comment>Topic watch action (verb)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="399"/>
+        <location filename="../qml/pages/FirstPage.qml" line="424"/>
         <source>New notification</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="431"/>
+        <location filename="../qml/pages/FirstPage.qml" line="456"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Foro de S a i l f i s h</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="444"/>
+        <location filename="../qml/pages/FirstPage.qml" line="469"/>
         <source>About</source>
         <translation type="unfinished">Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="449"/>
+        <location filename="../qml/pages/FirstPage.qml" line="474"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="455"/>
+        <location filename="../qml/pages/FirstPage.qml" line="480"/>
         <source>Logout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="460"/>
+        <location filename="../qml/pages/FirstPage.qml" line="485"/>
         <source>New thread</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="466"/>
+        <location filename="../qml/pages/FirstPage.qml" line="491"/>
         <source>Clear filter list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="475"/>
+        <location filename="../qml/pages/FirstPage.qml" line="500"/>
         <source>Search</source>
         <translation type="unfinished">Buscar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="480"/>
+        <location filename="../qml/pages/FirstPage.qml" line="505"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="485"/>
+        <location filename="../qml/pages/FirstPage.qml" line="510"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="504"/>
+        <location filename="../qml/pages/FirstPage.qml" line="529"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Nada que mostrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="505"/>
+        <location filename="../qml/pages/FirstPage.qml" line="530"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="678"/>
+        <location filename="../qml/pages/FirstPage.qml" line="703"/>
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="699"/>
+        <location filename="../qml/pages/FirstPage.qml" line="724"/>
         <source>Mark as read</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="744"/>
+        <location filename="../qml/pages/FirstPage.qml" line="769"/>
         <source>Don&apos;t track (local)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="751"/>
+        <location filename="../qml/pages/FirstPage.qml" line="777"/>
+        <source>Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FirstPage.qml" line="784"/>
         <source>Filter OP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="796"/>
+        <location filename="../qml/pages/FirstPage.qml" line="830"/>
         <source>Load more</source>
         <translation type="unfinished"></translation>
     </message>
@@ -266,29 +271,86 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>NewPost</name>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="127"/>
+        <location filename="../qml/pages/NewPost.qml" line="141"/>
+        <source>Cancel and discard draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="148"/>
         <source>Upload image (through ImgBB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="132"/>
+        <location filename="../qml/pages/NewPost.qml" line="153"/>
+        <source>Show parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="161"/>
+        <location filename="../qml/pages/NewPost.qml" line="238"/>
         <source>Insert quote</source>
         <translation>Insertar comillas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="139"/>
+        <location filename="../qml/pages/NewPost.qml" line="168"/>
         <source>Enter post</source>
         <translation>Marcar publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="139"/>
+        <location filename="../qml/pages/NewPost.qml" line="168"/>
         <source>Edit post</source>
         <translation>Editar publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewPost.qml" line="151"/>
+        <location filename="../qml/pages/NewPost.qml" line="168"/>
+        <source>Enter reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="169"/>
+        <source>Replying to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="181"/>
         <source>Body</source>
         <translation>Cuerpo</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="182"/>
+        <source>Draft saved. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="222"/>
+        <source>Replying to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="277"/>
+        <source>Discard draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="285"/>
+        <source>%1 will forget the current post text and return to the topic.
+%2 will bring you back to your drafted text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="293"/>
+        <source>Delete all drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="294"/>
+        <source>Delete all other saved drafts as well as this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NewPost.qml" line="295"/>
+        <source>You should clean up unused drafts from time to time using this switch.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -335,47 +397,58 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>Notifications</name>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="178"/>
-        <location filename="../qml/pages/Notifications.qml" line="216"/>
+        <location filename="../qml/pages/Notifications.qml" line="232"/>
+        <location filename="../qml/pages/Notifications.qml" line="280"/>
         <source>Notifications</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="178"/>
-        <location filename="../qml/pages/Notifications.qml" line="195"/>
+        <location filename="../qml/pages/Notifications.qml" line="232"/>
+        <location filename="../qml/pages/Notifications.qml" line="249"/>
         <source>PMs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="178"/>
-        <location filename="../qml/pages/Notifications.qml" line="205"/>
+        <location filename="../qml/pages/Notifications.qml" line="232"/>
+        <location filename="../qml/pages/Notifications.qml" line="259"/>
         <source>PMs - sent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="178"/>
-        <location filename="../qml/pages/Notifications.qml" line="185"/>
+        <location filename="../qml/pages/Notifications.qml" line="232"/>
+        <location filename="../qml/pages/Notifications.qml" line="239"/>
         <source>Muted topics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="179"/>
+        <location filename="../qml/pages/Notifications.qml" line="232"/>
+        <location filename="../qml/pages/Notifications.qml" line="269"/>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Notifications.qml" line="233"/>
         <source>SailfishOS Forum</source>
         <translation type="unfinished">Foro de S a i l f i s h</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="241"/>
+        <location filename="../qml/pages/Notifications.qml" line="305"/>
         <source>Nothing to show</source>
         <translation type="unfinished">Nada que mostrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="242"/>
+        <location filename="../qml/pages/Notifications.qml" line="306"/>
         <source>Is the network enabled?</source>
         <translation type="unfinished">¿Está conectado a internet?</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Notifications.qml" line="262"/>
+        <location filename="../qml/pages/Notifications.qml" line="326"/>
         <source>Unmute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Notifications.qml" line="332"/>
+        <source>Delete bookmark</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -588,124 +661,124 @@ Agradecimiento especial a los contribuyentes:
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="324"/>
+        <location filename="../qml/pages/ThreadView.qml" line="325"/>
         <source>Moderator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="481"/>
+        <location filename="../qml/pages/ThreadView.qml" line="500"/>
         <source>tags</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="495"/>
-        <location filename="../qml/pages/ThreadView.qml" line="747"/>
+        <location filename="../qml/pages/ThreadView.qml" line="514"/>
+        <location filename="../qml/pages/ThreadView.qml" line="784"/>
         <source>Copy link to clipboard</source>
         <translation>Copiar enlace al portapapeles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="499"/>
-        <location filename="../qml/pages/ThreadView.qml" line="537"/>
+        <location filename="../qml/pages/ThreadView.qml" line="518"/>
+        <location filename="../qml/pages/ThreadView.qml" line="556"/>
         <source>Open in external browser</source>
         <translation>Abrir en navegador externo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="503"/>
-        <location filename="../qml/pages/ThreadView.qml" line="532"/>
+        <location filename="../qml/pages/ThreadView.qml" line="522"/>
+        <location filename="../qml/pages/ThreadView.qml" line="551"/>
         <source>Open directly</source>
         <translation>Abrir directamente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="508"/>
         <location filename="../qml/pages/ThreadView.qml" line="527"/>
+        <location filename="../qml/pages/ThreadView.qml" line="546"/>
         <source>Search thread</source>
         <translation>Buscar hilo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="513"/>
-        <location filename="../qml/pages/ThreadView.qml" line="522"/>
+        <location filename="../qml/pages/ThreadView.qml" line="532"/>
+        <location filename="../qml/pages/ThreadView.qml" line="541"/>
         <source>Post reply</source>
         <translation>Responder a publicación</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="644"/>
+        <location filename="../qml/pages/ThreadView.qml" line="681"/>
         <source>✍️: %1</source>
         <translation>✍️: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="664"/>
-        <location filename="../qml/pages/ThreadView.qml" line="712"/>
+        <location filename="../qml/pages/ThreadView.qml" line="701"/>
+        <location filename="../qml/pages/ThreadView.qml" line="749"/>
         <source>This post contains polls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="665"/>
-        <location filename="../qml/pages/ThreadView.qml" line="713"/>
+        <location filename="../qml/pages/ThreadView.qml" line="702"/>
+        <location filename="../qml/pages/ThreadView.qml" line="750"/>
         <source>This post contains a poll.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="666"/>
+        <location filename="../qml/pages/ThreadView.qml" line="703"/>
         <source>See the bottom of the post to participate.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="714"/>
+        <location filename="../qml/pages/ThreadView.qml" line="751"/>
         <source>Click to view and vote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="732"/>
+        <location filename="../qml/pages/ThreadView.qml" line="769"/>
         <source>Poll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="743"/>
+        <location filename="../qml/pages/ThreadView.qml" line="780"/>
         <source>Copy to clipboard</source>
         <translation>Copiar al portapapeles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="753"/>
+        <location filename="../qml/pages/ThreadView.qml" line="790"/>
         <source>Revision history</source>
         <translation>Historial de revisiones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="758"/>
+        <location filename="../qml/pages/ThreadView.qml" line="795"/>
         <source>Alternative formatting</source>
         <translation>Formato alternativo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="763"/>
+        <location filename="../qml/pages/ThreadView.qml" line="800"/>
         <source>Show replied to post(s)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="780"/>
+        <location filename="../qml/pages/ThreadView.qml" line="813"/>
         <source>Like</source>
         <translation>Gustar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="785"/>
+        <location filename="../qml/pages/ThreadView.qml" line="818"/>
         <source>Reply</source>
         <translation>Responder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="790"/>
+        <location filename="../qml/pages/ThreadView.qml" line="823"/>
         <source>Unlike</source>
         <translation>No gustar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="800"/>
+        <location filename="../qml/pages/ThreadView.qml" line="833"/>
         <source>Delete</source>
         <translation>Borrar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="803"/>
+        <location filename="../qml/pages/ThreadView.qml" line="836"/>
         <source>Filter user</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ThreadView.qml" line="795"/>
+        <location filename="../qml/pages/ThreadView.qml" line="828"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
