@@ -213,14 +213,19 @@ Dialog {
                 anchors.top: header.bottom
                 spacing: Theme.paddingLarge
                 Label {
-                    font.pixelSize: Theme.fontSizeLarge
-                    text: qsTr("You have %Ln character(s) saved").arg(config.value(key).length)
-                    horizontalAlignment: Text.AlignHCenter
+                    width: parent.width - Theme.horizontalPageMargin*2
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: qsTr("%1 will forget the current post text and return to the topic.\n%2 will bring you back to your drafted text.").arg(header.acceptText).arg(header.cancelText)
+                    color: Theme.secondaryHighlightColor
+                    wrapMode: Text.Wrap
+                    horizontalAlignment: Text.AlignJustify
+
                 }
                 TextSwitch {
                     checked: clearAll
                     text: qsTr("Delete all drafts")
                     description: qsTr("Delete all other saved drafts as well as this one.")
+                        + "\n" + qsTr("You should clean up unused drafts from time to time using this switch.")
                     onCheckedChanged: clearAll = !clearAll
                 }
             }
