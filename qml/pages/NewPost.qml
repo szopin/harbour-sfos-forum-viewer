@@ -214,6 +214,7 @@ Dialog {
             bottomPadding: Theme.paddingLarge
             spacing: Theme.paddingSmall
 
+            PageHeader { title: qsTr("Replying to"); interactive: false }
             SectionHeader { text: username; font.pixelSize: Theme.fontSizeMedium }
             Label {
                 anchors {
