@@ -110,6 +110,11 @@ Dialog {
     }
     canAccept: postbody.text.length >19
 
+    onDone: {
+       if ((result === DialogResult.None) && !haveDraft && (postbody.text.length > 20) ) {
+           mainConfig.setValue(_draftKey, Qt.btoa(postbody.text) );
+       }
+    }
     onAccepted: {
         if(username){
             findFirstPage().replytopost(postbody.text, topicid, post_number);
