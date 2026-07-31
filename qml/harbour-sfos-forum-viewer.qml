@@ -91,7 +91,7 @@ ApplicationWindow
                             topic_count: item['topic_count'],
                             description_text: item['description_text'],
                             slug: item['slug'],
-                            topic_template: item['topic_template'],
+                            topic_template: item['topic_template'] || "NO-POSTS-ALLOWED", // need to discern null(no posts allowed) and ""
                             is_subcategory: (!!isSub),
                             parent_category_id: isSub ? item['parent_category_id'] : -1
                         };
