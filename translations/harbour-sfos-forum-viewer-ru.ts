@@ -49,29 +49,94 @@ Special thanks to contributors:
 <context>
     <name>CategorySelect</name>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="51"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="44"/>
+        <source>Muted</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="45"/>
+        <source>Mute</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="49"/>
+        <source>Normal</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="50"/>
+        <source>Normal</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="54"/>
+        <source>Tracking</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="55"/>
+        <source>Track</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="59"/>
+        <source>Watching</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="60"/>
+        <source>Watch</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="64"/>
+        <source>Watching First Post</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="65"/>
+        <source>First post</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="110"/>
         <source>Nothing to show</source>
         <translation>Ничего нет</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="52"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="111"/>
         <source>Is the network enabled?</source>
         <translation>Проверьте подключение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="61"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="120"/>
         <source>Categories</source>
         <translation>Категории</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="69"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="128"/>
         <source>Latest</source>
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CategorySelect.qml" line="76"/>
+        <location filename="../qml/pages/CategorySelect.qml" line="135"/>
         <source>Top</source>
         <translation>Топ</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CategorySelect.qml" line="204"/>
+        <source>Copy RSS feed link</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

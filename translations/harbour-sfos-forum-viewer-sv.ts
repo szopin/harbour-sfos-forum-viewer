@@ -63,6 +63,60 @@ Speciellt tack till medverkande:
         <source>Is the network enabled?</source>
         <translation>Är nätverket aktiverat?</translation>
     </message>
+    <message>
+        <source>Muted</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Tystad</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Tysta</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Spårar</translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Spåra</translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Bevakar</translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Bevaka</translation>
+    </message>
+    <message>
+        <source>Watching First Post</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First post</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy RSS feed link</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

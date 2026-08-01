@@ -63,6 +63,60 @@ Remerciements aux contributeurs :
         <source>Is the network enabled?</source>
         <translation>Le réseau est-il activé ?</translation>
     </message>
+    <message>
+        <source>Muted</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Watching First Post</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First post</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy RSS feed link</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>

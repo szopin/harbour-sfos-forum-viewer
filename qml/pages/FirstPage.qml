@@ -767,7 +767,7 @@ Page {
                     }
                 }
                 MenuItem { text: qsTr("Don't track (local)")
-                    visible: lastPostNumber > 0 //&& loggedin.value == "-1"
+                    visible: lastPostNumber > 0 || (lastPostNumber < 0 && lastread > 0)
                     onDelayedClick: {
                         postCountConfig.setValue(topicid, "0");
                         lastPostNumber = 0;
