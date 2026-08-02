@@ -671,7 +671,7 @@ ListModel { id: replyModel}
                         Label {
                             text: reply_to >0 && reply_to !== last_postid && reply_to_user != ""
                                   ? ("↪ " + reply_to_user)
-                                  : ""
+                                  : reply_to >0 && reply_to !== last_postid ? "💬" :  ""
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
