@@ -147,13 +147,13 @@ Special thanks to contributors:
         <translation>Последние</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="134"/>
+        <location filename="../qml/cover/CoverPage.qml" line="133"/>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation>SailfishOS</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="144"/>
+        <location filename="../qml/cover/CoverPage.qml" line="143"/>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation>Форум</translation>

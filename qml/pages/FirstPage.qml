@@ -716,7 +716,7 @@ Page {
             }
 
             menu: ContextMenu { id: ctxmenu
-                //hasContent: lastPostNumber > 0 || !loadedMore
+                hasContent: lastPostNumber > 0 || (!loadedMore && loggedin.value == "-1") || loggedin.value !== "-1"
                 property int wantLevel: notification_level
                 onClosed: if (wantLevel != notification_level) {
                               setNotificationLevel(index, topicid, wantLevel)

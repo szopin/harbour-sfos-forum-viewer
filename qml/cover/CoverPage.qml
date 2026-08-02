@@ -82,12 +82,11 @@ CoverBackground {
                         minimumPixelSize: 0.6*Theme.fontSizeTiny
                         fontSizeMode: Text.Fit
                         font.pixelSize: Theme.fontSizeTiny
-                        color: item.lastPostNumber <= 0 ?
-                                   Theme.primaryColor :
-                                   (item.hasNews  ?
-                                        Theme.highlightColor :
-                                        Theme.secondaryColor)
-
+                        color: item.hasNews
+                                   ? Theme.highlightColor
+                                   : ((item.lastPostNumber < highest_post_number && lastread <  highest_post_number)  || lastPostNumber == 0
+                                      ? Theme.primaryColor
+                                      : Theme.secondaryColor)
                         opacity: Theme.opacityHigh
                         horizontalAlignment: Text.AlignHCenter
                     }
@@ -102,11 +101,11 @@ CoverBackground {
 
                 Label {
                     id: entryLabel
-                    color: item.lastPostNumber <= 0 ?
-                               Theme.primaryColor :
-                               (item.hasNews ?
-                                    Theme.highlightColor :
-                                    Theme.secondaryColor)
+                    color: item.hasNews
+                                   ? Theme.highlightColor
+                                   : ((item.lastPostNumber < highest_post_number && lastread <  highest_post_number)  || lastPostNumber == 0
+                                      ? Theme.primaryColor
+                                      : Theme.secondaryColor)
                     font.pixelSize: Theme.fontSizeExtraSmall
                     text: title
                     truncationMode: TruncationMode.Fade

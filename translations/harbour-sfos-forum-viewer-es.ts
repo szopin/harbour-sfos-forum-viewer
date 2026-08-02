@@ -147,13 +147,13 @@ Agradecimiento especial a los contribuyentes:
         <translation>Publicaci. recientes</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="134"/>
+        <location filename="../qml/cover/CoverPage.qml" line="133"/>
         <source>SailfishOS</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation>Sailfish SO</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="144"/>
+        <location filename="../qml/cover/CoverPage.qml" line="143"/>
         <source>Forum Viewer</source>
         <extracomment>part of &apos;SailfishOS Forum Viewer&apos;</extracomment>
         <translation>Visor de foro</translation>
