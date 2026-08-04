@@ -188,7 +188,7 @@ Page {
                 }
 
                 var topics_length = topics.length;
-                for (var i=0;i<topics_length;i++) {
+                loop1: for (var i=0;i<topics_length;i++) {
                     spam = false;
                     var latest_post_by_me = false;
                     var topic = topics[i];
@@ -213,6 +213,9 @@ Page {
                     if (topic.tags) tags = topic.tags.join(" ");
                     var bookmarked = topic.bookmarked ? topic.bookmarked : false
                     var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
+                    loop2: for(var h=0;h<list.count;h++){
+                        if(list.model.get(h).topicid == topic.id) continue loop1;
+                    }
                     list.model.append({ title: topic.title,
                                           topicid: topic.id,
                                           posts_count: topic.posts_count,
