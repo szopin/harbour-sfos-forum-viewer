@@ -831,7 +831,7 @@ ListModel { id: replyModel}
                 MenuItem {
                     visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
-                    onClicked: del(postid, index);
+                    onClicked: delegateItem.remorseDelete(function() { del(postid, index) } )
                 }
                 MenuItem { text: qsTr("Filter user")
 
