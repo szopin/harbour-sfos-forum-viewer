@@ -486,7 +486,7 @@ Page {
             }
             MenuItem {
                 text: qsTr("New thread")
-                visible: !remorseActive && loggedin.value != "-1" && tid && topic_template != "NO-POSTS-ALLOWED" ? true : false
+                visible: !remorseActive && loggedin.value != "-1" && tid ? true : false
                 onClicked: pageStack.push("NewThread.qml", {category: category, raw: topic_template});
             }
             MenuItem {
