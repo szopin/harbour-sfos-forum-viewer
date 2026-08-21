@@ -37,6 +37,7 @@ Page {
     property string tid
     property string category
     property string topic_template
+    property bool new_topic_allowed
     property int pageno: 0
     property int timerv
     property string lastnotv
@@ -311,7 +312,8 @@ Page {
         viewmode = "";
         tid = showTopic;
         textname = showTextname;
-        topic_template = template;
+        topic_template = !!template ? template : "";
+        new_topic_allowed = (typeof template !== "undefined") // if disallowed this will be null in JSON, -> undefined in qml
         category = cat;
         clearview();
 
@@ -486,7 +488,7 @@ Page {
             }
             MenuItem {
                 text: qsTr("New thread")
-                visible: !remorseActive && loggedin.value != "-1" && tid ? true : false
+                visible: !remorseActive && loggedin.value != "-1" && tid && new_topic_allowed ? true : false
                 onClicked: pageStack.push("NewThread.qml", {category: category, raw: topic_template});
             }
             MenuItem {
@@ -517,6 +519,10 @@ Page {
                     application.fetchLatestPosts()
 
                 }
+            }
+            MenuLabel {
+                visible: !new_topic_allowed && loggedin.value != "-1"
+                text: qsTr("You cannot create threads this categury")
             }
         }
 
