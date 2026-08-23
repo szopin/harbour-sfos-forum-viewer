@@ -211,7 +211,9 @@ Page {
                 */
            }
            onClicked: {
-               findFirstPage().showCategory( ((is_subcategory) ? categories.lookup[parent_category_id].slug + "/" : "") + slug + "/" + topic, name, topic_template, topic);
+                   findFirstPage().showCategory( ((is_subcategory)
+                       ? categories.lookup[parent_category_id].slug + "/" : "")
+                       + slug + "/" + topic, name, topic_template, topic);
                pageStack.navigateBack();
            }
            Rectangle {
