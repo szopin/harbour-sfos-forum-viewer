@@ -276,6 +276,10 @@ Un grazie speciale ai contributori:
         <source>Bookmark</source>
         <translation>Segnalibro</translation>
     </message>
+    <message>
+        <source>You cannot create threads this categury</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -681,6 +685,10 @@ Un grazie speciale ai contributori:
     <message>
         <source>Moderator</source>
         <translation>Moderatore</translation>
+    </message>
+    <message>
+        <source>Undelete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

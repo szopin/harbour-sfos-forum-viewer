@@ -257,7 +257,7 @@ Page {
         list.model.clear();
         commentpage.getcomments();
     }
-    function del(postid, index){
+    function del(postid){
         var xhr = new XMLHttpRequest;
         xhr.open("DELETE", "https://forum.sailfishos.org/posts/" + postid);
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
@@ -267,8 +267,25 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                    list.model.setProperty(index, "cooked", "(post withdrawn by author, will be automatically deleted in 24 hours unless flagged)");
-                    list.model.setProperty(index, "can_delete", false);
+                    list.model.clear();
+                    commentpage.getcomments();
+                }
+            }
+        }
+        xhr.send();
+    }
+    function undel(postid){
+        var xhr = new XMLHttpRequest;
+        xhr.open("PUT", "https://forum.sailfishos.org/posts/" + postid + "/recover");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                } else {
+                    list.model.clear();
+                    commentpage.getcomments();
                 }
             }
         }
@@ -385,6 +402,7 @@ Page {
                                   yours: yours,
                                   can_edit: post.can_edit,
                                   can_delete: post.can_delete,
+                                  can_recover: post.can_recover,
                                   created_at: post.created_at,
                                   version: post.version,
                                   postid: post.id,
@@ -831,7 +849,12 @@ ListModel { id: replyModel}
                 MenuItem {
                     visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
-                    onClicked: delegateItem.remorseDelete(function() { del(postid, index) } )
+                    onClicked: delegateItem.remorseDelete(function() { del(postid) } )
+                }
+                MenuItem {
+                        visible: loggedin.value != "-1"  && yours && can_recover
+                        text: qsTr("Undelete")
+                        onClicked: undel(postid);
                 }
                 MenuItem { text: qsTr("Filter user")
 

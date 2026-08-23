@@ -213,7 +213,7 @@ Page {
            onClicked: {
                    findFirstPage().showCategory( ((is_subcategory)
                        ? categories.lookup[parent_category_id].slug + "/" : "")
-                       + slug + "/" + topic, name, topic_template, topic);
+                       + slug + "/" + topic, name, topic_template, topic, permission);
                pageStack.navigateBack();
            }
            Rectangle {

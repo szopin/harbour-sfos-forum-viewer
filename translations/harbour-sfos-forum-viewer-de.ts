@@ -276,6 +276,10 @@ Vielen Dank an die Mitwirkenden:
         <source>Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You cannot create threads this categury</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -679,6 +683,10 @@ Vielen Dank an die Mitwirkenden:
     </message>
     <message>
         <source>Moderator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undelete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

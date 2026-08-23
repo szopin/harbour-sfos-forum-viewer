@@ -268,6 +268,10 @@ Special thanks to contributors:
         <source>Bookmark</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You cannot create threads this categury</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -671,6 +675,10 @@ Special thanks to contributors:
     </message>
     <message>
         <source>Moderator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undelete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -37,7 +37,7 @@ Page {
     property string tid
     property string category
     property string topic_template
-    property bool new_topic_allowed
+    property var new_topic_allowed
     property int pageno: 0
     property int timerv
     property string lastnotv
@@ -308,12 +308,12 @@ Page {
         clearview();
     }
 
-    function showCategory(showTopic, showTextname, template, cat) {
+    function showCategory(showTopic, showTextname, template, cat, permission) {
         viewmode = "";
         tid = showTopic;
         textname = showTextname;
         topic_template = !!template ? template : "";
-        new_topic_allowed = (typeof template !== "undefined") // if disallowed this will be null in JSON, -> undefined in qml
+        new_topic_allowed = permission; //(typeof template !== "undefined") // if disallowed this will be null in JSON, -> undefined in qml
         category = cat;
         clearview();
 
@@ -488,7 +488,7 @@ Page {
             }
             MenuItem {
                 text: qsTr("New thread")
-                visible: !remorseActive && loggedin.value != "-1" && tid && new_topic_allowed ? true : false
+                visible: !remorseActive && loggedin.value != "-1" && tid && new_topic_allowed != "NO-POSTS-ALLOWED" ? true : false
                 onClicked: pageStack.push("NewThread.qml", {category: category, raw: topic_template});
             }
             MenuItem {
@@ -521,7 +521,7 @@ Page {
                 }
             }
             MenuLabel {
-                visible: !new_topic_allowed && loggedin.value != "-1"
+                visible: new_topic_allowed == "NO-POSTS-ALLOWED" && loggedin.value != "-1" && tid
                 text: qsTr("You cannot create threads this categury")
             }
         }
