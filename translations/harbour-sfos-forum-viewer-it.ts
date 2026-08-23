@@ -66,56 +66,56 @@ Un grazie speciale ai contributori:
     <message>
         <source>Muted</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Silenziato</translation>
+        <translation>Silenziato</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Silenzia</translation>
+        <translation>Silenzia</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normale</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Normalizza</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Tracciamento</translation>
+        <translation>Tracciamento</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Traccia</translation>
+        <translation>Traccia</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Osservando</translation>
+        <translation>Osservando</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Osserva</translation>
+        <translation>Osserva</translation>
     </message>
     <message>
         <source>Watching First Post</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Osservando il primo post</translation>
     </message>
     <message>
         <source>First post</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Primo post</translation>
     </message>
     <message>
         <source>Copy RSS feed link</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia collegamento feed RSS</translation>
     </message>
 </context>
 <context>
@@ -243,17 +243,17 @@ Un grazie speciale ai contributori:
     <message>
         <source>Tracking</source>
         <comment>Topic watch level (state)</comment>
-        <translation>Tracciamento</translation>
+        <translation>Seguito</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Topic watch action (verb)</comment>
-        <translation>Traccia</translation>
+        <translation>Segui</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Topic watch level (state)</comment>
-        <translation>Osservando</translation>
+        <translation>Osservato</translation>
     </message>
     <message>
         <source>Watch</source>
@@ -262,7 +262,7 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>Don&apos;t track (local)</source>
-        <translation>Non tracciare (locale)</translation>
+        <translation>Non seguire (locale)</translation>
     </message>
     <message>
         <source>Logging out</source>
@@ -274,7 +274,7 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Segnalibro</translation>
     </message>
 </context>
 <context>
@@ -301,48 +301,49 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>Cancel and discard draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancella ed elimina bozza</translation>
     </message>
     <message>
         <source>Show parent</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra correlato</translation>
     </message>
     <message>
         <source>Enter reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Inserisci risposta</translation>
     </message>
     <message>
         <source>Replying to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondi a %1</translation>
     </message>
     <message>
         <source>Draft saved. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bozza salvata. (%1)</translation>
     </message>
     <message>
         <source>Replying to</source>
-        <translation type="unfinished"></translation>
+        <translation>Rispondendo a</translation>
     </message>
     <message>
         <source>Discard draft?</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina bozza?</translation>
     </message>
     <message>
         <source>%1 will forget the current post text and return to the topic.
 %2 will bring you back to your drafted text.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 eliminerà il testo corrente e tornerà al topic.
+%2 tornerà alla bozza.</translation>
     </message>
     <message>
         <source>Delete all drafts</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina tutte le bozze</translation>
     </message>
     <message>
         <source>Delete all other saved drafts as well as this one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina tutte le bozze salvate inclusa questa.</translation>
     </message>
     <message>
         <source>You should clean up unused drafts from time to time using this switch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogni tanto dovresti eliminare le bozze salvate usando questo pulsante.</translation>
     </message>
 </context>
 <context>
@@ -415,11 +416,11 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Segnalibri</translation>
     </message>
     <message>
         <source>Delete bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina segnalibro</translation>
     </message>
 </context>
 <context>
@@ -437,11 +438,11 @@ Un grazie speciale ai contributori:
     <name>PollView</name>
     <message>
         <source>Single Answer Poll</source>
-        <translation>sondaggio a Risposta Singola</translation>
+        <translation>Sondaggio a risposta singola</translation>
     </message>
     <message>
         <source>Multiple Answer Poll</source>
-        <translation>Sondaggio a Risposta Multipla</translation>
+        <translation>Sondaggio a risposta multipla</translation>
     </message>
     <message>
         <source>Rating Poll</source>
@@ -523,35 +524,35 @@ Un grazie speciale ai contributori:
     <name>ReplyView</name>
     <message>
         <source>tags</source>
-        <translation type="unfinished">tags</translation>
+        <translation>tag</translation>
     </message>
     <message>
         <source>Back to full thread</source>
-        <translation type="unfinished">Torna alla discussione completa</translation>
+        <translation>Torna alla discussione completa</translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished">✍️: %1</translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation type="unfinished">Questo post contiene dei sondaggi.</translation>
+        <translation>Questo post contiene dei sondaggi.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
-        <translation type="unfinished">Questo post contiene un sondaggio.</translation>
+        <translation>Questo post contiene un sondaggio.</translation>
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedi l&apos;inizio del post per partecipare.</translation>
     </message>
     <message>
         <source>Click to view and vote:</source>
-        <translation type="unfinished">Clicca per vedere e votare:</translation>
+        <translation>Clicca per vedere e votare:</translation>
     </message>
     <message>
         <source>Poll</source>
-        <translation type="unfinished">Sondaggio</translation>
+        <translation>Sondaggio</translation>
     </message>
 </context>
 <context>
@@ -651,7 +652,7 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation>Questo post contiene dei sondaggi.</translation>
+        <translation>Questo post contiene sondaggi.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
@@ -675,11 +676,11 @@ Un grazie speciale ai contributori:
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vedi l&apos;inizio del post per partecipare.</translation>
     </message>
     <message>
         <source>Moderator</source>
-        <translation type="unfinished"></translation>
+        <translation>Moderatore</translation>
     </message>
 </context>
 <context>
