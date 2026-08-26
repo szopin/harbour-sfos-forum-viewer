@@ -66,56 +66,56 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Muted</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Dempet</translation>
+        <translation>Dempet</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Demp</translation>
+        <translation>Demp</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Sporer</translation>
+        <translation>Sporer</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Spor</translation>
+        <translation>Spor</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Overvåker</translation>
+        <translation>Overvåker</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Overvåk</translation>
+        <translation>Overvåk</translation>
     </message>
     <message>
         <source>Watching First Post</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ser på det første innlegget</translation>
     </message>
     <message>
         <source>First post</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Første innlegg</translation>
     </message>
     <message>
         <source>Copy RSS feed link</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier lenke til RSS-feed</translation>
     </message>
 </context>
 <context>
@@ -206,7 +206,7 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>tags</source>
-        <translation>tagger</translation>
+        <translation>etiketter</translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -274,11 +274,11 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmerk</translation>
     </message>
     <message>
         <source>You cannot create threads this categury</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan ikke opprette tråder i denne kategorien</translation>
     </message>
 </context>
 <context>
