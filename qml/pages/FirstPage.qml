@@ -37,6 +37,7 @@ Page {
     property string tid
     property string category
     property string topic_template
+    property var new_topic_allowed
     property int pageno: 0
     property int timerv
     property string lastnotv
@@ -56,6 +57,27 @@ Page {
     property bool loadedMore: false
     property bool spam: false
     property bool remorseActive: false
+
+
+    function bookmark(tid){
+        var xhr = new XMLHttpRequest;
+
+        xhr.open("POST", "https://forum.sailfishos.org/bookmarks.json?reminder_at=&auto_delete_preference=3&bookmarkable_id=" + tid + "&bookmarkable_type=Topic");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                } else {
+
+                    console.log(xhr.responseText);
+                    clearview();
+                }
+            }
+        }
+        xhr.send();
+    }
 
     function logout() {
         remorseActive = true
@@ -167,7 +189,7 @@ Page {
                 }
 
                 var topics_length = topics.length;
-                for (var i=0;i<topics_length;i++) {
+                loop1: for (var i=0;i<topics_length;i++) {
                     spam = false;
                     var latest_post_by_me = false;
                     var topic = topics[i];
@@ -190,6 +212,11 @@ Page {
                     }
                     var spammerop = filterlist.value(topic.posters[0].user_id, -1) < 0 ? true : false;
                     if (topic.tags) tags = topic.tags.join(" ");
+                    var bookmarked = topic.bookmarked ? topic.bookmarked : false
+                    var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
+                    loop2: for(var h=0;h<list.count;h++){
+                        if(list.model.get(h).topicid == topic.id) continue loop1;
+                    }
                     list.model.append({ title: topic.title,
                                           topicid: topic.id,
                                           posts_count: topic.posts_count,
@@ -199,6 +226,8 @@ Page {
                                           spam: spam,
                                           spamop: topic.posters[0].user_id,
                                           user_id: spammerop,
+                                          bookmarked: bookmarked,
+                                          lastread: lastread,
                                           has_accepted_answer: topic.has_accepted_answer,
                                           highest_post_number: topic.highest_post_number,
                                           notification_level: topic.notification_level !== undefined ? topic.notification_level : 1,
@@ -221,7 +250,7 @@ Page {
         var data = JSON.parse(posters);
         for(var i=0;i<data.users.length;i++){
             if (data.users[i].id == user_id){
-                console.log(data.users[i].username);
+         //       console.log(data.users[i].username);
                 return data.users[i].username;
             }
         }
@@ -269,6 +298,7 @@ Page {
         textname = qsTr("Latest");
         viewmode = "latest";
         clearview();
+        application.fetchLatestPosts()
     }
 
     function showTop() {
@@ -278,11 +308,12 @@ Page {
         clearview();
     }
 
-    function showCategory(showTopic, showTextname, template, cat) {
+    function showCategory(showTopic, showTextname, template, cat, permission) {
         viewmode = "";
         tid = showTopic;
         textname = showTextname;
-        topic_template = template;
+        topic_template = !!template ? template : "";
+        new_topic_allowed = permission; //(typeof template !== "undefined") // if disallowed this will be null in JSON, -> undefined in qml
         category = cat;
         clearview();
 
@@ -457,7 +488,7 @@ Page {
             }
             MenuItem {
                 text: qsTr("New thread")
-                visible: !remorseActive && loggedin.value != "-1" && tid ? true : false
+                visible: !remorseActive && loggedin.value != "-1" && tid && new_topic_allowed != "NO-POSTS-ALLOWED" ? true : false
                 onClicked: pageStack.push("NewThread.qml", {category: category, raw: topic_template});
             }
             MenuItem {
@@ -485,8 +516,13 @@ Page {
                 onClicked: {
                     pulley.close()
                     clearview()
+                    application.fetchLatestPosts()
 
                 }
+            }
+            MenuLabel {
+                visible: new_topic_allowed == "NO-POSTS-ALLOWED" && loggedin.value != "-1" && tid
+                text: qsTr("You cannot create threads this categury")
             }
         }
 
@@ -524,7 +560,7 @@ Page {
             contentHeight: user_id ?  normrow.height + Theme.paddingLarge : spamrow.height
 
             property int lastPostNumber: postCountConfig.value(topicid, -1)
-            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number) && !highest_post_by_me
+            property bool hasNews: (lastPostNumber > 0 && lastPostNumber < highest_post_number && lastread < highest_post_number) || ( lastread < highest_post_number && lastread > 0 && lastPostNumber < highest_post_number ) && lastPostNumber!= 0
 
 
             Column {
@@ -571,9 +607,9 @@ Page {
                             minimumPixelSize: Theme.fontSizeTiny
                             fontSizeMode: "Fit"
                             font.pixelSize: Theme.fontSizeSmall
-                            color: item.lastPostNumber < 0 ?
+                            color: item.lastPostNumber < 0 && lastread == 0 ?
                                        Theme.primaryColor :
-                                       (item.hasNews && !spam ?
+                                       (item.hasNews && !spam && !highest_post_by_me ?
                                             Theme.highlightColor :
                                             Theme.secondaryColor)
                             opacity: Theme.opacityHigh
@@ -585,10 +621,10 @@ Page {
                                 anchors.centerIn: parent
                                 width: parent.width+Theme.paddingSmall; height: parent.height
                                 radius: 20
-                                opacity: item.lastPostNumber < highest_post_number && !spam ?
+                                opacity: item.lastPostNumber < highest_post_number && !spam && !highest_post_by_me ?
                                              Theme.opacityLow :
                                              Theme.opacityFaint
-                                color: item.hasNews && !spam ?
+                                color: item.hasNews && !spam && !highest_post_by_me ?
                                            Theme.secondaryHighlightColor :
                                            Theme.secondaryColor
                             }
@@ -613,13 +649,13 @@ Page {
                         width: parent.width - postsLabel.width - parent.spacing
 
                         Label {
-                            text: title
+                            text: bookmarked ? "🔖" + title : title
                             width: parent.width
                             wrapMode: Text.Wrap
                             font.pixelSize: Theme.fontSizeSmall
-                            color: highlighted || item.hasNews && !spam
+                            color: highlighted || item.hasNews && !spam && !highest_post_by_me
                                    ? Theme.highlightColor
-                                   : (item.lastPostNumber < highest_post_number && !spam
+                                   : ((item.lastPostNumber < highest_post_number && lastread <  highest_post_number) && !spam && !highest_post_by_me || lastPostNumber == 0
                                       ? Theme.primaryColor
                                       : Theme.secondaryColor)
                         }
@@ -634,7 +670,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: (parent.width - 2*parent.spacing - catRect.width)/2
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
@@ -647,7 +683,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: dateLabel.width
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignRight
@@ -677,7 +713,7 @@ Page {
                                 wrapMode: Text.Wrap
                                 elide: Text.ElideRight
                                 width: parent.width
-                                color: highlighted || item.hasNews && !spam ? Theme.secondaryHighlightColor
+                                color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
                                                                             : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
@@ -689,7 +725,7 @@ Page {
             }
 
             menu: ContextMenu { id: ctxmenu
-                hasContent: lastPostNumber > 0 || !loadedMore
+                hasContent: lastPostNumber > 0 || (!loadedMore && loggedin.value == "-1") || loggedin.value !== "-1"
                 property int wantLevel: notification_level
                 onClosed: if (wantLevel != notification_level) {
                               setNotificationLevel(index, topicid, wantLevel)
@@ -740,12 +776,20 @@ Page {
                     }
                 }
                 MenuItem { text: qsTr("Don't track (local)")
-                    visible: lastPostNumber > 0
+                    visible: lastPostNumber > 0 || (lastPostNumber < 0 && lastread > 0)
                     onDelayedClick: {
-                        postCountConfig.setValue(topicid, "-1");
-                        lastPostNumber = -1;
+                        postCountConfig.setValue(topicid, "0");
+                        lastPostNumber = 0;
+                        application.fetchLatestPosts()
                     }
                 }
+                MenuItem { text: qsTr("Bookmark")
+                    visible: !bookmarked && loggedin.value !== "-1"
+                    onDelayedClick: {
+                        bookmark(topicid);
+                    }
+                }
+
                 MenuItem { text: qsTr("Filter OP")
                     visible: !loadedMore && !remorseActive
                     onDelayedClick: {
@@ -760,7 +804,8 @@ Page {
                     if(user_id){
                         var name = list.model.get(index).name
                         postCountConfig.setValue(topicid, highest_post_number);
-                        var oldLast = lastPostNumber;
+                        var oldLast = (lastread >= lastPostNumber && lastPostNumber != 0 ? lastread : lastPostNumber) ;
+                      //  console.log(lastread, lastPostNumber, highest_post_number)
                         lastPostNumber = highest_post_number;
                         pageStack.push("ThreadView.qml", {
                                            "aTitle": title,

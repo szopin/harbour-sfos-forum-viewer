@@ -39,7 +39,7 @@ ApplicationWindow
     // ================================
     // ATTENTION: UPDATE BEFORE RELEASE
     // --------------------------------
-    readonly property string appVersion: "1.14.4"
+    readonly property string appVersion: "1.16.6"
     // ================================
 
     property bool fetching: false
@@ -92,8 +92,10 @@ ApplicationWindow
                             description_text: item['description_text'],
                             slug: item['slug'],
                             topic_template: item['topic_template'],
+                            permission: item['permission'] || "NO-POSTS-ALLOWED",
                             is_subcategory: (!!isSub),
-                            parent_category_id: isSub ? item['parent_category_id'] : -1
+                            parent_category_id: isSub ? item['parent_category_id'] : -1,
+                            notification_level: item["notification_level"]
                         };
                         lookup[item['id']] = append;
                         model.append(append);
@@ -143,10 +145,13 @@ ApplicationWindow
                     var topics = data.topic_list.topics;
                     var topics_length = Math.min(topics.length, 15);
 
+                    var my_loggedinname = (loggedin.value != "-1") ? xhr.getResponseHeader('x-discourse-username') : ""
+
                     for (var i=0;i<topics_length;i++) {
                         var topic = topics[i];
+var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
                         if (topic.bumped){
-                            application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, })
+                            application.latest.append({title: topic.title, posts_count: topic.posts_count, highest_post_number: topic.highest_post_number, "topicid": topic.id, last_poster_username: topic.last_poster_username, my_loggedinname: my_loggedinname, lastread: lastread })
                         }
                     }
                 }

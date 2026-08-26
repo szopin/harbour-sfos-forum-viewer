@@ -10,6 +10,7 @@ Page {
     property int pMs: 0
     property string loggedin
     property string fancy_title
+  //  property var bid
     property string loggedinname
     property string highest_post_number
     property string last_read_post_number
@@ -37,6 +38,59 @@ Page {
         }
         xhr.send();
         getnotifications();
+    }
+    function getbookmarks(){
+        var xhr4 = new XMLHttpRequest;
+
+        xhr4.open("GET", application.source + "u/" + loggedinname + "/user-menu-bookmarks" );
+        xhr4.setRequestHeader("User-Api-Key", loggedin);
+        xhr4.onreadystatechange = function() {
+            if (xhr4.readyState === XMLHttpRequest.DONE) {
+                if (xhr4.responseText === "") {
+                    list.model.clear();
+                    networkError = true;
+                    return;
+                } else {
+                    networkError = false;
+                }
+
+                var data = JSON.parse(xhr4.responseText);
+                list.model.clear();
+                var bookm_length = data.bookmarks.length;
+                for (var i=0;i<data.bookmarks.length;i++) {
+console.log(data.bookmarks[i].id, data.bookmarks[i].title)
+                    var bid = data.bookmarks[i].id
+                    console.log(bid)
+                    list.model.append({ fancy_title: data.bookmarks[i].fancy_title,
+                        bid: bid,
+                        topic_id: data.bookmarks[i].topic_id,
+                        username:data.bookmarks[i].user.username
+                    });
+                }
+                busyind.running = false
+            }
+        }
+
+        xhr4.send();
+    }
+    function delbookmark(bid){
+        var xhr = new XMLHttpRequest;
+        console.log(bid)
+        xhr.open("DELETE", "https://forum.sailfishos.org/bookmarks/" + bid + ".json");
+        xhr.setRequestHeader("User-Api-Key", loggedin);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                } else {
+
+                    console.log(xhr.responseText);
+                    getbookmarks();
+                }
+            }
+        }
+        xhr.send();
     }
     function getPMs() {
         var xhr3 = new XMLHttpRequest;
@@ -175,7 +229,7 @@ getPMs();
         anchors.fill: parent
         header: PageHeader {
             id: header
-            title: pMs == 0 ? qsTr("Notifications") : pMs == 1 ? qsTr("PMs") : pMs == 2 ? qsTr("PMs - sent") :  qsTr("Muted topics")
+            title: pMs == 0 ? qsTr("Notifications") : pMs == 1 ? qsTr("PMs") : pMs == 2 ? qsTr("PMs - sent") :  pMs == 3 ?  qsTr("Muted topics") : qsTr("Bookmarks")
             description: qsTr("SailfishOS Forum")
         }
         PullDownMenu {
@@ -208,6 +262,16 @@ getPMs();
                     pMs = 2
                     combined2 = application.source +"topics/private-messages-sent/" + loggedinname + ".json"
                     getPMs();
+                }
+            }
+            MenuItem {
+                visible: pMs != 4
+                text: qsTr("Bookmarks")
+
+                onClicked: {
+                    pMs = 4
+                    list.model.clear();
+                    getbookmarks();
                 }
             }
 
@@ -255,13 +319,19 @@ getPMs();
 
             menu: ContextMenu {
        //         height: item.height
-                hasContent:  pMs ==3
+                hasContent:  pMs >=3
                     //        height: delegateCol.height + Theme.paddingLarge
                 MenuItem {
-          //          visible: pMs ==3
+                    visible: pMs ==3
                     text: qsTr("Unmute")
 
                  onDelayedClick:   resetNotificationLevel(topic_id);
+                }
+                MenuItem {
+                    visible: pMs ==4
+                    text: qsTr("Delete bookmark")
+
+                 onDelayedClick:   delbookmark(list.model.get(index).bid);
                 }
             }
             Column {
@@ -282,7 +352,7 @@ getPMs();
                         width: parent.width - parent.spacing
 
                         Label {
-                            text: !pMs ? username + " - " + Object.keys(notif)[type - 1] + " - " + fancy_title : username + " - " + fancy_title
+                            text:  !pMs ? username + " - " + Object.keys(notif)[type - 1] + " - " + fancy_title : username + " - " + fancy_title
                             width: parent.width
                             textFormat: Text.RichText
                             wrapMode: Text.Wrap

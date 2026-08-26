@@ -63,6 +63,60 @@ Speciellt tack till medverkande:
         <source>Is the network enabled?</source>
         <translation>Är nätverket aktiverat?</translation>
     </message>
+    <message>
+        <source>Muted</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Tystad</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Tysta</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Spårar</translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Spåra</translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Bevakar</translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Bevaka</translation>
+    </message>
+    <message>
+        <source>Watching First Post</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First post</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy RSS feed link</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -218,6 +272,14 @@ Speciellt tack till medverkande:
         <source>Filtering user</source>
         <translation>Filtrerar användare</translation>
     </message>
+    <message>
+        <source>Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You cannot create threads this categury</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -240,6 +302,51 @@ Speciellt tack till medverkande:
     <message>
         <source>Upload image (through ImgBB)</source>
         <translation>Ladda upp bild (via ImgBB)</translation>
+    </message>
+    <message>
+        <source>Cancel and discard draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft saved. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 will forget the current post text and return to the topic.
+%2 will bring you back to your drafted text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all other saved drafts as well as this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You should clean up unused drafts from time to time using this switch.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -309,6 +416,14 @@ Speciellt tack till medverkande:
     <message>
         <source>Unmute</source>
         <translation>Sluta tysta</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -406,6 +521,41 @@ Speciellt tack till medverkande:
     <message>
         <source>Alternative formatting</source>
         <translation>Alternativ formatering</translation>
+    </message>
+</context>
+<context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished">taggar</translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished">Tillbaka till tråden</translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished">✍️: %1</translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished">Det här inlägget innehåller omröstningar.</translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished">Detta inlägget innehåller en omröstning.</translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished">Se botten på tråden för att delta.</translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished">Tryck för att visa och rösta:</translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished">Omröstning</translation>
     </message>
 </context>
 <context>
@@ -524,19 +674,19 @@ Speciellt tack till medverkande:
         <translation>Filtrerar användare</translation>
     </message>
     <message>
-        <source>Back to full thread</source>
-        <translation>Tillbaka till tråden</translation>
-    </message>
-    <message>
         <source>Show replied to post(s)</source>
         <translation>Visa besvarade poster</translation>
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se botten på tråden för att delta.</translation>
     </message>
     <message>
         <source>Moderator</source>
+        <translation>Moderator</translation>
+    </message>
+    <message>
+        <source>Undelete</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

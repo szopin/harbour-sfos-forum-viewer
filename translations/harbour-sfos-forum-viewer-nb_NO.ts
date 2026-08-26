@@ -63,6 +63,60 @@ En spesiell takk til bidragsytere:
         <source>Is the network enabled?</source>
         <translation>Er nettverk aktivert?</translation>
     </message>
+    <message>
+        <source>Muted</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Dempet</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Demp</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Normal</translation>
+    </message>
+    <message>
+        <source>Tracking</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Sporer</translation>
+    </message>
+    <message>
+        <source>Track</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Spor</translation>
+    </message>
+    <message>
+        <source>Watching</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished">Overvåker</translation>
+    </message>
+    <message>
+        <source>Watch</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished">Overvåk</translation>
+    </message>
+    <message>
+        <source>Watching First Post</source>
+        <comment>Category watch level (state)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First post</source>
+        <comment>Category watch action (verb)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy RSS feed link</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -218,6 +272,14 @@ En spesiell takk til bidragsytere:
         <source>Filtering user</source>
         <translation>Filtrerer bruker</translation>
     </message>
+    <message>
+        <source>Bookmark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You cannot create threads this categury</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewPost</name>
@@ -240,6 +302,51 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Upload image (through ImgBB)</source>
         <translation>Last opp bilde (via ImgBB)</translation>
+    </message>
+    <message>
+        <source>Cancel and discard draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter reply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft saved. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replying to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 will forget the current post text and return to the topic.
+%2 will bring you back to your drafted text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all drafts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete all other saved drafts as well as this one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You should clean up unused drafts from time to time using this switch.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -309,6 +416,14 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Unmute</source>
         <translation>Fjern demping</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete bookmark</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -406,6 +521,41 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Alternative formatting</source>
         <translation>Alternativ formatering</translation>
+    </message>
+</context>
+<context>
+    <name>ReplyView</name>
+    <message>
+        <source>tags</source>
+        <translation type="unfinished">tagger</translation>
+    </message>
+    <message>
+        <source>Back to full thread</source>
+        <translation type="unfinished">Tilbake til hele tråden</translation>
+    </message>
+    <message>
+        <source>✍️: %1</source>
+        <translation type="unfinished">✍️: %1</translation>
+    </message>
+    <message>
+        <source>This post contains polls.</source>
+        <translation type="unfinished">Dette innlegget inneholder avstemninger.</translation>
+    </message>
+    <message>
+        <source>This post contains a poll.</source>
+        <translation type="unfinished">Dette innlegget inneholder en avstemning.</translation>
+    </message>
+    <message>
+        <source>See the bottom of the post to participate.</source>
+        <translation type="unfinished">Se nederst i innlegget for å delta.</translation>
+    </message>
+    <message>
+        <source>Click to view and vote:</source>
+        <translation type="unfinished">Klikk for å se og stemme:</translation>
+    </message>
+    <message>
+        <source>Poll</source>
+        <translation type="unfinished">Avstemning</translation>
     </message>
 </context>
 <context>
@@ -524,10 +674,6 @@ En spesiell takk til bidragsytere:
         <translation>Filtrerer bruker</translation>
     </message>
     <message>
-        <source>Back to full thread</source>
-        <translation>Tilbake til hele tråden</translation>
-    </message>
-    <message>
         <source>Show replied to post(s)</source>
         <translation>Vis besvarte innlegg</translation>
     </message>
@@ -538,6 +684,10 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Moderator</source>
         <translation>Moderator</translation>
+    </message>
+    <message>
+        <source>Undelete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

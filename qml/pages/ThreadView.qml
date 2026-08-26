@@ -61,9 +61,27 @@ Page {
     property int xi
     property int yi
     property int zi
-    property variant currentModel: commodel
     property int replyindex
     property bool spam: false
+
+    function cutYTiframes(cooked){
+        var ifram = /<iframe src="([^"]+)"[^<]+<\/iframe>/g //.exec(cooked)
+        cooked = cooked.replace(/\?feature=oembed\&amp\;wmode=opaque/g, "")
+        cooked = cooked.replace(/\/embed\//g, "/watch?v=")
+        cooked = cooked.replace(ifram, "<a href=\"" + "$1" + "\">" +"$1" + "</a>")
+        if (cooked.match(ifram)) cutYTiframes(cooked)
+
+        return cooked
+    }
+    // add some styling to "Hide Details" type post elements.
+    // These look like this: "<details>\n<summary>some text</summary>\n<p>hidden text</p>\n</details>
+    // as we can't "hide" them within a text label, style them smaller and show a description:
+    function styleDetailsElements(cooked) {
+        cooked = cooked.replace(/<summary>/g, "<summary><b>")
+        cooked = cooked.replace(/<\/summary>/g, "</b></summary><i> (hidden section)</i><font size='smaller'><blockquote>")
+        cooked = cooked.replace(/<\/details>/g, "</blockquote></font></details>")
+        return cooked
+    }
 
     function remspam(user_id, username){
         remorsePopup.execute(
@@ -89,20 +107,25 @@ Page {
         xhr.send();
     }
 
-    function findOP(filter){
-
-        for (var j=0; j < commodel.count; j++){
+    function findOP(filter, index){
+        for (var j=0; j < index; j++){
+            if (commodel.get(j).post_number > filter){
+                break
+            }
             if (commodel.get(j).post_number == filter){
                 //  pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: commodel.get(j).postid, aTitle: "Replied to post", cooked: commodel.get(j).cooked, username: commodel.get(j).username});
                 replyModel.insert(0, commodel.get(j))
                 break
             }
         }
-        if(commodel.get(j).reply_to > 0){
-            findOP(commodel.get(j).reply_to);
+
+            if( commodel.get(j).reply_to != 0 && commodel.get(j).post_number == filter){
+            findOP(commodel.get(j).reply_to, j);
+            }
+
+         if( (commodel.get(j).reply_to == 0) || (commodel.get(j).post_number > filter && replyModel.count > 1)){
+        pageStack.push("ReplyView.qml", { "commodel":  replyModel, "aTitle": aTitle, "tags": tags, "tclosed": tclosed});
         }
-        currentModel = replyModel
-        list.scrollToBottom()
     }
     function uncensor(postid, index){
         var xhr3 = new XMLHttpRequest;
@@ -234,7 +257,7 @@ Page {
         list.model.clear();
         commentpage.getcomments();
     }
-    function del(postid, index){
+    function del(postid){
         var xhr = new XMLHttpRequest;
         xhr.open("DELETE", "https://forum.sailfishos.org/posts/" + postid);
         xhr.setRequestHeader("User-Api-Key", loggedin.value);
@@ -244,8 +267,25 @@ Page {
                     pageStack.completeAnimation();
                     pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
                 } else {
-                    list.model.setProperty(index, "cooked", "(post withdrawn by author, will be automatically deleted in 24 hours unless flagged)");
-                    list.model.setProperty(index, "can_delete", false);
+                    list.model.clear();
+                    commentpage.getcomments();
+                }
+            }
+        }
+        xhr.send();
+    }
+    function undel(postid){
+        var xhr = new XMLHttpRequest;
+        xhr.open("PUT", "https://forum.sailfishos.org/posts/" + postid + "/recover");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                } else {
+                    list.model.clear();
+                    commentpage.getcomments();
                 }
             }
         }
@@ -285,6 +325,7 @@ Page {
             busy = !messageObject.last
 
             if (messageObject.last) busy = false// list.positionViewAtIndex(post_number - 1, ListView.Beginning);
+            if(loggedin.value !== "-1") timestamp(list.model.get(list.model.count - 1).post_number)
         }
     }
 
@@ -298,9 +339,9 @@ Page {
             var cooked_hidden = false
             if (post.staff){
                 if (post.moderator && !post.admin){
-                    stafftag = " - " + qsTr("Moderator")
+                    stafftag = qsTr("Moderator")
                 } else {
-                    stafftag = " - Jolla"
+                    stafftag = "Jolla"
                 }
             } else {
                 stafftag = ""
@@ -341,9 +382,18 @@ Page {
 
             }
             cooked_hidden = post.cooked_hidden ? post.cooked_hidden : false
+            var precook = post.cooked
+            if(post.cooked.indexOf('<iframe src="https://www.youtube' > 0)) {
+                precook = cutYTiframes(precook)
+            }
+            if(post.cooked.indexOf('<details' > 0)) {
+                precook = styleDetailsElements(precook)
+            }
+
             list.model.append({
-                                  cooked: post.cooked,
+                                  cooked: precook,
                                   username: post.username,
+                                  usertitle: !!post.user_title ? post.user_title : "",
                                   avatar: post.avatar_template,//.replace("{size}", 2* Theme.paddingLarge),
                                   updated_at: post.updated_at,
                                   likes: likes,
@@ -352,6 +402,7 @@ Page {
                                   yours: yours,
                                   can_edit: post.can_edit,
                                   can_delete: post.can_delete,
+                                  can_recover: post.can_recover,
                                   created_at: post.created_at,
                                   version: post.version,
                                   postid: post.id,
@@ -359,6 +410,7 @@ Page {
                                   spam: spam,
                                   post_number: post.post_number,
                                   reply_to: post.reply_to_post_number,
+                                  reply_to_user: post.reply_to_user ? post.reply_to_user["username"] : "",
                                   last_postid: last_post,
                                   cooked_hidden: cooked_hidden,
                                   accepted_answer: post.accepted_answer,
@@ -369,6 +421,22 @@ Page {
             last_post = post.post_number;
         }
     }
+    function timestamp(post_number){
+        var xhr = new XMLHttpRequest;
+    const payload = "timings%5B" + post_number + "%5D=1000&topic_time=5000&topic_id=" + topicid
+        xhr.open("POST", "https://forum.sailfishos.org/topics/timings");
+         xhr.setRequestHeader("User-Api-Key", loggedin.value);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+               if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                }
+        }
+    }
+        xhr.send(payload);
+}
 
     function getcomments(){
         var xhr = new XMLHttpRequest;
@@ -405,6 +473,7 @@ Page {
                     }
                 } else {
                     busy = false
+                    if(loggedin.value !== "-1") timestamp(list.model.get(list.model.count - 1).post_number)
                 }
 
                 if( zi == xi && posts_count >= 20) {
@@ -439,7 +508,8 @@ Page {
         id: remorsePopup
     }
     ListModel { id: commodel}
-    ListModel { id: replyModel}
+ListModel { id: replyModel}
+
     SilicaListView {
         id: list
         header: PageHeader {
@@ -481,28 +551,10 @@ Page {
                 visible: loggedin.value != "-1" && !tclosed
                 onClicked: newpost();
             }
-            MenuItem {
-                text: qsTr("Back to full thread")
-                visible: currentModel === replyModel
-                onClicked:{
-                    pdmenu.close()
-                    currentModel = commodel
-                    list.positionViewAtIndex(replyindex, ListView.Beginning)
-                }
-            }
+
         }
         PushUpMenu{
             id: pumenu
-
-            MenuItem {
-                text: qsTr("Back to full thread")
-                visible: currentModel === replyModel
-                onClicked: {
-                    pumenu.close()
-                    currentModel = commodel
-                    list.positionViewAtIndex(replyindex, ListView.Beginning)
-                }
-            }
             MenuItem {
                 text: qsTr("Post reply")
                 visible: loggedin.value != "-1" && !tclosed
@@ -532,7 +584,7 @@ Page {
             size: BusyIndicatorSize.Large
         }
 
-        model: currentModel // ListModel { id: commodel}
+        model: commodel
         delegate: ListItem {
             id: delegateItem
             property int postindex: index
@@ -585,26 +637,44 @@ Page {
                     }
                     Column {
                         width: parent.width - subMetadata.width - ava.width
-                        Label {
-                            id: mainMetadata
-                            text: loggedin.value != "-1" ? "<style>" +
-                                                           "a { color: %1 }".arg(Theme.highlightColor) +
-                                                           "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + stafftag + "</a>" : username + stafftag
-                            onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
-                            textFormat: Text.RichText
-                            truncationMode: TruncationMode.Fade
-                            elide: Text.ElideRight
-                            width: parent.width
-                            font.pixelSize: Theme.fontSizeMedium
+                        Row {
+                            spacing: Theme.paddingMedium
+                            Label {
+                                id: mainMetadata
+                                text: loggedin.value != "-1" ? "<style>" +
+                                                               "a { color: %1 }".arg(Theme.highlightColor) +
+                                                               "</style>" + "<a href=\"https://forum.sailfishos.org/u/\"" + username + "/card.json\">" + username + "</a>" : username
+                                onLinkActivated: pageStack.push("UserCard.qml", {username: username, loggedin: loggedin.value});
+                                textFormat: Text.RichText
+                                truncationMode: TruncationMode.Fade
+                                elide: Text.ElideRight
+                                //width: parent.width
+                                font.pixelSize: Theme.fontSizeMedium
+                                anchors.bottom: parent.bottom
+                            }
+                            Label {
+                                visible: stafftag != ""
+                                text: stafftag
+                                color: Theme.secondaryHighlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                font.bold: true
+                                anchors.bottom: parent.bottom
+                            }
+                            Label {
+                                visible: usertitle != ""
+                                text: usertitle
+                                color: Theme.secondaryHighlightColor
+                                font.pixelSize: Theme.fontSizeSmall
+                                font.italic: true
+                                anchors.bottom: parent.bottom
+                            }
                         }
-
 
                         Label {
                             visible: likes > 0
                             text: !acted ? likes + "♥" : likes + "💘"
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
-
                         }
                     }
 
@@ -617,14 +687,16 @@ Page {
                             anchors.right: parent.right
                         }
                         Label {
-                            text: (version > 1 && updated_at !== created_at) ?
-                                      qsTr("✍️: %1").arg(formatJsonDate(updated_at)) : ""
+                            text: reply_to >0 && reply_to !== last_postid && reply_to_user != ""
+                                  ? ("↪ " + reply_to_user)
+                                  : reply_to >0 && reply_to !== last_postid ? "💬" :  ""
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
                         }
                         Label {
-                            text: reply_to >0 && reply_to !== last_postid ?  "💬"  : ""
+                            text: (version > 1 && updated_at !== created_at) ?
+                                      qsTr("✍️: %1").arg(formatJsonDate(updated_at)) : ""
                             color: Theme.secondaryColor
                             font.pixelSize: Theme.fontSizeSmall
                             anchors.right: parent.right
@@ -720,6 +792,7 @@ Page {
                 }
             }
             menu: ContextMenu {
+            id: cmenu
 
                 MenuItem{
                     text: qsTr("Copy to clipboard");
@@ -741,23 +814,20 @@ Page {
                     onClicked: pageStack.push(Qt.resolvedUrl("PostView.qml"), {postid: postid, aTitle: aTitle, curRev: version, cooked: cooked, loggedin: loggedin.value});
                 }
                 MenuItem {
-                    visible: reply_to > 0 && reply_to !== last_postid && currentModel === commodel
+                    visible: reply_to > 0 && reply_to !== last_postid
                     text: qsTr("Show replied to post(s)")
                     onClicked: {
+                    cmenu.close()
                         replyindex = index
                         replyModel.clear()
                         replyModel.insert(0, commodel.get(index))
-                        findOP(reply_to);
+                        findOP(reply_to, index);
                     }
 
                 }
-                /*      MenuItem {
-                    visible: cooked_hidden
-                    text: qsTr("Uncensor post")
-                    onClicked: uncensor(postid, index);
-                }*/
+
                 MenuItem {
-                    visible: loggedin.value != "-1" && !acted && !yours && currentModel !== replyModel
+                    visible: loggedin.value != "-1" && !acted && !yours
                     text: qsTr("Like")
                     onClicked: like(postid, index);
                 }
@@ -767,7 +837,7 @@ Page {
                     onClicked: postreply(topicid, post_number, postid, username);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1" && acted && !yours && can_undo && currentModel !== replyModel
+                    visible: loggedin.value != "-1" && acted && !yours && can_undo
                     text: qsTr("Unlike")
                     onClicked: unlike(postid, index);
                 }
@@ -777,9 +847,14 @@ Page {
                     onClicked: newedit(postid);
                 }
                 MenuItem {
-                    visible: loggedin.value != "-1"  && yours && can_delete && currentModel !== replyModel
+                    visible: loggedin.value != "-1"  && yours && can_delete
                     text: qsTr("Delete")
-                    onClicked: del(postid, index);
+                    onClicked: delegateItem.remorseDelete(function() { del(postid) } )
+                }
+                MenuItem {
+                        visible: loggedin.value != "-1"  && yours && can_recover
+                        text: qsTr("Undelete")
+                        onClicked: undel(postid);
                 }
                 MenuItem { text: qsTr("Filter user")
 

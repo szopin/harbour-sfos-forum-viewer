@@ -25,7 +25,7 @@
  * SOFTWARE.
  */
 
-import QtQuick 2.2
+import QtQuick 2.6
 import Sailfish.Silica 1.0
 
 Page {
@@ -35,6 +35,65 @@ Page {
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('viewmode') });
     }
+
+    /* FIXME: all the notification stuff is a 1:1 copy of the same for topics/threads in FirstPage.qml.
+     *        This should be consolidated, as the only differemce is the PUT
+     *        url, and the source of the current setting.
+     */
+    readonly property var watchlevel: [
+        { "name": qsTr("Muted",    "Category watch level (state)"),
+            "action": qsTr("Mute",   "Category watch action (verb)"),
+            "smallicon": "image://theme/icon-m-speaker-mute",
+            "icon": "image://theme/icon-m-speaker-mute"
+        },
+        { "name": qsTr("Normal",   "Category watch level (state)"),
+            "action": qsTr("Normal", "Category watch action (verb)"),
+            "smallicon": "",
+            "icon": "image://theme/icon-m-favorite"
+        },
+        { "name": qsTr("Tracking", "Category watch level (state)"),
+            "action": qsTr("Track",  "Category watch action (verb)"),
+            "smallicon": "image://theme/icon-m-favorite",
+            "icon": "image://theme/icon-m-favorite-selected"
+        },
+        { "name": qsTr("Watching", "Category watch level (state)"),
+            "action": qsTr("Watch",  "Category watch action (verb)"),
+            "smallicon": "image://theme/icon-m-alarm",
+            "icon": "image://theme/icon-m-alarm"
+        },
+        { "name": qsTr("Watching First Post", "Category watch level (state)"),
+            "action": qsTr("First post",  "Category watch action (verb)"),
+            "smallicon": "image://theme/icon-m-notifications",
+            "icon": "image://theme/icon-m-notifications"
+        }
+    ]
+    // level being one of 0, 1, 2, 3; representing muted, normal, tracking, watching
+    // !! payload wants a string so "0", not 0
+    function setNotificationLevel(index, catid, level){
+        if (loggedin.value == "-1") return
+        console.debug("Setting watch level to", level, ",", watchlevel[Number(level)].name)
+        var xhr = new XMLHttpRequest;
+        const json = {
+            "notification_level": level
+        };
+        xhr.open("POST", application.source + "/category/" + catid + "/notifications.json");
+        xhr.setRequestHeader("User-Api-Key", loggedin.value);
+        xhr.setRequestHeader("Content-Type", 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.statusText !== "OK"){
+                    pageStack.completeAnimation();
+                    pageStack.push("Error.qml", {errortitle: xhr.status + " " + xhr.statusText, errortext: xhr.responseText});
+                } else {
+                    console.log(xhr.responseText);
+                    // update the topic properties
+                    list.model.setProperty(index, "notification_level", level)
+                }
+            }
+        }
+        xhr.send(JSON.stringify(json));
+    }
+
 
    SilicaListView {
        id:list
@@ -99,8 +158,62 @@ Page {
            width: ListView.view.width
            contentHeight: contentCol.height
 
+           menu: ContextMenu { id: ctxmenu
+                property int wantLevel: notification_level
+                onClosed: if (wantLevel != notification_level) {
+                              setNotificationLevel(index, topic, wantLevel)
+                          }
+                MenuLabel { height: buttons.height
+                    visible: loggedin.value !== "-1"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    Grid{ id: buttons
+                        rows: 1
+                        columns: watchlevel.length
+                        spacing: Theme.paddingLarge
+                        anchors.centerIn: parent
+                        Repeater { id: rep
+                            model: watchlevel
+                            delegate: BackgroundItem { id: bitem
+                                height: iconcol.height + Theme.paddingSmall
+                                width: iconcol.height
+                                Column { id: iconcol
+                                    width: parent.width
+                                    spacing: Theme.paddingSmall
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    Icon { id: icon
+                                        width: Theme.iconSizeSmallPlus
+                                        height: width
+                                        anchors.horizontalCenter: parent.horizontalCenter
+                                        source: modelData.icon + "?" + (highlighted ? Theme.highlightColor : Theme.primaryColor)
+                                        highlighted: bitem.down || (index == ctxmenu.wantLevel)
+                                    }
+                                    Label {
+                                        anchors.horizontalCenter: icon.horizontalCenter
+                                        text: modelData.action
+                                        font.pixelSize: Theme.fontSizeExtraSmall
+                                        color: icon.highlighted ? Theme.highlightColor : Theme.primaryColor
+                                        highlighted: icon.highlighted
+                                    }
+                                }
+                                // only change value when menu is closed
+                                onClicked: ctxmenu.wantLevel = index
+                            }
+                        }
+                    }
+                }
+                MenuItem { text: qsTr("Copy RSS feed link")
+                    onClicked: Clipboard.text = "https://forum.sailfishos.org/c/" + topic + ".rss"
+                }
+                /*
+                MenuItem { text: qsTr("Open RSS feed")
+                    onClicked: Qt.openUrlExternally("https://forum.sailfishos.org/c/" + topic + ".rss")
+                }
+                */
+           }
            onClicked: {
-               findFirstPage().showCategory( ((is_subcategory) ? categories.lookup[parent_category_id].slug + "/" : "") + slug + "/" + topic, name, topic_template, topic);
+                   findFirstPage().showCategory( ((is_subcategory)
+                       ? categories.lookup[parent_category_id].slug + "/" : "")
+                       + slug + "/" + topic, name, topic_template, topic, permission);
                pageStack.navigateBack();
            }
            Rectangle {
@@ -118,15 +231,28 @@ Page {
            Column {
                id: contentCol
                width: parent.width - 2*Theme.horizontalPageMargin - rect.width - Theme.paddingMedium
+               bottomPadding: Theme.paddingSmall
                anchors {
                    right: parent.right
                    rightMargin: Theme.horizontalPageMargin
                }
-
-               Label {
+               Row {
                    width: parent.width
-                   text: (is_subcategory ? categories.lookup[parent_category_id].name + ": " : "" ) + name
-                   wrapMode: Text.Wrap
+                   spacing: Theme.paddingSmall
+                   Label {
+                       text: (is_subcategory ? categories.lookup[parent_category_id].name + ": " : "" ) + name
+                       wrapMode: Text.Wrap
+                       anchors.bottom: parent.bottom
+                   }
+                   Icon {
+                       visible: source != ""
+                       anchors.bottom: parent.bottom
+                       source: ((notification_level >= 0 && loggedin.value !== "-1")
+                                  ? watchlevel[notification_level].smallicon
+                                  : "")
+                       width: Theme.iconSizeSmall
+                       height: width
+                   }
                }
 
                Label {

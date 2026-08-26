@@ -3,8 +3,10 @@ import Sailfish.Silica 1.0
 import QtQuick.LocalStorage 2.0
 import Sailfish.WebView 1.0
 import Sailfish.WebEngine 1.0
+import Amber.Web.Authorization 1.0
 
 WebViewPage {
+
     id: loginDialog
 
     allowedOrientations: Orientation.All
@@ -12,12 +14,36 @@ WebViewPage {
     property var payload
     property string pubkey
     property string encoded: encodeURIComponent(pubkey)
-    property string redirect_uri: "https://forum.sailfishos.org/login"
     property string rand
 
-    property string auth_url: "https://forum.sailfishos.org/user-api-key/new?nonce=12345678&scopes=read,write&client_id=" + rand + "&application_name=SFOS-Forum-Viewer&public_key=" + encoded  //"https://forum.sailfishos.org/user-api-key/new?nonce=" + rand + rand2 + "&scopes=read,write&client_id=" + rand2 + rand + rand + rand2 + "&application_name=SFOS-Forum-Viewer" + rand + "&public_key=" + encoded
+    property string auth_url: "https://forum.sailfishos.org/user-api-key/new?nonce=12345678&scopes=read,write&client_id=" + rand + "&application_name=SFOS-Forum-Viewer&public_key=" + encoded + "&auth_redirect="
 
     property bool showWebview: true
+
+    OAuth1 {
+	id: parseHelper
+    }
+
+    RedirectListener {
+        id: forumListener
+
+        onUriChanged: {
+            webview.url = auth_url + uri
+        }
+
+        onReceivedRedirect: {
+            var redirectParameters = parseHelper.parseRedirectUri(redirectUri)
+            var payload = redirectParameters["payload"]
+            var code = payload.replace(/%0A/gm, '\n')
+            code = decodeURIComponent(code)
+            findFirstPage().dec(code)
+            pageStack.pop()
+        }
+    }
+
+    Component.onCompleted: {
+        forumListener.startListening()
+    }
 
     function findFirstPage() {
         return pageStack.find(function(page) { return page.hasOwnProperty('plaintext'); });
@@ -31,13 +57,12 @@ WebViewPage {
         }
     }
 
-        WebView {
+            WebView {
             id: webview
-            anchors.fill: parent
-            url: auth_url
+                    anchors.fill: parent
 
             property var alreadyloaded: false
-            
+
             onLoadingChanged: {
                 console.log("onLoadingChanged")
                 if (alreadyloaded) {
@@ -54,5 +79,6 @@ WebViewPage {
             }
         }
 }
+
 
 
