@@ -66,56 +66,56 @@ Speciellt tack till medverkande:
     <message>
         <source>Muted</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Tystad</translation>
+        <translation>Tystad</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Tysta</translation>
+        <translation>Tysta</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Spårar</translation>
+        <translation>Spårar</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Spåra</translation>
+        <translation>Spåra</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Bevakar</translation>
+        <translation>Bevakar</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Bevaka</translation>
+        <translation>Bevaka</translation>
     </message>
     <message>
         <source>Watching First Post</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bevakar första inlägg</translation>
     </message>
     <message>
         <source>First post</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Första inlägg</translation>
     </message>
     <message>
         <source>Copy RSS feed link</source>
-        <translation type="unfinished"></translation>
+        <translation>Koåiera RSS-länk</translation>
     </message>
 </context>
 <context>
@@ -274,11 +274,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärk</translation>
     </message>
     <message>
         <source>You cannot create threads this categury</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan inte skapa trådar i denna kategori</translation>
     </message>
 </context>
 <context>
@@ -305,48 +305,48 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Cancel and discard draft</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt och kasta utkast</translation>
     </message>
     <message>
         <source>Show parent</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa överordnad</translation>
     </message>
     <message>
         <source>Enter reply</source>
-        <translation type="unfinished"></translation>
+        <translation>Skicka svar</translation>
     </message>
     <message>
         <source>Replying to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Svarar till %1</translation>
     </message>
     <message>
         <source>Draft saved. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Utkast sparat. (%1)</translation>
     </message>
     <message>
         <source>Replying to</source>
-        <translation type="unfinished"></translation>
+        <translation>Svarar till</translation>
     </message>
     <message>
         <source>Discard draft?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du kasta utkastet?</translation>
     </message>
     <message>
         <source>%1 will forget the current post text and return to the topic.
 %2 will bring you back to your drafted text.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kommer att glömma den nuvarande inläggstexten och återgå till ämnet. %2 tar dig tillbaka till din utkaststext.</translation>
     </message>
     <message>
         <source>Delete all drafts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasta alla utkast</translation>
     </message>
     <message>
         <source>Delete all other saved drafts as well as this one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort alla andra sparade utkast samt det här.</translation>
     </message>
     <message>
         <source>You should clean up unused drafts from time to time using this switch.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du borde rensa bort oanvända utkast då och då med den här knappen.</translation>
     </message>
 </context>
 <context>
@@ -419,11 +419,11 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmärken</translation>
     </message>
     <message>
         <source>Delete bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta bort bokmärke</translation>
     </message>
 </context>
 <context>
@@ -527,35 +527,35 @@ Speciellt tack till medverkande:
     <name>ReplyView</name>
     <message>
         <source>tags</source>
-        <translation type="unfinished">taggar</translation>
+        <translation>taggar</translation>
     </message>
     <message>
         <source>Back to full thread</source>
-        <translation type="unfinished">Tillbaka till tråden</translation>
+        <translation>Tillbaka till tråden</translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished">✍️: %1</translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation type="unfinished">Det här inlägget innehåller omröstningar.</translation>
+        <translation>Det här inlägget innehåller omröstningar.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
-        <translation type="unfinished">Detta inlägget innehåller en omröstning.</translation>
+        <translation>Detta inlägget innehåller en omröstning.</translation>
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished">Se botten på tråden för att delta.</translation>
+        <translation>Se botten på tråden för att delta.</translation>
     </message>
     <message>
         <source>Click to view and vote:</source>
-        <translation type="unfinished">Tryck för att visa och rösta:</translation>
+        <translation>Tryck för att visa och rösta:</translation>
     </message>
     <message>
         <source>Poll</source>
-        <translation type="unfinished">Omröstning</translation>
+        <translation>Omröstning</translation>
     </message>
 </context>
 <context>
@@ -687,7 +687,7 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>Undelete</source>
-        <translation type="unfinished"></translation>
+        <translation>Ångra borttagning</translation>
     </message>
 </context>
 <context>
