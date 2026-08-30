@@ -66,56 +66,56 @@ En spesiell takk til bidragsytere:
     <message>
         <source>Muted</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Dempet</translation>
+        <translation>Dempet</translation>
     </message>
     <message>
         <source>Mute</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Demp</translation>
+        <translation>Demp</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Normal</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <source>Tracking</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Sporer</translation>
+        <translation>Sporer</translation>
     </message>
     <message>
         <source>Track</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Spor</translation>
+        <translation>Spor</translation>
     </message>
     <message>
         <source>Watching</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished">Overvåker</translation>
+        <translation>Overvåker</translation>
     </message>
     <message>
         <source>Watch</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished">Overvåk</translation>
+        <translation>Overvåk</translation>
     </message>
     <message>
         <source>Watching First Post</source>
         <comment>Category watch level (state)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Ser på det første innlegget</translation>
     </message>
     <message>
         <source>First post</source>
         <comment>Category watch action (verb)</comment>
-        <translation type="unfinished"></translation>
+        <translation>Første innlegg</translation>
     </message>
     <message>
         <source>Copy RSS feed link</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier lenke til RSS-feed</translation>
     </message>
 </context>
 <context>
@@ -206,7 +206,7 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>tags</source>
-        <translation>tagger</translation>
+        <translation>etiketter</translation>
     </message>
     <message>
         <source>Mark as read</source>
@@ -274,11 +274,11 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>Bookmark</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmerk</translation>
     </message>
     <message>
         <source>You cannot create threads this categury</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan ikke opprette tråder i denne kategorien</translation>
     </message>
 </context>
 <context>
@@ -527,35 +527,35 @@ En spesiell takk til bidragsytere:
     <name>ReplyView</name>
     <message>
         <source>tags</source>
-        <translation type="unfinished">tagger</translation>
+        <translation>etiketter</translation>
     </message>
     <message>
         <source>Back to full thread</source>
-        <translation type="unfinished">Tilbake til hele tråden</translation>
+        <translation>Tilbake til hele tråden</translation>
     </message>
     <message>
         <source>✍️: %1</source>
-        <translation type="unfinished">✍️: %1</translation>
+        <translation>✍️: %1</translation>
     </message>
     <message>
         <source>This post contains polls.</source>
-        <translation type="unfinished">Dette innlegget inneholder avstemninger.</translation>
+        <translation>Dette innlegget inneholder avstemninger.</translation>
     </message>
     <message>
         <source>This post contains a poll.</source>
-        <translation type="unfinished">Dette innlegget inneholder en avstemning.</translation>
+        <translation>Dette innlegget inneholder en avstemning.</translation>
     </message>
     <message>
         <source>See the bottom of the post to participate.</source>
-        <translation type="unfinished">Se nederst i innlegget for å delta.</translation>
+        <translation>Se nederst i innlegget for å delta.</translation>
     </message>
     <message>
         <source>Click to view and vote:</source>
-        <translation type="unfinished">Klikk for å se og stemme:</translation>
+        <translation>Klikk for å se og stemme:</translation>
     </message>
     <message>
         <source>Poll</source>
-        <translation type="unfinished">Avstemning</translation>
+        <translation>Avstemning</translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>tags</source>
-        <translation>tagger</translation>
+        <translation>etiketter</translation>
     </message>
     <message>
         <source>Filter user</source>
@@ -687,7 +687,7 @@ En spesiell takk til bidragsytere:
     </message>
     <message>
         <source>Undelete</source>
-        <translation type="unfinished"></translation>
+        <translation>Angre sletting</translation>
     </message>
 </context>
 <context>
