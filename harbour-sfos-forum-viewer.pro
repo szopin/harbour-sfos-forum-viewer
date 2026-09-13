@@ -65,3 +65,15 @@ TRANSLATIONS += \
     translations/harbour-sfos-forum-viewer-nb_NO.ts \
     translations/harbour-sfos-forum-viewer-zh_CN.ts
 
+EMOJILIST       = rpm/emojis.json
+EMOJISCRIPT     = emoji.js.in
+emoji.input    += EMOJILIST
+emoji.output    = $$OUT_PWD/emoji.js
+emoji.commands += sed -e \"/@EMOJI@/{r ${QMAKE_FILE_NAME}\" -e \"d\" -e \"}\" $${EMOJISCRIPT} > ${QMAKE_FILE_OUT};
+emoji.CONFIG    = target_predeps no_link
+QMAKE_EXTRA_COMPILERS += emoji
+
+emojiscript.files  += $$OUT_PWD/emoji.js
+emojiscript.path    = $$PREFIX/share/$$TARGET/qml
+emojiscript.CONFIG += no_check_exist
+INSTALLS += emojiscript

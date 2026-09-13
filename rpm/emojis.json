@@ -1,0 +1,7582 @@
+[
+  {
+    "name": "grinning_face",
+    "code": "1f600"
+  },
+  {
+    "name": "smiley",
+    "code": "1f603"
+  },
+  {
+    "name": "grinning_face_with_smiling_eyes",
+    "code": "1f604"
+  },
+  {
+    "name": "grin",
+    "code": "1f601"
+  },
+  {
+    "name": "laughing",
+    "code": "1f606"
+  },
+  {
+    "name": "sweat_smile",
+    "code": "1f605"
+  },
+  {
+    "name": "rofl",
+    "code": "1f923"
+  },
+  {
+    "name": "joy",
+    "code": "1f602"
+  },
+  {
+    "name": "slightly_smiling_face",
+    "code": "1f642"
+  },
+  {
+    "name": "upside_down_face",
+    "code": "1f643"
+  },
+  {
+    "name": "melting_face",
+    "code": "1fae0"
+  },
+  {
+    "name": "wink",
+    "code": "1f609"
+  },
+  {
+    "name": "blush",
+    "code": "1f60a"
+  },
+  {
+    "name": "innocent",
+    "code": "1f607"
+  },
+  {
+    "name": "smiling_face_with_three_hearts",
+    "code": "1f970"
+  },
+  {
+    "name": "heart_eyes",
+    "code": "1f60d"
+  },
+  {
+    "name": "star_struck",
+    "code": "1f929"
+  },
+  {
+    "name": "face_blowing_a_kiss",
+    "code": "1f618"
+  },
+  {
+    "name": "kissing_face",
+    "code": "1f617"
+  },
+  {
+    "name": "smiling_face",
+    "code": "263a"
+  },
+  {
+    "name": "kissing_face_with_closed_eyes",
+    "code": "1f61a"
+  },
+  {
+    "name": "kissing_face_with_smiling_eyes",
+    "code": "1f619"
+  },
+  {
+    "name": "smiling_face_with_tear",
+    "code": "1f972"
+  },
+  {
+    "name": "face_savoring_food",
+    "code": "1f60b"
+  },
+  {
+    "name": "face_with_tongue",
+    "code": "1f61b"
+  },
+  {
+    "name": "winking_face_with_tongue",
+    "code": "1f61c"
+  },
+  {
+    "name": "zany_face",
+    "code": "1f92a"
+  },
+  {
+    "name": "squinting_face_with_tongue",
+    "code": "1f61d"
+  },
+  {
+    "name": "money_mouth_face",
+    "code": "1f911"
+  },
+  {
+    "name": "hugs",
+    "code": "1f917"
+  },
+  {
+    "name": "face_with_hand_over_mouth",
+    "code": "1f92d"
+  },
+  {
+    "name": "face_with_open_eyes_and_hand_over_mouth",
+    "code": "1fae2"
+  },
+  {
+    "name": "face_with_peeking_eye",
+    "code": "1fae3"
+  },
+  {
+    "name": "shushing_face",
+    "code": "1f92b"
+  },
+  {
+    "name": "thinking",
+    "code": "1f914"
+  },
+  {
+    "name": "saluting_face",
+    "code": "1fae1"
+  },
+  {
+    "name": "zipper_mouth_face",
+    "code": "1f910"
+  },
+  {
+    "name": "face_with_raised_eyebrow",
+    "code": "1f928"
+  },
+  {
+    "name": "neutral_face",
+    "code": "1f610"
+  },
+  {
+    "name": "expressionless_face",
+    "code": "1f611"
+  },
+  {
+    "name": "face_without_mouth",
+    "code": "1f636"
+  },
+  {
+    "name": "dotted_line_face",
+    "code": "1fae5"
+  },
+  {
+    "name": "face_in_clouds",
+    "code": "1f636-200d-1f32b-fe0f"
+  },
+  {
+    "name": "smirking_face",
+    "code": "1f60f"
+  },
+  {
+    "name": "unamused_face",
+    "code": "1f612"
+  },
+  {
+    "name": "roll_eyes",
+    "code": "1f644"
+  },
+  {
+    "name": "grimacing",
+    "code": "1f62c"
+  },
+  {
+    "name": "face_exhaling",
+    "code": "1f62e-200d-1f4a8"
+  },
+  {
+    "name": "lying_face",
+    "code": "1f925"
+  },
+  {
+    "name": "shaking_face",
+    "code": "1fae8"
+  },
+  {
+    "name": "head_shaking_horizontally",
+    "code": "1f642-200d-2194-fe0f"
+  },
+  {
+    "name": "head_shaking_vertically",
+    "code": "1f642-200d-2195-fe0f"
+  },
+  {
+    "name": "relieved_face",
+    "code": "1f60c"
+  },
+  {
+    "name": "pensive_face",
+    "code": "1f614"
+  },
+  {
+    "name": "sleepy_face",
+    "code": "1f62a"
+  },
+  {
+    "name": "drooling_face",
+    "code": "1f924"
+  },
+  {
+    "name": "sleeping_face",
+    "code": "1f634"
+  },
+  {
+    "name": "face_with_bags_under_eyes",
+    "code": "1fae9"
+  },
+  {
+    "name": "face_with_medical_mask",
+    "code": "1f637"
+  },
+  {
+    "name": "face_with_thermometer",
+    "code": "1f912"
+  },
+  {
+    "name": "face_with_head_bandage",
+    "code": "1f915"
+  },
+  {
+    "name": "nauseated_face",
+    "code": "1f922"
+  },
+  {
+    "name": "face_vomiting",
+    "code": "1f92e"
+  },
+  {
+    "name": "sneezing_face",
+    "code": "1f927"
+  },
+  {
+    "name": "hot_face",
+    "code": "1f975"
+  },
+  {
+    "name": "cold_face",
+    "code": "1f976"
+  },
+  {
+    "name": "woozy_face",
+    "code": "1f974"
+  },
+  {
+    "name": "face_with_crossed_out_eyes",
+    "code": "1f635"
+  },
+  {
+    "name": "face_with_spiral_eyes",
+    "code": "1f635-200d-1f4ab"
+  },
+  {
+    "name": "exploding_head",
+    "code": "1f92f"
+  },
+  {
+    "name": "cowboy_hat_face",
+    "code": "1f920"
+  },
+  {
+    "name": "partying_face",
+    "code": "1f973"
+  },
+  {
+    "name": "disguised_face",
+    "code": "1f978"
+  },
+  {
+    "name": "smiling_face_with_sunglasses",
+    "code": "1f60e"
+  },
+  {
+    "name": "nerd_face",
+    "code": "1f913"
+  },
+  {
+    "name": "face_with_monocle",
+    "code": "1f9d0"
+  },
+  {
+    "name": "confused",
+    "code": "1f615"
+  },
+  {
+    "name": "face_with_diagonal_mouth",
+    "code": "1fae4"
+  },
+  {
+    "name": "worried",
+    "code": "1f61f"
+  },
+  {
+    "name": "slightly_frowning_face",
+    "code": "1f641"
+  },
+  {
+    "name": "frowning",
+    "code": "2639"
+  },
+  {
+    "name": "open_mouth",
+    "code": "1f62e"
+  },
+  {
+    "name": "hushed_face",
+    "code": "1f62f"
+  },
+  {
+    "name": "astonished_face",
+    "code": "1f632"
+  },
+  {
+    "name": "flushed_face",
+    "code": "1f633"
+  },
+  {
+    "name": "distorted_face",
+    "code": "1faea"
+  },
+  {
+    "name": "pleading_face",
+    "code": "1f97a"
+  },
+  {
+    "name": "face_holding_back_tears",
+    "code": "1f979"
+  },
+  {
+    "name": "frowning_face_with_open_mouth",
+    "code": "1f626"
+  },
+  {
+    "name": "anguished_face",
+    "code": "1f627"
+  },
+  {
+    "name": "fearful",
+    "code": "1f628"
+  },
+  {
+    "name": "anxious_face_with_sweat",
+    "code": "1f630"
+  },
+  {
+    "name": "sad_but_relieved_face",
+    "code": "1f625"
+  },
+  {
+    "name": "cry",
+    "code": "1f622"
+  },
+  {
+    "name": "sob",
+    "code": "1f62d"
+  },
+  {
+    "name": "scream",
+    "code": "1f631"
+  },
+  {
+    "name": "confounded_face",
+    "code": "1f616"
+  },
+  {
+    "name": "persevering_face",
+    "code": "1f623"
+  },
+  {
+    "name": "disappointed_face",
+    "code": "1f61e"
+  },
+  {
+    "name": "downcast_face_with_sweat",
+    "code": "1f613"
+  },
+  {
+    "name": "weary_face",
+    "code": "1f629"
+  },
+  {
+    "name": "tired_face",
+    "code": "1f62b"
+  },
+  {
+    "name": "yawning_face",
+    "code": "1f971"
+  },
+  {
+    "name": "face_with_steam_from_nose",
+    "code": "1f624"
+  },
+  {
+    "name": "enraged_face",
+    "code": "1f621"
+  },
+  {
+    "name": "angry",
+    "code": "1f620"
+  },
+  {
+    "name": "face_with_symbols_on_mouth",
+    "code": "1f92c"
+  },
+  {
+    "name": "smiling_face_with_horns",
+    "code": "1f608"
+  },
+  {
+    "name": "angry_face_with_horns",
+    "code": "1f47f"
+  },
+  {
+    "name": "skull",
+    "code": "1f480"
+  },
+  {
+    "name": "skull_and_crossbones",
+    "code": "2620"
+  },
+  {
+    "name": "poop",
+    "code": "1f4a9"
+  },
+  {
+    "name": "clown_face",
+    "code": "1f921"
+  },
+  {
+    "name": "ogre",
+    "code": "1f479"
+  },
+  {
+    "name": "goblin",
+    "code": "1f47a"
+  },
+  {
+    "name": "ghost",
+    "code": "1f47b"
+  },
+  {
+    "name": "alien",
+    "code": "1f47d"
+  },
+  {
+    "name": "alien_monster",
+    "code": "1f47e"
+  },
+  {
+    "name": "robot",
+    "code": "1f916"
+  },
+  {
+    "name": "grinning_cat",
+    "code": "1f63a"
+  },
+  {
+    "name": "grinning_cat_with_smiling_eyes",
+    "code": "1f638"
+  },
+  {
+    "name": "joy_cat",
+    "code": "1f639"
+  },
+  {
+    "name": "smiling_cat_with_heart_eyes",
+    "code": "1f63b"
+  },
+  {
+    "name": "cat_with_wry_smile",
+    "code": "1f63c"
+  },
+  {
+    "name": "kissing_cat",
+    "code": "1f63d"
+  },
+  {
+    "name": "weary_cat",
+    "code": "1f640"
+  },
+  {
+    "name": "crying_cat",
+    "code": "1f63f"
+  },
+  {
+    "name": "pouting_cat",
+    "code": "1f63e"
+  },
+  {
+    "name": "see_no_evil_monkey",
+    "code": "1f648"
+  },
+  {
+    "name": "hear_no_evil_monkey",
+    "code": "1f649"
+  },
+  {
+    "name": "speak_no_evil_monkey",
+    "code": "1f64a"
+  },
+  {
+    "name": "love_letter",
+    "code": "1f48c"
+  },
+  {
+    "name": "heart_with_arrow",
+    "code": "1f498"
+  },
+  {
+    "name": "heart_with_ribbon",
+    "code": "1f49d"
+  },
+  {
+    "name": "sparkling_heart",
+    "code": "1f496"
+  },
+  {
+    "name": "growing_heart",
+    "code": "1f497"
+  },
+  {
+    "name": "beating_heart",
+    "code": "1f493"
+  },
+  {
+    "name": "revolving_hearts",
+    "code": "1f49e"
+  },
+  {
+    "name": "two_hearts",
+    "code": "1f495"
+  },
+  {
+    "name": "heart_decoration",
+    "code": "1f49f"
+  },
+  {
+    "name": "heart_exclamation",
+    "code": "2763"
+  },
+  {
+    "name": "broken_heart",
+    "code": "1f494"
+  },
+  {
+    "name": "heart_on_fire",
+    "code": "2764-fe0f-200d-1f525"
+  },
+  {
+    "name": "mending_heart",
+    "code": "2764-fe0f-200d-1fa79"
+  },
+  {
+    "name": "heart",
+    "code": "2764"
+  },
+  {
+    "name": "pink_heart",
+    "code": "1fa77"
+  },
+  {
+    "name": "orange_heart",
+    "code": "1f9e1"
+  },
+  {
+    "name": "yellow_heart",
+    "code": "1f49b"
+  },
+  {
+    "name": "green_heart",
+    "code": "1f49a"
+  },
+  {
+    "name": "blue_heart",
+    "code": "1f499"
+  },
+  {
+    "name": "light_blue_heart",
+    "code": "1fa75"
+  },
+  {
+    "name": "purple_heart",
+    "code": "1f49c"
+  },
+  {
+    "name": "brown_heart",
+    "code": "1f90e"
+  },
+  {
+    "name": "black_heart",
+    "code": "1f5a4"
+  },
+  {
+    "name": "grey_heart",
+    "code": "1fa76"
+  },
+  {
+    "name": "white_heart",
+    "code": "1f90d"
+  },
+  {
+    "name": "kiss_mark",
+    "code": "1f48b"
+  },
+  {
+    "name": "100",
+    "code": "1f4af"
+  },
+  {
+    "name": "anger_symbol",
+    "code": "1f4a2"
+  },
+  {
+    "name": "fight_cloud",
+    "code": "1faef"
+  },
+  {
+    "name": "collision",
+    "code": "1f4a5"
+  },
+  {
+    "name": "dizzy",
+    "code": "1f4ab"
+  },
+  {
+    "name": "sweat_droplets",
+    "code": "1f4a6"
+  },
+  {
+    "name": "dashing_away",
+    "code": "1f4a8"
+  },
+  {
+    "name": "hole",
+    "code": "1f573"
+  },
+  {
+    "name": "speech_balloon",
+    "code": "1f4ac"
+  },
+  {
+    "name": "eye_in_speech_bubble",
+    "code": "1f441-fe0f-200d-1f5e8-fe0f"
+  },
+  {
+    "name": "left_speech_bubble",
+    "code": "1f5e8"
+  },
+  {
+    "name": "right_anger_bubble",
+    "code": "1f5ef"
+  },
+  {
+    "name": "thought_balloon",
+    "code": "1f4ad"
+  },
+  {
+    "name": "zzz",
+    "code": "1f4a4"
+  },
+  {
+    "name": "waving_hand",
+    "code": "1f44b"
+  },
+  {
+    "name": "raised_back_of_hand",
+    "code": "1f91a"
+  },
+  {
+    "name": "hand_with_fingers_splayed",
+    "code": "1f590"
+  },
+  {
+    "name": "raised_hand",
+    "code": "270b"
+  },
+  {
+    "name": "vulcan_salute",
+    "code": "1f596"
+  },
+  {
+    "name": "rightwards_hand",
+    "code": "1faf1"
+  },
+  {
+    "name": "leftwards_hand",
+    "code": "1faf2"
+  },
+  {
+    "name": "palm_down_hand",
+    "code": "1faf3"
+  },
+  {
+    "name": "palm_up_hand",
+    "code": "1faf4"
+  },
+  {
+    "name": "leftwards_pushing_hand",
+    "code": "1faf7"
+  },
+  {
+    "name": "rightwards_pushing_hand",
+    "code": "1faf8"
+  },
+  {
+    "name": "ok_hand",
+    "code": "1f44c"
+  },
+  {
+    "name": "pinched_fingers",
+    "code": "1f90c"
+  },
+  {
+    "name": "pinching_hand",
+    "code": "1f90f"
+  },
+  {
+    "name": "victory_hand",
+    "code": "270c"
+  },
+  {
+    "name": "crossed_fingers",
+    "code": "1f91e"
+  },
+  {
+    "name": "hand_with_index_finger_and_thumb_crossed",
+    "code": "1faf0"
+  },
+  {
+    "name": "love_you_gesture",
+    "code": "1f91f"
+  },
+  {
+    "name": "sign_of_the_horns",
+    "code": "1f918"
+  },
+  {
+    "name": "call_me_hand",
+    "code": "1f919"
+  },
+  {
+    "name": "backhand_index_pointing_left",
+    "code": "1f448"
+  },
+  {
+    "name": "backhand_index_pointing_right",
+    "code": "1f449"
+  },
+  {
+    "name": "backhand_index_pointing_up",
+    "code": "1f446"
+  },
+  {
+    "name": "fu",
+    "code": "1f595"
+  },
+  {
+    "name": "backhand_index_pointing_down",
+    "code": "1f447"
+  },
+  {
+    "name": "index_pointing_up",
+    "code": "261d"
+  },
+  {
+    "name": "index_pointing_at_the_viewer",
+    "code": "1faf5"
+  },
+  {
+    "name": "+1",
+    "code": "1f44d"
+  },
+  {
+    "name": "-1",
+    "code": "1f44e"
+  },
+  {
+    "name": "raised_fist",
+    "code": "270a"
+  },
+  {
+    "name": "oncoming_fist",
+    "code": "1f44a"
+  },
+  {
+    "name": "left_facing_fist",
+    "code": "1f91b"
+  },
+  {
+    "name": "right_facing_fist",
+    "code": "1f91c"
+  },
+  {
+    "name": "clap",
+    "code": "1f44f"
+  },
+  {
+    "name": "raising_hands",
+    "code": "1f64c"
+  },
+  {
+    "name": "heart_hands",
+    "code": "1faf6"
+  },
+  {
+    "name": "open_hands",
+    "code": "1f450"
+  },
+  {
+    "name": "palms_up_together",
+    "code": "1f932"
+  },
+  {
+    "name": "handshake",
+    "code": "1f91d"
+  },
+  {
+    "name": "folded_hands",
+    "code": "1f64f"
+  },
+  {
+    "name": "writing_hand",
+    "code": "270d"
+  },
+  {
+    "name": "nail_polish",
+    "code": "1f485"
+  },
+  {
+    "name": "selfie",
+    "code": "1f933"
+  },
+  {
+    "name": "flexed_biceps",
+    "code": "1f4aa"
+  },
+  {
+    "name": "mechanical_arm",
+    "code": "1f9be"
+  },
+  {
+    "name": "mechanical_leg",
+    "code": "1f9bf"
+  },
+  {
+    "name": "leg",
+    "code": "1f9b5"
+  },
+  {
+    "name": "foot",
+    "code": "1f9b6"
+  },
+  {
+    "name": "ear",
+    "code": "1f442"
+  },
+  {
+    "name": "ear_with_hearing_aid",
+    "code": "1f9bb"
+  },
+  {
+    "name": "nose",
+    "code": "1f443"
+  },
+  {
+    "name": "brain",
+    "code": "1f9e0"
+  },
+  {
+    "name": "anatomical_heart",
+    "code": "1fac0"
+  },
+  {
+    "name": "lungs",
+    "code": "1fac1"
+  },
+  {
+    "name": "tooth",
+    "code": "1f9b7"
+  },
+  {
+    "name": "bone",
+    "code": "1f9b4"
+  },
+  {
+    "name": "eyes",
+    "code": "1f440"
+  },
+  {
+    "name": "eye",
+    "code": "1f441"
+  },
+  {
+    "name": "tongue",
+    "code": "1f445"
+  },
+  {
+    "name": "mouth",
+    "code": "1f444"
+  },
+  {
+    "name": "biting_lip",
+    "code": "1fae6"
+  },
+  {
+    "name": "baby",
+    "code": "1f476"
+  },
+  {
+    "name": "child",
+    "code": "1f9d2"
+  },
+  {
+    "name": "boy",
+    "code": "1f466"
+  },
+  {
+    "name": "girl",
+    "code": "1f467"
+  },
+  {
+    "name": "person",
+    "code": "1f9d1"
+  },
+  {
+    "name": "person_blond_hair",
+    "code": "1f471"
+  },
+  {
+    "name": "man",
+    "code": "1f468"
+  },
+  {
+    "name": "person_beard",
+    "code": "1f9d4"
+  },
+  {
+    "name": "man_beard",
+    "code": "1f9d4-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_beard",
+    "code": "1f9d4-200d-2640-fe0f"
+  },
+  {
+    "name": "man_red_hair",
+    "code": "1f468-200d-1f9b0"
+  },
+  {
+    "name": "man_curly_hair",
+    "code": "1f468-200d-1f9b1"
+  },
+  {
+    "name": "man_white_hair",
+    "code": "1f468-200d-1f9b3"
+  },
+  {
+    "name": "man_bald",
+    "code": "1f468-200d-1f9b2"
+  },
+  {
+    "name": "woman",
+    "code": "1f469"
+  },
+  {
+    "name": "woman_red_hair",
+    "code": "1f469-200d-1f9b0"
+  },
+  {
+    "name": "person_red_hair",
+    "code": "1f9d1-200d-1f9b0"
+  },
+  {
+    "name": "woman_curly_hair",
+    "code": "1f469-200d-1f9b1"
+  },
+  {
+    "name": "person_curly_hair",
+    "code": "1f9d1-200d-1f9b1"
+  },
+  {
+    "name": "woman_white_hair",
+    "code": "1f469-200d-1f9b3"
+  },
+  {
+    "name": "person_white_hair",
+    "code": "1f9d1-200d-1f9b3"
+  },
+  {
+    "name": "woman_bald",
+    "code": "1f469-200d-1f9b2"
+  },
+  {
+    "name": "person_bald",
+    "code": "1f9d1-200d-1f9b2"
+  },
+  {
+    "name": "blonde_woman",
+    "code": "1f471-200d-2640-fe0f"
+  },
+  {
+    "name": "blonde_man",
+    "code": "1f471-200d-2642-fe0f"
+  },
+  {
+    "name": "older_person",
+    "code": "1f9d3"
+  },
+  {
+    "name": "old_man",
+    "code": "1f474"
+  },
+  {
+    "name": "old_woman",
+    "code": "1f475"
+  },
+  {
+    "name": "person_frowning",
+    "code": "1f64d"
+  },
+  {
+    "name": "man_frowning",
+    "code": "1f64d-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_frowning",
+    "code": "1f64d-200d-2640-fe0f"
+  },
+  {
+    "name": "person_pouting",
+    "code": "1f64e"
+  },
+  {
+    "name": "man_pouting",
+    "code": "1f64e-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_pouting",
+    "code": "1f64e-200d-2640-fe0f"
+  },
+  {
+    "name": "person_gesturing_no",
+    "code": "1f645"
+  },
+  {
+    "name": "man_gesturing_no",
+    "code": "1f645-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_gesturing_no",
+    "code": "1f645-200d-2640-fe0f"
+  },
+  {
+    "name": "person_gesturing_ok",
+    "code": "1f646"
+  },
+  {
+    "name": "man_gesturing_ok",
+    "code": "1f646-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_gesturing_ok",
+    "code": "1f646-200d-2640-fe0f"
+  },
+  {
+    "name": "person_tipping_hand",
+    "code": "1f481"
+  },
+  {
+    "name": "man_tipping_hand",
+    "code": "1f481-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_tipping_hand",
+    "code": "1f481-200d-2640-fe0f"
+  },
+  {
+    "name": "person_raising_hand",
+    "code": "1f64b"
+  },
+  {
+    "name": "man_raising_hand",
+    "code": "1f64b-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_raising_hand",
+    "code": "1f64b-200d-2640-fe0f"
+  },
+  {
+    "name": "deaf_person",
+    "code": "1f9cf"
+  },
+  {
+    "name": "deaf_man",
+    "code": "1f9cf-200d-2642-fe0f"
+  },
+  {
+    "name": "deaf_woman",
+    "code": "1f9cf-200d-2640-fe0f"
+  },
+  {
+    "name": "person_bowing",
+    "code": "1f647"
+  },
+  {
+    "name": "man_bowing",
+    "code": "1f647-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_bowing",
+    "code": "1f647-200d-2640-fe0f"
+  },
+  {
+    "name": "person_facepalming",
+    "code": "1f926"
+  },
+  {
+    "name": "man_facepalming",
+    "code": "1f926-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_facepalming",
+    "code": "1f926-200d-2640-fe0f"
+  },
+  {
+    "name": "person_shrugging",
+    "code": "1f937"
+  },
+  {
+    "name": "man_shrugging",
+    "code": "1f937-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_shrugging",
+    "code": "1f937-200d-2640-fe0f"
+  },
+  {
+    "name": "health_worker",
+    "code": "1f9d1-200d-2695-fe0f"
+  },
+  {
+    "name": "man_health_worker",
+    "code": "1f468-200d-2695-fe0f"
+  },
+  {
+    "name": "woman_health_worker",
+    "code": "1f469-200d-2695-fe0f"
+  },
+  {
+    "name": "student",
+    "code": "1f9d1-200d-1f393"
+  },
+  {
+    "name": "man_student",
+    "code": "1f468-200d-1f393"
+  },
+  {
+    "name": "woman_student",
+    "code": "1f469-200d-1f393"
+  },
+  {
+    "name": "teacher",
+    "code": "1f9d1-200d-1f3eb"
+  },
+  {
+    "name": "man_teacher",
+    "code": "1f468-200d-1f3eb"
+  },
+  {
+    "name": "woman_teacher",
+    "code": "1f469-200d-1f3eb"
+  },
+  {
+    "name": "judge",
+    "code": "1f9d1-200d-2696-fe0f"
+  },
+  {
+    "name": "man_judge",
+    "code": "1f468-200d-2696-fe0f"
+  },
+  {
+    "name": "woman_judge",
+    "code": "1f469-200d-2696-fe0f"
+  },
+  {
+    "name": "farmer",
+    "code": "1f9d1-200d-1f33e"
+  },
+  {
+    "name": "man_farmer",
+    "code": "1f468-200d-1f33e"
+  },
+  {
+    "name": "woman_farmer",
+    "code": "1f469-200d-1f33e"
+  },
+  {
+    "name": "cook",
+    "code": "1f9d1-200d-1f373"
+  },
+  {
+    "name": "man_cook",
+    "code": "1f468-200d-1f373"
+  },
+  {
+    "name": "woman_cook",
+    "code": "1f469-200d-1f373"
+  },
+  {
+    "name": "mechanic",
+    "code": "1f9d1-200d-1f527"
+  },
+  {
+    "name": "man_mechanic",
+    "code": "1f468-200d-1f527"
+  },
+  {
+    "name": "woman_mechanic",
+    "code": "1f469-200d-1f527"
+  },
+  {
+    "name": "factory_worker",
+    "code": "1f9d1-200d-1f3ed"
+  },
+  {
+    "name": "man_factory_worker",
+    "code": "1f468-200d-1f3ed"
+  },
+  {
+    "name": "woman_factory_worker",
+    "code": "1f469-200d-1f3ed"
+  },
+  {
+    "name": "office_worker",
+    "code": "1f9d1-200d-1f4bc"
+  },
+  {
+    "name": "man_office_worker",
+    "code": "1f468-200d-1f4bc"
+  },
+  {
+    "name": "woman_office_worker",
+    "code": "1f469-200d-1f4bc"
+  },
+  {
+    "name": "scientist",
+    "code": "1f9d1-200d-1f52c"
+  },
+  {
+    "name": "man_scientist",
+    "code": "1f468-200d-1f52c"
+  },
+  {
+    "name": "woman_scientist",
+    "code": "1f469-200d-1f52c"
+  },
+  {
+    "name": "technologist",
+    "code": "1f9d1-200d-1f4bb"
+  },
+  {
+    "name": "man_technologist",
+    "code": "1f468-200d-1f4bb"
+  },
+  {
+    "name": "woman_technologist",
+    "code": "1f469-200d-1f4bb"
+  },
+  {
+    "name": "singer",
+    "code": "1f9d1-200d-1f3a4"
+  },
+  {
+    "name": "man_singer",
+    "code": "1f468-200d-1f3a4"
+  },
+  {
+    "name": "woman_singer",
+    "code": "1f469-200d-1f3a4"
+  },
+  {
+    "name": "artist",
+    "code": "1f9d1-200d-1f3a8"
+  },
+  {
+    "name": "man_artist",
+    "code": "1f468-200d-1f3a8"
+  },
+  {
+    "name": "woman_artist",
+    "code": "1f469-200d-1f3a8"
+  },
+  {
+    "name": "pilot",
+    "code": "1f9d1-200d-2708-fe0f"
+  },
+  {
+    "name": "man_pilot",
+    "code": "1f468-200d-2708-fe0f"
+  },
+  {
+    "name": "woman_pilot",
+    "code": "1f469-200d-2708-fe0f"
+  },
+  {
+    "name": "astronaut",
+    "code": "1f9d1-200d-1f680"
+  },
+  {
+    "name": "man_astronaut",
+    "code": "1f468-200d-1f680"
+  },
+  {
+    "name": "woman_astronaut",
+    "code": "1f469-200d-1f680"
+  },
+  {
+    "name": "firefighter",
+    "code": "1f9d1-200d-1f692"
+  },
+  {
+    "name": "man_firefighter",
+    "code": "1f468-200d-1f692"
+  },
+  {
+    "name": "woman_firefighter",
+    "code": "1f469-200d-1f692"
+  },
+  {
+    "name": "police_officer",
+    "code": "1f46e"
+  },
+  {
+    "name": "man_police_officer",
+    "code": "1f46e-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_police_officer",
+    "code": "1f46e-200d-2640-fe0f"
+  },
+  {
+    "name": "detective",
+    "code": "1f575"
+  },
+  {
+    "name": "man_detective",
+    "code": "1f575-fe0f-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_detective",
+    "code": "1f575-fe0f-200d-2640-fe0f"
+  },
+  {
+    "name": "guard",
+    "code": "1f482"
+  },
+  {
+    "name": "man_guard",
+    "code": "1f482-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_guard",
+    "code": "1f482-200d-2640-fe0f"
+  },
+  {
+    "name": "ninja",
+    "code": "1f977"
+  },
+  {
+    "name": "construction_worker",
+    "code": "1f477"
+  },
+  {
+    "name": "construction_worker_man",
+    "code": "1f477-200d-2642-fe0f"
+  },
+  {
+    "name": "construction_worker_woman",
+    "code": "1f477-200d-2640-fe0f"
+  },
+  {
+    "name": "person_with_crown",
+    "code": "1fac5"
+  },
+  {
+    "name": "prince",
+    "code": "1f934"
+  },
+  {
+    "name": "princess",
+    "code": "1f478"
+  },
+  {
+    "name": "person_wearing_turban",
+    "code": "1f473"
+  },
+  {
+    "name": "man_wearing_turban",
+    "code": "1f473-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_wearing_turban",
+    "code": "1f473-200d-2640-fe0f"
+  },
+  {
+    "name": "person_with_skullcap",
+    "code": "1f472"
+  },
+  {
+    "name": "woman_with_headscarf",
+    "code": "1f9d5"
+  },
+  {
+    "name": "person_in_tuxedo",
+    "code": "1f935"
+  },
+  {
+    "name": "man_in_tuxedo",
+    "code": "1f935-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_in_tuxedo",
+    "code": "1f935-200d-2640-fe0f"
+  },
+  {
+    "name": "person_with_veil",
+    "code": "1f470"
+  },
+  {
+    "name": "man_with_veil",
+    "code": "1f470-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_with_veil",
+    "code": "1f470-200d-2640-fe0f"
+  },
+  {
+    "name": "pregnant_woman",
+    "code": "1f930"
+  },
+  {
+    "name": "pregnant_man",
+    "code": "1fac3"
+  },
+  {
+    "name": "pregnant_person",
+    "code": "1fac4"
+  },
+  {
+    "name": "breast_feeding",
+    "code": "1f931"
+  },
+  {
+    "name": "woman_feeding_baby",
+    "code": "1f469-200d-1f37c"
+  },
+  {
+    "name": "man_feeding_baby",
+    "code": "1f468-200d-1f37c"
+  },
+  {
+    "name": "person_feeding_baby",
+    "code": "1f9d1-200d-1f37c"
+  },
+  {
+    "name": "baby_angel",
+    "code": "1f47c"
+  },
+  {
+    "name": "santa_claus",
+    "code": "1f385"
+  },
+  {
+    "name": "mrs_claus",
+    "code": "1f936"
+  },
+  {
+    "name": "mx_claus",
+    "code": "1f9d1-200d-1f384"
+  },
+  {
+    "name": "superhero",
+    "code": "1f9b8"
+  },
+  {
+    "name": "man_superhero",
+    "code": "1f9b8-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_superhero",
+    "code": "1f9b8-200d-2640-fe0f"
+  },
+  {
+    "name": "supervillain",
+    "code": "1f9b9"
+  },
+  {
+    "name": "man_supervillain",
+    "code": "1f9b9-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_supervillain",
+    "code": "1f9b9-200d-2640-fe0f"
+  },
+  {
+    "name": "mage",
+    "code": "1f9d9"
+  },
+  {
+    "name": "man_mage",
+    "code": "1f9d9-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_mage",
+    "code": "1f9d9-200d-2640-fe0f"
+  },
+  {
+    "name": "fairy",
+    "code": "1f9da"
+  },
+  {
+    "name": "man_fairy",
+    "code": "1f9da-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_fairy",
+    "code": "1f9da-200d-2640-fe0f"
+  },
+  {
+    "name": "vampire",
+    "code": "1f9db"
+  },
+  {
+    "name": "man_vampire",
+    "code": "1f9db-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_vampire",
+    "code": "1f9db-200d-2640-fe0f"
+  },
+  {
+    "name": "merperson",
+    "code": "1f9dc"
+  },
+  {
+    "name": "merman",
+    "code": "1f9dc-200d-2642-fe0f"
+  },
+  {
+    "name": "mermaid",
+    "code": "1f9dc-200d-2640-fe0f"
+  },
+  {
+    "name": "elf",
+    "code": "1f9dd"
+  },
+  {
+    "name": "man_elf",
+    "code": "1f9dd-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_elf",
+    "code": "1f9dd-200d-2640-fe0f"
+  },
+  {
+    "name": "genie",
+    "code": "1f9de"
+  },
+  {
+    "name": "man_genie",
+    "code": "1f9de-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_genie",
+    "code": "1f9de-200d-2640-fe0f"
+  },
+  {
+    "name": "zombie",
+    "code": "1f9df"
+  },
+  {
+    "name": "man_zombie",
+    "code": "1f9df-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_zombie",
+    "code": "1f9df-200d-2640-fe0f"
+  },
+  {
+    "name": "troll",
+    "code": "1f9cc"
+  },
+  {
+    "name": "hairy_creature",
+    "code": "1fac8"
+  },
+  {
+    "name": "person_getting_massage",
+    "code": "1f486"
+  },
+  {
+    "name": "man_getting_massage",
+    "code": "1f486-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_getting_massage",
+    "code": "1f486-200d-2640-fe0f"
+  },
+  {
+    "name": "person_getting_haircut",
+    "code": "1f487"
+  },
+  {
+    "name": "man_getting_haircut",
+    "code": "1f487-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_getting_haircut",
+    "code": "1f487-200d-2640-fe0f"
+  },
+  {
+    "name": "person_walking",
+    "code": "1f6b6"
+  },
+  {
+    "name": "man_walking",
+    "code": "1f6b6-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_walking",
+    "code": "1f6b6-200d-2640-fe0f"
+  },
+  {
+    "name": "person_standing",
+    "code": "1f9cd"
+  },
+  {
+    "name": "man_standing",
+    "code": "1f9cd-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_standing",
+    "code": "1f9cd-200d-2640-fe0f"
+  },
+  {
+    "name": "person_kneeling",
+    "code": "1f9ce"
+  },
+  {
+    "name": "man_kneeling",
+    "code": "1f9ce-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_kneeling",
+    "code": "1f9ce-200d-2640-fe0f"
+  },
+  {
+    "name": "person_with_white_cane",
+    "code": "1f9d1-200d-1f9af"
+  },
+  {
+    "name": "man_with_white_cane",
+    "code": "1f468-200d-1f9af"
+  },
+  {
+    "name": "woman_with_white_cane",
+    "code": "1f469-200d-1f9af"
+  },
+  {
+    "name": "person_in_motorized_wheelchair",
+    "code": "1f9d1-200d-1f9bc"
+  },
+  {
+    "name": "man_in_motorized_wheelchair",
+    "code": "1f468-200d-1f9bc"
+  },
+  {
+    "name": "woman_in_motorized_wheelchair",
+    "code": "1f469-200d-1f9bc"
+  },
+  {
+    "name": "person_in_manual_wheelchair",
+    "code": "1f9d1-200d-1f9bd"
+  },
+  {
+    "name": "man_in_manual_wheelchair",
+    "code": "1f468-200d-1f9bd"
+  },
+  {
+    "name": "woman_in_manual_wheelchair",
+    "code": "1f469-200d-1f9bd"
+  },
+  {
+    "name": "person_running",
+    "code": "1f3c3"
+  },
+  {
+    "name": "man_running",
+    "code": "1f3c3-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_running",
+    "code": "1f3c3-200d-2640-fe0f"
+  },
+  {
+    "name": "ballet_dancer",
+    "code": "1f9d1-200d-1fa70"
+  },
+  {
+    "name": "woman_dancing",
+    "code": "1f483"
+  },
+  {
+    "name": "man_dancing",
+    "code": "1f57a"
+  },
+  {
+    "name": "person_in_suit_levitating",
+    "code": "1f574"
+  },
+  {
+    "name": "people_with_bunny_ears",
+    "code": "1f46f"
+  },
+  {
+    "name": "men_with_bunny_ears",
+    "code": "1f46f-200d-2642-fe0f"
+  },
+  {
+    "name": "women_with_bunny_ears",
+    "code": "1f46f-200d-2640-fe0f"
+  },
+  {
+    "name": "person_in_steamy_room",
+    "code": "1f9d6"
+  },
+  {
+    "name": "man_in_steamy_room",
+    "code": "1f9d6-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_in_steamy_room",
+    "code": "1f9d6-200d-2640-fe0f"
+  },
+  {
+    "name": "person_climbing",
+    "code": "1f9d7"
+  },
+  {
+    "name": "man_climbing",
+    "code": "1f9d7-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_climbing",
+    "code": "1f9d7-200d-2640-fe0f"
+  },
+  {
+    "name": "person_fencing",
+    "code": "1f93a"
+  },
+  {
+    "name": "horse_racing",
+    "code": "1f3c7"
+  },
+  {
+    "name": "skier",
+    "code": "26f7"
+  },
+  {
+    "name": "snowboarder",
+    "code": "1f3c2"
+  },
+  {
+    "name": "person_golfing",
+    "code": "1f3cc"
+  },
+  {
+    "name": "man_golfing",
+    "code": "1f3cc-fe0f-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_golfing",
+    "code": "1f3cc-fe0f-200d-2640-fe0f"
+  },
+  {
+    "name": "person_surfing",
+    "code": "1f3c4"
+  },
+  {
+    "name": "man_surfing",
+    "code": "1f3c4-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_surfing",
+    "code": "1f3c4-200d-2640-fe0f"
+  },
+  {
+    "name": "person_rowing_boat",
+    "code": "1f6a3"
+  },
+  {
+    "name": "man_rowing_boat",
+    "code": "1f6a3-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_rowing_boat",
+    "code": "1f6a3-200d-2640-fe0f"
+  },
+  {
+    "name": "person_swimming",
+    "code": "1f3ca"
+  },
+  {
+    "name": "man_swimming",
+    "code": "1f3ca-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_swimming",
+    "code": "1f3ca-200d-2640-fe0f"
+  },
+  {
+    "name": "person_bouncing_ball",
+    "code": "26f9"
+  },
+  {
+    "name": "man_bouncing_ball",
+    "code": "26f9-fe0f-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_bouncing_ball",
+    "code": "26f9-fe0f-200d-2640-fe0f"
+  },
+  {
+    "name": "person_lifting_weights",
+    "code": "1f3cb"
+  },
+  {
+    "name": "man_lifting_weights",
+    "code": "1f3cb-fe0f-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_lifting_weights",
+    "code": "1f3cb-fe0f-200d-2640-fe0f"
+  },
+  {
+    "name": "person_biking",
+    "code": "1f6b4"
+  },
+  {
+    "name": "man_biking",
+    "code": "1f6b4-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_biking",
+    "code": "1f6b4-200d-2640-fe0f"
+  },
+  {
+    "name": "person_mountain_biking",
+    "code": "1f6b5"
+  },
+  {
+    "name": "man_mountain_biking",
+    "code": "1f6b5-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_mountain_biking",
+    "code": "1f6b5-200d-2640-fe0f"
+  },
+  {
+    "name": "person_cartwheeling",
+    "code": "1f938"
+  },
+  {
+    "name": "man_cartwheeling",
+    "code": "1f938-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_cartwheeling",
+    "code": "1f938-200d-2640-fe0f"
+  },
+  {
+    "name": "people_wrestling",
+    "code": "1f93c"
+  },
+  {
+    "name": "men_wrestling",
+    "code": "1f93c-200d-2642-fe0f"
+  },
+  {
+    "name": "women_wrestling",
+    "code": "1f93c-200d-2640-fe0f"
+  },
+  {
+    "name": "person_playing_water_polo",
+    "code": "1f93d"
+  },
+  {
+    "name": "man_playing_water_polo",
+    "code": "1f93d-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_playing_water_polo",
+    "code": "1f93d-200d-2640-fe0f"
+  },
+  {
+    "name": "person_playing_handball",
+    "code": "1f93e"
+  },
+  {
+    "name": "man_playing_handball",
+    "code": "1f93e-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_playing_handball",
+    "code": "1f93e-200d-2640-fe0f"
+  },
+  {
+    "name": "person_juggling",
+    "code": "1f939"
+  },
+  {
+    "name": "man_juggling",
+    "code": "1f939-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_juggling",
+    "code": "1f939-200d-2640-fe0f"
+  },
+  {
+    "name": "person_in_lotus_position",
+    "code": "1f9d8"
+  },
+  {
+    "name": "man_in_lotus_position",
+    "code": "1f9d8-200d-2642-fe0f"
+  },
+  {
+    "name": "woman_in_lotus_position",
+    "code": "1f9d8-200d-2640-fe0f"
+  },
+  {
+    "name": "person_taking_bath",
+    "code": "1f6c0"
+  },
+  {
+    "name": "person_in_bed",
+    "code": "1f6cc"
+  },
+  {
+    "name": "people_holding_hands",
+    "code": "1f9d1-200d-1f91d-200d-1f9d1"
+  },
+  {
+    "name": "women_holding_hands",
+    "code": "1f46d"
+  },
+  {
+    "name": "woman_and_man_holding_hands",
+    "code": "1f46b"
+  },
+  {
+    "name": "men_holding_hands",
+    "code": "1f46c"
+  },
+  {
+    "name": "kiss",
+    "code": "1f48f"
+  },
+  {
+    "name": "kiss_woman_man",
+    "code": "1f469-200d-2764-fe0f-200d-1f48b-200d-1f468"
+  },
+  {
+    "name": "kiss_man_man",
+    "code": "1f468-200d-2764-fe0f-200d-1f48b-200d-1f468"
+  },
+  {
+    "name": "kiss_woman_woman",
+    "code": "1f469-200d-2764-fe0f-200d-1f48b-200d-1f469"
+  },
+  {
+    "name": "couple_with_heart",
+    "code": "1f491"
+  },
+  {
+    "name": "couple_with_heart",
+    "code": "1f469-200d-2764-fe0f-200d-1f468"
+  },
+  {
+    "name": "couple_with_heart_man_man",
+    "code": "1f468-200d-2764-fe0f-200d-1f468"
+  },
+  {
+    "name": "couple_with_heart_woman_woman",
+    "code": "1f469-200d-2764-fe0f-200d-1f469"
+  },
+  {
+    "name": "family_man_woman_boy",
+    "code": "1f468-200d-1f469-200d-1f466"
+  },
+  {
+    "name": "family_man_woman_girl",
+    "code": "1f468-200d-1f469-200d-1f467"
+  },
+  {
+    "name": "family_man_woman_girl_boy",
+    "code": "1f468-200d-1f469-200d-1f467-200d-1f466"
+  },
+  {
+    "name": "family_man_woman_boy_boy",
+    "code": "1f468-200d-1f469-200d-1f466-200d-1f466"
+  },
+  {
+    "name": "family_man_woman_girl_girl",
+    "code": "1f468-200d-1f469-200d-1f467-200d-1f467"
+  },
+  {
+    "name": "family_man_man_boy",
+    "code": "1f468-200d-1f468-200d-1f466"
+  },
+  {
+    "name": "family_man_man_girl",
+    "code": "1f468-200d-1f468-200d-1f467"
+  },
+  {
+    "name": "family_man_man_girl_boy",
+    "code": "1f468-200d-1f468-200d-1f467-200d-1f466"
+  },
+  {
+    "name": "family_man_man_boy_boy",
+    "code": "1f468-200d-1f468-200d-1f466-200d-1f466"
+  },
+  {
+    "name": "family_man_man_girl_girl",
+    "code": "1f468-200d-1f468-200d-1f467-200d-1f467"
+  },
+  {
+    "name": "family_woman_woman_boy",
+    "code": "1f469-200d-1f469-200d-1f466"
+  },
+  {
+    "name": "family_woman_woman_girl",
+    "code": "1f469-200d-1f469-200d-1f467"
+  },
+  {
+    "name": "family_woman_woman_girl_boy",
+    "code": "1f469-200d-1f469-200d-1f467-200d-1f466"
+  },
+  {
+    "name": "family_woman_woman_boy_boy",
+    "code": "1f469-200d-1f469-200d-1f466-200d-1f466"
+  },
+  {
+    "name": "family_woman_woman_girl_girl",
+    "code": "1f469-200d-1f469-200d-1f467-200d-1f467"
+  },
+  {
+    "name": "family_man_boy",
+    "code": "1f468-200d-1f466"
+  },
+  {
+    "name": "family_man_boy_boy",
+    "code": "1f468-200d-1f466-200d-1f466"
+  },
+  {
+    "name": "family_man_girl",
+    "code": "1f468-200d-1f467"
+  },
+  {
+    "name": "family_man_girl_boy",
+    "code": "1f468-200d-1f467-200d-1f466"
+  },
+  {
+    "name": "family_man_girl_girl",
+    "code": "1f468-200d-1f467-200d-1f467"
+  },
+  {
+    "name": "family_woman_boy",
+    "code": "1f469-200d-1f466"
+  },
+  {
+    "name": "family_woman_boy_boy",
+    "code": "1f469-200d-1f466-200d-1f466"
+  },
+  {
+    "name": "family_woman_girl",
+    "code": "1f469-200d-1f467"
+  },
+  {
+    "name": "family_woman_girl_boy",
+    "code": "1f469-200d-1f467-200d-1f466"
+  },
+  {
+    "name": "family_woman_girl_girl",
+    "code": "1f469-200d-1f467-200d-1f467"
+  },
+  {
+    "name": "speaking_head",
+    "code": "1f5e3"
+  },
+  {
+    "name": "bust_in_silhouette",
+    "code": "1f464"
+  },
+  {
+    "name": "busts_in_silhouette",
+    "code": "1f465"
+  },
+  {
+    "name": "people_hugging",
+    "code": "1fac2"
+  },
+  {
+    "name": "family",
+    "code": "1f46a"
+  },
+  {
+    "name": "family_adult_adult_child",
+    "code": "1f9d1-200d-1f9d1-200d-1f9d2"
+  },
+  {
+    "name": "family_adult_adult_child_child",
+    "code": "1f9d1-200d-1f9d1-200d-1f9d2-200d-1f9d2"
+  },
+  {
+    "name": "family_adult_child",
+    "code": "1f9d1-200d-1f9d2"
+  },
+  {
+    "name": "family_adult_child_child",
+    "code": "1f9d1-200d-1f9d2-200d-1f9d2"
+  },
+  {
+    "name": "footprints",
+    "code": "1f463"
+  },
+  {
+    "name": "fingerprint",
+    "code": "1fac6"
+  },
+  {
+    "name": "monkey_face",
+    "code": "1f435"
+  },
+  {
+    "name": "monkey",
+    "code": "1f412"
+  },
+  {
+    "name": "gorilla",
+    "code": "1f98d"
+  },
+  {
+    "name": "orangutan",
+    "code": "1f9a7"
+  },
+  {
+    "name": "dog_face",
+    "code": "1f436"
+  },
+  {
+    "name": "dog",
+    "code": "1f415"
+  },
+  {
+    "name": "guide_dog",
+    "code": "1f9ae"
+  },
+  {
+    "name": "service_dog",
+    "code": "1f415-200d-1f9ba"
+  },
+  {
+    "name": "poodle",
+    "code": "1f429"
+  },
+  {
+    "name": "wolf",
+    "code": "1f43a"
+  },
+  {
+    "name": "fox",
+    "code": "1f98a"
+  },
+  {
+    "name": "raccoon",
+    "code": "1f99d"
+  },
+  {
+    "name": "cat_face",
+    "code": "1f431"
+  },
+  {
+    "name": "cat",
+    "code": "1f408"
+  },
+  {
+    "name": "black_cat",
+    "code": "1f408-200d-2b1b"
+  },
+  {
+    "name": "lion",
+    "code": "1f981"
+  },
+  {
+    "name": "tiger_face",
+    "code": "1f42f"
+  },
+  {
+    "name": "tiger",
+    "code": "1f405"
+  },
+  {
+    "name": "leopard",
+    "code": "1f406"
+  },
+  {
+    "name": "horse_face",
+    "code": "1f434"
+  },
+  {
+    "name": "moose",
+    "code": "1face"
+  },
+  {
+    "name": "donkey",
+    "code": "1facf"
+  },
+  {
+    "name": "horse",
+    "code": "1f40e"
+  },
+  {
+    "name": "unicorn",
+    "code": "1f984"
+  },
+  {
+    "name": "zebra",
+    "code": "1f993"
+  },
+  {
+    "name": "deer",
+    "code": "1f98c"
+  },
+  {
+    "name": "bison",
+    "code": "1f9ac"
+  },
+  {
+    "name": "cow_face",
+    "code": "1f42e"
+  },
+  {
+    "name": "ox",
+    "code": "1f402"
+  },
+  {
+    "name": "water_buffalo",
+    "code": "1f403"
+  },
+  {
+    "name": "cow",
+    "code": "1f404"
+  },
+  {
+    "name": "pig_face",
+    "code": "1f437"
+  },
+  {
+    "name": "pig",
+    "code": "1f416"
+  },
+  {
+    "name": "boar",
+    "code": "1f417"
+  },
+  {
+    "name": "pig_nose",
+    "code": "1f43d"
+  },
+  {
+    "name": "ram",
+    "code": "1f40f"
+  },
+  {
+    "name": "ewe",
+    "code": "1f411"
+  },
+  {
+    "name": "goat",
+    "code": "1f410"
+  },
+  {
+    "name": "camel",
+    "code": "1f42a"
+  },
+  {
+    "name": "two_hump_camel",
+    "code": "1f42b"
+  },
+  {
+    "name": "llama",
+    "code": "1f999"
+  },
+  {
+    "name": "giraffe",
+    "code": "1f992"
+  },
+  {
+    "name": "elephant",
+    "code": "1f418"
+  },
+  {
+    "name": "mammoth",
+    "code": "1f9a3"
+  },
+  {
+    "name": "rhinoceros",
+    "code": "1f98f"
+  },
+  {
+    "name": "hippopotamus",
+    "code": "1f99b"
+  },
+  {
+    "name": "mouse_face",
+    "code": "1f42d"
+  },
+  {
+    "name": "mouse",
+    "code": "1f401"
+  },
+  {
+    "name": "rat",
+    "code": "1f400"
+  },
+  {
+    "name": "hamster",
+    "code": "1f439"
+  },
+  {
+    "name": "rabbit_face",
+    "code": "1f430"
+  },
+  {
+    "name": "rabbit",
+    "code": "1f407"
+  },
+  {
+    "name": "chipmunk",
+    "code": "1f43f"
+  },
+  {
+    "name": "beaver",
+    "code": "1f9ab"
+  },
+  {
+    "name": "hedgehog",
+    "code": "1f994"
+  },
+  {
+    "name": "bat",
+    "code": "1f987"
+  },
+  {
+    "name": "bear",
+    "code": "1f43b"
+  },
+  {
+    "name": "polar_bear",
+    "code": "1f43b-200d-2744-fe0f"
+  },
+  {
+    "name": "koala",
+    "code": "1f428"
+  },
+  {
+    "name": "panda",
+    "code": "1f43c"
+  },
+  {
+    "name": "sloth",
+    "code": "1f9a5"
+  },
+  {
+    "name": "otter",
+    "code": "1f9a6"
+  },
+  {
+    "name": "skunk",
+    "code": "1f9a8"
+  },
+  {
+    "name": "kangaroo",
+    "code": "1f998"
+  },
+  {
+    "name": "badger",
+    "code": "1f9a1"
+  },
+  {
+    "name": "paw_prints",
+    "code": "1f43e"
+  },
+  {
+    "name": "turkey",
+    "code": "1f983"
+  },
+  {
+    "name": "chicken",
+    "code": "1f414"
+  },
+  {
+    "name": "rooster",
+    "code": "1f413"
+  },
+  {
+    "name": "hatching_chick",
+    "code": "1f423"
+  },
+  {
+    "name": "baby_chick",
+    "code": "1f424"
+  },
+  {
+    "name": "front_facing_baby_chick",
+    "code": "1f425"
+  },
+  {
+    "name": "bird",
+    "code": "1f426"
+  },
+  {
+    "name": "penguin",
+    "code": "1f427"
+  },
+  {
+    "name": "dove",
+    "code": "1f54a"
+  },
+  {
+    "name": "eagle",
+    "code": "1f985"
+  },
+  {
+    "name": "duck",
+    "code": "1f986"
+  },
+  {
+    "name": "swan",
+    "code": "1f9a2"
+  },
+  {
+    "name": "owl",
+    "code": "1f989"
+  },
+  {
+    "name": "dodo",
+    "code": "1f9a4"
+  },
+  {
+    "name": "feather",
+    "code": "1fab6"
+  },
+  {
+    "name": "flamingo",
+    "code": "1f9a9"
+  },
+  {
+    "name": "peacock",
+    "code": "1f99a"
+  },
+  {
+    "name": "parrot",
+    "code": "1f99c"
+  },
+  {
+    "name": "wing",
+    "code": "1fabd"
+  },
+  {
+    "name": "black_bird",
+    "code": "1f426-200d-2b1b"
+  },
+  {
+    "name": "goose",
+    "code": "1fabf"
+  },
+  {
+    "name": "phoenix",
+    "code": "1f426-200d-1f525"
+  },
+  {
+    "name": "frog",
+    "code": "1f438"
+  },
+  {
+    "name": "crocodile",
+    "code": "1f40a"
+  },
+  {
+    "name": "turtle",
+    "code": "1f422"
+  },
+  {
+    "name": "lizard",
+    "code": "1f98e"
+  },
+  {
+    "name": "snake",
+    "code": "1f40d"
+  },
+  {
+    "name": "dragon_face",
+    "code": "1f432"
+  },
+  {
+    "name": "dragon",
+    "code": "1f409"
+  },
+  {
+    "name": "sauropod",
+    "code": "1f995"
+  },
+  {
+    "name": "t_rex",
+    "code": "1f996"
+  },
+  {
+    "name": "spouting_whale",
+    "code": "1f433"
+  },
+  {
+    "name": "whale",
+    "code": "1f40b"
+  },
+  {
+    "name": "dolphin",
+    "code": "1f42c"
+  },
+  {
+    "name": "orca",
+    "code": "1facd"
+  },
+  {
+    "name": "seal",
+    "code": "1f9ad"
+  },
+  {
+    "name": "fish",
+    "code": "1f41f"
+  },
+  {
+    "name": "tropical_fish",
+    "code": "1f420"
+  },
+  {
+    "name": "blowfish",
+    "code": "1f421"
+  },
+  {
+    "name": "shark",
+    "code": "1f988"
+  },
+  {
+    "name": "octopus",
+    "code": "1f419"
+  },
+  {
+    "name": "spiral_shell",
+    "code": "1f41a"
+  },
+  {
+    "name": "coral",
+    "code": "1fab8"
+  },
+  {
+    "name": "jellyfish",
+    "code": "1fabc"
+  },
+  {
+    "name": "crab",
+    "code": "1f980"
+  },
+  {
+    "name": "lobster",
+    "code": "1f99e"
+  },
+  {
+    "name": "shrimp",
+    "code": "1f990"
+  },
+  {
+    "name": "squid",
+    "code": "1f991"
+  },
+  {
+    "name": "oyster",
+    "code": "1f9aa"
+  },
+  {
+    "name": "snail",
+    "code": "1f40c"
+  },
+  {
+    "name": "butterfly",
+    "code": "1f98b"
+  },
+  {
+    "name": "bug",
+    "code": "1f41b"
+  },
+  {
+    "name": "ant",
+    "code": "1f41c"
+  },
+  {
+    "name": "honeybee",
+    "code": "1f41d"
+  },
+  {
+    "name": "beetle",
+    "code": "1fab2"
+  },
+  {
+    "name": "lady_beetle",
+    "code": "1f41e"
+  },
+  {
+    "name": "cricket",
+    "code": "1f997"
+  },
+  {
+    "name": "cockroach",
+    "code": "1fab3"
+  },
+  {
+    "name": "spider",
+    "code": "1f577"
+  },
+  {
+    "name": "spider_web",
+    "code": "1f578"
+  },
+  {
+    "name": "scorpion",
+    "code": "1f982"
+  },
+  {
+    "name": "mosquito",
+    "code": "1f99f"
+  },
+  {
+    "name": "fly",
+    "code": "1fab0"
+  },
+  {
+    "name": "worm",
+    "code": "1fab1"
+  },
+  {
+    "name": "microbe",
+    "code": "1f9a0"
+  },
+  {
+    "name": "bouquet",
+    "code": "1f490"
+  },
+  {
+    "name": "cherry_blossom",
+    "code": "1f338"
+  },
+  {
+    "name": "white_flower",
+    "code": "1f4ae"
+  },
+  {
+    "name": "lotus",
+    "code": "1fab7"
+  },
+  {
+    "name": "rosette",
+    "code": "1f3f5"
+  },
+  {
+    "name": "rose",
+    "code": "1f339"
+  },
+  {
+    "name": "wilted_flower",
+    "code": "1f940"
+  },
+  {
+    "name": "hibiscus",
+    "code": "1f33a"
+  },
+  {
+    "name": "sunflower",
+    "code": "1f33b"
+  },
+  {
+    "name": "blossom",
+    "code": "1f33c"
+  },
+  {
+    "name": "tulip",
+    "code": "1f337"
+  },
+  {
+    "name": "hyacinth",
+    "code": "1fabb"
+  },
+  {
+    "name": "seedling",
+    "code": "1f331"
+  },
+  {
+    "name": "potted_plant",
+    "code": "1fab4"
+  },
+  {
+    "name": "evergreen_tree",
+    "code": "1f332"
+  },
+  {
+    "name": "deciduous_tree",
+    "code": "1f333"
+  },
+  {
+    "name": "palm_tree",
+    "code": "1f334"
+  },
+  {
+    "name": "cactus",
+    "code": "1f335"
+  },
+  {
+    "name": "sheaf_of_rice",
+    "code": "1f33e"
+  },
+  {
+    "name": "herb",
+    "code": "1f33f"
+  },
+  {
+    "name": "shamrock",
+    "code": "2618"
+  },
+  {
+    "name": "four_leaf_clover",
+    "code": "1f340"
+  },
+  {
+    "name": "maple_leaf",
+    "code": "1f341"
+  },
+  {
+    "name": "fallen_leaf",
+    "code": "1f342"
+  },
+  {
+    "name": "leaf_fluttering_in_wind",
+    "code": "1f343"
+  },
+  {
+    "name": "empty_nest",
+    "code": "1fab9"
+  },
+  {
+    "name": "nest_with_eggs",
+    "code": "1faba"
+  },
+  {
+    "name": "mushroom",
+    "code": "1f344"
+  },
+  {
+    "name": "leafless_tree",
+    "code": "1fabe"
+  },
+  {
+    "name": "grapes",
+    "code": "1f347"
+  },
+  {
+    "name": "melon",
+    "code": "1f348"
+  },
+  {
+    "name": "watermelon",
+    "code": "1f349"
+  },
+  {
+    "name": "tangerine",
+    "code": "1f34a"
+  },
+  {
+    "name": "lemon",
+    "code": "1f34b"
+  },
+  {
+    "name": "lime",
+    "code": "1f34b-200d-1f7e9"
+  },
+  {
+    "name": "banana",
+    "code": "1f34c"
+  },
+  {
+    "name": "pineapple",
+    "code": "1f34d"
+  },
+  {
+    "name": "mango",
+    "code": "1f96d"
+  },
+  {
+    "name": "red_apple",
+    "code": "1f34e"
+  },
+  {
+    "name": "green_apple",
+    "code": "1f34f"
+  },
+  {
+    "name": "pear",
+    "code": "1f350"
+  },
+  {
+    "name": "peach",
+    "code": "1f351"
+  },
+  {
+    "name": "cherries",
+    "code": "1f352"
+  },
+  {
+    "name": "strawberry",
+    "code": "1f353"
+  },
+  {
+    "name": "blueberries",
+    "code": "1fad0"
+  },
+  {
+    "name": "kiwi_fruit",
+    "code": "1f95d"
+  },
+  {
+    "name": "tomato",
+    "code": "1f345"
+  },
+  {
+    "name": "olive",
+    "code": "1fad2"
+  },
+  {
+    "name": "coconut",
+    "code": "1f965"
+  },
+  {
+    "name": "avocado",
+    "code": "1f951"
+  },
+  {
+    "name": "eggplant",
+    "code": "1f346"
+  },
+  {
+    "name": "potato",
+    "code": "1f954"
+  },
+  {
+    "name": "carrot",
+    "code": "1f955"
+  },
+  {
+    "name": "ear_of_corn",
+    "code": "1f33d"
+  },
+  {
+    "name": "hot_pepper",
+    "code": "1f336"
+  },
+  {
+    "name": "bell_pepper",
+    "code": "1fad1"
+  },
+  {
+    "name": "cucumber",
+    "code": "1f952"
+  },
+  {
+    "name": "leafy_green",
+    "code": "1f96c"
+  },
+  {
+    "name": "broccoli",
+    "code": "1f966"
+  },
+  {
+    "name": "garlic",
+    "code": "1f9c4"
+  },
+  {
+    "name": "onion",
+    "code": "1f9c5"
+  },
+  {
+    "name": "peanuts",
+    "code": "1f95c"
+  },
+  {
+    "name": "beans",
+    "code": "1fad8"
+  },
+  {
+    "name": "chestnut",
+    "code": "1f330"
+  },
+  {
+    "name": "ginger_root",
+    "code": "1fada"
+  },
+  {
+    "name": "pea_pod",
+    "code": "1fadb"
+  },
+  {
+    "name": "brown_mushroom",
+    "code": "1f344-200d-1f7eb"
+  },
+  {
+    "name": "root_vegetable",
+    "code": "1fadc"
+  },
+  {
+    "name": "bread",
+    "code": "1f35e"
+  },
+  {
+    "name": "croissant",
+    "code": "1f950"
+  },
+  {
+    "name": "baguette_bread",
+    "code": "1f956"
+  },
+  {
+    "name": "flatbread",
+    "code": "1fad3"
+  },
+  {
+    "name": "pretzel",
+    "code": "1f968"
+  },
+  {
+    "name": "bagel",
+    "code": "1f96f"
+  },
+  {
+    "name": "pancakes",
+    "code": "1f95e"
+  },
+  {
+    "name": "waffle",
+    "code": "1f9c7"
+  },
+  {
+    "name": "cheese_wedge",
+    "code": "1f9c0"
+  },
+  {
+    "name": "meat_on_bone",
+    "code": "1f356"
+  },
+  {
+    "name": "poultry_leg",
+    "code": "1f357"
+  },
+  {
+    "name": "cut_of_meat",
+    "code": "1f969"
+  },
+  {
+    "name": "bacon",
+    "code": "1f953"
+  },
+  {
+    "name": "hamburger",
+    "code": "1f354"
+  },
+  {
+    "name": "french_fries",
+    "code": "1f35f"
+  },
+  {
+    "name": "pizza",
+    "code": "1f355"
+  },
+  {
+    "name": "hot_dog",
+    "code": "1f32d"
+  },
+  {
+    "name": "sandwich",
+    "code": "1f96a"
+  },
+  {
+    "name": "taco",
+    "code": "1f32e"
+  },
+  {
+    "name": "burrito",
+    "code": "1f32f"
+  },
+  {
+    "name": "tamale",
+    "code": "1fad4"
+  },
+  {
+    "name": "stuffed_flatbread",
+    "code": "1f959"
+  },
+  {
+    "name": "falafel",
+    "code": "1f9c6"
+  },
+  {
+    "name": "egg",
+    "code": "1f95a"
+  },
+  {
+    "name": "cooking",
+    "code": "1f373"
+  },
+  {
+    "name": "shallow_pan_of_food",
+    "code": "1f958"
+  },
+  {
+    "name": "pot_of_food",
+    "code": "1f372"
+  },
+  {
+    "name": "fondue",
+    "code": "1fad5"
+  },
+  {
+    "name": "bowl_with_spoon",
+    "code": "1f963"
+  },
+  {
+    "name": "green_salad",
+    "code": "1f957"
+  },
+  {
+    "name": "popcorn",
+    "code": "1f37f"
+  },
+  {
+    "name": "butter",
+    "code": "1f9c8"
+  },
+  {
+    "name": "salt",
+    "code": "1f9c2"
+  },
+  {
+    "name": "canned_food",
+    "code": "1f96b"
+  },
+  {
+    "name": "bento_box",
+    "code": "1f371"
+  },
+  {
+    "name": "rice_cracker",
+    "code": "1f358"
+  },
+  {
+    "name": "rice_ball",
+    "code": "1f359"
+  },
+  {
+    "name": "cooked_rice",
+    "code": "1f35a"
+  },
+  {
+    "name": "curry_rice",
+    "code": "1f35b"
+  },
+  {
+    "name": "steaming_bowl",
+    "code": "1f35c"
+  },
+  {
+    "name": "spaghetti",
+    "code": "1f35d"
+  },
+  {
+    "name": "roasted_sweet_potato",
+    "code": "1f360"
+  },
+  {
+    "name": "oden",
+    "code": "1f362"
+  },
+  {
+    "name": "sushi",
+    "code": "1f363"
+  },
+  {
+    "name": "fried_shrimp",
+    "code": "1f364"
+  },
+  {
+    "name": "fish_cake_with_swirl",
+    "code": "1f365"
+  },
+  {
+    "name": "moon_cake",
+    "code": "1f96e"
+  },
+  {
+    "name": "dango",
+    "code": "1f361"
+  },
+  {
+    "name": "dumpling",
+    "code": "1f95f"
+  },
+  {
+    "name": "fortune_cookie",
+    "code": "1f960"
+  },
+  {
+    "name": "takeout_box",
+    "code": "1f961"
+  },
+  {
+    "name": "soft_ice_cream",
+    "code": "1f366"
+  },
+  {
+    "name": "shaved_ice",
+    "code": "1f367"
+  },
+  {
+    "name": "ice_cream",
+    "code": "1f368"
+  },
+  {
+    "name": "doughnut",
+    "code": "1f369"
+  },
+  {
+    "name": "cookie",
+    "code": "1f36a"
+  },
+  {
+    "name": "birthday_cake",
+    "code": "1f382"
+  },
+  {
+    "name": "shortcake",
+    "code": "1f370"
+  },
+  {
+    "name": "cupcake",
+    "code": "1f9c1"
+  },
+  {
+    "name": "pie",
+    "code": "1f967"
+  },
+  {
+    "name": "chocolate_bar",
+    "code": "1f36b"
+  },
+  {
+    "name": "candy",
+    "code": "1f36c"
+  },
+  {
+    "name": "lollipop",
+    "code": "1f36d"
+  },
+  {
+    "name": "custard",
+    "code": "1f36e"
+  },
+  {
+    "name": "honey_pot",
+    "code": "1f36f"
+  },
+  {
+    "name": "baby_bottle",
+    "code": "1f37c"
+  },
+  {
+    "name": "glass_of_milk",
+    "code": "1f95b"
+  },
+  {
+    "name": "hot_beverage",
+    "code": "2615"
+  },
+  {
+    "name": "teapot",
+    "code": "1fad6"
+  },
+  {
+    "name": "teacup_without_handle",
+    "code": "1f375"
+  },
+  {
+    "name": "sake",
+    "code": "1f376"
+  },
+  {
+    "name": "bottle_with_popping_cork",
+    "code": "1f37e"
+  },
+  {
+    "name": "wine_glass",
+    "code": "1f377"
+  },
+  {
+    "name": "cocktail_glass",
+    "code": "1f378"
+  },
+  {
+    "name": "tropical_drink",
+    "code": "1f379"
+  },
+  {
+    "name": "beer_mug",
+    "code": "1f37a"
+  },
+  {
+    "name": "clinking_beer_mugs",
+    "code": "1f37b"
+  },
+  {
+    "name": "clinking_glasses",
+    "code": "1f942"
+  },
+  {
+    "name": "tumbler_glass",
+    "code": "1f943"
+  },
+  {
+    "name": "pouring_liquid",
+    "code": "1fad7"
+  },
+  {
+    "name": "cup_with_straw",
+    "code": "1f964"
+  },
+  {
+    "name": "bubble_tea",
+    "code": "1f9cb"
+  },
+  {
+    "name": "beverage_box",
+    "code": "1f9c3"
+  },
+  {
+    "name": "mate",
+    "code": "1f9c9"
+  },
+  {
+    "name": "ice",
+    "code": "1f9ca"
+  },
+  {
+    "name": "chopsticks",
+    "code": "1f962"
+  },
+  {
+    "name": "fork_and_knife_with_plate",
+    "code": "1f37d"
+  },
+  {
+    "name": "fork_and_knife",
+    "code": "1f374"
+  },
+  {
+    "name": "spoon",
+    "code": "1f944"
+  },
+  {
+    "name": "kitchen_knife",
+    "code": "1f52a"
+  },
+  {
+    "name": "jar",
+    "code": "1fad9"
+  },
+  {
+    "name": "amphora",
+    "code": "1f3fa"
+  },
+  {
+    "name": "globe_showing_europe_africa",
+    "code": "1f30d"
+  },
+  {
+    "name": "globe_showing_americas",
+    "code": "1f30e"
+  },
+  {
+    "name": "globe_showing_asia_australia",
+    "code": "1f30f"
+  },
+  {
+    "name": "globe_with_meridians",
+    "code": "1f310"
+  },
+  {
+    "name": "world_map",
+    "code": "1f5fa"
+  },
+  {
+    "name": "map_of_japan",
+    "code": "1f5fe"
+  },
+  {
+    "name": "compass",
+    "code": "1f9ed"
+  },
+  {
+    "name": "snow_capped_mountain",
+    "code": "1f3d4"
+  },
+  {
+    "name": "mountain",
+    "code": "26f0"
+  },
+  {
+    "name": "landslide",
+    "code": "1f6d8"
+  },
+  {
+    "name": "volcano",
+    "code": "1f30b"
+  },
+  {
+    "name": "mount_fuji",
+    "code": "1f5fb"
+  },
+  {
+    "name": "camping",
+    "code": "1f3d5"
+  },
+  {
+    "name": "beach_with_umbrella",
+    "code": "1f3d6"
+  },
+  {
+    "name": "desert",
+    "code": "1f3dc"
+  },
+  {
+    "name": "desert_island",
+    "code": "1f3dd"
+  },
+  {
+    "name": "national_park",
+    "code": "1f3de"
+  },
+  {
+    "name": "stadium",
+    "code": "1f3df"
+  },
+  {
+    "name": "classical_building",
+    "code": "1f3db"
+  },
+  {
+    "name": "building_construction",
+    "code": "1f3d7"
+  },
+  {
+    "name": "brick",
+    "code": "1f9f1"
+  },
+  {
+    "name": "rock",
+    "code": "1faa8"
+  },
+  {
+    "name": "wood",
+    "code": "1fab5"
+  },
+  {
+    "name": "hut",
+    "code": "1f6d6"
+  },
+  {
+    "name": "houses",
+    "code": "1f3d8"
+  },
+  {
+    "name": "derelict_house",
+    "code": "1f3da"
+  },
+  {
+    "name": "house",
+    "code": "1f3e0"
+  },
+  {
+    "name": "house_with_garden",
+    "code": "1f3e1"
+  },
+  {
+    "name": "office_building",
+    "code": "1f3e2"
+  },
+  {
+    "name": "japanese_post_office",
+    "code": "1f3e3"
+  },
+  {
+    "name": "post_office",
+    "code": "1f3e4"
+  },
+  {
+    "name": "hospital",
+    "code": "1f3e5"
+  },
+  {
+    "name": "bank",
+    "code": "1f3e6"
+  },
+  {
+    "name": "hotel",
+    "code": "1f3e8"
+  },
+  {
+    "name": "love_hotel",
+    "code": "1f3e9"
+  },
+  {
+    "name": "convenience_store",
+    "code": "1f3ea"
+  },
+  {
+    "name": "school",
+    "code": "1f3eb"
+  },
+  {
+    "name": "department_store",
+    "code": "1f3ec"
+  },
+  {
+    "name": "factory",
+    "code": "1f3ed"
+  },
+  {
+    "name": "japanese_castle",
+    "code": "1f3ef"
+  },
+  {
+    "name": "castle",
+    "code": "1f3f0"
+  },
+  {
+    "name": "wedding",
+    "code": "1f492"
+  },
+  {
+    "name": "tokyo_tower",
+    "code": "1f5fc"
+  },
+  {
+    "name": "statue_of_liberty",
+    "code": "1f5fd"
+  },
+  {
+    "name": "church",
+    "code": "26ea"
+  },
+  {
+    "name": "mosque",
+    "code": "1f54c"
+  },
+  {
+    "name": "hindu_temple",
+    "code": "1f6d5"
+  },
+  {
+    "name": "synagogue",
+    "code": "1f54d"
+  },
+  {
+    "name": "shinto_shrine",
+    "code": "26e9"
+  },
+  {
+    "name": "kaaba",
+    "code": "1f54b"
+  },
+  {
+    "name": "fountain",
+    "code": "26f2"
+  },
+  {
+    "name": "tent",
+    "code": "26fa"
+  },
+  {
+    "name": "foggy",
+    "code": "1f301"
+  },
+  {
+    "name": "night_with_stars",
+    "code": "1f303"
+  },
+  {
+    "name": "cityscape",
+    "code": "1f3d9"
+  },
+  {
+    "name": "sunrise_over_mountains",
+    "code": "1f304"
+  },
+  {
+    "name": "sunrise",
+    "code": "1f305"
+  },
+  {
+    "name": "cityscape_at_dusk",
+    "code": "1f306"
+  },
+  {
+    "name": "sunset",
+    "code": "1f307"
+  },
+  {
+    "name": "bridge_at_night",
+    "code": "1f309"
+  },
+  {
+    "name": "hot_springs",
+    "code": "2668"
+  },
+  {
+    "name": "carousel_horse",
+    "code": "1f3a0"
+  },
+  {
+    "name": "playground_slide",
+    "code": "1f6dd"
+  },
+  {
+    "name": "ferris_wheel",
+    "code": "1f3a1"
+  },
+  {
+    "name": "roller_coaster",
+    "code": "1f3a2"
+  },
+  {
+    "name": "barber_pole",
+    "code": "1f488"
+  },
+  {
+    "name": "circus_tent",
+    "code": "1f3aa"
+  },
+  {
+    "name": "locomotive",
+    "code": "1f682"
+  },
+  {
+    "name": "railway_car",
+    "code": "1f683"
+  },
+  {
+    "name": "high_speed_train",
+    "code": "1f684"
+  },
+  {
+    "name": "bullet_train",
+    "code": "1f685"
+  },
+  {
+    "name": "train",
+    "code": "1f686"
+  },
+  {
+    "name": "metro",
+    "code": "1f687"
+  },
+  {
+    "name": "light_rail",
+    "code": "1f688"
+  },
+  {
+    "name": "station",
+    "code": "1f689"
+  },
+  {
+    "name": "tram",
+    "code": "1f68a"
+  },
+  {
+    "name": "monorail",
+    "code": "1f69d"
+  },
+  {
+    "name": "mountain_railway",
+    "code": "1f69e"
+  },
+  {
+    "name": "tram_car",
+    "code": "1f68b"
+  },
+  {
+    "name": "bus",
+    "code": "1f68c"
+  },
+  {
+    "name": "oncoming_bus",
+    "code": "1f68d"
+  },
+  {
+    "name": "trolleybus",
+    "code": "1f68e"
+  },
+  {
+    "name": "minibus",
+    "code": "1f690"
+  },
+  {
+    "name": "ambulance",
+    "code": "1f691"
+  },
+  {
+    "name": "fire_engine",
+    "code": "1f692"
+  },
+  {
+    "name": "police_car",
+    "code": "1f693"
+  },
+  {
+    "name": "oncoming_police_car",
+    "code": "1f694"
+  },
+  {
+    "name": "taxi",
+    "code": "1f695"
+  },
+  {
+    "name": "oncoming_taxi",
+    "code": "1f696"
+  },
+  {
+    "name": "automobile",
+    "code": "1f697"
+  },
+  {
+    "name": "oncoming_automobile",
+    "code": "1f698"
+  },
+  {
+    "name": "sport_utility_vehicle",
+    "code": "1f699"
+  },
+  {
+    "name": "pickup_truck",
+    "code": "1f6fb"
+  },
+  {
+    "name": "delivery_truck",
+    "code": "1f69a"
+  },
+  {
+    "name": "articulated_lorry",
+    "code": "1f69b"
+  },
+  {
+    "name": "tractor",
+    "code": "1f69c"
+  },
+  {
+    "name": "racing_car",
+    "code": "1f3ce"
+  },
+  {
+    "name": "motorcycle",
+    "code": "1f3cd"
+  },
+  {
+    "name": "motor_scooter",
+    "code": "1f6f5"
+  },
+  {
+    "name": "manual_wheelchair",
+    "code": "1f9bd"
+  },
+  {
+    "name": "motorized_wheelchair",
+    "code": "1f9bc"
+  },
+  {
+    "name": "auto_rickshaw",
+    "code": "1f6fa"
+  },
+  {
+    "name": "bicycle",
+    "code": "1f6b2"
+  },
+  {
+    "name": "kick_scooter",
+    "code": "1f6f4"
+  },
+  {
+    "name": "skateboard",
+    "code": "1f6f9"
+  },
+  {
+    "name": "roller_skate",
+    "code": "1f6fc"
+  },
+  {
+    "name": "bus_stop",
+    "code": "1f68f"
+  },
+  {
+    "name": "motorway",
+    "code": "1f6e3"
+  },
+  {
+    "name": "railway_track",
+    "code": "1f6e4"
+  },
+  {
+    "name": "oil_drum",
+    "code": "1f6e2"
+  },
+  {
+    "name": "fuel_pump",
+    "code": "26fd"
+  },
+  {
+    "name": "wheel",
+    "code": "1f6de"
+  },
+  {
+    "name": "police_car_light",
+    "code": "1f6a8"
+  },
+  {
+    "name": "horizontal_traffic_light",
+    "code": "1f6a5"
+  },
+  {
+    "name": "vertical_traffic_light",
+    "code": "1f6a6"
+  },
+  {
+    "name": "stop_sign",
+    "code": "1f6d1"
+  },
+  {
+    "name": "construction",
+    "code": "1f6a7"
+  },
+  {
+    "name": "anchor",
+    "code": "2693"
+  },
+  {
+    "name": "ring_buoy",
+    "code": "1f6df"
+  },
+  {
+    "name": "sailboat",
+    "code": "26f5"
+  },
+  {
+    "name": "canoe",
+    "code": "1f6f6"
+  },
+  {
+    "name": "speedboat",
+    "code": "1f6a4"
+  },
+  {
+    "name": "passenger_ship",
+    "code": "1f6f3"
+  },
+  {
+    "name": "ferry",
+    "code": "26f4"
+  },
+  {
+    "name": "motor_boat",
+    "code": "1f6e5"
+  },
+  {
+    "name": "ship",
+    "code": "1f6a2"
+  },
+  {
+    "name": "airplane",
+    "code": "2708"
+  },
+  {
+    "name": "small_airplane",
+    "code": "1f6e9"
+  },
+  {
+    "name": "airplane_departure",
+    "code": "1f6eb"
+  },
+  {
+    "name": "airplane_arrival",
+    "code": "1f6ec"
+  },
+  {
+    "name": "parachute",
+    "code": "1fa82"
+  },
+  {
+    "name": "seat",
+    "code": "1f4ba"
+  },
+  {
+    "name": "helicopter",
+    "code": "1f681"
+  },
+  {
+    "name": "suspension_railway",
+    "code": "1f69f"
+  },
+  {
+    "name": "mountain_cableway",
+    "code": "1f6a0"
+  },
+  {
+    "name": "aerial_tramway",
+    "code": "1f6a1"
+  },
+  {
+    "name": "satellite",
+    "code": "1f6f0"
+  },
+  {
+    "name": "rocket",
+    "code": "1f680"
+  },
+  {
+    "name": "flying_saucer",
+    "code": "1f6f8"
+  },
+  {
+    "name": "bellhop_bell",
+    "code": "1f6ce"
+  },
+  {
+    "name": "luggage",
+    "code": "1f9f3"
+  },
+  {
+    "name": "hourglass_done",
+    "code": "231b"
+  },
+  {
+    "name": "hourglass_not_done",
+    "code": "23f3"
+  },
+  {
+    "name": "watch",
+    "code": "231a"
+  },
+  {
+    "name": "alarm_clock",
+    "code": "23f0"
+  },
+  {
+    "name": "stopwatch",
+    "code": "23f1"
+  },
+  {
+    "name": "timer_clock",
+    "code": "23f2"
+  },
+  {
+    "name": "mantelpiece_clock",
+    "code": "1f570"
+  },
+  {
+    "name": "twelve_o_clock",
+    "code": "1f55b"
+  },
+  {
+    "name": "twelve_thirty",
+    "code": "1f567"
+  },
+  {
+    "name": "one_o_clock",
+    "code": "1f550"
+  },
+  {
+    "name": "one_thirty",
+    "code": "1f55c"
+  },
+  {
+    "name": "two_o_clock",
+    "code": "1f551"
+  },
+  {
+    "name": "two_thirty",
+    "code": "1f55d"
+  },
+  {
+    "name": "three_o_clock",
+    "code": "1f552"
+  },
+  {
+    "name": "three_thirty",
+    "code": "1f55e"
+  },
+  {
+    "name": "four_o_clock",
+    "code": "1f553"
+  },
+  {
+    "name": "four_thirty",
+    "code": "1f55f"
+  },
+  {
+    "name": "five_o_clock",
+    "code": "1f554"
+  },
+  {
+    "name": "five_thirty",
+    "code": "1f560"
+  },
+  {
+    "name": "six_o_clock",
+    "code": "1f555"
+  },
+  {
+    "name": "six_thirty",
+    "code": "1f561"
+  },
+  {
+    "name": "seven_o_clock",
+    "code": "1f556"
+  },
+  {
+    "name": "seven_thirty",
+    "code": "1f562"
+  },
+  {
+    "name": "eight_o_clock",
+    "code": "1f557"
+  },
+  {
+    "name": "eight_thirty",
+    "code": "1f563"
+  },
+  {
+    "name": "nine_o_clock",
+    "code": "1f558"
+  },
+  {
+    "name": "nine_thirty",
+    "code": "1f564"
+  },
+  {
+    "name": "ten_o_clock",
+    "code": "1f559"
+  },
+  {
+    "name": "ten_thirty",
+    "code": "1f565"
+  },
+  {
+    "name": "eleven_o_clock",
+    "code": "1f55a"
+  },
+  {
+    "name": "eleven_thirty",
+    "code": "1f566"
+  },
+  {
+    "name": "new_moon",
+    "code": "1f311"
+  },
+  {
+    "name": "waxing_crescent_moon",
+    "code": "1f312"
+  },
+  {
+    "name": "first_quarter_moon",
+    "code": "1f313"
+  },
+  {
+    "name": "waxing_gibbous_moon",
+    "code": "1f314"
+  },
+  {
+    "name": "full_moon",
+    "code": "1f315"
+  },
+  {
+    "name": "waning_gibbous_moon",
+    "code": "1f316"
+  },
+  {
+    "name": "last_quarter_moon",
+    "code": "1f317"
+  },
+  {
+    "name": "waning_crescent_moon",
+    "code": "1f318"
+  },
+  {
+    "name": "crescent_moon",
+    "code": "1f319"
+  },
+  {
+    "name": "new_moon_face",
+    "code": "1f31a"
+  },
+  {
+    "name": "first_quarter_moon_face",
+    "code": "1f31b"
+  },
+  {
+    "name": "last_quarter_moon_face",
+    "code": "1f31c"
+  },
+  {
+    "name": "thermometer",
+    "code": "1f321"
+  },
+  {
+    "name": "sun",
+    "code": "2600"
+  },
+  {
+    "name": "full_moon_face",
+    "code": "1f31d"
+  },
+  {
+    "name": "sun_with_face",
+    "code": "1f31e"
+  },
+  {
+    "name": "ringed_planet",
+    "code": "1fa90"
+  },
+  {
+    "name": "star",
+    "code": "2b50"
+  },
+  {
+    "name": "glowing_star",
+    "code": "1f31f"
+  },
+  {
+    "name": "shooting_star",
+    "code": "1f320"
+  },
+  {
+    "name": "milky_way",
+    "code": "1f30c"
+  },
+  {
+    "name": "cloud",
+    "code": "2601"
+  },
+  {
+    "name": "sun_behind_cloud",
+    "code": "26c5"
+  },
+  {
+    "name": "cloud_with_lightning_and_rain",
+    "code": "26c8"
+  },
+  {
+    "name": "sun_behind_small_cloud",
+    "code": "1f324"
+  },
+  {
+    "name": "sun_behind_large_cloud",
+    "code": "1f325"
+  },
+  {
+    "name": "sun_behind_rain_cloud",
+    "code": "1f326"
+  },
+  {
+    "name": "cloud_with_rain",
+    "code": "1f327"
+  },
+  {
+    "name": "cloud_with_snow",
+    "code": "1f328"
+  },
+  {
+    "name": "cloud_with_lightning",
+    "code": "1f329"
+  },
+  {
+    "name": "tornado",
+    "code": "1f32a"
+  },
+  {
+    "name": "fog",
+    "code": "1f32b"
+  },
+  {
+    "name": "wind_face",
+    "code": "1f32c"
+  },
+  {
+    "name": "cyclone",
+    "code": "1f300"
+  },
+  {
+    "name": "rainbow",
+    "code": "1f308"
+  },
+  {
+    "name": "closed_umbrella",
+    "code": "1f302"
+  },
+  {
+    "name": "umbrella",
+    "code": "2602"
+  },
+  {
+    "name": "umbrella_with_rain_drops",
+    "code": "2614"
+  },
+  {
+    "name": "umbrella_on_ground",
+    "code": "26f1"
+  },
+  {
+    "name": "high_voltage",
+    "code": "26a1"
+  },
+  {
+    "name": "snowflake",
+    "code": "2744"
+  },
+  {
+    "name": "snowman",
+    "code": "2603"
+  },
+  {
+    "name": "snowman_without_snow",
+    "code": "26c4"
+  },
+  {
+    "name": "comet",
+    "code": "2604"
+  },
+  {
+    "name": "fire",
+    "code": "1f525"
+  },
+  {
+    "name": "droplet",
+    "code": "1f4a7"
+  },
+  {
+    "name": "ocean",
+    "code": "1f30a"
+  },
+  {
+    "name": "jack_o_lantern",
+    "code": "1f383"
+  },
+  {
+    "name": "christmas_tree",
+    "code": "1f384"
+  },
+  {
+    "name": "fireworks",
+    "code": "1f386"
+  },
+  {
+    "name": "sparkler",
+    "code": "1f387"
+  },
+  {
+    "name": "firecracker",
+    "code": "1f9e8"
+  },
+  {
+    "name": "sparkles",
+    "code": "2728"
+  },
+  {
+    "name": "balloon",
+    "code": "1f388"
+  },
+  {
+    "name": "tada",
+    "code": "1f389"
+  },
+  {
+    "name": "confetti_ball",
+    "code": "1f38a"
+  },
+  {
+    "name": "tanabata_tree",
+    "code": "1f38b"
+  },
+  {
+    "name": "pine_decoration",
+    "code": "1f38d"
+  },
+  {
+    "name": "japanese_dolls",
+    "code": "1f38e"
+  },
+  {
+    "name": "carp_streamer",
+    "code": "1f38f"
+  },
+  {
+    "name": "wind_chime",
+    "code": "1f390"
+  },
+  {
+    "name": "moon_viewing_ceremony",
+    "code": "1f391"
+  },
+  {
+    "name": "red_envelope",
+    "code": "1f9e7"
+  },
+  {
+    "name": "ribbon",
+    "code": "1f380"
+  },
+  {
+    "name": "wrapped_gift",
+    "code": "1f381"
+  },
+  {
+    "name": "reminder_ribbon",
+    "code": "1f397"
+  },
+  {
+    "name": "admission_tickets",
+    "code": "1f39f"
+  },
+  {
+    "name": "ticket",
+    "code": "1f3ab"
+  },
+  {
+    "name": "military_medal",
+    "code": "1f396"
+  },
+  {
+    "name": "trophy",
+    "code": "1f3c6"
+  },
+  {
+    "name": "sports_medal",
+    "code": "1f3c5"
+  },
+  {
+    "name": "1st_place_medal",
+    "code": "1f947"
+  },
+  {
+    "name": "2nd_place_medal",
+    "code": "1f948"
+  },
+  {
+    "name": "3rd_place_medal",
+    "code": "1f949"
+  },
+  {
+    "name": "soccer_ball",
+    "code": "26bd"
+  },
+  {
+    "name": "baseball",
+    "code": "26be"
+  },
+  {
+    "name": "softball",
+    "code": "1f94e"
+  },
+  {
+    "name": "basketball",
+    "code": "1f3c0"
+  },
+  {
+    "name": "volleyball",
+    "code": "1f3d0"
+  },
+  {
+    "name": "american_football",
+    "code": "1f3c8"
+  },
+  {
+    "name": "rugby_football",
+    "code": "1f3c9"
+  },
+  {
+    "name": "tennis",
+    "code": "1f3be"
+  },
+  {
+    "name": "flying_disc",
+    "code": "1f94f"
+  },
+  {
+    "name": "bowling",
+    "code": "1f3b3"
+  },
+  {
+    "name": "cricket_game",
+    "code": "1f3cf"
+  },
+  {
+    "name": "field_hockey",
+    "code": "1f3d1"
+  },
+  {
+    "name": "ice_hockey",
+    "code": "1f3d2"
+  },
+  {
+    "name": "lacrosse",
+    "code": "1f94d"
+  },
+  {
+    "name": "ping_pong",
+    "code": "1f3d3"
+  },
+  {
+    "name": "badminton",
+    "code": "1f3f8"
+  },
+  {
+    "name": "boxing_glove",
+    "code": "1f94a"
+  },
+  {
+    "name": "martial_arts_uniform",
+    "code": "1f94b"
+  },
+  {
+    "name": "goal_net",
+    "code": "1f945"
+  },
+  {
+    "name": "in_hole",
+    "code": "26f3"
+  },
+  {
+    "name": "ice_skate",
+    "code": "26f8"
+  },
+  {
+    "name": "fishing_pole",
+    "code": "1f3a3"
+  },
+  {
+    "name": "diving_mask",
+    "code": "1f93f"
+  },
+  {
+    "name": "running_shirt",
+    "code": "1f3bd"
+  },
+  {
+    "name": "skis",
+    "code": "1f3bf"
+  },
+  {
+    "name": "sled",
+    "code": "1f6f7"
+  },
+  {
+    "name": "curling_stone",
+    "code": "1f94c"
+  },
+  {
+    "name": "bullseye",
+    "code": "1f3af"
+  },
+  {
+    "name": "yoyo",
+    "code": "1fa80"
+  },
+  {
+    "name": "kite",
+    "code": "1fa81"
+  },
+  {
+    "name": "water_pistol",
+    "code": "1f52b"
+  },
+  {
+    "name": "pool_8_ball",
+    "code": "1f3b1"
+  },
+  {
+    "name": "crystal_ball",
+    "code": "1f52e"
+  },
+  {
+    "name": "magic_wand",
+    "code": "1fa84"
+  },
+  {
+    "name": "video_game",
+    "code": "1f3ae"
+  },
+  {
+    "name": "joystick",
+    "code": "1f579"
+  },
+  {
+    "name": "slot_machine",
+    "code": "1f3b0"
+  },
+  {
+    "name": "game_die",
+    "code": "1f3b2"
+  },
+  {
+    "name": "puzzle_piece",
+    "code": "1f9e9"
+  },
+  {
+    "name": "teddy_bear",
+    "code": "1f9f8"
+  },
+  {
+    "name": "piñata",
+    "code": "1fa85"
+  },
+  {
+    "name": "mirror_ball",
+    "code": "1faa9"
+  },
+  {
+    "name": "nesting_dolls",
+    "code": "1fa86"
+  },
+  {
+    "name": "spade_suit",
+    "code": "2660"
+  },
+  {
+    "name": "heart_suit",
+    "code": "2665"
+  },
+  {
+    "name": "diamond_suit",
+    "code": "2666"
+  },
+  {
+    "name": "club_suit",
+    "code": "2663"
+  },
+  {
+    "name": "chess_pawn",
+    "code": "265f"
+  },
+  {
+    "name": "joker",
+    "code": "1f0cf"
+  },
+  {
+    "name": "mahjong_red_dragon",
+    "code": "1f004"
+  },
+  {
+    "name": "flower_playing_cards",
+    "code": "1f3b4"
+  },
+  {
+    "name": "performing_arts",
+    "code": "1f3ad"
+  },
+  {
+    "name": "framed_picture",
+    "code": "1f5bc"
+  },
+  {
+    "name": "artist_palette",
+    "code": "1f3a8"
+  },
+  {
+    "name": "thread",
+    "code": "1f9f5"
+  },
+  {
+    "name": "sewing_needle",
+    "code": "1faa1"
+  },
+  {
+    "name": "yarn",
+    "code": "1f9f6"
+  },
+  {
+    "name": "knot",
+    "code": "1faa2"
+  },
+  {
+    "name": "glasses",
+    "code": "1f453"
+  },
+  {
+    "name": "sunglasses",
+    "code": "1f576"
+  },
+  {
+    "name": "goggles",
+    "code": "1f97d"
+  },
+  {
+    "name": "lab_coat",
+    "code": "1f97c"
+  },
+  {
+    "name": "safety_vest",
+    "code": "1f9ba"
+  },
+  {
+    "name": "necktie",
+    "code": "1f454"
+  },
+  {
+    "name": "t_shirt",
+    "code": "1f455"
+  },
+  {
+    "name": "jeans",
+    "code": "1f456"
+  },
+  {
+    "name": "scarf",
+    "code": "1f9e3"
+  },
+  {
+    "name": "gloves",
+    "code": "1f9e4"
+  },
+  {
+    "name": "coat",
+    "code": "1f9e5"
+  },
+  {
+    "name": "socks",
+    "code": "1f9e6"
+  },
+  {
+    "name": "dress",
+    "code": "1f457"
+  },
+  {
+    "name": "kimono",
+    "code": "1f458"
+  },
+  {
+    "name": "sari",
+    "code": "1f97b"
+  },
+  {
+    "name": "one_piece_swimsuit",
+    "code": "1fa71"
+  },
+  {
+    "name": "briefs",
+    "code": "1fa72"
+  },
+  {
+    "name": "shorts",
+    "code": "1fa73"
+  },
+  {
+    "name": "bikini",
+    "code": "1f459"
+  },
+  {
+    "name": "woman_s_clothes",
+    "code": "1f45a"
+  },
+  {
+    "name": "folding_hand_fan",
+    "code": "1faad"
+  },
+  {
+    "name": "purse",
+    "code": "1f45b"
+  },
+  {
+    "name": "handbag",
+    "code": "1f45c"
+  },
+  {
+    "name": "clutch_bag",
+    "code": "1f45d"
+  },
+  {
+    "name": "shopping_bags",
+    "code": "1f6cd"
+  },
+  {
+    "name": "backpack",
+    "code": "1f392"
+  },
+  {
+    "name": "thong_sandal",
+    "code": "1fa74"
+  },
+  {
+    "name": "man_s_shoe",
+    "code": "1f45e"
+  },
+  {
+    "name": "running_shoe",
+    "code": "1f45f"
+  },
+  {
+    "name": "hiking_boot",
+    "code": "1f97e"
+  },
+  {
+    "name": "flat_shoe",
+    "code": "1f97f"
+  },
+  {
+    "name": "high_heeled_shoe",
+    "code": "1f460"
+  },
+  {
+    "name": "woman_s_sandal",
+    "code": "1f461"
+  },
+  {
+    "name": "ballet_shoes",
+    "code": "1fa70"
+  },
+  {
+    "name": "woman_s_boot",
+    "code": "1f462"
+  },
+  {
+    "name": "hair_pick",
+    "code": "1faae"
+  },
+  {
+    "name": "crown",
+    "code": "1f451"
+  },
+  {
+    "name": "woman_s_hat",
+    "code": "1f452"
+  },
+  {
+    "name": "top_hat",
+    "code": "1f3a9"
+  },
+  {
+    "name": "graduation_cap",
+    "code": "1f393"
+  },
+  {
+    "name": "billed_cap",
+    "code": "1f9e2"
+  },
+  {
+    "name": "military_helmet",
+    "code": "1fa96"
+  },
+  {
+    "name": "rescue_worker_s_helmet",
+    "code": "26d1"
+  },
+  {
+    "name": "prayer_beads",
+    "code": "1f4ff"
+  },
+  {
+    "name": "lipstick",
+    "code": "1f484"
+  },
+  {
+    "name": "ring",
+    "code": "1f48d"
+  },
+  {
+    "name": "gem_stone",
+    "code": "1f48e"
+  },
+  {
+    "name": "muted_speaker",
+    "code": "1f507"
+  },
+  {
+    "name": "speaker_low_volume",
+    "code": "1f508"
+  },
+  {
+    "name": "speaker_medium_volume",
+    "code": "1f509"
+  },
+  {
+    "name": "speaker_high_volume",
+    "code": "1f50a"
+  },
+  {
+    "name": "loudspeaker",
+    "code": "1f4e2"
+  },
+  {
+    "name": "megaphone",
+    "code": "1f4e3"
+  },
+  {
+    "name": "postal_horn",
+    "code": "1f4ef"
+  },
+  {
+    "name": "bell",
+    "code": "1f514"
+  },
+  {
+    "name": "bell_with_slash",
+    "code": "1f515"
+  },
+  {
+    "name": "musical_score",
+    "code": "1f3bc"
+  },
+  {
+    "name": "musical_note",
+    "code": "1f3b5"
+  },
+  {
+    "name": "musical_notes",
+    "code": "1f3b6"
+  },
+  {
+    "name": "studio_microphone",
+    "code": "1f399"
+  },
+  {
+    "name": "level_slider",
+    "code": "1f39a"
+  },
+  {
+    "name": "control_knobs",
+    "code": "1f39b"
+  },
+  {
+    "name": "microphone",
+    "code": "1f3a4"
+  },
+  {
+    "name": "headphone",
+    "code": "1f3a7"
+  },
+  {
+    "name": "radio",
+    "code": "1f4fb"
+  },
+  {
+    "name": "saxophone",
+    "code": "1f3b7"
+  },
+  {
+    "name": "trumpet",
+    "code": "1f3ba"
+  },
+  {
+    "name": "trombone",
+    "code": "1fa8a"
+  },
+  {
+    "name": "accordion",
+    "code": "1fa97"
+  },
+  {
+    "name": "guitar",
+    "code": "1f3b8"
+  },
+  {
+    "name": "musical_keyboard",
+    "code": "1f3b9"
+  },
+  {
+    "name": "violin",
+    "code": "1f3bb"
+  },
+  {
+    "name": "banjo",
+    "code": "1fa95"
+  },
+  {
+    "name": "drum",
+    "code": "1f941"
+  },
+  {
+    "name": "long_drum",
+    "code": "1fa98"
+  },
+  {
+    "name": "maracas",
+    "code": "1fa87"
+  },
+  {
+    "name": "flute",
+    "code": "1fa88"
+  },
+  {
+    "name": "harp",
+    "code": "1fa89"
+  },
+  {
+    "name": "mobile_phone",
+    "code": "1f4f1"
+  },
+  {
+    "name": "mobile_phone_with_arrow",
+    "code": "1f4f2"
+  },
+  {
+    "name": "telephone",
+    "code": "260e"
+  },
+  {
+    "name": "telephone_receiver",
+    "code": "1f4de"
+  },
+  {
+    "name": "pager",
+    "code": "1f4df"
+  },
+  {
+    "name": "fax_machine",
+    "code": "1f4e0"
+  },
+  {
+    "name": "battery",
+    "code": "1f50b"
+  },
+  {
+    "name": "low_battery",
+    "code": "1faab"
+  },
+  {
+    "name": "electric_plug",
+    "code": "1f50c"
+  },
+  {
+    "name": "laptop",
+    "code": "1f4bb"
+  },
+  {
+    "name": "desktop_computer",
+    "code": "1f5a5"
+  },
+  {
+    "name": "printer",
+    "code": "1f5a8"
+  },
+  {
+    "name": "keyboard",
+    "code": "2328"
+  },
+  {
+    "name": "computer_mouse",
+    "code": "1f5b1"
+  },
+  {
+    "name": "trackball",
+    "code": "1f5b2"
+  },
+  {
+    "name": "computer_disk",
+    "code": "1f4bd"
+  },
+  {
+    "name": "floppy_disk",
+    "code": "1f4be"
+  },
+  {
+    "name": "optical_disk",
+    "code": "1f4bf"
+  },
+  {
+    "name": "dvd",
+    "code": "1f4c0"
+  },
+  {
+    "name": "abacus",
+    "code": "1f9ee"
+  },
+  {
+    "name": "movie_camera",
+    "code": "1f3a5"
+  },
+  {
+    "name": "film_frames",
+    "code": "1f39e"
+  },
+  {
+    "name": "film_projector",
+    "code": "1f4fd"
+  },
+  {
+    "name": "clapper_board",
+    "code": "1f3ac"
+  },
+  {
+    "name": "television",
+    "code": "1f4fa"
+  },
+  {
+    "name": "camera",
+    "code": "1f4f7"
+  },
+  {
+    "name": "camera_with_flash",
+    "code": "1f4f8"
+  },
+  {
+    "name": "video_camera",
+    "code": "1f4f9"
+  },
+  {
+    "name": "videocassette",
+    "code": "1f4fc"
+  },
+  {
+    "name": "magnifying_glass_tilted_left",
+    "code": "1f50d"
+  },
+  {
+    "name": "magnifying_glass_tilted_right",
+    "code": "1f50e"
+  },
+  {
+    "name": "candle",
+    "code": "1f56f"
+  },
+  {
+    "name": "light_bulb",
+    "code": "1f4a1"
+  },
+  {
+    "name": "flashlight",
+    "code": "1f526"
+  },
+  {
+    "name": "red_paper_lantern",
+    "code": "1f3ee"
+  },
+  {
+    "name": "diya_lamp",
+    "code": "1fa94"
+  },
+  {
+    "name": "notebook_with_decorative_cover",
+    "code": "1f4d4"
+  },
+  {
+    "name": "closed_book",
+    "code": "1f4d5"
+  },
+  {
+    "name": "open_book",
+    "code": "1f4d6"
+  },
+  {
+    "name": "green_book",
+    "code": "1f4d7"
+  },
+  {
+    "name": "blue_book",
+    "code": "1f4d8"
+  },
+  {
+    "name": "orange_book",
+    "code": "1f4d9"
+  },
+  {
+    "name": "books",
+    "code": "1f4da"
+  },
+  {
+    "name": "notebook",
+    "code": "1f4d3"
+  },
+  {
+    "name": "ledger",
+    "code": "1f4d2"
+  },
+  {
+    "name": "page_with_curl",
+    "code": "1f4c3"
+  },
+  {
+    "name": "scroll",
+    "code": "1f4dc"
+  },
+  {
+    "name": "page_facing_up",
+    "code": "1f4c4"
+  },
+  {
+    "name": "newspaper",
+    "code": "1f4f0"
+  },
+  {
+    "name": "rolled_up_newspaper",
+    "code": "1f5de"
+  },
+  {
+    "name": "bookmark_tabs",
+    "code": "1f4d1"
+  },
+  {
+    "name": "bookmark",
+    "code": "1f516"
+  },
+  {
+    "name": "label",
+    "code": "1f3f7"
+  },
+  {
+    "name": "coin",
+    "code": "1fa99"
+  },
+  {
+    "name": "money_bag",
+    "code": "1f4b0"
+  },
+  {
+    "name": "treasure_chest",
+    "code": "1fa8e"
+  },
+  {
+    "name": "yen_banknote",
+    "code": "1f4b4"
+  },
+  {
+    "name": "dollar_banknote",
+    "code": "1f4b5"
+  },
+  {
+    "name": "euro_banknote",
+    "code": "1f4b6"
+  },
+  {
+    "name": "pound_banknote",
+    "code": "1f4b7"
+  },
+  {
+    "name": "money_with_wings",
+    "code": "1f4b8"
+  },
+  {
+    "name": "credit_card",
+    "code": "1f4b3"
+  },
+  {
+    "name": "receipt",
+    "code": "1f9fe"
+  },
+  {
+    "name": "chart_increasing_with_yen",
+    "code": "1f4b9"
+  },
+  {
+    "name": "envelope",
+    "code": "2709"
+  },
+  {
+    "name": "e_mail",
+    "code": "1f4e7"
+  },
+  {
+    "name": "incoming_envelope",
+    "code": "1f4e8"
+  },
+  {
+    "name": "envelope_with_arrow",
+    "code": "1f4e9"
+  },
+  {
+    "name": "outbox_tray",
+    "code": "1f4e4"
+  },
+  {
+    "name": "inbox_tray",
+    "code": "1f4e5"
+  },
+  {
+    "name": "package",
+    "code": "1f4e6"
+  },
+  {
+    "name": "closed_mailbox_with_raised_flag",
+    "code": "1f4eb"
+  },
+  {
+    "name": "closed_mailbox_with_lowered_flag",
+    "code": "1f4ea"
+  },
+  {
+    "name": "open_mailbox_with_raised_flag",
+    "code": "1f4ec"
+  },
+  {
+    "name": "open_mailbox_with_lowered_flag",
+    "code": "1f4ed"
+  },
+  {
+    "name": "postbox",
+    "code": "1f4ee"
+  },
+  {
+    "name": "ballot_box_with_ballot",
+    "code": "1f5f3"
+  },
+  {
+    "name": "pencil",
+    "code": "270f"
+  },
+  {
+    "name": "black_nib",
+    "code": "2712"
+  },
+  {
+    "name": "fountain_pen",
+    "code": "1f58b"
+  },
+  {
+    "name": "pen",
+    "code": "1f58a"
+  },
+  {
+    "name": "paintbrush",
+    "code": "1f58c"
+  },
+  {
+    "name": "crayon",
+    "code": "1f58d"
+  },
+  {
+    "name": "memo",
+    "code": "1f4dd"
+  },
+  {
+    "name": "briefcase",
+    "code": "1f4bc"
+  },
+  {
+    "name": "file_folder",
+    "code": "1f4c1"
+  },
+  {
+    "name": "open_file_folder",
+    "code": "1f4c2"
+  },
+  {
+    "name": "card_index_dividers",
+    "code": "1f5c2"
+  },
+  {
+    "name": "date",
+    "code": "1f4c5"
+  },
+  {
+    "name": "tear_off_calendar",
+    "code": "1f4c6"
+  },
+  {
+    "name": "spiral_notepad",
+    "code": "1f5d2"
+  },
+  {
+    "name": "spiral_calendar",
+    "code": "1f5d3"
+  },
+  {
+    "name": "card_index",
+    "code": "1f4c7"
+  },
+  {
+    "name": "chart_increasing",
+    "code": "1f4c8"
+  },
+  {
+    "name": "chart_decreasing",
+    "code": "1f4c9"
+  },
+  {
+    "name": "bar_chart",
+    "code": "1f4ca"
+  },
+  {
+    "name": "clipboard",
+    "code": "1f4cb"
+  },
+  {
+    "name": "pushpin",
+    "code": "1f4cc"
+  },
+  {
+    "name": "round_pushpin",
+    "code": "1f4cd"
+  },
+  {
+    "name": "paperclip",
+    "code": "1f4ce"
+  },
+  {
+    "name": "linked_paperclips",
+    "code": "1f587"
+  },
+  {
+    "name": "straight_ruler",
+    "code": "1f4cf"
+  },
+  {
+    "name": "triangular_ruler",
+    "code": "1f4d0"
+  },
+  {
+    "name": "scissors",
+    "code": "2702"
+  },
+  {
+    "name": "card_file_box",
+    "code": "1f5c3"
+  },
+  {
+    "name": "file_cabinet",
+    "code": "1f5c4"
+  },
+  {
+    "name": "wastebasket",
+    "code": "1f5d1"
+  },
+  {
+    "name": "locked",
+    "code": "1f512"
+  },
+  {
+    "name": "unlocked",
+    "code": "1f513"
+  },
+  {
+    "name": "locked_with_pen",
+    "code": "1f50f"
+  },
+  {
+    "name": "locked_with_key",
+    "code": "1f510"
+  },
+  {
+    "name": "key",
+    "code": "1f511"
+  },
+  {
+    "name": "old_key",
+    "code": "1f5dd"
+  },
+  {
+    "name": "hammer",
+    "code": "1f528"
+  },
+  {
+    "name": "axe",
+    "code": "1fa93"
+  },
+  {
+    "name": "pick",
+    "code": "26cf"
+  },
+  {
+    "name": "hammer_and_pick",
+    "code": "2692"
+  },
+  {
+    "name": "hammer_and_wrench",
+    "code": "1f6e0"
+  },
+  {
+    "name": "dagger",
+    "code": "1f5e1"
+  },
+  {
+    "name": "crossed_swords",
+    "code": "2694"
+  },
+  {
+    "name": "bomb",
+    "code": "1f4a3"
+  },
+  {
+    "name": "boomerang",
+    "code": "1fa83"
+  },
+  {
+    "name": "bow_and_arrow",
+    "code": "1f3f9"
+  },
+  {
+    "name": "shield",
+    "code": "1f6e1"
+  },
+  {
+    "name": "carpentry_saw",
+    "code": "1fa9a"
+  },
+  {
+    "name": "wrench",
+    "code": "1f527"
+  },
+  {
+    "name": "screwdriver",
+    "code": "1fa9b"
+  },
+  {
+    "name": "nut_and_bolt",
+    "code": "1f529"
+  },
+  {
+    "name": "gear",
+    "code": "2699"
+  },
+  {
+    "name": "clamp",
+    "code": "1f5dc"
+  },
+  {
+    "name": "balance_scale",
+    "code": "2696"
+  },
+  {
+    "name": "white_cane",
+    "code": "1f9af"
+  },
+  {
+    "name": "link",
+    "code": "1f517"
+  },
+  {
+    "name": "broken_chain",
+    "code": "26d3-fe0f-200d-1f4a5"
+  },
+  {
+    "name": "chains",
+    "code": "26d3"
+  },
+  {
+    "name": "hook",
+    "code": "1fa9d"
+  },
+  {
+    "name": "toolbox",
+    "code": "1f9f0"
+  },
+  {
+    "name": "magnet",
+    "code": "1f9f2"
+  },
+  {
+    "name": "ladder",
+    "code": "1fa9c"
+  },
+  {
+    "name": "shovel",
+    "code": "1fa8f"
+  },
+  {
+    "name": "alembic",
+    "code": "2697"
+  },
+  {
+    "name": "test_tube",
+    "code": "1f9ea"
+  },
+  {
+    "name": "petri_dish",
+    "code": "1f9eb"
+  },
+  {
+    "name": "dna",
+    "code": "1f9ec"
+  },
+  {
+    "name": "microscope",
+    "code": "1f52c"
+  },
+  {
+    "name": "telescope",
+    "code": "1f52d"
+  },
+  {
+    "name": "satellite_antenna",
+    "code": "1f4e1"
+  },
+  {
+    "name": "syringe",
+    "code": "1f489"
+  },
+  {
+    "name": "drop_of_blood",
+    "code": "1fa78"
+  },
+  {
+    "name": "pill",
+    "code": "1f48a"
+  },
+  {
+    "name": "adhesive_bandage",
+    "code": "1fa79"
+  },
+  {
+    "name": "crutch",
+    "code": "1fa7c"
+  },
+  {
+    "name": "stethoscope",
+    "code": "1fa7a"
+  },
+  {
+    "name": "x_ray",
+    "code": "1fa7b"
+  },
+  {
+    "name": "door",
+    "code": "1f6aa"
+  },
+  {
+    "name": "elevator",
+    "code": "1f6d7"
+  },
+  {
+    "name": "mirror",
+    "code": "1fa9e"
+  },
+  {
+    "name": "window",
+    "code": "1fa9f"
+  },
+  {
+    "name": "bed",
+    "code": "1f6cf"
+  },
+  {
+    "name": "couch_and_lamp",
+    "code": "1f6cb"
+  },
+  {
+    "name": "chair",
+    "code": "1fa91"
+  },
+  {
+    "name": "toilet",
+    "code": "1f6bd"
+  },
+  {
+    "name": "plunger",
+    "code": "1faa0"
+  },
+  {
+    "name": "shower",
+    "code": "1f6bf"
+  },
+  {
+    "name": "bathtub",
+    "code": "1f6c1"
+  },
+  {
+    "name": "mouse_trap",
+    "code": "1faa4"
+  },
+  {
+    "name": "razor",
+    "code": "1fa92"
+  },
+  {
+    "name": "lotion_bottle",
+    "code": "1f9f4"
+  },
+  {
+    "name": "safety_pin",
+    "code": "1f9f7"
+  },
+  {
+    "name": "broom",
+    "code": "1f9f9"
+  },
+  {
+    "name": "basket",
+    "code": "1f9fa"
+  },
+  {
+    "name": "roll_of_paper",
+    "code": "1f9fb"
+  },
+  {
+    "name": "bucket",
+    "code": "1faa3"
+  },
+  {
+    "name": "soap",
+    "code": "1f9fc"
+  },
+  {
+    "name": "bubbles",
+    "code": "1fae7"
+  },
+  {
+    "name": "toothbrush",
+    "code": "1faa5"
+  },
+  {
+    "name": "sponge",
+    "code": "1f9fd"
+  },
+  {
+    "name": "fire_extinguisher",
+    "code": "1f9ef"
+  },
+  {
+    "name": "shopping_cart",
+    "code": "1f6d2"
+  },
+  {
+    "name": "cigarette",
+    "code": "1f6ac"
+  },
+  {
+    "name": "coffin",
+    "code": "26b0"
+  },
+  {
+    "name": "headstone",
+    "code": "1faa6"
+  },
+  {
+    "name": "funeral_urn",
+    "code": "26b1"
+  },
+  {
+    "name": "nazar_amulet",
+    "code": "1f9ff"
+  },
+  {
+    "name": "hamsa",
+    "code": "1faac"
+  },
+  {
+    "name": "moai",
+    "code": "1f5ff"
+  },
+  {
+    "name": "placard",
+    "code": "1faa7"
+  },
+  {
+    "name": "identification_card",
+    "code": "1faaa"
+  },
+  {
+    "name": "atm_sign",
+    "code": "1f3e7"
+  },
+  {
+    "name": "litter_in_bin_sign",
+    "code": "1f6ae"
+  },
+  {
+    "name": "potable_water",
+    "code": "1f6b0"
+  },
+  {
+    "name": "wheelchair_symbol",
+    "code": "267f"
+  },
+  {
+    "name": "men_s_room",
+    "code": "1f6b9"
+  },
+  {
+    "name": "women_s_room",
+    "code": "1f6ba"
+  },
+  {
+    "name": "restroom",
+    "code": "1f6bb"
+  },
+  {
+    "name": "baby_symbol",
+    "code": "1f6bc"
+  },
+  {
+    "name": "water_closet",
+    "code": "1f6be"
+  },
+  {
+    "name": "passport_control",
+    "code": "1f6c2"
+  },
+  {
+    "name": "customs",
+    "code": "1f6c3"
+  },
+  {
+    "name": "baggage_claim",
+    "code": "1f6c4"
+  },
+  {
+    "name": "left_luggage",
+    "code": "1f6c5"
+  },
+  {
+    "name": "warning",
+    "code": "26a0"
+  },
+  {
+    "name": "children_crossing",
+    "code": "1f6b8"
+  },
+  {
+    "name": "no_entry",
+    "code": "26d4"
+  },
+  {
+    "name": "prohibited",
+    "code": "1f6ab"
+  },
+  {
+    "name": "no_bicycles",
+    "code": "1f6b3"
+  },
+  {
+    "name": "no_smoking",
+    "code": "1f6ad"
+  },
+  {
+    "name": "no_littering",
+    "code": "1f6af"
+  },
+  {
+    "name": "non_potable_water",
+    "code": "1f6b1"
+  },
+  {
+    "name": "no_pedestrians",
+    "code": "1f6b7"
+  },
+  {
+    "name": "no_mobile_phones",
+    "code": "1f4f5"
+  },
+  {
+    "name": "no_one_under_eighteen",
+    "code": "1f51e"
+  },
+  {
+    "name": "radioactive",
+    "code": "2622"
+  },
+  {
+    "name": "biohazard",
+    "code": "2623"
+  },
+  {
+    "name": "up_arrow",
+    "code": "2b06"
+  },
+  {
+    "name": "up_right_arrow",
+    "code": "2197"
+  },
+  {
+    "name": "right_arrow",
+    "code": "27a1"
+  },
+  {
+    "name": "down_right_arrow",
+    "code": "2198"
+  },
+  {
+    "name": "down_arrow",
+    "code": "2b07"
+  },
+  {
+    "name": "down_left_arrow",
+    "code": "2199"
+  },
+  {
+    "name": "left_arrow",
+    "code": "2b05"
+  },
+  {
+    "name": "up_left_arrow",
+    "code": "2196"
+  },
+  {
+    "name": "up_down_arrow",
+    "code": "2195"
+  },
+  {
+    "name": "left_right_arrow",
+    "code": "2194"
+  },
+  {
+    "name": "right_arrow_curving_left",
+    "code": "21a9"
+  },
+  {
+    "name": "left_arrow_curving_right",
+    "code": "21aa"
+  },
+  {
+    "name": "right_arrow_curving_up",
+    "code": "2934"
+  },
+  {
+    "name": "right_arrow_curving_down",
+    "code": "2935"
+  },
+  {
+    "name": "clockwise_vertical_arrows",
+    "code": "1f503"
+  },
+  {
+    "name": "counterclockwise_arrows_button",
+    "code": "1f504"
+  },
+  {
+    "name": "back_arrow",
+    "code": "1f519"
+  },
+  {
+    "name": "end_arrow",
+    "code": "1f51a"
+  },
+  {
+    "name": "on_arrow",
+    "code": "1f51b"
+  },
+  {
+    "name": "soon_arrow",
+    "code": "1f51c"
+  },
+  {
+    "name": "top_arrow",
+    "code": "1f51d"
+  },
+  {
+    "name": "place_of_worship",
+    "code": "1f6d0"
+  },
+  {
+    "name": "atom_symbol",
+    "code": "269b"
+  },
+  {
+    "name": "om",
+    "code": "1f549"
+  },
+  {
+    "name": "star_of_david",
+    "code": "2721"
+  },
+  {
+    "name": "wheel_of_dharma",
+    "code": "2638"
+  },
+  {
+    "name": "yin_yang",
+    "code": "262f"
+  },
+  {
+    "name": "latin_cross",
+    "code": "271d"
+  },
+  {
+    "name": "orthodox_cross",
+    "code": "2626"
+  },
+  {
+    "name": "star_and_crescent",
+    "code": "262a"
+  },
+  {
+    "name": "peace_symbol",
+    "code": "262e"
+  },
+  {
+    "name": "menorah",
+    "code": "1f54e"
+  },
+  {
+    "name": "dotted_six_pointed_star",
+    "code": "1f52f"
+  },
+  {
+    "name": "khanda",
+    "code": "1faaf"
+  },
+  {
+    "name": "aries",
+    "code": "2648"
+  },
+  {
+    "name": "taurus",
+    "code": "2649"
+  },
+  {
+    "name": "gemini",
+    "code": "264a"
+  },
+  {
+    "name": "cancer",
+    "code": "264b"
+  },
+  {
+    "name": "leo",
+    "code": "264c"
+  },
+  {
+    "name": "virgo",
+    "code": "264d"
+  },
+  {
+    "name": "libra",
+    "code": "264e"
+  },
+  {
+    "name": "scorpio",
+    "code": "264f"
+  },
+  {
+    "name": "sagittarius",
+    "code": "2650"
+  },
+  {
+    "name": "capricorn",
+    "code": "2651"
+  },
+  {
+    "name": "aquarius",
+    "code": "2652"
+  },
+  {
+    "name": "pisces",
+    "code": "2653"
+  },
+  {
+    "name": "ophiuchus",
+    "code": "26ce"
+  },
+  {
+    "name": "shuffle_tracks_button",
+    "code": "1f500"
+  },
+  {
+    "name": "repeat_button",
+    "code": "1f501"
+  },
+  {
+    "name": "repeat_single_button",
+    "code": "1f502"
+  },
+  {
+    "name": "play_button",
+    "code": "25b6"
+  },
+  {
+    "name": "fast_forward_button",
+    "code": "23e9"
+  },
+  {
+    "name": "next_track_button",
+    "code": "23ed"
+  },
+  {
+    "name": "play_or_pause_button",
+    "code": "23ef"
+  },
+  {
+    "name": "reverse_button",
+    "code": "25c0"
+  },
+  {
+    "name": "fast_reverse_button",
+    "code": "23ea"
+  },
+  {
+    "name": "last_track_button",
+    "code": "23ee"
+  },
+  {
+    "name": "upwards_button",
+    "code": "1f53c"
+  },
+  {
+    "name": "fast_up_button",
+    "code": "23eb"
+  },
+  {
+    "name": "downwards_button",
+    "code": "1f53d"
+  },
+  {
+    "name": "fast_down_button",
+    "code": "23ec"
+  },
+  {
+    "name": "pause_button",
+    "code": "23f8"
+  },
+  {
+    "name": "stop_button",
+    "code": "23f9"
+  },
+  {
+    "name": "record_button",
+    "code": "23fa"
+  },
+  {
+    "name": "eject_button",
+    "code": "23cf"
+  },
+  {
+    "name": "cinema",
+    "code": "1f3a6"
+  },
+  {
+    "name": "dim_button",
+    "code": "1f505"
+  },
+  {
+    "name": "bright_button",
+    "code": "1f506"
+  },
+  {
+    "name": "antenna_bars",
+    "code": "1f4f6"
+  },
+  {
+    "name": "wireless",
+    "code": "1f6dc"
+  },
+  {
+    "name": "vibration_mode",
+    "code": "1f4f3"
+  },
+  {
+    "name": "mobile_phone_off",
+    "code": "1f4f4"
+  },
+  {
+    "name": "female_sign",
+    "code": "2640"
+  },
+  {
+    "name": "male_sign",
+    "code": "2642"
+  },
+  {
+    "name": "transgender_symbol",
+    "code": "26a7"
+  },
+  {
+    "name": "multiply",
+    "code": "2716"
+  },
+  {
+    "name": "plus",
+    "code": "2795"
+  },
+  {
+    "name": "minus",
+    "code": "2796"
+  },
+  {
+    "name": "divide",
+    "code": "2797"
+  },
+  {
+    "name": "heavy_equals_sign",
+    "code": "1f7f0"
+  },
+  {
+    "name": "infinity",
+    "code": "267e"
+  },
+  {
+    "name": "double_exclamation_mark",
+    "code": "203c"
+  },
+  {
+    "name": "exclamation_question_mark",
+    "code": "2049"
+  },
+  {
+    "name": "red_question_mark",
+    "code": "2753"
+  },
+  {
+    "name": "white_question_mark",
+    "code": "2754"
+  },
+  {
+    "name": "white_exclamation_mark",
+    "code": "2755"
+  },
+  {
+    "name": "red_exclamation_mark",
+    "code": "2757"
+  },
+  {
+    "name": "wavy_dash",
+    "code": "3030"
+  },
+  {
+    "name": "currency_exchange",
+    "code": "1f4b1"
+  },
+  {
+    "name": "heavy_dollar_sign",
+    "code": "1f4b2"
+  },
+  {
+    "name": "medical_symbol",
+    "code": "2695"
+  },
+  {
+    "name": "recycling_symbol",
+    "code": "267b"
+  },
+  {
+    "name": "fleur_de_lis",
+    "code": "269c"
+  },
+  {
+    "name": "trident_emblem",
+    "code": "1f531"
+  },
+  {
+    "name": "name_badge",
+    "code": "1f4db"
+  },
+  {
+    "name": "japanese_symbol_for_beginner",
+    "code": "1f530"
+  },
+  {
+    "name": "hollow_red_circle",
+    "code": "2b55"
+  },
+  {
+    "name": "white_check_mark",
+    "code": "2705"
+  },
+  {
+    "name": "check_box_with_check",
+    "code": "2611"
+  },
+  {
+    "name": "check_mark",
+    "code": "2714"
+  },
+  {
+    "name": "cross_mark",
+    "code": "274c"
+  },
+  {
+    "name": "cross_mark_button",
+    "code": "274e"
+  },
+  {
+    "name": "curly_loop",
+    "code": "27b0"
+  },
+  {
+    "name": "double_curly_loop",
+    "code": "27bf"
+  },
+  {
+    "name": "part_alternation_mark",
+    "code": "303d"
+  },
+  {
+    "name": "eight_spoked_asterisk",
+    "code": "2733"
+  },
+  {
+    "name": "eight_pointed_star",
+    "code": "2734"
+  },
+  {
+    "name": "sparkle",
+    "code": "2747"
+  },
+  {
+    "name": "copyright",
+    "code": "00a9"
+  },
+  {
+    "name": "registered",
+    "code": "00ae"
+  },
+  {
+    "name": "trade_mark",
+    "code": "2122"
+  },
+  {
+    "name": "splatter",
+    "code": "1fadf"
+  },
+  {
+    "name": "hash",
+    "code": "0023-fe0f-20e3"
+  },
+  {
+    "name": "asterisk",
+    "code": "002a-fe0f-20e3"
+  },
+  {
+    "name": "zero",
+    "code": "0030-fe0f-20e3"
+  },
+  {
+    "name": "one",
+    "code": "0031-fe0f-20e3"
+  },
+  {
+    "name": "two",
+    "code": "0032-fe0f-20e3"
+  },
+  {
+    "name": "three",
+    "code": "0033-fe0f-20e3"
+  },
+  {
+    "name": "four",
+    "code": "0034-fe0f-20e3"
+  },
+  {
+    "name": "five",
+    "code": "0035-fe0f-20e3"
+  },
+  {
+    "name": "six",
+    "code": "0036-fe0f-20e3"
+  },
+  {
+    "name": "seven",
+    "code": "0037-fe0f-20e3"
+  },
+  {
+    "name": "eight",
+    "code": "0038-fe0f-20e3"
+  },
+  {
+    "name": "nine",
+    "code": "0039-fe0f-20e3"
+  },
+  {
+    "name": "ten",
+    "code": "1f51f"
+  },
+  {
+    "name": "input_latin_uppercase",
+    "code": "1f520"
+  },
+  {
+    "name": "input_latin_lowercase",
+    "code": "1f521"
+  },
+  {
+    "name": "1234",
+    "code": "1f522"
+  },
+  {
+    "name": "input_symbols",
+    "code": "1f523"
+  },
+  {
+    "name": "input_latin_letters",
+    "code": "1f524"
+  },
+  {
+    "name": "a_button_blood_type",
+    "code": "1f170"
+  },
+  {
+    "name": "ab_button_blood_type",
+    "code": "1f18e"
+  },
+  {
+    "name": "b_button_blood_type",
+    "code": "1f171"
+  },
+  {
+    "name": "cl_button",
+    "code": "1f191"
+  },
+  {
+    "name": "cool_button",
+    "code": "1f192"
+  },
+  {
+    "name": "free_button",
+    "code": "1f193"
+  },
+  {
+    "name": "information_source",
+    "code": "2139"
+  },
+  {
+    "name": "id_button",
+    "code": "1f194"
+  },
+  {
+    "name": "circled_m",
+    "code": "24c2"
+  },
+  {
+    "name": "new_button",
+    "code": "1f195"
+  },
+  {
+    "name": "ng_button",
+    "code": "1f196"
+  },
+  {
+    "name": "o_button_blood_type",
+    "code": "1f17e"
+  },
+  {
+    "name": "ok_button",
+    "code": "1f197"
+  },
+  {
+    "name": "p_button",
+    "code": "1f17f"
+  },
+  {
+    "name": "sos_button",
+    "code": "1f198"
+  },
+  {
+    "name": "up_button",
+    "code": "1f199"
+  },
+  {
+    "name": "vs_button",
+    "code": "1f19a"
+  },
+  {
+    "name": "japanese_here_button",
+    "code": "1f201"
+  },
+  {
+    "name": "japanese_service_charge_button",
+    "code": "1f202"
+  },
+  {
+    "name": "japanese_monthly_amount_button",
+    "code": "1f237"
+  },
+  {
+    "name": "japanese_not_free_of_charge_button",
+    "code": "1f236"
+  },
+  {
+    "name": "japanese_reserved_button",
+    "code": "1f22f"
+  },
+  {
+    "name": "japanese_bargain_button",
+    "code": "1f250"
+  },
+  {
+    "name": "japanese_discount_button",
+    "code": "1f239"
+  },
+  {
+    "name": "japanese_free_of_charge_button",
+    "code": "1f21a"
+  },
+  {
+    "name": "japanese_prohibited_button",
+    "code": "1f232"
+  },
+  {
+    "name": "japanese_acceptable_button",
+    "code": "1f251"
+  },
+  {
+    "name": "japanese_application_button",
+    "code": "1f238"
+  },
+  {
+    "name": "japanese_passing_grade_button",
+    "code": "1f234"
+  },
+  {
+    "name": "japanese_vacancy_button",
+    "code": "1f233"
+  },
+  {
+    "name": "japanese_congratulations_button",
+    "code": "3297"
+  },
+  {
+    "name": "japanese_secret_button",
+    "code": "3299"
+  },
+  {
+    "name": "japanese_open_for_business_button",
+    "code": "1f23a"
+  },
+  {
+    "name": "japanese_no_vacancy_button",
+    "code": "1f235"
+  },
+  {
+    "name": "red_circle",
+    "code": "1f534"
+  },
+  {
+    "name": "orange_circle",
+    "code": "1f7e0"
+  },
+  {
+    "name": "yellow_circle",
+    "code": "1f7e1"
+  },
+  {
+    "name": "green_circle",
+    "code": "1f7e2"
+  },
+  {
+    "name": "blue_circle",
+    "code": "1f535"
+  },
+  {
+    "name": "purple_circle",
+    "code": "1f7e3"
+  },
+  {
+    "name": "brown_circle",
+    "code": "1f7e4"
+  },
+  {
+    "name": "black_circle",
+    "code": "26ab"
+  },
+  {
+    "name": "white_circle",
+    "code": "26aa"
+  },
+  {
+    "name": "red_square",
+    "code": "1f7e5"
+  },
+  {
+    "name": "orange_square",
+    "code": "1f7e7"
+  },
+  {
+    "name": "yellow_square",
+    "code": "1f7e8"
+  },
+  {
+    "name": "green_square",
+    "code": "1f7e9"
+  },
+  {
+    "name": "blue_square",
+    "code": "1f7e6"
+  },
+  {
+    "name": "purple_square",
+    "code": "1f7ea"
+  },
+  {
+    "name": "brown_square",
+    "code": "1f7eb"
+  },
+  {
+    "name": "black_large_square",
+    "code": "2b1b"
+  },
+  {
+    "name": "white_large_square",
+    "code": "2b1c"
+  },
+  {
+    "name": "black_medium_square",
+    "code": "25fc"
+  },
+  {
+    "name": "white_medium_square",
+    "code": "25fb"
+  },
+  {
+    "name": "black_medium_small_square",
+    "code": "25fe"
+  },
+  {
+    "name": "white_medium_small_square",
+    "code": "25fd"
+  },
+  {
+    "name": "black_small_square",
+    "code": "25aa"
+  },
+  {
+    "name": "white_small_square",
+    "code": "25ab"
+  },
+  {
+    "name": "large_orange_diamond",
+    "code": "1f536"
+  },
+  {
+    "name": "large_blue_diamond",
+    "code": "1f537"
+  },
+  {
+    "name": "small_orange_diamond",
+    "code": "1f538"
+  },
+  {
+    "name": "small_blue_diamond",
+    "code": "1f539"
+  },
+  {
+    "name": "red_triangle_pointed_up",
+    "code": "1f53a"
+  },
+  {
+    "name": "red_triangle_pointed_down",
+    "code": "1f53b"
+  },
+  {
+    "name": "diamond_with_a_dot",
+    "code": "1f4a0"
+  },
+  {
+    "name": "radio_button",
+    "code": "1f518"
+  },
+  {
+    "name": "white_square_button",
+    "code": "1f533"
+  },
+  {
+    "name": "black_square_button",
+    "code": "1f532"
+  },
+  {
+    "name": "chequered_flag",
+    "code": "1f3c1"
+  },
+  {
+    "name": "triangular_flag",
+    "code": "1f6a9"
+  },
+  {
+    "name": "crossed_flags",
+    "code": "1f38c"
+  },
+  {
+    "name": "black_flag",
+    "code": "1f3f4"
+  },
+  {
+    "name": "white_flag",
+    "code": "1f3f3"
+  },
+  {
+    "name": "rainbow_flag",
+    "code": "1f3f3-fe0f-200d-1f308"
+  },
+  {
+    "name": "transgender_flag",
+    "code": "1f3f3-fe0f-200d-26a7-fe0f"
+  },
+  {
+    "name": "pirate_flag",
+    "code": "1f3f4-200d-2620-fe0f"
+  },
+  {
+    "name": "ascension_island",
+    "code": "1f1e6-1f1e8"
+  },
+  {
+    "name": "andorra",
+    "code": "1f1e6-1f1e9"
+  },
+  {
+    "name": "united_arab_emirates",
+    "code": "1f1e6-1f1ea"
+  },
+  {
+    "name": "afghanistan",
+    "code": "1f1e6-1f1eb"
+  },
+  {
+    "name": "antigua_barbuda",
+    "code": "1f1e6-1f1ec"
+  },
+  {
+    "name": "anguilla",
+    "code": "1f1e6-1f1ee"
+  },
+  {
+    "name": "albania",
+    "code": "1f1e6-1f1f1"
+  },
+  {
+    "name": "armenia",
+    "code": "1f1e6-1f1f2"
+  },
+  {
+    "name": "angola",
+    "code": "1f1e6-1f1f4"
+  },
+  {
+    "name": "antarctica",
+    "code": "1f1e6-1f1f6"
+  },
+  {
+    "name": "argentina",
+    "code": "1f1e6-1f1f7"
+  },
+  {
+    "name": "american_samoa",
+    "code": "1f1e6-1f1f8"
+  },
+  {
+    "name": "austria",
+    "code": "1f1e6-1f1f9"
+  },
+  {
+    "name": "australia",
+    "code": "1f1e6-1f1fa"
+  },
+  {
+    "name": "aruba",
+    "code": "1f1e6-1f1fc"
+  },
+  {
+    "name": "åland_islands",
+    "code": "1f1e6-1f1fd"
+  },
+  {
+    "name": "azerbaijan",
+    "code": "1f1e6-1f1ff"
+  },
+  {
+    "name": "bosnia_herzegovina",
+    "code": "1f1e7-1f1e6"
+  },
+  {
+    "name": "barbados",
+    "code": "1f1e7-1f1e7"
+  },
+  {
+    "name": "bangladesh",
+    "code": "1f1e7-1f1e9"
+  },
+  {
+    "name": "belgium",
+    "code": "1f1e7-1f1ea"
+  },
+  {
+    "name": "burkina_faso",
+    "code": "1f1e7-1f1eb"
+  },
+  {
+    "name": "bulgaria",
+    "code": "1f1e7-1f1ec"
+  },
+  {
+    "name": "bahrain",
+    "code": "1f1e7-1f1ed"
+  },
+  {
+    "name": "burundi",
+    "code": "1f1e7-1f1ee"
+  },
+  {
+    "name": "benin",
+    "code": "1f1e7-1f1ef"
+  },
+  {
+    "name": "st_barthelemy",
+    "code": "1f1e7-1f1f1"
+  },
+  {
+    "name": "bermuda",
+    "code": "1f1e7-1f1f2"
+  },
+  {
+    "name": "brunei",
+    "code": "1f1e7-1f1f3"
+  },
+  {
+    "name": "bolivia",
+    "code": "1f1e7-1f1f4"
+  },
+  {
+    "name": "caribbean_netherlands",
+    "code": "1f1e7-1f1f6"
+  },
+  {
+    "name": "brazil",
+    "code": "1f1e7-1f1f7"
+  },
+  {
+    "name": "bahamas",
+    "code": "1f1e7-1f1f8"
+  },
+  {
+    "name": "bhutan",
+    "code": "1f1e7-1f1f9"
+  },
+  {
+    "name": "bouvet_island",
+    "code": "1f1e7-1f1fb"
+  },
+  {
+    "name": "botswana",
+    "code": "1f1e7-1f1fc"
+  },
+  {
+    "name": "belarus",
+    "code": "1f1e7-1f1fe"
+  },
+  {
+    "name": "belize",
+    "code": "1f1e7-1f1ff"
+  },
+  {
+    "name": "canada",
+    "code": "1f1e8-1f1e6"
+  },
+  {
+    "name": "cocos_keeling_islands",
+    "code": "1f1e8-1f1e8"
+  },
+  {
+    "name": "congo_kinshasa",
+    "code": "1f1e8-1f1e9"
+  },
+  {
+    "name": "central_african_republic",
+    "code": "1f1e8-1f1eb"
+  },
+  {
+    "name": "congo_brazzaville",
+    "code": "1f1e8-1f1ec"
+  },
+  {
+    "name": "switzerland",
+    "code": "1f1e8-1f1ed"
+  },
+  {
+    "name": "côte_d_ivoire",
+    "code": "1f1e8-1f1ee"
+  },
+  {
+    "name": "cook_islands",
+    "code": "1f1e8-1f1f0"
+  },
+  {
+    "name": "chile",
+    "code": "1f1e8-1f1f1"
+  },
+  {
+    "name": "cameroon",
+    "code": "1f1e8-1f1f2"
+  },
+  {
+    "name": "china",
+    "code": "1f1e8-1f1f3"
+  },
+  {
+    "name": "colombia",
+    "code": "1f1e8-1f1f4"
+  },
+  {
+    "name": "clipperton_island",
+    "code": "1f1e8-1f1f5"
+  },
+  {
+    "name": "costa_rica",
+    "code": "1f1e8-1f1f7"
+  },
+  {
+    "name": "cuba",
+    "code": "1f1e8-1f1fa"
+  },
+  {
+    "name": "cape_verde",
+    "code": "1f1e8-1f1fb"
+  },
+  {
+    "name": "curaçao",
+    "code": "1f1e8-1f1fc"
+  },
+  {
+    "name": "christmas_island",
+    "code": "1f1e8-1f1fd"
+  },
+  {
+    "name": "cyprus",
+    "code": "1f1e8-1f1fe"
+  },
+  {
+    "name": "czechia",
+    "code": "1f1e8-1f1ff"
+  },
+  {
+    "name": "germany",
+    "code": "1f1e9-1f1ea"
+  },
+  {
+    "name": "diego_garcia",
+    "code": "1f1e9-1f1ec"
+  },
+  {
+    "name": "djibouti",
+    "code": "1f1e9-1f1ef"
+  },
+  {
+    "name": "denmark",
+    "code": "1f1e9-1f1f0"
+  },
+  {
+    "name": "dominica",
+    "code": "1f1e9-1f1f2"
+  },
+  {
+    "name": "dominican_republic",
+    "code": "1f1e9-1f1f4"
+  },
+  {
+    "name": "algeria",
+    "code": "1f1e9-1f1ff"
+  },
+  {
+    "name": "ceuta_melilla",
+    "code": "1f1ea-1f1e6"
+  },
+  {
+    "name": "ecuador",
+    "code": "1f1ea-1f1e8"
+  },
+  {
+    "name": "estonia",
+    "code": "1f1ea-1f1ea"
+  },
+  {
+    "name": "egypt",
+    "code": "1f1ea-1f1ec"
+  },
+  {
+    "name": "western_sahara",
+    "code": "1f1ea-1f1ed"
+  },
+  {
+    "name": "eritrea",
+    "code": "1f1ea-1f1f7"
+  },
+  {
+    "name": "spain",
+    "code": "1f1ea-1f1f8"
+  },
+  {
+    "name": "ethiopia",
+    "code": "1f1ea-1f1f9"
+  },
+  {
+    "name": "european_union",
+    "code": "1f1ea-1f1fa"
+  },
+  {
+    "name": "finland",
+    "code": "1f1eb-1f1ee"
+  },
+  {
+    "name": "fiji",
+    "code": "1f1eb-1f1ef"
+  },
+  {
+    "name": "falkland_islands",
+    "code": "1f1eb-1f1f0"
+  },
+  {
+    "name": "micronesia",
+    "code": "1f1eb-1f1f2"
+  },
+  {
+    "name": "faroe_islands",
+    "code": "1f1eb-1f1f4"
+  },
+  {
+    "name": "france",
+    "code": "1f1eb-1f1f7"
+  },
+  {
+    "name": "gabon",
+    "code": "1f1ec-1f1e6"
+  },
+  {
+    "name": "united_kingdom",
+    "code": "1f1ec-1f1e7"
+  },
+  {
+    "name": "grenada",
+    "code": "1f1ec-1f1e9"
+  },
+  {
+    "name": "georgia",
+    "code": "1f1ec-1f1ea"
+  },
+  {
+    "name": "french_guiana",
+    "code": "1f1ec-1f1eb"
+  },
+  {
+    "name": "guernsey",
+    "code": "1f1ec-1f1ec"
+  },
+  {
+    "name": "ghana",
+    "code": "1f1ec-1f1ed"
+  },
+  {
+    "name": "gibraltar",
+    "code": "1f1ec-1f1ee"
+  },
+  {
+    "name": "greenland",
+    "code": "1f1ec-1f1f1"
+  },
+  {
+    "name": "gambia",
+    "code": "1f1ec-1f1f2"
+  },
+  {
+    "name": "guinea",
+    "code": "1f1ec-1f1f3"
+  },
+  {
+    "name": "guadeloupe",
+    "code": "1f1ec-1f1f5"
+  },
+  {
+    "name": "equatorial_guinea",
+    "code": "1f1ec-1f1f6"
+  },
+  {
+    "name": "greece",
+    "code": "1f1ec-1f1f7"
+  },
+  {
+    "name": "south_georgia_south_sandwich_islands",
+    "code": "1f1ec-1f1f8"
+  },
+  {
+    "name": "guatemala",
+    "code": "1f1ec-1f1f9"
+  },
+  {
+    "name": "guam",
+    "code": "1f1ec-1f1fa"
+  },
+  {
+    "name": "guinea_bissau",
+    "code": "1f1ec-1f1fc"
+  },
+  {
+    "name": "guyana",
+    "code": "1f1ec-1f1fe"
+  },
+  {
+    "name": "hong_kong_sar_china",
+    "code": "1f1ed-1f1f0"
+  },
+  {
+    "name": "heard_mcdonald_islands",
+    "code": "1f1ed-1f1f2"
+  },
+  {
+    "name": "honduras",
+    "code": "1f1ed-1f1f3"
+  },
+  {
+    "name": "croatia",
+    "code": "1f1ed-1f1f7"
+  },
+  {
+    "name": "haiti",
+    "code": "1f1ed-1f1f9"
+  },
+  {
+    "name": "hungary",
+    "code": "1f1ed-1f1fa"
+  },
+  {
+    "name": "canary_islands",
+    "code": "1f1ee-1f1e8"
+  },
+  {
+    "name": "indonesia",
+    "code": "1f1ee-1f1e9"
+  },
+  {
+    "name": "ireland",
+    "code": "1f1ee-1f1ea"
+  },
+  {
+    "name": "israel",
+    "code": "1f1ee-1f1f1"
+  },
+  {
+    "name": "isle_of_man",
+    "code": "1f1ee-1f1f2"
+  },
+  {
+    "name": "india",
+    "code": "1f1ee-1f1f3"
+  },
+  {
+    "name": "british_indian_ocean_territory",
+    "code": "1f1ee-1f1f4"
+  },
+  {
+    "name": "iraq",
+    "code": "1f1ee-1f1f6"
+  },
+  {
+    "name": "iran",
+    "code": "1f1ee-1f1f7"
+  },
+  {
+    "name": "iceland",
+    "code": "1f1ee-1f1f8"
+  },
+  {
+    "name": "italy",
+    "code": "1f1ee-1f1f9"
+  },
+  {
+    "name": "jersey",
+    "code": "1f1ef-1f1ea"
+  },
+  {
+    "name": "jamaica",
+    "code": "1f1ef-1f1f2"
+  },
+  {
+    "name": "jordan",
+    "code": "1f1ef-1f1f4"
+  },
+  {
+    "name": "japan",
+    "code": "1f1ef-1f1f5"
+  },
+  {
+    "name": "kenya",
+    "code": "1f1f0-1f1ea"
+  },
+  {
+    "name": "kyrgyzstan",
+    "code": "1f1f0-1f1ec"
+  },
+  {
+    "name": "cambodia",
+    "code": "1f1f0-1f1ed"
+  },
+  {
+    "name": "kiribati",
+    "code": "1f1f0-1f1ee"
+  },
+  {
+    "name": "comoros",
+    "code": "1f1f0-1f1f2"
+  },
+  {
+    "name": "st_kitts_nevis",
+    "code": "1f1f0-1f1f3"
+  },
+  {
+    "name": "north_korea",
+    "code": "1f1f0-1f1f5"
+  },
+  {
+    "name": "south_korea",
+    "code": "1f1f0-1f1f7"
+  },
+  {
+    "name": "kuwait",
+    "code": "1f1f0-1f1fc"
+  },
+  {
+    "name": "cayman_islands",
+    "code": "1f1f0-1f1fe"
+  },
+  {
+    "name": "kazakhstan",
+    "code": "1f1f0-1f1ff"
+  },
+  {
+    "name": "laos",
+    "code": "1f1f1-1f1e6"
+  },
+  {
+    "name": "lebanon",
+    "code": "1f1f1-1f1e7"
+  },
+  {
+    "name": "st_lucia",
+    "code": "1f1f1-1f1e8"
+  },
+  {
+    "name": "liechtenstein",
+    "code": "1f1f1-1f1ee"
+  },
+  {
+    "name": "sri_lanka",
+    "code": "1f1f1-1f1f0"
+  },
+  {
+    "name": "liberia",
+    "code": "1f1f1-1f1f7"
+  },
+  {
+    "name": "lesotho",
+    "code": "1f1f1-1f1f8"
+  },
+  {
+    "name": "lithuania",
+    "code": "1f1f1-1f1f9"
+  },
+  {
+    "name": "luxembourg",
+    "code": "1f1f1-1f1fa"
+  },
+  {
+    "name": "latvia",
+    "code": "1f1f1-1f1fb"
+  },
+  {
+    "name": "libya",
+    "code": "1f1f1-1f1fe"
+  },
+  {
+    "name": "morocco",
+    "code": "1f1f2-1f1e6"
+  },
+  {
+    "name": "monaco",
+    "code": "1f1f2-1f1e8"
+  },
+  {
+    "name": "moldova",
+    "code": "1f1f2-1f1e9"
+  },
+  {
+    "name": "montenegro",
+    "code": "1f1f2-1f1ea"
+  },
+  {
+    "name": "st_martin",
+    "code": "1f1f2-1f1eb"
+  },
+  {
+    "name": "madagascar",
+    "code": "1f1f2-1f1ec"
+  },
+  {
+    "name": "marshall_islands",
+    "code": "1f1f2-1f1ed"
+  },
+  {
+    "name": "north_macedonia",
+    "code": "1f1f2-1f1f0"
+  },
+  {
+    "name": "mali",
+    "code": "1f1f2-1f1f1"
+  },
+  {
+    "name": "myanmar_burma",
+    "code": "1f1f2-1f1f2"
+  },
+  {
+    "name": "mongolia",
+    "code": "1f1f2-1f1f3"
+  },
+  {
+    "name": "macao_sar_china",
+    "code": "1f1f2-1f1f4"
+  },
+  {
+    "name": "northern_mariana_islands",
+    "code": "1f1f2-1f1f5"
+  },
+  {
+    "name": "martinique",
+    "code": "1f1f2-1f1f6"
+  },
+  {
+    "name": "mauritania",
+    "code": "1f1f2-1f1f7"
+  },
+  {
+    "name": "montserrat",
+    "code": "1f1f2-1f1f8"
+  },
+  {
+    "name": "malta",
+    "code": "1f1f2-1f1f9"
+  },
+  {
+    "name": "mauritius",
+    "code": "1f1f2-1f1fa"
+  },
+  {
+    "name": "maldives",
+    "code": "1f1f2-1f1fb"
+  },
+  {
+    "name": "malawi",
+    "code": "1f1f2-1f1fc"
+  },
+  {
+    "name": "mexico",
+    "code": "1f1f2-1f1fd"
+  },
+  {
+    "name": "malaysia",
+    "code": "1f1f2-1f1fe"
+  },
+  {
+    "name": "mozambique",
+    "code": "1f1f2-1f1ff"
+  },
+  {
+    "name": "namibia",
+    "code": "1f1f3-1f1e6"
+  },
+  {
+    "name": "new_caledonia",
+    "code": "1f1f3-1f1e8"
+  },
+  {
+    "name": "niger",
+    "code": "1f1f3-1f1ea"
+  },
+  {
+    "name": "norfolk_island",
+    "code": "1f1f3-1f1eb"
+  },
+  {
+    "name": "nigeria",
+    "code": "1f1f3-1f1ec"
+  },
+  {
+    "name": "nicaragua",
+    "code": "1f1f3-1f1ee"
+  },
+  {
+    "name": "netherlands",
+    "code": "1f1f3-1f1f1"
+  },
+  {
+    "name": "norway",
+    "code": "1f1f3-1f1f4"
+  },
+  {
+    "name": "nepal",
+    "code": "1f1f3-1f1f5"
+  },
+  {
+    "name": "nauru",
+    "code": "1f1f3-1f1f7"
+  },
+  {
+    "name": "niue",
+    "code": "1f1f3-1f1fa"
+  },
+  {
+    "name": "new_zealand",
+    "code": "1f1f3-1f1ff"
+  },
+  {
+    "name": "oman",
+    "code": "1f1f4-1f1f2"
+  },
+  {
+    "name": "panama",
+    "code": "1f1f5-1f1e6"
+  },
+  {
+    "name": "peru",
+    "code": "1f1f5-1f1ea"
+  },
+  {
+    "name": "french_polynesia",
+    "code": "1f1f5-1f1eb"
+  },
+  {
+    "name": "papua_new_guinea",
+    "code": "1f1f5-1f1ec"
+  },
+  {
+    "name": "philippines",
+    "code": "1f1f5-1f1ed"
+  },
+  {
+    "name": "pakistan",
+    "code": "1f1f5-1f1f0"
+  },
+  {
+    "name": "poland",
+    "code": "1f1f5-1f1f1"
+  },
+  {
+    "name": "st_pierre_miquelon",
+    "code": "1f1f5-1f1f2"
+  },
+  {
+    "name": "pitcairn_islands",
+    "code": "1f1f5-1f1f3"
+  },
+  {
+    "name": "puerto_rico",
+    "code": "1f1f5-1f1f7"
+  },
+  {
+    "name": "palestinian_territories",
+    "code": "1f1f5-1f1f8"
+  },
+  {
+    "name": "portugal",
+    "code": "1f1f5-1f1f9"
+  },
+  {
+    "name": "palau",
+    "code": "1f1f5-1f1fc"
+  },
+  {
+    "name": "paraguay",
+    "code": "1f1f5-1f1fe"
+  },
+  {
+    "name": "qatar",
+    "code": "1f1f6-1f1e6"
+  },
+  {
+    "name": "reunion",
+    "code": "1f1f7-1f1ea"
+  },
+  {
+    "name": "romania",
+    "code": "1f1f7-1f1f4"
+  },
+  {
+    "name": "serbia",
+    "code": "1f1f7-1f1f8"
+  },
+  {
+    "name": "russia",
+    "code": "1f1f7-1f1fa"
+  },
+  {
+    "name": "rwanda",
+    "code": "1f1f7-1f1fc"
+  },
+  {
+    "name": "saudi_arabia",
+    "code": "1f1f8-1f1e6"
+  },
+  {
+    "name": "solomon_islands",
+    "code": "1f1f8-1f1e7"
+  },
+  {
+    "name": "seychelles",
+    "code": "1f1f8-1f1e8"
+  },
+  {
+    "name": "sudan",
+    "code": "1f1f8-1f1e9"
+  },
+  {
+    "name": "sweden",
+    "code": "1f1f8-1f1ea"
+  },
+  {
+    "name": "singapore",
+    "code": "1f1f8-1f1ec"
+  },
+  {
+    "name": "st_helena",
+    "code": "1f1f8-1f1ed"
+  },
+  {
+    "name": "slovenia",
+    "code": "1f1f8-1f1ee"
+  },
+  {
+    "name": "svalbard_jan_mayen",
+    "code": "1f1f8-1f1ef"
+  },
+  {
+    "name": "slovakia",
+    "code": "1f1f8-1f1f0"
+  },
+  {
+    "name": "sierra_leone",
+    "code": "1f1f8-1f1f1"
+  },
+  {
+    "name": "san_marino",
+    "code": "1f1f8-1f1f2"
+  },
+  {
+    "name": "senegal",
+    "code": "1f1f8-1f1f3"
+  },
+  {
+    "name": "somalia",
+    "code": "1f1f8-1f1f4"
+  },
+  {
+    "name": "suriname",
+    "code": "1f1f8-1f1f7"
+  },
+  {
+    "name": "south_sudan",
+    "code": "1f1f8-1f1f8"
+  },
+  {
+    "name": "sao_tome_principe",
+    "code": "1f1f8-1f1f9"
+  },
+  {
+    "name": "el_salvador",
+    "code": "1f1f8-1f1fb"
+  },
+  {
+    "name": "sint_maarten",
+    "code": "1f1f8-1f1fd"
+  },
+  {
+    "name": "syria",
+    "code": "1f1f8-1f1fe"
+  },
+  {
+    "name": "eswatini",
+    "code": "1f1f8-1f1ff"
+  },
+  {
+    "name": "tristan_da_cunha",
+    "code": "1f1f9-1f1e6"
+  },
+  {
+    "name": "turks_caicos_islands",
+    "code": "1f1f9-1f1e8"
+  },
+  {
+    "name": "chad",
+    "code": "1f1f9-1f1e9"
+  },
+  {
+    "name": "french_southern_territories",
+    "code": "1f1f9-1f1eb"
+  },
+  {
+    "name": "togo",
+    "code": "1f1f9-1f1ec"
+  },
+  {
+    "name": "thailand",
+    "code": "1f1f9-1f1ed"
+  },
+  {
+    "name": "tajikistan",
+    "code": "1f1f9-1f1ef"
+  },
+  {
+    "name": "tokelau",
+    "code": "1f1f9-1f1f0"
+  },
+  {
+    "name": "timor_leste",
+    "code": "1f1f9-1f1f1"
+  },
+  {
+    "name": "turkmenistan",
+    "code": "1f1f9-1f1f2"
+  },
+  {
+    "name": "tunisia",
+    "code": "1f1f9-1f1f3"
+  },
+  {
+    "name": "tonga",
+    "code": "1f1f9-1f1f4"
+  },
+  {
+    "name": "türkiye",
+    "code": "1f1f9-1f1f7"
+  },
+  {
+    "name": "trinidad_tobago",
+    "code": "1f1f9-1f1f9"
+  },
+  {
+    "name": "tuvalu",
+    "code": "1f1f9-1f1fb"
+  },
+  {
+    "name": "taiwan",
+    "code": "1f1f9-1f1fc"
+  },
+  {
+    "name": "tanzania",
+    "code": "1f1f9-1f1ff"
+  },
+  {
+    "name": "ukraine",
+    "code": "1f1fa-1f1e6"
+  },
+  {
+    "name": "uganda",
+    "code": "1f1fa-1f1ec"
+  },
+  {
+    "name": "us_outlying_islands",
+    "code": "1f1fa-1f1f2"
+  },
+  {
+    "name": "united_nations",
+    "code": "1f1fa-1f1f3"
+  },
+  {
+    "name": "united_states",
+    "code": "1f1fa-1f1f8"
+  },
+  {
+    "name": "uruguay",
+    "code": "1f1fa-1f1fe"
+  },
+  {
+    "name": "uzbekistan",
+    "code": "1f1fa-1f1ff"
+  },
+  {
+    "name": "vatican_city",
+    "code": "1f1fb-1f1e6"
+  },
+  {
+    "name": "st_vincent_grenadines",
+    "code": "1f1fb-1f1e8"
+  },
+  {
+    "name": "venezuela",
+    "code": "1f1fb-1f1ea"
+  },
+  {
+    "name": "british_virgin_islands",
+    "code": "1f1fb-1f1ec"
+  },
+  {
+    "name": "us_virgin_islands",
+    "code": "1f1fb-1f1ee"
+  },
+  {
+    "name": "vietnam",
+    "code": "1f1fb-1f1f3"
+  },
+  {
+    "name": "vanuatu",
+    "code": "1f1fb-1f1fa"
+  },
+  {
+    "name": "wallis_futuna",
+    "code": "1f1fc-1f1eb"
+  },
+  {
+    "name": "samoa",
+    "code": "1f1fc-1f1f8"
+  },
+  {
+    "name": "kosovo",
+    "code": "1f1fd-1f1f0"
+  },
+  {
+    "name": "yemen",
+    "code": "1f1fe-1f1ea"
+  },
+  {
+    "name": "mayotte",
+    "code": "1f1fe-1f1f9"
+  },
+  {
+    "name": "south_africa",
+    "code": "1f1ff-1f1e6"
+  },
+  {
+    "name": "zambia",
+    "code": "1f1ff-1f1f2"
+  },
+  {
+    "name": "zimbabwe",
+    "code": "1f1ff-1f1fc"
+  },
+  {
+    "name": "england",
+    "code": "1f3f4-e0067-e0062-e0065-e006e-e0067-e007f"
+  },
+  {
+    "name": "scotland",
+    "code": "1f3f4-e0067-e0062-e0073-e0063-e0074-e007f"
+  },
+  {
+    "name": "wales",
+    "code": "1f3f4-e0067-e0062-e0077-e006c-e0073-e007f"
+  }
+]

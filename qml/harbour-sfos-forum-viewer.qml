@@ -29,7 +29,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 import "pages"
-
+import "emoji.js" as Emoji
 ApplicationWindow
 {
     id: application
@@ -170,5 +170,18 @@ var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
         //console.log(checkem.value, loggedin.value)
         categories.fetch();
         fetchLatestPosts();
+    }
+
+    readonly property var emojiData: Emoji.data()
+    function replaceShortcode(text) {
+        // titles can only have one emoji, so we can use a non-greedy match
+        const reg = /:([a-zA-Z+_-]+):/;
+        const emo = reg.exec(text)
+        if (emo == null) return text
+        const shortcode = emo[1] // matched text in first group, via re.exec()
+        // map the code string to a sequence of HTML entities
+        const replacement  = emojiData[shortcode].split('-').map(function(e) { return '&#x' + e + ';' } ).join('')
+        const formatted = text.replace(reg, replacement)
+        return !!formatted ? formatted : text
     }
 }

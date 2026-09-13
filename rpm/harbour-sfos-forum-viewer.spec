@@ -16,6 +16,7 @@ License:    MIT
 BuildArch:  noarch
 URL:        https://github.com/szopin/harbour-sfos-forum-viewer
 Source0:    %{name}-%{version}.tar.bz2
+Source10:   https://raw.githubusercontent.com/discourse/discourse-emojis/main/dist/emojis.json
 Source100:  harbour-sfos-forum-viewer.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher

@@ -72,7 +72,8 @@ Page {
             PageHeader {
                 id: pageHeader
                 title: cooked ? username ? username : qsTr("Alternative formatting") : qsTr("Revision history")
-                description: cooked ? "" : aTitle
+                description: cooked ? "" : replaceShortcode(aTitle)
+                _titleItem.textFormat: Text.RichText
             }
 
             Label {

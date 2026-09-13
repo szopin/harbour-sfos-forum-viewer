@@ -1,0 +1,11 @@
+.pragma library
+
+var list =
+@EMOJI@
+;
+
+function data() {
+    var emoji = {};
+    list.forEach(function(e) { emoji[e.name] = e.code });
+    return emoji;
+}
