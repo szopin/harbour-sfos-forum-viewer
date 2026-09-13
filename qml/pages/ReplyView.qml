@@ -64,10 +64,9 @@ Page {
         id: list
         header: PageHeader {
             id: pageHeader
-            title: tclosed ? "🔐" + replaceShortcode(aTitle) : replaceShortcode(aTitle)
+            title: tclosed ? "🔐" + aTitle : aTitle
             description: tags ? qsTr("tags") + ": " + tags : ""
             wrapMode: Text.Wrap
-            _titleItem.textFormat: Text.RichText
         }
         footer: Item {
             width: parent.width
