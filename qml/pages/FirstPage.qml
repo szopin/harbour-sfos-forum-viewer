@@ -649,10 +649,9 @@ Page {
                         width: parent.width - postsLabel.width - parent.spacing
 
                         Label {
-                            text: bookmarked ? "🔖" + replaceShortcode(title) : replaceShortcode(title)
+                            text: bookmarked ? "🔖" + title : title
                             width: parent.width
                             wrapMode: Text.Wrap
-                            textFormat: Text.RichText // needed for emoji entities
                             font.pixelSize: Theme.fontSizeSmall
                             color: highlighted || item.hasNews && !spam && !highest_post_by_me
                                    ? Theme.highlightColor
