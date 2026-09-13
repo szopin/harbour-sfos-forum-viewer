@@ -277,8 +277,8 @@ Veel dank aan de bijdragers:
         <translation>Bladwijzer toevoegen</translation>
     </message>
     <message>
-        <source>You cannot create threads this categury</source>
-        <translation>In deze categorie kun je geen topics aanmaken</translation>
+        <source>You cannot create threads this category</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

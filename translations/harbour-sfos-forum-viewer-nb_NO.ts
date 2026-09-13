@@ -277,8 +277,8 @@ En spesiell takk til bidragsytere:
         <translation>Bokmerk</translation>
     </message>
     <message>
-        <source>You cannot create threads this categury</source>
-        <translation>Du kan ikke opprette tråder i denne kategorien</translation>
+        <source>You cannot create threads this category</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

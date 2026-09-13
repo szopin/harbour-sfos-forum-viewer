@@ -294,7 +294,7 @@ Agradecimiento especial a los contribuyentes:
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="525"/>
-        <source>You cannot create threads this categury</source>
+        <source>You cannot create threads this category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

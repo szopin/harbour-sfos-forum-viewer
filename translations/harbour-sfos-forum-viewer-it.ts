@@ -277,8 +277,8 @@ Un grazie speciale ai contributori:
         <translation>Segnalibro</translation>
     </message>
     <message>
-        <source>You cannot create threads this categury</source>
-        <translation>Non puoi creare discussioni in questa categoria</translation>
+        <source>You cannot create threads this category</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

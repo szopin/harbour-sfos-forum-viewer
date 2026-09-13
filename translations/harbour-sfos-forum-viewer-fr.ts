@@ -277,7 +277,7 @@ Remerciements aux contributeurs :
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You cannot create threads this categury</source>
+        <source>You cannot create threads this category</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
