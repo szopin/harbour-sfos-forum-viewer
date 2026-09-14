@@ -278,7 +278,7 @@ Speciellt tack till medverkande:
     </message>
     <message>
         <source>You cannot create threads this category</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan inte skapa trådar i denna kategori</translation>
     </message>
 </context>
 <context>

@@ -278,7 +278,7 @@ Veel dank aan de bijdragers:
     </message>
     <message>
         <source>You cannot create threads this category</source>
-        <translation type="unfinished"></translation>
+        <translation>In deze categorie kunde geên topics aanmaken</translation>
     </message>
 </context>
 <context>

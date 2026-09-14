@@ -9,7 +9,7 @@ Name:       harbour-sfos-forum-viewer
 # << macros
 
 Summary:    Viewer for SailfishOS forums
-Version:    1.16.8
+Version:    1.16.9
 Release:    1
 Group:      Qt/Qt
 License:    MIT
