@@ -691,36 +691,41 @@ Agradecimiento especial a los contribuyentes:
 <context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="55"/>
+        <location filename="../qml/pages/SearchPage.qml" line="56"/>
         <source>Searching in “%1”</source>
         <translation>Buscando en “%1”</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="81"/>
+        <location filename="../qml/pages/SearchPage.qml" line="82"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>No hay resultados</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="83"/>
+        <location filename="../qml/pages/SearchPage.qml" line="84"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>en “%1”</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="164"/>
+        <location filename="../qml/pages/SearchPage.qml" line="165"/>
         <source>Search</source>
         <translation>Buscar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="171"/>
+        <location filename="../qml/pages/SearchPage.qml" line="172"/>
         <source>Search in all threads</source>
         <translation>Busca en todos los hilos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="172"/>
+        <location filename="../qml/pages/SearchPage.qml" line="173"/>
         <source>Search in the current thread</source>
         <translation>Busca en hilo actual</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchPage.qml" line="182"/>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

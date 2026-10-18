@@ -586,6 +586,10 @@ Speciellt tack till medverkande:
         <source>Search</source>
         <translation>Sök</translation>
     </message>
+    <message>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadView</name>

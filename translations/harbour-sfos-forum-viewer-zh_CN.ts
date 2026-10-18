@@ -583,6 +583,10 @@ Special thanks to contributors:
         <source>Search</source>
         <translation>搜索</translation>
     </message>
+    <message>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadView</name>

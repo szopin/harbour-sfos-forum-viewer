@@ -691,36 +691,41 @@ Special thanks to contributors:
 <context>
     <name>SearchPage</name>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="55"/>
+        <location filename="../qml/pages/SearchPage.qml" line="56"/>
         <source>Searching in “%1”</source>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="81"/>
+        <location filename="../qml/pages/SearchPage.qml" line="82"/>
         <source>No results</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>Нет результатов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="83"/>
+        <location filename="../qml/pages/SearchPage.qml" line="84"/>
         <source>in “%1”</source>
         <extracomment>part of &apos;No results in &quot;foo&quot;&apos;</extracomment>
         <translation>%1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="164"/>
+        <location filename="../qml/pages/SearchPage.qml" line="165"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="171"/>
+        <location filename="../qml/pages/SearchPage.qml" line="172"/>
         <source>Search in all threads</source>
         <translation>Искать по всем темам</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SearchPage.qml" line="172"/>
+        <location filename="../qml/pages/SearchPage.qml" line="173"/>
         <source>Search in the current thread</source>
         <translation>Искать в текущей теме</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SearchPage.qml" line="182"/>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

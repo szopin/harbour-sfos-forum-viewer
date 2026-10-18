@@ -586,6 +586,10 @@ Special thanks to contributors:
         <source>Search</source>
         <translation>Search</translation>
     </message>
+    <message>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadView</name>

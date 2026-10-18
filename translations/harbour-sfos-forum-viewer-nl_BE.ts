@@ -587,6 +587,10 @@ Veel dank aan de bijdragers:
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
+    <message>
+        <source>Search in category</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ThreadView</name>

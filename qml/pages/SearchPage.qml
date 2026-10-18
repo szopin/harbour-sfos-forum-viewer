@@ -37,6 +37,7 @@ Page {
     property string initialSearch
     property int searchid
     property string aTitle
+    property string categoryhash: ""
     readonly property string searchstring: {
         var res = application.source + "search.json?"
         if (searchid) {
@@ -58,8 +59,9 @@ Page {
 
     function getcomments(text){
         busyIndicator.running = true;
+        list.model.clear();
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", searchstring + text);
+        xhr.open("GET", searchstring + text + categoryhash);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 busyIndicator.running = false;
@@ -67,7 +69,6 @@ Page {
                 var posts  = data.posts;
                 var topics = data.topics;
                 var firstTopic = topics[0];
-                list.model.clear();
                 if(posts[0]){
                     haveResults = true;
                     var posts_length = posts.length
@@ -176,6 +177,23 @@ Page {
                 EnterKey.onClicked: _search(text)
 
                 onTextChanged: if (!text) _reset()
+            }
+            ComboBox {
+                label: qsTr("Search in category")
+                visible: !searchid
+                menu: ContextMenu {
+                    MenuItem { text: "All"
+                        onClicked: categoryhash = ""
+                    }
+                    Repeater {
+                        model: categories.model
+                        MenuItem {
+                            text: name
+                            onClicked: categoryhash = " %23" + ( is_subcategory
+                                                                ? categories.lookup[parent_category_id].slug + ":" + slug : slug)
+                        }
+                    }
+                }
             }
         }
 
