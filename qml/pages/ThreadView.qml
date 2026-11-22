@@ -445,7 +445,7 @@ Page {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 var data = JSON.parse(xhr.responseText);
-                if (data.tags) tags = data.tags.join(" ");
+                //if (data.tags) tags = data.tags.join(" ");
                 tclosed = data.closed;
                 if (aTitle == "") aTitle = data.title;
                 posts_count = data.posts_count;

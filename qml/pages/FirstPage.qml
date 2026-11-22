@@ -211,7 +211,16 @@ Page {
                         }
                     }
                     var spammerop = filterlist.value(topic.posters[0].user_id, -1) < 0 ? true : false;
-                    if (topic.tags) tags = topic.tags.join(" ");
+                    if (topic.tags){
+                        tags = "";
+                        for(var l = 0;l < topic.tags.length;l++){
+                            console.log(l)
+                            console.log(topic.tags[l].name, topic.tags.length)
+                            tags += topic.tags[l].name +" ";
+                        }
+                        l=0;
+                    }
+
                     var bookmarked = topic.bookmarked ? topic.bookmarked : false
                     var lastread = topic.last_read_post_number ?  topic.last_read_post_number : 0
                     loop2: for(var h=0;h<list.count;h++){
@@ -250,7 +259,7 @@ Page {
         var data = JSON.parse(posters);
         for(var i=0;i<data.users.length;i++){
             if (data.users[i].id == user_id){
-         //       console.log(data.users[i].username);
+                //       console.log(data.users[i].username);
                 return data.users[i].username;
             }
         }
@@ -671,7 +680,7 @@ Page {
                                 elide: Text.ElideRight
                                 width: (parent.width - 2*parent.spacing - catRect.width)/2
                                 color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
-                                                                            : Theme.secondaryColor
+                                                                                                   : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
                             }
@@ -684,7 +693,7 @@ Page {
                                 elide: Text.ElideRight
                                 width: dateLabel.width
                                 color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
-                                                                            : Theme.secondaryColor
+                                                                                                   : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignRight
                             }
@@ -714,7 +723,7 @@ Page {
                                 elide: Text.ElideRight
                                 width: parent.width
                                 color: highlighted || item.hasNews && !spam && !highest_post_by_me ? Theme.secondaryHighlightColor
-                                                                            : Theme.secondaryColor
+                                                                                                   : Theme.secondaryColor
                                 font.pixelSize: Theme.fontSizeSmall
                                 horizontalAlignment: Text.AlignLeft
                             }
@@ -805,11 +814,12 @@ Page {
                         var name = list.model.get(index).name
                         postCountConfig.setValue(topicid, highest_post_number);
                         var oldLast = (lastread >= lastPostNumber && lastPostNumber != 0 ? lastread : lastPostNumber) ;
-                      //  console.log(lastread, lastPostNumber, highest_post_number)
+                        //  console.log(lastread, lastPostNumber, highest_post_number)
                         lastPostNumber = highest_post_number;
                         pageStack.push("ThreadView.qml", {
                                            "aTitle": title,
                                            "topicid": topicid,
+                                           "tags": ttags,
                                            "posts_count": posts_count,
                                            "post_number": oldLast,
                                            "highest_post_number": highest_post_number
