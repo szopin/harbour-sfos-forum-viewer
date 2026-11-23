@@ -339,15 +339,60 @@ Agradecimiento especial a los contribuyentes:
     </message>
 </context>
 <context>
-    <name>LoginWeb</name>
+    <name>LoginDevice</name>
     <message>
-        <location filename="../qml/pages/LoginWeb.qml" line="65"/>
-        <source>Copy the generated API key here</source>
+        <location filename="../qml/pages/LoginDevice.qml" line="64"/>
+        <source>The forum does not support device login.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/LoginWeb.qml" line="73"/>
-        <source>the code you get after clicking Authorize</source>
+        <location filename="../qml/pages/LoginDevice.qml" line="117"/>
+        <source>The login request was denied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="119"/>
+        <source>The code has expired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="153"/>
+        <source>Copy link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="157"/>
+        <source>Request a new code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="168"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="184"/>
+        <source>Open the forum in a browser, log in and enter this code to authorize the app:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="200"/>
+        <source>Copy code and open browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="211"/>
+        <source>You can also approve the login on another device at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="227"/>
+        <source>Waiting for authorization…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/LoginDevice.qml" line="244"/>
+        <source>Try again</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
