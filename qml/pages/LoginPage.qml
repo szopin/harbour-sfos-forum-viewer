@@ -103,7 +103,7 @@ function dec(payload){
 
                     console.log(pubkey)
                     pageStack.completeAnimation();
-                    var dialog = pageStack.push("LoginWeb.qml", {pubkey: pubkey, rand: rand});
+                    var dialog = pageStack.push("LoginDevice.qml", {pubkey: pubkey, rand: rand});
                 }
 }
 }

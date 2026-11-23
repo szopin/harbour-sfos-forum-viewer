@@ -282,13 +282,49 @@ Veel dank aan de bijdragers:
     </message>
 </context>
 <context>
-    <name>LoginWeb</name>
+    <name>LoginDevice</name>
     <message>
-        <source>Copy the generated API key here</source>
+        <source>The forum does not support device login.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>the code you get after clicking Authorize</source>
+        <source>The login request was denied.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The code has expired.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Request a new code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="unfinished">Aanmelden</translation>
+    </message>
+    <message>
+        <source>Open the forum in a browser, log in and enter this code to authorize the app:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy code and open browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can also approve the login on another device at %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Waiting for authorization…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try again</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
