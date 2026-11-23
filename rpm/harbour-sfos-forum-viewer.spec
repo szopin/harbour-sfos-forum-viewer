@@ -24,7 +24,6 @@ Requires:   qml(Sailfish.Crypto)
 Requires:   qml(Sailfish.Secrets)
 Requires:   sailfishsecretsdaemon-cryptoplugins-default
 Requires:   sailfishsecretsdaemon-secretsplugins-default
-Requires:   amber-web-authorization
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(sailfishsecrets)
 BuildRequires:  pkgconfig(sailfishcrypto)
@@ -32,7 +31,6 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(amberwebauthorization)
 
 %description
 Viewer for SailfishOS forums

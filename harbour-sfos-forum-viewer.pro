@@ -13,7 +13,7 @@
 TARGET = harbour-sfos-forum-viewer
 
 CONFIG += sailfishapp_qml
-PKGCONFIG += sailfishsecrets sailfishcrypto amberwebauthorization
+PKGCONFIG += sailfishsecrets sailfishcrypto
 CONFIG += link_pkgconfig
 
 DISTFILES += qml/harbour-sfos-forum-viewer.qml \
@@ -24,7 +24,7 @@ DISTFILES += qml/harbour-sfos-forum-viewer.qml \
     qml/pages/Error.qml \
     qml/pages/FirstPage.qml \
     qml/pages/LoginPage.qml \
-    qml/pages/LoginWeb.qml \
+    qml/pages/LoginDevice.qml \
     qml/pages/NewPost.qml \
     qml/pages/NewThread.qml \
     qml/pages/NotificationSettings.qml \
