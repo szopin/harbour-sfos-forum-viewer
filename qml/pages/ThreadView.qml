@@ -448,11 +448,12 @@ Page {
                 //if (data.tags) tags = data.tags.join(" ");
                 tclosed = data.closed;
                 if (aTitle == "") aTitle = data.title;
-                posts_count = data.posts_count;
+
                 var post_stream = data.post_stream;
                 list.model.clear();
                 appendPosts(post_stream.posts);
                 var stream = post_stream.stream;
+                posts_count = stream.length;
                 if (posts_count >= 20){
                     xi = Math.floor((posts_count - 20) / 400)
                     yi = (posts_count - 20) % 400
